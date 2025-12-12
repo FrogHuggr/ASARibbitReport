@@ -12,6 +12,7 @@ import {
   Link as LinkIcon,
   Waves,
   TreeDeciduous,
+  Lightbulb,
 } from 'lucide-react';
 import { getRealStoryById } from '../data/realStory';
 import type { Comparison, FaceOffSection } from '../data/realStory';
@@ -57,98 +58,126 @@ function FaceOffCards({
   const ToadIcon = getIcon(comparison.toad.icon);
 
   return (
-    <div className="space-y-4">
-      {/* Category indicator */}
-      <div className="flex items-center justify-center gap-2">
-        {comparisons.map((_, idx) => (
-          <button
-            key={idx}
-            onClick={() => setCurrentIndex(idx)}
-            className={`w-2.5 h-2.5 rounded-full transition-all ${
-              idx === currentIndex
-                ? 'bg-[#2D5A3D] dark:bg-[#81C784] w-6'
-                : 'bg-[#D1D5DB] dark:bg-[#4B5563]'
-            }`}
-            aria-label={`Go to ${comparisons[idx].category}`}
-          />
-        ))}
-      </div>
-
+    <div className="space-y-5">
       {/* Category title */}
-      <h4 className="text-center font-display font-bold text-xl text-[#2D2D2D] dark:text-white">
-        {comparison.category}
-      </h4>
+      <div className="text-center">
+        <span className="inline-block px-4 py-1.5 bg-[#F3F4F6] dark:bg-[#2D2D2D] rounded-full font-display font-bold text-xl text-[#2D2D2D] dark:text-white">
+          {comparison.category}
+        </span>
+      </div>
 
       {/* VS Cards */}
       <div className="relative">
         {/* Navigation arrows */}
         <button
           onClick={goPrev}
-          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 z-10 w-10 h-10 rounded-full bg-white dark:bg-[#2D2D2D] shadow-lg flex items-center justify-center text-[#6B7280] hover:text-[#2D2D2D] dark:hover:text-white transition-colors"
+          className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-1 z-10 w-11 h-11 rounded-full bg-white dark:bg-[#2D2D2D] shadow-lg flex items-center justify-center text-[#6B7280] hover:text-[#2D2D2D] dark:hover:text-white hover:scale-110 transition-all"
           aria-label="Previous comparison"
         >
-          <ChevronLeft size={24} />
+          <ChevronLeft size={28} />
         </button>
 
         <button
           onClick={goNext}
-          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 z-10 w-10 h-10 rounded-full bg-white dark:bg-[#2D2D2D] shadow-lg flex items-center justify-center text-[#6B7280] hover:text-[#2D2D2D] dark:hover:text-white transition-colors"
+          className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1 z-10 w-11 h-11 rounded-full bg-white dark:bg-[#2D2D2D] shadow-lg flex items-center justify-center text-[#6B7280] hover:text-[#2D2D2D] dark:hover:text-white hover:scale-110 transition-all"
           aria-label="Next comparison"
         >
-          <ChevronRight size={24} />
+          <ChevronRight size={28} />
         </button>
 
-        <div className="grid grid-cols-2 gap-3 px-6">
+        <div className="grid grid-cols-2 gap-3 px-8">
           {/* Frog Card */}
           <div
-            className="rounded-2xl p-4 text-center"
-            style={{ backgroundColor: `${frogColor.primary}15` }}
+            className="rounded-2xl p-4 text-center border-2 shadow-md"
+            style={{
+              backgroundColor: '#E8F5E9',
+              borderColor: frogColor.primary,
+            }}
           >
+            {/* Label */}
+            <p
+              className="text-xs font-bold uppercase tracking-wider mb-3"
+              style={{ color: frogColor.primary }}
+            >
+              Frog
+            </p>
+            {/* Icon */}
             <div
-              className="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
+              className="w-14 h-14 rounded-full mx-auto mb-3 flex items-center justify-center"
               style={{ backgroundColor: frogColor.primary }}
             >
-              <FrogIcon size={24} className="text-white" />
+              <FrogIcon size={28} className="text-white" />
             </div>
+            {/* Title */}
             <h5
-              className="font-display font-bold text-sm mb-2"
+              className="font-display font-bold text-base mb-2"
               style={{ color: frogColor.primary }}
             >
               {comparison.frog.title}
             </h5>
-            <p className="text-xs text-[#4B5563] dark:text-[#D1D5DB] leading-relaxed">
+            {/* Description */}
+            <p className="text-sm text-[#374151] leading-relaxed">
               {comparison.frog.description}
             </p>
           </div>
 
           {/* Toad Card */}
           <div
-            className="rounded-2xl p-4 text-center"
-            style={{ backgroundColor: `${toadColor.primary}15` }}
+            className="rounded-2xl p-4 text-center border-2 shadow-md"
+            style={{
+              backgroundColor: '#F5E6D3',
+              borderColor: toadColor.primary,
+            }}
           >
+            {/* Label */}
+            <p
+              className="text-xs font-bold uppercase tracking-wider mb-3"
+              style={{ color: '#6B5344' }}
+            >
+              Toad
+            </p>
+            {/* Icon */}
             <div
-              className="w-12 h-12 rounded-full mx-auto mb-3 flex items-center justify-center"
+              className="w-14 h-14 rounded-full mx-auto mb-3 flex items-center justify-center"
               style={{ backgroundColor: toadColor.primary }}
             >
-              <ToadIcon size={24} className="text-white" />
+              <ToadIcon size={28} className="text-white" />
             </div>
+            {/* Title */}
             <h5
-              className="font-display font-bold text-sm mb-2"
-              style={{ color: toadColor.primary }}
+              className="font-display font-bold text-base mb-2"
+              style={{ color: '#6B5344' }}
             >
               {comparison.toad.title}
             </h5>
-            <p className="text-xs text-[#4B5563] dark:text-[#D1D5DB] leading-relaxed">
+            {/* Description */}
+            <p className="text-sm text-[#374151] leading-relaxed">
               {comparison.toad.description}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Swipe hint */}
-      <p className="text-center text-xs text-[#9CA3AF]">
-        {currentIndex + 1} of {comparisons.length} - Tap arrows to compare
-      </p>
+      {/* Progress dots and count */}
+      <div className="text-center space-y-2">
+        <div className="flex items-center justify-center gap-2">
+          {comparisons.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentIndex(idx)}
+              className={`h-2.5 rounded-full transition-all ${
+                idx === currentIndex
+                  ? 'bg-[#2D5A3D] dark:bg-[#81C784] w-6'
+                  : 'bg-[#D1D5DB] dark:bg-[#4B5563] w-2.5'
+              }`}
+              aria-label={`Go to ${comparisons[idx].category}`}
+            />
+          ))}
+        </div>
+        <p className="text-sm text-[#6B7280]">
+          {currentIndex + 1} of {comparisons.length}
+        </p>
+      </div>
     </div>
   );
 }
@@ -175,7 +204,7 @@ export function RealStory() {
       {/* Header */}
       <header className="container-app px-4 py-4">
         <Link
-          to="/"
+          to="/explore"
           className="inline-flex items-center gap-2 text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#2D2D2D] dark:hover:text-white transition-colors"
         >
           <ArrowLeft size={20} />
@@ -185,20 +214,35 @@ export function RealStory() {
 
       {/* Hero Section */}
       <section className="container-app px-4 mb-8">
-        <div className="bg-gradient-to-br from-[#E8F5E9] to-[#FFF8E1] dark:from-[#1B3D2F] dark:to-[#3D3520] rounded-2xl p-6 text-center">
+        <div className="bg-gradient-to-br from-[#E8F5E9] to-[#FFF8E1] dark:from-[#1B3D2F] dark:to-[#3D3520] rounded-2xl p-8 text-center shadow-sm">
           {/* VS Images */}
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-24 h-24 rounded-full overflow-hidden bg-white dark:bg-[#2D2D2D] shadow-lg p-2">
+          <div className="flex items-center justify-center gap-3 mb-6">
+            {/* Frog Image */}
+            <div
+              className="w-32 h-32 rounded-full overflow-hidden shadow-lg p-2 relative"
+              style={{ backgroundColor: '#E8F5E9' }}
+            >
               <img
                 src={`${story.images.frog.path}${story.images.frog.file}`}
                 alt={story.images.frog.alt}
                 className="w-full h-full object-contain"
               />
             </div>
-            <span className="font-display font-bold text-2xl text-[#6B7280] dark:text-[#9CA3AF]">
-              VS
-            </span>
-            <div className="w-24 h-24 rounded-full overflow-hidden bg-white dark:bg-[#2D2D2D] shadow-lg p-2">
+
+            {/* VS Badge */}
+            <div
+              className="w-16 h-16 rounded-full bg-[#E85D4C] flex items-center justify-center shadow-lg transform rotate-3"
+            >
+              <span className="font-display font-extrabold text-2xl text-white">
+                VS
+              </span>
+            </div>
+
+            {/* Toad Image */}
+            <div
+              className="w-32 h-32 rounded-full overflow-hidden shadow-lg p-2"
+              style={{ backgroundColor: '#F5E6D3' }}
+            >
               <img
                 src={`${story.images.toad.path}${story.images.toad.file}`}
                 alt={story.images.toad.alt}
@@ -207,18 +251,19 @@ export function RealStory() {
             </div>
           </div>
 
-          <p className="text-xs font-medium text-[#6B7280] dark:text-[#9CA3AF] uppercase tracking-wider mb-1">
+          {/* Title */}
+          <p className="text-sm font-semibold text-[#2D5A3D] dark:text-[#81C784] uppercase tracking-wider mb-2">
             The Real Story
           </p>
-          <h1 className="font-display text-2xl font-bold text-[#2D2D2D] dark:text-white">
+          <h1 className="font-display text-4xl font-extrabold text-[#2D2D2D] dark:text-white mb-2">
             {story.title}
           </h1>
-          <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-1">{story.subtitle}</p>
+          <p className="text-lg text-[#6B7280] dark:text-[#9CA3AF]">{story.subtitle}</p>
         </div>
       </section>
 
       {/* Sections */}
-      <div className="container-app px-4 space-y-8">
+      <div className="container-app px-4 space-y-10">
         {story.sections.map((section, index) => {
           if (section.type === 'question') {
             return (
@@ -229,10 +274,10 @@ export function RealStory() {
                   className="w-16 h-16 flex-shrink-0"
                 />
                 <div className="flex-1 bg-[#F3F4F6] dark:bg-[#2D2D2D] rounded-2xl rounded-tl-sm p-4">
-                  <p className="text-xs font-medium text-[#6B7280] dark:text-[#9CA3AF] mb-1">
+                  <p className="text-xs font-semibold text-[#6B7280] dark:text-[#9CA3AF] mb-1">
                     {section.speaker} asks...
                   </p>
-                  <p className="text-[#2D2D2D] dark:text-white font-medium italic">
+                  <p className="text-[#2D2D2D] dark:text-white font-medium italic text-lg">
                     "{section.content}"
                   </p>
                 </div>
@@ -243,14 +288,23 @@ export function RealStory() {
           if (section.type === 'answer') {
             return (
               <section key={index}>
-                <h2 className="font-display text-lg font-bold text-[#2D5A3D] dark:text-[#81C784] mb-3">
-                  {section.title}
-                </h2>
-                <div className="bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-2xl p-5">
-                  <p className="font-display font-bold text-xl text-[#2D2D2D] dark:text-white mb-3">
+                {/* Section Header with icon */}
+                <div className="flex items-center gap-2 mb-3">
+                  <Lightbulb size={24} className="text-[#2D5A3D] dark:text-[#81C784]" />
+                  <h2 className="font-display text-2xl font-bold text-[#2D5A3D] dark:text-[#81C784]">
+                    {section.title}
+                  </h2>
+                </div>
+                <div
+                  className="w-16 h-1 mb-4"
+                  style={{ backgroundColor: frogColor.secondary }}
+                />
+                <div className="bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-2xl p-6">
+                  {/* The Big Reveal */}
+                  <p className="font-display font-bold text-2xl text-[#2D2D2D] dark:text-white mb-4 leading-tight">
                     {section.headline}
                   </p>
-                  <p className="text-[#4B5563] dark:text-[#D1D5DB] leading-relaxed">
+                  <p className="text-[#374151] dark:text-[#D1D5DB] leading-relaxed text-base">
                     {section.content}
                   </p>
                 </div>
@@ -262,9 +316,13 @@ export function RealStory() {
             const faceOff = section as FaceOffSection;
             return (
               <section key={index}>
-                <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white mb-4 text-center">
-                  {faceOff.title}
-                </h2>
+                {/* Section Header */}
+                <div className="text-center mb-6">
+                  <h2 className="font-display text-3xl font-extrabold text-[#2D2D2D] dark:text-white inline-block">
+                    {faceOff.title}
+                  </h2>
+                  <div className="w-24 h-1 bg-gradient-to-r from-[#4A7B5C] to-[#8B7355] mx-auto mt-2 rounded-full" />
+                </div>
                 <FaceOffCards
                   comparisons={faceOff.comparisons}
                   frogColor={frogColor}
@@ -276,16 +334,26 @@ export function RealStory() {
 
           if (section.type === 'sameTeam') {
             return (
-              <section key={index}>
-                <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white mb-3">
+              <section key={index} className="pt-4">
+                {/* Visual break - divider */}
+                <hr className="border-[#E5E7EB] dark:border-[#374151] mb-8" />
+
+                {/* Section Header */}
+                <h2 className="font-display text-2xl font-bold text-[#2D2D2D] dark:text-white mb-1">
                   {section.title}
                 </h2>
-                <div className="space-y-4">
-                  <p className="text-[#4B5563] dark:text-[#D1D5DB] leading-relaxed">
+                <div
+                  className="w-16 h-1 mb-4"
+                  style={{ backgroundColor: frogColor.secondary }}
+                />
+
+                <div className="space-y-5">
+                  <p className="text-[#374151] dark:text-[#D1D5DB] leading-relaxed text-base">
                     {section.content}
                   </p>
-                  <div className="bg-[#FFF8E1] dark:bg-[#3D3520] rounded-xl p-4 border-l-4 border-[#F4B942]">
-                    <p className="text-sm text-[#4B5563] dark:text-[#D1D5DB] leading-relaxed">
+                  {/* Conservation Callout */}
+                  <div className="bg-[#FFF9E6] dark:bg-[#3D3520] rounded-xl p-5 border-l-4 border-[#F4B942]">
+                    <p className="text-[#374151] dark:text-[#D1D5DB] leading-relaxed">
                       {section.conservation}
                     </p>
                   </div>
@@ -298,14 +366,25 @@ export function RealStory() {
             return (
               <section
                 key={index}
-                className="bg-gradient-to-r from-[#4CAF50] to-[#2D5A3D] rounded-2xl p-5 text-center"
+                className="bg-gradient-to-r from-[#4CAF50] to-[#2D5A3D] rounded-2xl p-6 flex items-center gap-4"
               >
-                <p className="text-xs font-medium text-white/80 uppercase tracking-wider mb-2">
-                  {section.speaker}'s Takeaway
-                </p>
-                <p className="font-display font-bold text-lg text-white">
-                  "{section.content}"
-                </p>
+                {/* MarshMellow avatar */}
+                <div className="w-14 h-14 rounded-full bg-white/20 flex-shrink-0 flex items-center justify-center overflow-hidden">
+                  <img
+                    src="/images/marshmellow/marshmellow-wave.png"
+                    alt="MarshMellow"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                {/* Quote */}
+                <div className="flex-1 text-center">
+                  <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-2">
+                    {section.speaker}'s Takeaway
+                  </p>
+                  <p className="font-display font-bold text-xl text-white leading-snug">
+                    "{section.content}"
+                  </p>
+                </div>
               </section>
             );
           }
