@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { dispatches } from '../data/dispatches';
 import { DispatchCard } from '../components/ui/DispatchCard';
 import { Footer } from '../components/layout/Footer';
@@ -36,18 +37,26 @@ export function Dispatches() {
         </h2>
         <div className="space-y-3">
           {dispatches.map((dispatch) => (
-            <a
+            <Link
               key={dispatch.id}
-              href={`/dispatches/${dispatch.id}`}
+              to={`/dispatches/${dispatch.id}`}
               className="flex items-center gap-4 p-3 rounded-xl bg-white dark:bg-[#242424] shadow-sm hover:shadow-md transition-shadow"
             >
-              {/* Color indicator */}
-              <div
-                className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl flex-shrink-0"
-                style={{ backgroundColor: dispatch.palette.primary }}
-              >
-                🐸
-              </div>
+              {/* Color indicator or image */}
+              {dispatch.heroImage?.src ? (
+                <img
+                  src={dispatch.heroImage.src}
+                  alt={dispatch.heroImage.alt}
+                  className="w-12 h-12 rounded-lg flex-shrink-0 object-cover"
+                />
+              ) : (
+                <div
+                  className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl flex-shrink-0"
+                  style={{ backgroundColor: dispatch.colors.primary }}
+                >
+                  🐸
+                </div>
+              )}
 
               {/* Info */}
               <div className="flex-1 min-w-0">
@@ -55,10 +64,10 @@ export function Dispatches() {
                   {dispatch.title}
                 </p>
                 <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] truncate">
-                  {dispatch.commonName}
+                  {dispatch.species.commonName}
                 </p>
                 <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">
-                  {dispatch.region}, {dispatch.country}
+                  {dispatch.location.displayLocation || `${dispatch.location.region}, ${dispatch.location.country}`}
                 </p>
               </div>
 
@@ -76,7 +85,7 @@ export function Dispatches() {
               >
                 <path d="m9 18 6-6-6-6" />
               </svg>
-            </a>
+            </Link>
           ))}
         </div>
       </section>

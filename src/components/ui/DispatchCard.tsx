@@ -14,8 +14,9 @@ const countryFlags: Record<string, string> = {
 };
 
 export function DispatchCard({ dispatch }: DispatchCardProps) {
-  const flag = countryFlags[dispatch.countryCode] || '🌍';
-  const hasImage = !!dispatch.heroImage;
+  const countryCode = dispatch.location.countryCode;
+  const flag = countryFlags[countryCode] || '🌍';
+  const hasImage = !!dispatch.heroImage?.src;
 
   return (
     <Link
@@ -27,14 +28,14 @@ export function DispatchCard({ dispatch }: DispatchCardProps) {
         style={{
           background: hasImage
             ? undefined
-            : `linear-gradient(135deg, ${dispatch.palette.primary} 0%, ${dispatch.palette.secondary} 100%)`,
+            : `linear-gradient(135deg, ${dispatch.colors.primary} 0%, ${dispatch.colors.secondary} 100%)`,
         }}
       >
         {/* Hero image or gradient fallback */}
         {hasImage ? (
           <img
-            src={dispatch.heroImage}
-            alt={dispatch.commonName}
+            src={dispatch.heroImage.src}
+            alt={dispatch.heroImage.alt}
             className="absolute inset-0 w-full h-full object-cover"
           />
         ) : (
@@ -51,16 +52,16 @@ export function DispatchCard({ dispatch }: DispatchCardProps) {
             backdropFilter: 'blur(4px)',
           }}
         >
-          {flag} {dispatch.countryCode}
+          {flag} {countryCode}
         </div>
 
         {/* Bottom info */}
         <div className="absolute bottom-0 left-0 right-0 p-3 bg-gradient-to-t from-black/60 to-transparent">
           <p className="text-white font-display font-bold text-base leading-tight">
-            {dispatch.region}
+            {dispatch.location.region}
           </p>
           <p className="text-white/80 text-sm">
-            {dispatch.country}
+            {dispatch.location.country}
           </p>
         </div>
       </div>
