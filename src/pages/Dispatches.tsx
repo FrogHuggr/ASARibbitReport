@@ -1,9 +1,23 @@
+import { useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { DispatchCard } from '../components/ui/DispatchCard';
 import { Footer } from '../components/layout/Footer';
 
 export function Dispatches() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 300;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
   return (
     <div className="pb-6">
       {/* Header */}
@@ -16,16 +30,40 @@ export function Dispatches() {
         </p>
       </header>
 
-      {/* Horizontal Scroll Section */}
-      <section className="mb-8">
-        <div className="overflow-x-auto hide-scrollbar">
-          <div className="flex gap-4 px-4 pb-4" style={{ width: 'max-content' }}>
+      {/* Horizontal Scroll Section with Desktop Arrows */}
+      <section className="mb-8 relative">
+        {/* Left Arrow - Desktop only */}
+        <button
+          onClick={() => scroll('left')}
+          className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white dark:bg-[#242424] shadow-md hover:shadow-lg transition-shadow"
+          aria-label="Scroll left"
+        >
+          <ChevronLeft size={24} className="text-[#6B7280] dark:text-[#9CA3AF]" />
+        </button>
+
+        {/* Cards Container */}
+        <div
+          ref={scrollRef}
+          className="overflow-x-auto hide-scrollbar scroll-smooth"
+        >
+          <div className="flex gap-4 px-4 md:px-14 pb-4" style={{ width: 'max-content' }}>
             {dispatches.map((dispatch) => (
               <DispatchCard key={dispatch.id} dispatch={dispatch} />
             ))}
           </div>
         </div>
-        <p className="text-center text-sm text-[#6B7280] dark:text-[#9CA3AF] mt-2">
+
+        {/* Right Arrow - Desktop only */}
+        <button
+          onClick={() => scroll('right')}
+          className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white dark:bg-[#242424] shadow-md hover:shadow-lg transition-shadow"
+          aria-label="Scroll right"
+        >
+          <ChevronRight size={24} className="text-[#6B7280] dark:text-[#9CA3AF]" />
+        </button>
+
+        {/* Swipe hint - Mobile only */}
+        <p className="text-center text-sm text-[#6B7280] dark:text-[#9CA3AF] mt-2 md:hidden">
           ← swipe for more →
         </p>
       </section>
