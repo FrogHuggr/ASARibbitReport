@@ -791,6 +791,135 @@ export const dispatches: Dispatch[] = [
       issue: 2,
     },
   },
+  {
+    id: 'usa-green-frog',
+    slug: 'green-frog',
+    title: "Michigan's Familiar Friend",
+    subtitle: 'The Green Frog',
+    species: {
+      commonName: 'Green Frog',
+      scientificName: 'Lithobates clamitans',
+    },
+    location: {
+      country: 'United States',
+      countryCode: 'US',
+      region: 'Michigan',
+      displayLocation: 'Michigan, USA',
+    },
+    iucnStatus: {
+      code: 'LC',
+      label: 'Least Concern',
+    },
+    colors: {
+      primary: '#3A6B52',
+      secondary: '#5889A6',
+      accent: '#B8860B',
+    },
+    countryStamp: {
+      label: 'USA',
+      backgroundColor: '#3A6B52',
+      textColor: '#FFFFFF',
+      rotation: -3,
+    },
+    heroImage: {
+      src: '/images/dispatches/us-green-frog/hero.jpg',
+      alt: 'Green Frog peeking out of the water at Holland Ponds, showing its distinctive green upper lip and golden eyes',
+      credit: 'Tom Favazza',
+    },
+    sections: [
+      {
+        id: 'story',
+        type: 'story',
+        title: 'The Frog Next Door',
+        titleColor: '#3A6B52',
+        content: "Green Frogs are one of the most common frogs around the lakes and ponds of Michigan. But just because they're familiar doesn't mean they're not fascinating!\n\nThese frogs are important indicator species. That means scientists watch them closely because their health tells us a lot about the health of the whole ecosystem. If the frogs are doing well, the wetlands are probably doing well too. If something's wrong with the frogs, it's an early warning sign that something might be off in the environment.\n\nEven though they're a familiar sight, there's always something new to discover about them.",
+        attribution: 'Trinity Favazza',
+      },
+      {
+        id: 'fun-facts',
+        type: 'facts',
+        title: 'Fun Facts',
+        titleColor: '#3A6B52',
+        displayAs: 'cards',
+        facts: [
+          {
+            id: 'color-change',
+            icon: 'palette',
+            iconLibrary: 'lucide',
+            text: 'Green Frogs can change their skin color slightly to blend in with their surroundings or to absorb heat!',
+            cardColor: '#FDF8E8',
+            accentColor: '#5889A6',
+          },
+          {
+            id: 'calls',
+            icon: 'volume-2',
+            iconLibrary: 'lucide',
+            text: "They have up to six different types of calls. That's a lot of ways to say hello!",
+            cardColor: '#F0F7F1',
+            accentColor: '#5889A6',
+          },
+          {
+            id: 'freeze',
+            icon: 'snowflake',
+            iconLibrary: 'lucide',
+            text: 'Some can survive freezing during the winter and thaw back to life in the spring!',
+            cardColor: '#FFF8F0',
+            accentColor: '#5889A6',
+          },
+        ],
+      },
+      {
+        id: 'researcher',
+        type: 'researcher',
+        title: 'Meet the Researcher',
+        titleColor: '#3A6B52',
+        displayAs: 'card',
+        cardColor: '#F7F5F0',
+        borderColor: '#5889A6',
+        researcher: {
+          name: 'Trinity Favazza',
+          organization: 'Amphibian Conservation',
+          photo: {
+            src: '/images/dispatches/us-green-frog/researcher.jpg',
+            alt: 'Trinity Favazza',
+            credit: 'Tom Favazza',
+          },
+          quote: {
+            text: "Saving amphibians means saving our planet's future.",
+            borderColor: '#3A6B52',
+          },
+        },
+      },
+      {
+        id: 'dive-deeper',
+        type: 'links',
+        title: 'Dive Deeper',
+        titleColor: '#3A6B52',
+        links: [
+          {
+            id: 'iucn',
+            label: 'IUCN Red List',
+            url: 'https://www.iucnredlist.org/species/58578/193376512',
+            icon: 'circle-alert',
+            iconLibrary: 'lucide',
+          },
+          {
+            id: 'amphibiaweb',
+            label: 'AmphibiaWeb',
+            url: 'https://amphibiaweb.org/species/5009',
+            icon: 'book-open',
+            iconLibrary: 'lucide',
+          },
+        ],
+      },
+    ],
+    meta: {
+      photographer: 'Tom Favazza',
+      contentSource: 'Trinity Favazza',
+      dateAdded: '2025-01',
+      issue: 2,
+    },
+  },
 ];
 
 export const getDispatchById = (id: string): Dispatch | undefined => {
