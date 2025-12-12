@@ -660,7 +660,7 @@ export const dispatches: Dispatch[] = [
       rotation: 3,
     },
     heroImage: {
-      src: '/images/dispatches/argentina-patagonia-frog/hero.webp',
+      src: '/images/dispatches/argentina-patagonia-frog/hero.jpg',
       alt: 'Patagonia Frog in shallow water showing its golden-brown coloring and blue eye',
       credit: 'Facundo De los Santos',
     },
