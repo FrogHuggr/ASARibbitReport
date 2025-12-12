@@ -215,12 +215,16 @@ export function RealStory() {
       {/* Hero Section */}
       <section className="container-app px-4 mb-8">
         <div className="bg-gradient-to-br from-[#E8F5E9] to-[#FFF8E1] dark:from-[#1B3D2F] dark:to-[#3D3520] rounded-2xl p-8 text-center shadow-sm">
-          {/* VS Images */}
-          <div className="flex items-center justify-center gap-3 mb-6">
-            {/* Frog Image */}
+          {/* VS Images - overlapping with different sizes */}
+          <div className="flex items-center justify-center mb-6">
+            {/* Frog Image - slightly smaller, positioned to overlap */}
             <div
-              className="w-32 h-32 rounded-full overflow-hidden shadow-lg p-2 relative"
-              style={{ backgroundColor: '#E8F5E9' }}
+              className="w-28 h-28 rounded-full overflow-hidden p-2 relative z-10 border-4 border-white"
+              style={{
+                backgroundColor: '#E8F5E9',
+                boxShadow: '0 8px 24px rgba(74, 123, 92, 0.3)',
+                marginRight: '-16px',
+              }}
             >
               <img
                 src={`${story.images.frog.path}${story.images.frog.file}`}
@@ -229,19 +233,26 @@ export function RealStory() {
               />
             </div>
 
-            {/* VS Badge */}
+            {/* VS Badge - elevated in the middle */}
             <div
-              className="w-16 h-16 rounded-full bg-[#E85D4C] flex items-center justify-center shadow-lg transform rotate-3"
+              className="w-14 h-14 rounded-full bg-[#E85D4C] flex items-center justify-center transform rotate-3 z-20 border-3 border-white"
+              style={{
+                boxShadow: '0 6px 20px rgba(232, 93, 76, 0.4)',
+              }}
             >
-              <span className="font-display font-extrabold text-2xl text-white">
+              <span className="font-display font-extrabold text-xl text-white">
                 VS
               </span>
             </div>
 
-            {/* Toad Image */}
+            {/* Toad Image - larger, positioned to overlap */}
             <div
-              className="w-32 h-32 rounded-full overflow-hidden shadow-lg p-2"
-              style={{ backgroundColor: '#F5E6D3' }}
+              className="w-36 h-36 rounded-full overflow-hidden p-2 relative z-10 border-4 border-white"
+              style={{
+                backgroundColor: '#F5E6D3',
+                boxShadow: '0 10px 30px rgba(139, 115, 85, 0.35)',
+                marginLeft: '-16px',
+              }}
             >
               <img
                 src={`${story.images.toad.path}${story.images.toad.file}`}
@@ -366,22 +377,27 @@ export function RealStory() {
             return (
               <section
                 key={index}
-                className="bg-gradient-to-r from-[#4CAF50] to-[#2D5A3D] rounded-2xl p-6 flex items-center gap-4"
+                className="bg-gradient-to-r from-[#4CAF50] to-[#2D5A3D] rounded-2xl p-5 flex items-center gap-4"
               >
-                {/* MarshMellow avatar */}
-                <div className="w-14 h-14 rounded-full bg-white/20 flex-shrink-0 flex items-center justify-center overflow-hidden">
+                {/* MarshMellow avatar - larger with white background */}
+                <div
+                  className="w-20 h-20 rounded-full bg-white flex-shrink-0 flex items-center justify-center overflow-hidden border-2 border-white/50"
+                  style={{
+                    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
+                  }}
+                >
                   <img
-                    src="/images/marshmellow/marshmellow-wave.png"
-                    alt="MarshMellow"
-                    className="w-12 h-12 object-contain"
+                    src="/images/marshmellow/marshmellow-celebrating.png"
+                    alt="MarshMellow celebrating"
+                    className="w-16 h-16 object-contain"
                   />
                 </div>
                 {/* Quote */}
-                <div className="flex-1 text-center">
-                  <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-2">
+                <div className="flex-1">
+                  <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-1">
                     {section.speaker}'s Takeaway
                   </p>
-                  <p className="font-display font-bold text-xl text-white leading-snug">
+                  <p className="font-display font-bold text-lg text-white leading-snug">
                     "{section.content}"
                   </p>
                 </div>
