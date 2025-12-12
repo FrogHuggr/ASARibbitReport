@@ -21,6 +21,9 @@ export function DispatchDetail() {
     );
   }
 
+  const hasHeroImage = !!dispatch.heroImage;
+  const hasResearcherPhoto = !!dispatch.researcher.photo;
+
   return (
     <div className="pb-6">
       {/* Back Button */}
@@ -35,14 +38,24 @@ export function DispatchDetail() {
       </div>
 
       {/* Hero Image Area */}
-      <div
-        className="w-full aspect-[4/3] flex items-center justify-center"
-        style={{
-          background: `linear-gradient(135deg, ${dispatch.palette.primary} 0%, ${dispatch.palette.secondary} 100%)`,
-        }}
-      >
-        <span className="text-9xl opacity-50">🐸</span>
-      </div>
+      {hasHeroImage ? (
+        <div className="w-full aspect-[4/3] overflow-hidden">
+          <img
+            src={dispatch.heroImage}
+            alt={dispatch.commonName}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      ) : (
+        <div
+          className="w-full aspect-[4/3] flex items-center justify-center"
+          style={{
+            background: `linear-gradient(135deg, ${dispatch.palette.primary} 0%, ${dispatch.palette.secondary} 100%)`,
+          }}
+        >
+          <span className="text-9xl opacity-50">🐸</span>
+        </div>
+      )}
 
       {/* Content */}
       <div className="container-app px-4">
@@ -82,6 +95,17 @@ export function DispatchDetail() {
           </p>
         </section>
 
+        {/* Detail Image (if available) */}
+        {dispatch.detailImage && (
+          <div className="mb-8 rounded-xl overflow-hidden">
+            <img
+              src={dispatch.detailImage}
+              alt={`${dispatch.commonName} detail`}
+              className="w-full h-auto"
+            />
+          </div>
+        )}
+
         {/* Divider */}
         <hr className="border-[#E5E7EB] dark:border-[#374151] my-6" />
 
@@ -105,13 +129,21 @@ export function DispatchDetail() {
         <section className="mb-8">
           <SectionHeader title="Meet the Researcher" color={dispatch.palette.primary} />
           <div className="flex items-start gap-4">
-            {/* Photo placeholder */}
-            <div
-              className="w-20 h-20 rounded-xl flex-shrink-0 flex items-center justify-center text-3xl"
-              style={{ backgroundColor: dispatch.palette.secondary + '40' }}
-            >
-              👩‍🔬
-            </div>
+            {/* Researcher Photo */}
+            {hasResearcherPhoto ? (
+              <img
+                src={dispatch.researcher.photo}
+                alt={dispatch.researcher.name}
+                className="w-20 h-20 rounded-xl flex-shrink-0 object-cover"
+              />
+            ) : (
+              <div
+                className="w-20 h-20 rounded-xl flex-shrink-0 flex items-center justify-center text-3xl"
+                style={{ backgroundColor: dispatch.palette.secondary + '40' }}
+              >
+                👩‍🔬
+              </div>
+            )}
             <div>
               <p className="font-display font-bold text-lg text-[#2D2D2D] dark:text-white">
                 {dispatch.researcher.name}

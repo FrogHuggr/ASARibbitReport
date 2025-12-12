@@ -15,6 +15,7 @@ export interface Dispatch {
     photo?: string;
   };
   heroImage?: string;
+  detailImage?: string;
   whySpecial: string;
   funFacts: Array<{
     icon: string;
@@ -38,10 +39,13 @@ export const dispatches: Dispatch[] = [
     title: 'Born Ready',
     iucnStatus: 'CR',
     iucnLabel: 'Critically Endangered',
+    heroImage: '/images/dispatches/india-resplendent-grass-frog/hero.jpeg',
+    detailImage: '/images/dispatches/india-resplendent-grass-frog/detail.jpg',
     researcher: {
       name: 'Harikrishnan S',
       organization: 'Wildlife Trust of India',
       quote: 'These tiny frogs skip the tadpole stage entirely—they hatch as fully formed froglets, ready to take on the world from day one.',
+      photo: '/images/dispatches/india-resplendent-grass-frog/researcher.jpg',
     },
     whySpecial: 'The Resplendent Grass Frog is one of nature\'s most remarkable survivors. Unlike most frogs that start life as tadpoles swimming in water, these little champions hatch directly as tiny froglets! They live in the misty forests of India\'s Western Ghats, one of the world\'s biodiversity hotspots. With their gorgeous golden-green coloring and unique life cycle, they\'re proof that evolution loves to surprise us.',
     funFacts: [

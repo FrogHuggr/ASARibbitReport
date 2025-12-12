@@ -1,13 +1,27 @@
 interface MarshMellowProps {
   message: string;
+  pose?: 'wave' | 'reading' | 'explorer' | 'thinking' | 'celebrating' | 'searching';
 }
 
-export function MarshMellow({ message }: MarshMellowProps) {
+const poseImages: Record<string, string> = {
+  wave: '/images/marshmellow/marshmellow-wave.png',
+  reading: '/images/marshmellow/marshmellow-reading.png',
+  explorer: '/images/marshmellow/marshmellow-explorer.png',
+  thinking: '/images/marshmellow/marshmellow-thinking.png',
+  celebrating: '/images/marshmellow/marshmellow-celebrating.png',
+  searching: '/images/marshmellow/marshmellow-searching.png',
+};
+
+export function MarshMellow({ message, pose = 'wave' }: MarshMellowProps) {
   return (
     <div className="bg-[#E8F5E9] dark:bg-[#1B3B2F] rounded-2xl p-5 flex flex-col sm:flex-row gap-4 items-center">
-      {/* MarshMellow character - simple friendly frog */}
-      <div className="flex-shrink-0 w-24 h-24 rounded-full bg-[#81C784] flex items-center justify-center text-5xl shadow-md">
-        🐸
+      {/* MarshMellow character */}
+      <div className="flex-shrink-0 w-28 h-28">
+        <img
+          src={poseImages[pose]}
+          alt={`MarshMellow ${pose}`}
+          className="w-full h-full object-contain"
+        />
       </div>
 
       {/* Message */}

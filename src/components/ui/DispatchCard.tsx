@@ -15,6 +15,7 @@ const countryFlags: Record<string, string> = {
 
 export function DispatchCard({ dispatch }: DispatchCardProps) {
   const flag = countryFlags[dispatch.countryCode] || '🌍';
+  const hasImage = !!dispatch.heroImage;
 
   return (
     <Link
@@ -24,13 +25,23 @@ export function DispatchCard({ dispatch }: DispatchCardProps) {
       <div
         className="relative aspect-[3/4] rounded-xl overflow-hidden shadow-md transition-all duration-200 group-hover:shadow-lg group-hover:scale-[1.02]"
         style={{
-          background: `linear-gradient(135deg, ${dispatch.palette.primary} 0%, ${dispatch.palette.secondary} 100%)`,
+          background: hasImage
+            ? undefined
+            : `linear-gradient(135deg, ${dispatch.palette.primary} 0%, ${dispatch.palette.secondary} 100%)`,
         }}
       >
-        {/* Frog silhouette placeholder */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-6xl opacity-30">🐸</div>
-        </div>
+        {/* Hero image or gradient fallback */}
+        {hasImage ? (
+          <img
+            src={dispatch.heroImage}
+            alt={dispatch.commonName}
+            className="absolute inset-0 w-full h-full object-cover"
+          />
+        ) : (
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="text-6xl opacity-30">🐸</div>
+          </div>
+        )}
 
         {/* Country stamp */}
         <div
