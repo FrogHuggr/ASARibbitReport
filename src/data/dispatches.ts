@@ -77,12 +77,27 @@ export interface OrganizationSection {
   image?: ImageWithCredit;
 }
 
+export interface LinksSection {
+  id: string;
+  type: 'links';
+  title: string;
+  titleColor?: string;
+  links: Array<{
+    id: string;
+    label: string;
+    url: string;
+    icon?: string;
+    iconLibrary?: 'lucide' | 'emoji';
+  }>;
+}
+
 export type DispatchSection =
   | StorySection
   | FactsSection
   | AlertSection
   | ResearcherSection
-  | OrganizationSection;
+  | OrganizationSection
+  | LinksSection;
 
 export interface Dispatch {
   id: string;
@@ -293,6 +308,28 @@ export const dispatches: Dispatch[] = [
         title: 'On the Ground',
         titleColor: '#2D5A3D',
         content: "Wildlife Trust of India's Amphibian Recovery Project works to conserve threatened amphibians of the Western Ghats.",
+      },
+      {
+        id: 'dive-deeper',
+        type: 'links',
+        title: 'Dive Deeper',
+        titleColor: '#2D5A3D',
+        links: [
+          {
+            id: 'iucn',
+            label: 'IUCN Red List',
+            url: 'https://www.iucnredlist.org/species/189814/86897335',
+            icon: '🔴',
+            iconLibrary: 'emoji',
+          },
+          {
+            id: 'amphibiaweb',
+            label: 'AmphibiaWeb',
+            url: 'https://amphibiaweb.org/species/7509',
+            icon: '🐸',
+            iconLibrary: 'emoji',
+          },
+        ],
       },
     ],
 

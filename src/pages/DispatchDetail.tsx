@@ -1,6 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, AlertTriangle, Egg, Footprints, EyeOff, Volume2, Droplets, Ruler, Moon, Mountain, Zap, Layers, Heart, User } from 'lucide-react';
-import { getDispatchById, type Dispatch, type DispatchSection, type StorySection, type FactsSection, type AlertSection, type ResearcherSection, type OrganizationSection } from '../data/dispatches';
+import { ArrowLeft, MapPin, AlertTriangle, Egg, Footprints, EyeOff, Volume2, Droplets, Ruler, Moon, Mountain, Zap, Layers, Heart, User, ExternalLink } from 'lucide-react';
+import { getDispatchById, type Dispatch, type DispatchSection, type StorySection, type FactsSection, type AlertSection, type ResearcherSection, type OrganizationSection, type LinksSection } from '../data/dispatches';
 import { CountryStamp } from '../components/ui/CountryStamp';
 import { StatusBadge } from '../components/ui/StatusBadge';
 import { Footer } from '../components/layout/Footer';
@@ -114,7 +114,7 @@ function FactsBlock({ section, colors }: { section: FactsSection; colors: Dispat
               {/* Icon */}
               <div className="mb-3">
                 {IconComponent ? (
-                  <IconComponent size={32} style={{ color: fact.accentColor || colors.accent }} />
+                  <IconComponent size={32} style={{ color: fact.accentColor || colors.secondary }} />
                 ) : (
                   <span className="text-3xl">{fact.icon}</span>
                 )}
@@ -128,7 +128,6 @@ function FactsBlock({ section, colors }: { section: FactsSection; colors: Dispat
           );
         })}
       </div>
-      <p className="text-xs text-center mt-2" style={{ color: colors.secondary }}>← swipe for more →</p>
     </section>
   );
 }
@@ -281,6 +280,43 @@ function OrganizationBlock({ section, colors }: { section: OrganizationSection; 
   );
 }
 
+function LinksBlock({ section, colors }: { section: LinksSection; colors: Dispatch['colors'] }) {
+  return (
+    <section className="mb-6">
+      <h2
+        className="font-display text-2xl font-bold mb-1"
+        style={{ color: section.titleColor || colors.primary }}
+      >
+        {section.title}
+      </h2>
+      <div
+        className="w-16 h-[3px] mb-4"
+        style={{ backgroundColor: colors.secondary }}
+      />
+
+      <div className="grid grid-cols-2 gap-3">
+        {section.links.map((link) => (
+          <a
+            key={link.id}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-white dark:bg-[#242424] rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-2"
+          >
+            {link.icon && (
+              <span className="text-2xl">{link.icon}</span>
+            )}
+            <span className="font-display font-semibold text-sm text-[#2D2D2D] dark:text-white">
+              {link.label}
+            </span>
+            <ExternalLink size={16} className="text-[#9CA3AF]" />
+          </a>
+        ))}
+      </div>
+    </section>
+  );
+}
+
 function SectionRenderer({ section, colors }: { section: DispatchSection; colors: Dispatch['colors'] }) {
   switch (section.type) {
     case 'story':
@@ -293,6 +329,8 @@ function SectionRenderer({ section, colors }: { section: DispatchSection; colors
       return <ResearcherBlock section={section} colors={colors} />;
     case 'organization':
       return <OrganizationBlock section={section} colors={colors} />;
+    case 'links':
+      return <LinksBlock section={section} colors={colors} />;
     default:
       return null;
   }
