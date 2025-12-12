@@ -1232,7 +1232,7 @@ export const dispatches: Dispatch[] = [
       rotation: 3,
     },
     heroImage: {
-      src: '/images/dispatches/argentina-valcheta-frog/hero.jpg',
+      src: '/images/dispatches/argentina-Valcheta-Frog/hero.jpg',
       alt: 'A pair of Valcheta Frogs with striking golden eyes among bright green aquatic vegetation during breeding season',
       credit: 'Rodrigo Calvo',
     },
@@ -1285,7 +1285,7 @@ export const dispatches: Dispatch[] = [
         titleColor: '#2D7A7A',
         content: "Rodrigo searches for Valcheta Frogs after dark, when they're most active. He wades carefully through the warm stream with his headlamp, looking for the golden gleam of frog eyes. But these frogs are clever escape artists. The moment they spot light or sense movement, they zip away or dive under stones and sand.\n\nScientists here have worked for years to remove invasive trout that were eating the frogs, fence off areas where cattle were trampling the stream banks, and even release captive-bred frogs back into restored habitats. Thanks to this hard work, the Valcheta Frog is making a comeback.",
         image: {
-          src: '/images/dispatches/argentina-valcheta-frog/researcher.jpeg',
+          src: '/images/dispatches/argentina-Valcheta-Frog/researcher.jpeg',
           alt: 'Biologist Rodrigo Calvo kneeling by the stream at night with a headlamp, carefully holding small Valcheta Frogs in his hands',
           credit: 'Rodrigo Calvo',
           caption: 'Rodrigo monitors Valcheta Frog populations during nighttime surveys in the thermal stream.',
@@ -1303,7 +1303,7 @@ export const dispatches: Dispatch[] = [
           name: 'Rodrigo Calvo',
           organization: 'Amphibian Conservation',
           photo: {
-            src: '/images/dispatches/argentina-valcheta-frog/researcher.jpeg',
+            src: '/images/dispatches/argentina-Valcheta-Frog/researcher.jpeg',
             alt: 'Rodrigo Calvo during nighttime fieldwork',
             credit: 'Rodrigo Calvo',
           },
