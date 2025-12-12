@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, AlertTriangle, Egg, Footprints, EyeOff, Volume2, Droplets, Ruler, Moon, Mountain, Zap, Layers, Heart, User, ExternalLink } from 'lucide-react';
+import { ArrowLeft, MapPin, AlertTriangle, Egg, Footprints, EyeOff, Volume2, Droplets, Ruler, Moon, Mountain, Zap, Layers, Heart, User, ExternalLink, CircleAlert, BookOpen } from 'lucide-react';
 import { getDispatchById, type Dispatch, type DispatchSection, type StorySection, type FactsSection, type AlertSection, type ResearcherSection, type OrganizationSection, type LinksSection } from '../data/dispatches';
 import { CountryStamp } from '../components/ui/CountryStamp';
 import { StatusBadge } from '../components/ui/StatusBadge';
@@ -20,6 +20,8 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; className?: s
   heart: Heart,
   'alert-triangle': AlertTriangle,
   user: User,
+  'circle-alert': CircleAlert,
+  'book-open': BookOpen,
 };
 
 // Get icon component or return null for emoji fallback
@@ -304,6 +306,7 @@ function LinksBlock({ section, colors }: { section: LinksSection; colors: Dispat
       <div className="grid grid-cols-2 gap-3">
         {section.links.map((link) => {
           const accentColor = getLinkAccent(link.id);
+          const IconComponent = link.icon && link.iconLibrary === 'lucide' ? getIconComponent(link.icon) : null;
           return (
             <a
               key={link.id}
@@ -313,10 +316,13 @@ function LinksBlock({ section, colors }: { section: LinksSection; colors: Dispat
               className="bg-[#F7F5F0] dark:bg-[#2A2A2A] rounded-xl rounded-l-none p-4 min-h-[80px] hover:shadow-md transition-shadow flex flex-col justify-center items-center text-center gap-2"
               style={{ borderLeft: `3px solid ${accentColor}` }}
             >
+              {IconComponent && (
+                <IconComponent size={20} style={{ color: accentColor }} />
+              )}
               <span className="font-display font-bold text-[#2D2D2D] dark:text-white">
                 {link.label}
               </span>
-              <ExternalLink size={16} style={{ color: colors.primary }} />
+              <ExternalLink size={14} className="text-[#6B7280]" />
             </a>
           );
         })}
