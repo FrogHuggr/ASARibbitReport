@@ -386,11 +386,11 @@ export function DispatchDetail() {
 
       {/* Hero Image */}
       {dispatch.heroImage?.src ? (
-        <div className="w-full max-w-none aspect-[4/3] overflow-hidden relative">
+        <div className="w-full max-w-none aspect-[4/3] overflow-hidden relative bg-black">
           <img
             src={dispatch.heroImage.src}
             alt={dispatch.heroImage.alt}
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
           />
           {dispatch.heroImage.credit && (
             <span className="absolute bottom-3 right-3 text-xs text-white/90 bg-black/50 px-2 py-1 rounded">
