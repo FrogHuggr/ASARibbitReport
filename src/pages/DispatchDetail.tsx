@@ -372,7 +372,7 @@ export function DispatchDetail() {
   const stampRotation = dispatch.countryStamp?.rotation || 3;
 
   return (
-    <div className="pb-6">
+    <div className="pb-6 w-full">
       {/* Back Button */}
       <div className="container-app px-4 py-4">
         <Link
@@ -386,21 +386,21 @@ export function DispatchDetail() {
 
       {/* Hero Image */}
       {dispatch.heroImage?.src ? (
-        <div className="w-full aspect-[4/3] overflow-hidden relative">
+        <div className="w-full max-w-none aspect-[4/3] overflow-hidden relative">
           <img
             src={dispatch.heroImage.src}
             alt={dispatch.heroImage.alt}
             className="w-full h-full object-cover"
           />
           {dispatch.heroImage.credit && (
-            <p className="absolute bottom-2 right-2 text-xs text-white/80 bg-black/40 px-2 py-1 rounded">
+            <span className="absolute bottom-3 right-3 text-xs text-white/90 bg-black/50 px-2 py-1 rounded">
               Photo: {dispatch.heroImage.credit}
-            </p>
+            </span>
           )}
         </div>
       ) : (
         <div
-          className="w-full aspect-[4/3] flex items-center justify-center"
+          className="w-full max-w-none aspect-[4/3] flex items-center justify-center"
           style={{
             background: `linear-gradient(135deg, ${dispatch.colors.primary} 0%, ${dispatch.colors.secondary} 100%)`,
           }}
