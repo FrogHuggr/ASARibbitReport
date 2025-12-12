@@ -281,6 +281,13 @@ function OrganizationBlock({ section, colors }: { section: OrganizationSection; 
 }
 
 function LinksBlock({ section, colors }: { section: LinksSection; colors: Dispatch['colors'] }) {
+  // Define accent colors for specific link types
+  const getLinkAccent = (linkId: string) => {
+    if (linkId === 'iucn') return '#D32F2F'; // IUCN red
+    if (linkId === 'amphibiaweb') return '#43A047'; // AmphibiaWeb green
+    return colors.primary;
+  };
+
   return (
     <section className="mb-6">
       <h2
@@ -295,23 +302,24 @@ function LinksBlock({ section, colors }: { section: LinksSection; colors: Dispat
       />
 
       <div className="grid grid-cols-2 gap-3">
-        {section.links.map((link) => (
-          <a
-            key={link.id}
-            href={link.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-white dark:bg-[#242424] rounded-xl p-4 shadow-sm hover:shadow-md transition-shadow flex flex-col items-center text-center gap-2"
-          >
-            {link.icon && (
-              <span className="text-2xl">{link.icon}</span>
-            )}
-            <span className="font-display font-semibold text-sm text-[#2D2D2D] dark:text-white">
-              {link.label}
-            </span>
-            <ExternalLink size={16} className="text-[#9CA3AF]" />
-          </a>
-        ))}
+        {section.links.map((link) => {
+          const accentColor = getLinkAccent(link.id);
+          return (
+            <a
+              key={link.id}
+              href={link.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#F7F5F0] dark:bg-[#2A2A2A] rounded-xl rounded-l-none p-4 min-h-[80px] hover:shadow-md transition-shadow flex flex-col justify-center items-center text-center gap-2"
+              style={{ borderLeft: `3px solid ${accentColor}` }}
+            >
+              <span className="font-display font-bold text-[#2D2D2D] dark:text-white">
+                {link.label}
+              </span>
+              <ExternalLink size={16} style={{ color: colors.primary }} />
+            </a>
+          );
+        })}
       </div>
     </section>
   );
