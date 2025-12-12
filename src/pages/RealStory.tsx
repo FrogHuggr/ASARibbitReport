@@ -278,11 +278,11 @@ export function RealStory() {
         {story.sections.map((section, index) => {
           if (section.type === 'question') {
             return (
-              <section key={index} className="flex gap-4">
+              <section key={index} className="flex gap-3 items-start">
                 <img
                   src={`${story.images[section.image].path}${story.images[section.image].file}`}
                   alt={story.images[section.image].alt}
-                  className="w-16 h-16 flex-shrink-0"
+                  className="w-20 h-20 flex-shrink-0"
                 />
                 <div className="flex-1 bg-[#F3F4F6] dark:bg-[#2D2D2D] rounded-2xl rounded-tl-sm p-4">
                   <p className="text-xs font-semibold text-[#6B7280] dark:text-[#9CA3AF] mb-1">
