@@ -1089,7 +1089,7 @@ export const dispatches: Dispatch[] = [
       rotation: -3,
     },
     heroImage: {
-      src: '/images/dispatches/peru-lake-junin-frog/hero.jpg',
+      src: '/images/dispatches/peru-Lake-Junin-Frog/hero.jpg',
       alt: 'Underwater view of a Lake Junin Frog resting on the rocky bottom, showing its massive body, golden-ringed eyes, and grayish-brown skin',
       credit: 'Roberto Elías Piperis',
     },
@@ -1142,7 +1142,7 @@ export const dispatches: Dispatch[] = [
         titleColor: '#2E6A8E',
         content: "Luis and his team work in the Junín National Reserve and Huayllay National Sanctuary to monitor and protect the Lake Junin Frog. They wade into cold mountain streams and even go snorkeling to find frogs hiding under rocks. When they catch one, they carefully weigh and measure it before releasing it back. Luis has been working with this species for over ten years and is dedicated to protecting it until it's no longer endangered.",
         image: {
-          src: '/images/dispatches/peru-lake-junin-frog/field.jpeg',
+          src: '/images/dispatches/peru-Lake-Junin-Frog/field.jpeg',
           alt: 'Luis Castillo giving a thumbs up while weighing a large Lake Junin Frog on a yellow scale tray beside a stream, with field equipment nearby',
           credit: 'Miguel Manrique',
           caption: 'Weighing a Lake Junin Frog during fieldwork at the Huayllay National Sanctuary.',
@@ -1160,7 +1160,7 @@ export const dispatches: Dispatch[] = [
           name: 'Luis Castillo',
           organization: 'Amphibian Conservation',
           photo: {
-            src: '/images/dispatches/peru-lake-junin-frog/researcher.jpeg',
+            src: '/images/dispatches/peru-Lake-Junin-Frog/researcher.jpeg',
             alt: 'Luis with two Lake Junin Frogs at the Huayllay National Sanctuary, with the famous Rock Forest in the background',
             credit: 'Miguel Manrique',
           },
