@@ -939,7 +939,7 @@ export const dispatches: Dispatch[] = [
       rotation: 3,
     },
     heroImage: {
-      src: '/images/dispatches/nepal-mahabharat-torrent-frog/hero.jpg',
+      src: '/images/dispatches/nepal-mahabharat-torrent-frog /hero.jpg',
       alt: 'A Mahabharat Torrent Frog firmly attached to a wet stone beside a Himalayan stream, showing its mottled brown coloring and powerful legs',
       credit: 'Suman Sapkota',
     },
@@ -952,7 +952,7 @@ export const dispatches: Dispatch[] = [
         content: "High in the Himalayas, where icy streams rush down mountain slopes, lives a frog that can do something incredible: climb right up beside waterfalls.\n\nThe Mahabharat Torrent Frog was only recently discovered and exists nowhere else on Earth except Nepal. It makes its home in remote mountain locations where fast, cold water tumbles over rocks. Most animals would get swept away, but not this frog.\n\nSpecial sticky pads on its feet let it grip wet rocks even when water is rushing past. Its tadpoles are just as amazing. They have sucker-shaped mouths that help them hold on tight in the current. Scientists like Suman are still learning about this species and use special sound sensors to listen for their calls in the mountain streams.",
         attribution: 'Suman Sapkota',
         image: {
-          src: '/images/dispatches/nepal-mahabharat-torrent-frog/detail.jpeg',
+          src: '/images/dispatches/nepal-mahabharat-torrent-frog /detail.jpeg',
           alt: 'Close-up of a Mahabharat Torrent Frog tadpole in a human palm, showing its specialized sucker mouth adapted for fast-flowing streams',
           credit: 'Suman Sapkota',
           caption: 'This tadpole has special suckers that help it hold on tight in fast-flowing streams!',
@@ -998,7 +998,7 @@ export const dispatches: Dispatch[] = [
         titleColor: '#4A6072',
         content: "Suman and his team search for these frogs in some of Nepal's most remote places, including the Dhorpatan Hunting Reserve in Western Nepal. Finding them means trekking through rugged mountain terrain and wading into cold streams during monsoon season. They're also installing the first bioacoustics sensors in Nepal to record frog calls and learn more about these mysterious mountain amphibians.",
         image: {
-          src: '/images/dispatches/nepal-mahabharat-torrent-frog/field.jpeg',
+          src: '/images/dispatches/nepal-mahabharat-torrent-frog /field.jpeg',
           alt: 'Suman Sapkota at night wearing a headlamp, carefully examining a small frog while taking measurements in the field',
           credit: 'Sangam Paudel',
           caption: 'In the search of threatened frogs in Dhorpatan Hunting Reserve, Western Nepal.',
@@ -1016,7 +1016,7 @@ export const dispatches: Dispatch[] = [
           name: 'Suman Sapkota',
           organization: 'Amphibian Conservation',
           photo: {
-            src: '/images/dispatches/nepal-mahabharat-torrent-frog/researcher.jpeg',
+            src: '/images/dispatches/nepal-mahabharat-torrent-frog /researcher.jpeg',
             alt: 'Suman Sapkota installing a bioacoustics sensor to better understand amphibian vocalization in the Himalayas',
             credit: 'Sangam Paudel',
             caption: 'Installing the first bioacoustics sensor to better understand amphibian vocalization in the Himalayas.',
