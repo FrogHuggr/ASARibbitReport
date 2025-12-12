@@ -629,6 +629,168 @@ export const dispatches: Dispatch[] = [
       },
     ],
   },
+  {
+    id: 'argentina-patagonia-frog',
+    slug: 'patagonia-frog',
+    title: "Patagonia's Shapeshifter",
+    subtitle: 'The Patagonia Frog',
+    species: {
+      commonName: 'Patagonia Frog',
+      scientificName: 'Atelognathus patagonicus',
+    },
+    location: {
+      country: 'Argentina',
+      countryCode: 'AR',
+      region: 'Patagonia',
+      displayLocation: 'Patagonia, Argentina',
+    },
+    iucnStatus: {
+      code: 'CR',
+      label: 'Critically Endangered',
+    },
+    colors: {
+      primary: '#2E6A8E',
+      secondary: '#C4A35A',
+      accent: '#8B7355',
+    },
+    countryStamp: {
+      label: 'ARGENTINA',
+      backgroundColor: '#2E6A8E',
+      textColor: '#FFFFFF',
+      rotation: 3,
+    },
+    heroImage: {
+      src: '/images/dispatches/argentina-patagonia-frog/hero.webp',
+      alt: 'Patagonia Frog in shallow water showing its golden-brown coloring and blue eye',
+      credit: 'Facundo De los Santos',
+    },
+    sections: [
+      {
+        id: 'story',
+        type: 'story',
+        title: 'One Frog, Two Bodies',
+        titleColor: '#2E6A8E',
+        content: "This amazing frog has a superpower: it can change its body to survive the tough Patagonian weather!\n\nThe most common form lives underwater, with smooth skin and webbed feet made for swimming. But when the lagoons dry up at the end of summer, these frogs can change their shape! They lose some of the skin folds and webbing so they can live on land, hiding under rocks to stay safe.\n\nThey even change their diet, from eating tiny water creatures to catching land prey like ants and spiders. That's why their color changes too. Incredible, right?",
+        attribution: 'Melisa Rolón',
+        image: {
+          src: '/images/dispatches/argentina-patagonia-frog/detail.png',
+          alt: 'Six photos showing the two forms of the Patagonia Frog: aquatic form on left with skin folds and webbed feet, land form on right with reduced webbing',
+          credit: 'Melisa Rolón',
+          caption: 'Same species, two forms! The aquatic form (left) has skin folds and webbed feet for swimming. The land form (right) loses these features when lagoons dry up.',
+        },
+      },
+      {
+        id: 'fun-facts',
+        type: 'facts',
+        title: 'Fun Facts',
+        titleColor: '#2E6A8E',
+        displayAs: 'cards',
+        facts: [
+          {
+            id: 'two-forms',
+            icon: 'users',
+            iconLibrary: 'lucide',
+            text: 'Scientists first thought these were different species, but they\'re actually two forms of the same frog!',
+            cardColor: '#FDF8E8',
+            accentColor: '#C4A35A',
+          },
+          {
+            id: 'overwinter',
+            icon: 'snowflake',
+            iconLibrary: 'lucide',
+            text: 'Tadpoles can overwinter! They stay as tadpoles all winter and only become frogs when spring arrives.',
+            cardColor: '#F0F7F1',
+            accentColor: '#C4A35A',
+          },
+          {
+            id: 'mystery',
+            icon: 'help-circle',
+            iconLibrary: 'lucide',
+            text: "Mystery alert: Scientists still don't know what their eggs look like or where they're laid!",
+            cardColor: '#FFF8F0',
+            accentColor: '#C4A35A',
+          },
+        ],
+      },
+      {
+        id: 'threats',
+        type: 'alert',
+        title: 'Why They Need Us',
+        titleColor: '#2E6A8E',
+        stats: [
+          {
+            value: 'CR',
+            label: 'Critically Endangered',
+            color: '#D32F2F',
+          },
+        ],
+        content: 'These shapeshifting frogs live in only a few lagoons in Patagonia and nowhere else in the world. Climate change and habitat loss threaten their fragile wetland homes.',
+      },
+      {
+        id: 'on-the-ground',
+        type: 'organization',
+        title: 'On the Ground',
+        titleColor: '#2E6A8E',
+        content: "Melisa and her team search for frogs using funnel traps and visual surveys, looking beneath rocks in the lagoons where the species lives. The Patagonian weather can be extreme, from snowy winters with frozen lagoons to hot summers with winds so strong they've blown away field equipment more than once!",
+        image: {
+          src: '/images/dispatches/argentina-patagonia-frog/field.jpg',
+          alt: 'Two researchers searching for frogs in a shallow Patagonian lagoon surrounded by rocky steppe landscape',
+          credit: 'Melisa Rolón',
+        },
+      },
+      {
+        id: 'researcher',
+        type: 'researcher',
+        title: 'Meet the Researcher',
+        titleColor: '#2E6A8E',
+        displayAs: 'card',
+        cardColor: '#F7F5F0',
+        borderColor: '#C4A35A',
+        researcher: {
+          name: 'Melisa Rolón',
+          organization: 'Amphibian Conservation',
+          photo: {
+            src: '/images/dispatches/argentina-patagonia-frog/researcher.jpg',
+            alt: 'Melisa Rolón in the field',
+            credit: 'Melisa Rolón',
+          },
+          quote: {
+            text: "This species lives in only a few lagoons in Patagonia and nowhere else in the world! Together with the water birds, they are the only vertebrates adapted to these habitats. Protecting them is everyone's responsibility!",
+            borderColor: '#2E6A8E',
+          },
+        },
+      },
+      {
+        id: 'dive-deeper',
+        type: 'links',
+        title: 'Dive Deeper',
+        titleColor: '#2E6A8E',
+        links: [
+          {
+            id: 'iucn',
+            label: 'IUCN Red List',
+            url: 'https://www.iucnredlist.org/species/56323/101427111',
+            icon: 'circle-alert',
+            iconLibrary: 'lucide',
+          },
+          {
+            id: 'amphibiaweb',
+            label: 'AmphibiaWeb',
+            url: 'https://amphibiaweb.org/species/2566',
+            icon: 'book-open',
+            iconLibrary: 'lucide',
+          },
+        ],
+      },
+    ],
+    meta: {
+      photographer: 'Facundo De los Santos',
+      fieldPhotoCredit: 'Melisa Rolón',
+      contentSource: 'Melisa Rolón',
+      dateAdded: '2025-01',
+      issue: 2,
+    },
+  },
 ];
 
 export const getDispatchById = (id: string): Dispatch | undefined => {
