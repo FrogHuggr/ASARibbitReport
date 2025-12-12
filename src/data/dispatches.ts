@@ -60,6 +60,8 @@ export interface ResearcherSection {
     name: string;
     organization: string;
     project?: string;
+    program?: string;
+    bio?: string;
     photo?: ImageWithCredit;
     quote?: {
       text: string;
@@ -179,7 +181,7 @@ export const dispatches: Dispatch[] = [
     id: 'india-western-ghats',
     slug: 'resplendent-grass-frog',
 
-    title: 'Born Ready',
+    title: "India's Living Jewel",
     subtitle: 'The Resplendent Grass Frog',
 
     species: {
@@ -291,6 +293,8 @@ export const dispatches: Dispatch[] = [
           name: 'Harikrishnan S',
           organization: 'Wildlife Trust of India',
           project: 'Amphibian Recovery Project',
+          program: 'Future Leaders of Amphibian Conservation',
+          bio: "Harikrishnan is a wildlife biologist who leads the Amphibian Recovery Project in India's Western Ghats mountains. During his research career, he's discovered and named three species that were completely new to science! He works with local communities to protect threatened frogs in the complex landscape of forests and plantations.",
           photo: {
             src: '/images/dispatches/india-resplendent-grass-frog/researcher.jpg',
             alt: 'Harikrishnan S in the field wearing a cap',
@@ -454,6 +458,8 @@ export const dispatches: Dispatch[] = [
         researcher: {
           name: 'Melisa Rolón',
           organization: 'Amphibian Conservation',
+          program: 'Future Leaders of Amphibian Conservation',
+          bio: "Melisa is from Argentina and finished her biology degree in 2022. Now she's working on her PhD while leading a conservation project for the Critically Endangered Patagonia Frog, including building sanctuaries and restoring habitat. She believes we can still protect amphibians if we act now.",
           photo: {
             src: '/images/dispatches/argentina-patagonia-frog/researcher.jpg',
             alt: 'Melisa Rolón in the field',
@@ -584,6 +590,8 @@ export const dispatches: Dispatch[] = [
         researcher: {
           name: 'Trinity Favazza',
           organization: 'Amphibian Conservation',
+          program: 'Future Leaders of Amphibian Conservation',
+          bio: "Trinity has been the Mayor of Amphibiville at the Detroit Zoo's National Amphibian Conservation Center since 2016. She started her own conservation campaign called Amphibian Conservation Rocks and runs a website to inspire young people worldwide. Her work has been featured on TV news and she's received awards including the President's Environmental Youth Award!",
           photo: {
             src: '/images/dispatches/us-green-frog/researcher.jpg',
             alt: 'Trinity Favazza',
@@ -718,6 +726,8 @@ export const dispatches: Dispatch[] = [
         researcher: {
           name: 'Amoghavarsha M',
           organization: 'Wildlife Researcher',
+          program: 'Future Leaders of Amphibian Conservation',
+          bio: 'Amoghavarsha is a researcher and educator currently studying Biology and Education at Azim Premji University in India. He leads workshops and training programs for students, forest rangers, and local communities across southern India. He believes that teaching people about amphibians is just as important as studying them.',
           photo: {
             src: '/images/dispatches/india-indigo-bush-frog/researcher.jpeg',
             alt: 'Amoghavarsha M',
@@ -866,6 +876,8 @@ export const dispatches: Dispatch[] = [
         researcher: {
           name: 'Karina Rodríguez',
           organization: 'Panama Amphibian Rescue and Conservation Project',
+          program: 'Future Leaders of Amphibian Conservation',
+          bio: "Karina is a biologist from Panama who joined the Panama Amphibian Rescue and Conservation Project in 2019. She's developing ways to help endangered frogs have babies in captivity, including creating the first-ever sperm bank for Crowned Tree Frogs! She hopes to inspire other young scientists in Panama to take action for amphibians.",
           photo: {
             src: '/images/dispatches/panama-spiny-headed-treefrog/researcher.jpeg',
             alt: 'Karina Rodríguez searching for amphibians',
@@ -1015,6 +1027,8 @@ export const dispatches: Dispatch[] = [
         researcher: {
           name: 'Suman Sapkota',
           organization: 'Amphibian Conservation',
+          program: 'Future Leaders of Amphibian Conservation',
+          bio: 'Suman is an ecologist from Nepal who leads the Stream Frog Conservation Project and volunteers with Save the Frogs. He studies how frogs communicate through their calls and works to protect their breeding sites in the Himalayas. He teaches students and local communities about why these mountain frogs matter.',
           photo: {
             src: '/images/dispatches/nepal-mahabharat-torrent-frog/researcher.jpeg',
             alt: 'Suman Sapkota installing a bioacoustics sensor to better understand amphibian vocalization in the Himalayas',
@@ -1159,6 +1173,8 @@ export const dispatches: Dispatch[] = [
         researcher: {
           name: 'Luis Castillo',
           organization: 'Amphibian Conservation',
+          program: 'Future Leaders of Amphibian Conservation',
+          bio: 'Luis is a zoologist from Peru who co-founded Grupo Rana, an organization dedicated to saving endangered water frogs at Lake Junín. In 2018, he became a National Geographic Explorer and discovered new places where endangered frogs still survive. He runs citizen science programs where local people help monitor frog populations.',
           photo: {
             src: '/images/dispatches/peru-Lake-Junin-Frog/researcher.jpeg',
             alt: 'Luis with two Lake Junin Frogs at the Huayllay National Sanctuary, with the famous Rock Forest in the background',
@@ -1302,6 +1318,8 @@ export const dispatches: Dispatch[] = [
         researcher: {
           name: 'Rodrigo Calvo',
           organization: 'Amphibian Conservation',
+          program: 'Future Leaders of Amphibian Conservation',
+          bio: 'Rodrigo is an Argentine biologist devoted to saving the Critically Endangered Valcheta Frog, which lives only in hot springs in Patagonia. He believes conservation works best when scientists and local communities work together. His goal is to make sure future generations can still find these unique frogs in the wild.',
           photo: {
             src: '/images/dispatches/argentina-Valcheta-Frog/researcher.jpeg',
             alt: 'Rodrigo Calvo during nighttime fieldwork',
@@ -1450,6 +1468,8 @@ export const dispatches: Dispatch[] = [
         researcher: {
           name: 'Caleb Ofori-Boateng',
           organization: 'SAVE THE FROGS! Ghana',
+          program: 'Future Leaders of Amphibian Conservation',
+          bio: "Caleb was the first biologist to study amphibians in Ghana, and he's discovered species that were completely new to science. He even rediscovered the Togo Slippery Frog, which scientists thought had been extinct for nearly 40 years! In 2011, he founded Herp-Ghana, the first organization in West Africa dedicated to protecting amphibians and reptiles.",
           photo: {
             src: '/images/dispatches/ghana-afiabirago-puddle-frog/researcher.jpeg',
             alt: 'Caleb Ofori-Boateng in the field',
