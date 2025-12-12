@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, AlertTriangle, Egg, Footprints, EyeOff, Volume2, Droplets, Ruler, Moon, Mountain, Zap, Layers, Heart, User, ExternalLink, CircleAlert, BookOpen, Users, Snowflake, HelpCircle, Palette, Search } from 'lucide-react';
+import { ArrowLeft, MapPin, AlertTriangle, Egg, Footprints, EyeOff, Volume2, Droplets, Ruler, Moon, Mountain, Zap, Layers, Heart, User, ExternalLink, CircleAlert, BookOpen, Users, Snowflake, HelpCircle, Palette, Search, Crown } from 'lucide-react';
 import { getDispatchById, type Dispatch, type DispatchSection, type StorySection, type FactsSection, type AlertSection, type ResearcherSection, type OrganizationSection, type LinksSection } from '../data/dispatches';
 import { CountryStamp } from '../components/ui/CountryStamp';
 import { StatusBadge } from '../components/ui/StatusBadge';
@@ -28,6 +28,7 @@ const iconMap: Record<string, React.ComponentType<{ size?: number; className?: s
   palette: Palette,
   'map-pin': MapPin,
   search: Search,
+  crown: Crown,
 };
 
 // Get icon component or return null for emoji fallback
