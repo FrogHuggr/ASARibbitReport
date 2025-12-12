@@ -17,17 +17,11 @@ export function Dispatches() {
     <div className="pb-6">
       {/* Header */}
       <header className="container-app px-4 pt-6 pb-8">
-        <div className="flex items-center gap-3">
-          <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white">
-            Dispatches
-          </h1>
-          {/* Count Badge */}
-          <div className="bg-gradient-to-r from-[#4CAF50] to-[#2D5A3D] text-white text-sm font-bold px-3 py-1 rounded-full shadow-sm">
-            {dispatches.length}
-          </div>
-        </div>
+        <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white">
+          Dispatches
+        </h1>
         <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-2">
-          Choose your adventure
+          {dispatches.length} adventures and counting...
         </p>
       </header>
 
