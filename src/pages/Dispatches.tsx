@@ -1,23 +1,9 @@
-import { useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
-import { DispatchCard } from '../components/ui/DispatchCard';
 import { Footer } from '../components/layout/Footer';
 
 export function Dispatches() {
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = 300;
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      });
-    }
-  };
-
   return (
     <div className="pb-6">
       {/* Header */}
@@ -30,99 +16,66 @@ export function Dispatches() {
         </p>
       </header>
 
-      {/* Horizontal Scroll Section with Desktop Arrows */}
-      <section className="mb-8 relative">
-        {/* Left Arrow - Desktop only */}
-        <button
-          onClick={() => scroll('left')}
-          className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white dark:bg-[#242424] shadow-md hover:shadow-lg transition-shadow"
-          aria-label="Scroll left"
-        >
-          <ChevronLeft size={24} className="text-[#6B7280] dark:text-[#9CA3AF]" />
-        </button>
-
-        {/* Cards Container */}
-        <div
-          ref={scrollRef}
-          className="overflow-x-auto hide-scrollbar scroll-smooth"
-        >
-          <div className="flex gap-4 px-4 md:px-14 pb-4" style={{ width: 'max-content' }}>
-            {dispatches.map((dispatch) => (
-              <DispatchCard key={dispatch.id} dispatch={dispatch} />
-            ))}
-          </div>
-        </div>
-
-        {/* Right Arrow - Desktop only */}
-        <button
-          onClick={() => scroll('right')}
-          className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 z-10 w-10 h-10 items-center justify-center rounded-full bg-white dark:bg-[#242424] shadow-md hover:shadow-lg transition-shadow"
-          aria-label="Scroll right"
-        >
-          <ChevronRight size={24} className="text-[#6B7280] dark:text-[#9CA3AF]" />
-        </button>
-
-        {/* Swipe hint - Mobile only */}
-        <p className="text-center text-sm text-[#6B7280] dark:text-[#9CA3AF] mt-2 md:hidden">
-          ← swipe for more →
-        </p>
-      </section>
-
-      {/* List View */}
+      {/* Grid of Cards */}
       <section className="container-app px-4">
-        <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white mb-4">
-          All Dispatches
-        </h2>
-        <div className="space-y-3">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           {dispatches.map((dispatch) => (
             <Link
               key={dispatch.id}
               to={`/dispatches/${dispatch.id}`}
-              className="flex items-center gap-4 p-3 rounded-xl bg-white dark:bg-[#242424] shadow-sm hover:shadow-md transition-shadow"
+              className="group block rounded-2xl overflow-hidden bg-white dark:bg-[#242424] shadow-sm hover:shadow-lg transition-all duration-300"
             >
-              {/* Color indicator or image */}
-              {dispatch.heroImage?.src ? (
+              {/* Hero Image - 3:2 aspect ratio */}
+              <div className="aspect-[3/2] overflow-hidden relative">
                 <img
                   src={dispatch.heroImage.src}
                   alt={dispatch.heroImage.alt}
-                  className="w-12 h-12 rounded-lg flex-shrink-0 object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-              ) : (
+                {/* IUCN Status Badge */}
                 <div
-                  className="w-12 h-12 rounded-lg flex items-center justify-center text-2xl flex-shrink-0"
-                  style={{ backgroundColor: dispatch.colors.primary }}
+                  className="absolute top-3 right-3 px-2 py-1 rounded-full text-xs font-bold text-white"
+                  style={{
+                    backgroundColor:
+                      dispatch.iucnStatus.code === 'CR'
+                        ? '#D32F2F'
+                        : dispatch.iucnStatus.code === 'EN'
+                          ? '#E65100'
+                          : dispatch.iucnStatus.code === 'VU'
+                            ? '#F9A825'
+                            : dispatch.iucnStatus.code === 'NT'
+                              ? '#7CB342'
+                              : '#4CAF50',
+                  }}
                 >
-                  🐸
+                  {dispatch.iucnStatus.code}
                 </div>
-              )}
-
-              {/* Info */}
-              <div className="flex-1 min-w-0">
-                <p className="font-display font-bold text-[#2D2D2D] dark:text-white truncate">
-                  {dispatch.title}
-                </p>
-                <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] truncate">
-                  {dispatch.species.commonName}
-                </p>
-                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">
-                  {dispatch.location.displayLocation || `${dispatch.location.region}, ${dispatch.location.country}`}
-                </p>
               </div>
 
-              {/* Arrow */}
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                className="text-[#6B7280] dark:text-[#9CA3AF] flex-shrink-0"
-              >
-                <path d="m9 18 6-6-6-6" />
-              </svg>
+              {/* Card Content */}
+              <div className="p-4">
+                {/* Country with pin */}
+                <div className="flex items-center gap-1.5 text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-2">
+                  <MapPin size={14} className="flex-shrink-0" />
+                  <span>{dispatch.location.country}</span>
+                </div>
+
+                {/* Species Name */}
+                <h3 className="font-display font-bold text-lg text-[#2D2D2D] dark:text-white leading-tight">
+                  {dispatch.species.commonName}
+                </h3>
+                <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] italic mb-2">
+                  {dispatch.species.scientificName}
+                </p>
+
+                {/* Fun Title */}
+                <p
+                  className="text-sm font-medium"
+                  style={{ color: dispatch.colors.primary }}
+                >
+                  {dispatch.title}
+                </p>
+              </div>
             </Link>
           ))}
         </div>
