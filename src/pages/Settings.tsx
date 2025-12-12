@@ -1,5 +1,4 @@
 import { useTheme } from '../context/ThemeContext';
-import { Footer } from '../components/layout/Footer';
 
 export function Settings() {
   const { isDark, toggleDark } = useTheme();
@@ -123,12 +122,14 @@ export function Settings() {
       </section>
 
       {/* App Version */}
-      <div className="text-center text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-8">
+      <div className="text-center text-sm text-[#6B7280] dark:text-[#9CA3AF]">
         Version 1.0.0
       </div>
 
-      {/* Footer */}
-      <Footer />
+      {/* Copyright */}
+      <div className="text-center text-xs text-[#9CA3AF] dark:text-[#6B7280] mt-4">
+        © 2025 Amphibian Survival Alliance
+      </div>
     </div>
   );
 }

@@ -15,7 +15,6 @@ import {
 } from 'lucide-react';
 import { getRealStoryById } from '../data/realStory';
 import type { Comparison, FaceOffSection } from '../data/realStory';
-import { Footer } from '../components/layout/Footer';
 
 // Icon mapping
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
@@ -313,11 +312,6 @@ export function RealStory() {
 
           return null;
         })}
-      </div>
-
-      {/* Footer */}
-      <div className="container-app px-4 mt-8">
-        <Footer />
       </div>
     </div>
   );

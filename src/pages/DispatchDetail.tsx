@@ -3,7 +3,6 @@ import { ArrowLeft, MapPin, AlertTriangle, Egg, Footprints, EyeOff, Volume2, Dro
 import { getDispatchById, type Dispatch, type DispatchSection, type StorySection, type FactsSection, type AlertSection, type ResearcherSection, type OrganizationSection, type LinksSection } from '../data/dispatches';
 import { CountryStamp } from '../components/ui/CountryStamp';
 import { StatusBadge } from '../components/ui/StatusBadge';
-import { Footer } from '../components/layout/Footer';
 
 // Map icon names to Lucide components
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>> = {
@@ -489,8 +488,6 @@ export function DispatchDetail() {
           ))}
         </div>
 
-        {/* Footer */}
-        <Footer />
       </div>
     </div>
   );

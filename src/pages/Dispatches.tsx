@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import { MapPin } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import type { ResearcherSection } from '../data/dispatches';
-import { Footer } from '../components/layout/Footer';
 
 // Helper to get researcher from dispatch sections
 function getResearcher(dispatch: (typeof dispatches)[0]) {
@@ -157,11 +156,6 @@ export function Dispatches() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <div className="container-app px-4 mt-8">
-        <Footer />
-      </div>
     </div>
   );
 }

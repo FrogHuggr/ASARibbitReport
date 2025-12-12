@@ -1,10 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { Home, Globe, Search, Settings } from 'lucide-react';
+import { Home, Compass, Settings } from 'lucide-react';
 
 const navItems = [
   { to: '/', icon: Home, label: 'Home' },
-  { to: '/dispatches', icon: Globe, label: 'Dispatches' },
-  { to: '/myths', icon: Search, label: 'Myth Busters' },
+  { to: '/explore', icon: Compass, label: 'Explore' },
   { to: '/settings', icon: Settings, label: 'Settings' },
 ];
 

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { mythbusters } from '../data/mythbusters';
-import { Footer } from '../components/layout/Footer';
 
 export function MythBusters() {
   return (
@@ -51,9 +50,6 @@ export function MythBusters() {
           More myths coming in future issues!
         </p>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }

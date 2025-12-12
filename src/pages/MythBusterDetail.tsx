@@ -2,7 +2,6 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { getMythBusterById } from '../data/mythbusters';
 import { SectionHeader } from '../components/ui/SectionHeader';
-import { Footer } from '../components/layout/Footer';
 
 export function MythBusterDetail() {
   const { id } = useParams<{ id: string }>();
@@ -126,8 +125,6 @@ export function MythBusterDetail() {
         </p>
       </section>
 
-      {/* Footer */}
-      <Footer />
     </div>
   );
 }
