@@ -366,7 +366,7 @@ export const dispatches: Dispatch[] = [
       accent: '#2D5A3D',
     },
     heroImage: {
-      src: '/images/dispatches/panama/hero.jpg',
+      src: '',
       alt: 'Spiny-headed Treefrog',
     },
     sections: [
@@ -425,7 +425,7 @@ export const dispatches: Dispatch[] = [
       accent: '#8B6914',
     },
     heroImage: {
-      src: '/images/dispatches/peru/hero.jpg',
+      src: '',
       alt: 'Lake Junín Frog',
     },
     sections: [
@@ -484,7 +484,7 @@ export const dispatches: Dispatch[] = [
       accent: '#D4B896',
     },
     heroImage: {
-      src: '/images/dispatches/argentina/hero.jpg',
+      src: '',
       alt: 'Valcheta Frog',
     },
     sections: [
@@ -543,7 +543,7 @@ export const dispatches: Dispatch[] = [
       accent: '#A8B5BD',
     },
     heroImage: {
-      src: '/images/dispatches/nepal/hero.jpg',
+      src: '',
       alt: 'Mahabharat Torrent Frog',
     },
     sections: [
@@ -602,7 +602,7 @@ export const dispatches: Dispatch[] = [
       accent: '#8FA4AF',
     },
     heroImage: {
-      src: '/images/dispatches/india-kudremukh/hero.jpg',
+      src: '',
       alt: 'Indigo Bush Frog',
     },
     sections: [
