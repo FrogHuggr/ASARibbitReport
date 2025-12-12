@@ -1,0 +1,181 @@
+@import "tailwindcss";
+
+/* Custom Design Tokens */
+@theme {
+  /* Base Colors */
+  --color-white: #FFFFFF;
+  --color-cream: #FDFBF7;
+  --color-charcoal: #2D2D2D;
+  --color-dark-gray: #6B7280;
+  --color-light-gray: #E5E7EB;
+
+  /* Regional Palettes */
+  /* Panama - Tropical rainforest */
+  --color-panama-primary: #6B3FA0;
+  --color-panama-secondary: #F4B942;
+  --color-panama-accent: #2D5A3D;
+
+  /* Peru - High Andes */
+  --color-peru-primary: #2E6A8E;
+  --color-peru-secondary: #D4A634;
+  --color-peru-accent: #8B6914;
+
+  /* Argentina - Patagonian steppe */
+  --color-argentina-primary: #C67B4E;
+  --color-argentina-secondary: #7D9A78;
+  --color-argentina-accent: #D4B896;
+
+  /* Nepal - Himalayan streams */
+  --color-nepal-primary: #4A6072;
+  --color-nepal-secondary: #3D8B8B;
+  --color-nepal-accent: #A8B5BD;
+
+  /* India Kudremukh - Monsoon forest */
+  --color-kudremukh-primary: #3A5F7D;
+  --color-kudremukh-secondary: #4A7B4A;
+  --color-kudremukh-accent: #8FA4AF;
+
+  /* India Western Ghats - Lush canopy */
+  --color-ghats-primary: #2D5A3D;
+  --color-ghats-secondary: #E8B84A;
+  --color-ghats-accent: #6B8E4E;
+
+  /* IUCN Status Colors */
+  --color-iucn-cr: #D32F2F;
+  --color-iucn-en: #F57C00;
+  --color-iucn-vu: #FBC02D;
+  --color-iucn-nt: #7CB342;
+  --color-iucn-lc: #43A047;
+
+  /* Dark Mode Colors */
+  --color-dark-bg: #1A1A1A;
+  --color-dark-alt: #242424;
+  --color-dark-text: #E5E5E5;
+  --color-dark-secondary: #9CA3AF;
+  --color-dark-border: #374151;
+
+  /* Typography */
+  --font-display: 'Baloo 2', 'Nunito', sans-serif;
+  --font-body: 'Nunito', system-ui, sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
+  line-height: 1.5;
+}
+
+/* Dark mode */
+.dark body {
+  background-color: var(--color-dark-bg);
+  color: var(--color-dark-text);
+}
+
+/* Typography Classes */
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* Headline styles */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Safe area for mobile devices */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0);
+}
+
+.safe-area-top {
+  padding-top: env(safe-area-inset-top, 0);
+}
+
+/* Hide scrollbar but allow scrolling */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Card component */
+.card {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: var(--spacing-md);
+}
+
+.dark .card {
+  background: var(--color-dark-alt);
+}
+
+/* Button reset */
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 3px solid var(--color-panama-primary);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions */
+.transition-default {
+  transition: all 0.2s ease;
+}
+
+/* Max width container for desktop */
+.container-app {
+  max-width: 540px;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .container-app {
+    padding: 0 var(--spacing-lg);
+  }
+}
