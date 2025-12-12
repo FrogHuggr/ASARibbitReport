@@ -242,8 +242,27 @@ function ResearcherBlock({ section, colors }: { section: ResearcherSection; colo
               {researcher.project}
             </p>
           )}
+          {researcher.program && (
+            <a
+              href="https://www.amphibians.org/programs/future-leaders/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-1 rounded-full text-xs font-medium text-white transition-opacity hover:opacity-90"
+              style={{ backgroundColor: colors.primary }}
+            >
+              <span>Future Leader</span>
+              <ExternalLink size={12} />
+            </a>
+          )}
         </div>
       </div>
+
+      {/* Bio */}
+      {researcher.bio && (
+        <p className="text-sm text-[#4B5563] dark:text-[#D1D5DB] mb-4 leading-relaxed">
+          {researcher.bio}
+        </p>
+      )}
 
       {researcher.quote && (
         <blockquote
