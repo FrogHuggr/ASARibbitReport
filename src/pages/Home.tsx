@@ -57,29 +57,29 @@ export function Home() {
         </div>
       </Link>
 
-      {/* Myth Busters Card */}
+      {/* The Real Story Card */}
       <Link
-        to="/myths"
+        to="/real-story/frogs-vs-toads"
         className="block mb-8 group"
       >
         <div className="card relative overflow-hidden hover:shadow-lg transition-shadow">
           <div
             className="absolute inset-0 opacity-10"
             style={{
-              background: 'linear-gradient(135deg, #F4B942 0%, #C67B4E 100%)',
+              background: 'linear-gradient(135deg, #4A7B5C 0%, #8B7355 100%)',
             }}
           />
           <div className="relative p-2">
             <div className="flex items-center justify-between">
               <div>
                 <h2 className="font-display text-2xl font-bold text-[#2D2D2D] dark:text-white">
-                  Myth Busters
+                  The Real Story
                 </h2>
                 <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-1">
-                  Fact or fiction?
+                  Frogs vs. Toads
                 </p>
                 <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
-                  Bust common myths about frogs
+                  Are they really different animals?
                 </p>
               </div>
               <ChevronRight

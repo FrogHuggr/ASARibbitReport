@@ -6,6 +6,7 @@ import { Dispatches } from './pages/Dispatches';
 import { DispatchDetail } from './pages/DispatchDetail';
 import { MythBusters } from './pages/MythBusters';
 import { MythBusterDetail } from './pages/MythBusterDetail';
+import { RealStory } from './pages/RealStory';
 import { Settings } from './pages/Settings';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
             <Route path="/dispatches/:id" element={<DispatchDetail />} />
             <Route path="/myths" element={<MythBusters />} />
             <Route path="/myths/:id" element={<MythBusterDetail />} />
+            <Route path="/real-story/:id" element={<RealStory />} />
             <Route path="/settings" element={<Settings />} />
           </Route>
         </Routes>
