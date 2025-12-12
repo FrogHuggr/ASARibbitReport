@@ -1201,6 +1201,148 @@ export const dispatches: Dispatch[] = [
       issue: 2,
     },
   },
+  {
+    id: 'argentina-valcheta-frog',
+    slug: 'valcheta-frog',
+    title: "Patagonia's Warm Water Secret",
+    subtitle: 'The Valcheta Frog',
+    species: {
+      commonName: 'Valcheta Frog',
+      scientificName: 'Pleurodema somuncurense',
+    },
+    location: {
+      country: 'Argentina',
+      countryCode: 'AR',
+      region: 'Somuncurá Plateau',
+      displayLocation: 'Somuncurá Plateau, Patagonia',
+    },
+    iucnStatus: {
+      code: 'CR',
+      label: 'Critically Endangered',
+    },
+    colors: {
+      primary: '#2D7A7A',
+      secondary: '#C9A961',
+      accent: '#4A8B5C',
+    },
+    countryStamp: {
+      label: 'ARGENTINA',
+      backgroundColor: '#2D7A7A',
+      textColor: '#FFFFFF',
+      rotation: 3,
+    },
+    heroImage: {
+      src: '/images/dispatches/argentina-valcheta-frog/hero.jpg',
+      alt: 'A pair of Valcheta Frogs with striking golden eyes among bright green aquatic vegetation during breeding season',
+      credit: 'Rodrigo Calvo',
+    },
+    sections: [
+      {
+        id: 'story',
+        type: 'story',
+        title: 'A Hot Spring Hideaway',
+        titleColor: '#2D7A7A',
+        content: "In the middle of Argentina's cold, windswept Patagonian steppe, there's a secret. Underground hot springs bubble up to create a tiny stream where the water never drops below 19°C, even when winter temperatures plunge to -15°C outside. This is the only home of the Valcheta Frog, a species so rare it lives in an area smaller than five square kilometers. That's like fitting an entire species into a few city blocks!\n\nThese little frogs never leave their warm water refuge. They eat, sleep, and raise their families right there in the stream. Scientists call animals like this microendemics, and the Valcheta Frog is one of the most extreme examples on Earth.",
+        attribution: 'Rodrigo Calvo',
+      },
+      {
+        id: 'fun-facts',
+        type: 'facts',
+        title: 'Fun Facts',
+        titleColor: '#2D7A7A',
+        displayAs: 'cards',
+        facts: [
+          {
+            id: 'thermal-springs',
+            icon: 'thermometer',
+            iconLibrary: 'lucide',
+            text: 'Lives in warm thermal springs surrounded by freezing Patagonian steppe where air temperatures can drop to -15°C.',
+            cardColor: '#FDF8E8',
+            accentColor: '#C9A961',
+          },
+          {
+            id: 'speedy',
+            icon: 'zap',
+            iconLibrary: 'lucide',
+            text: 'Super speedy and tricky to catch because they react instantly to flashlight beams or any movement.',
+            cardColor: '#F0F7F1',
+            accentColor: '#C9A961',
+          },
+          {
+            id: 'one-stream',
+            icon: 'map-pin',
+            iconLibrary: 'lucide',
+            text: 'Found in only ONE stream in the entire world, in an area smaller than five square kilometers.',
+            cardColor: '#FFF8F0',
+            accentColor: '#C9A961',
+          },
+        ],
+      },
+      {
+        id: 'on-the-ground',
+        type: 'organization',
+        title: 'Nighttime Surveys',
+        titleColor: '#2D7A7A',
+        content: "Rodrigo searches for Valcheta Frogs after dark, when they're most active. He wades carefully through the warm stream with his headlamp, looking for the golden gleam of frog eyes. But these frogs are clever escape artists. The moment they spot light or sense movement, they zip away or dive under stones and sand.\n\nScientists here have worked for years to remove invasive trout that were eating the frogs, fence off areas where cattle were trampling the stream banks, and even release captive-bred frogs back into restored habitats. Thanks to this hard work, the Valcheta Frog is making a comeback.",
+        image: {
+          src: '/images/dispatches/argentina-valcheta-frog/researcher.jpeg',
+          alt: 'Biologist Rodrigo Calvo kneeling by the stream at night with a headlamp, carefully holding small Valcheta Frogs in his hands',
+          credit: 'Rodrigo Calvo',
+          caption: 'Rodrigo monitors Valcheta Frog populations during nighttime surveys in the thermal stream.',
+        },
+      },
+      {
+        id: 'researcher',
+        type: 'researcher',
+        title: 'Meet the Researcher',
+        titleColor: '#2D7A7A',
+        displayAs: 'card',
+        cardColor: '#F7F5F0',
+        borderColor: '#C9A961',
+        researcher: {
+          name: 'Rodrigo Calvo',
+          organization: 'Amphibian Conservation',
+          photo: {
+            src: '/images/dispatches/argentina-valcheta-frog/researcher.jpeg',
+            alt: 'Rodrigo Calvo during nighttime fieldwork',
+            credit: 'Rodrigo Calvo',
+          },
+          quote: {
+            text: 'By protecting this unique frog, we also take care of all the other species that share its home, and we inspire people to connect with nature and protect it too.',
+            borderColor: '#2D7A7A',
+          },
+        },
+      },
+      {
+        id: 'dive-deeper',
+        type: 'links',
+        title: 'Dive Deeper',
+        titleColor: '#2D7A7A',
+        links: [
+          {
+            id: 'iucn',
+            label: 'IUCN Red List',
+            url: 'https://www.iucnredlist.org/species/20372/85948443',
+            icon: 'circle-alert',
+            iconLibrary: 'lucide',
+          },
+          {
+            id: 'amphibiaweb',
+            label: 'AmphibiaWeb',
+            url: 'https://amphibiaweb.org/species/9386',
+            icon: 'book-open',
+            iconLibrary: 'lucide',
+          },
+        ],
+      },
+    ],
+    meta: {
+      photographer: 'Rodrigo Calvo',
+      contentSource: 'Rodrigo Calvo',
+      dateAdded: '2025-01',
+      issue: 2,
+    },
+  },
 ];
 
 export const getDispatchById = (id: string): Dispatch | undefined => {
