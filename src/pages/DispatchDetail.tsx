@@ -243,16 +243,22 @@ function ResearcherBlock({ section, colors }: { section: ResearcherSection; colo
             </p>
           )}
           {researcher.program && (
-            <a
-              href="https://www.amphibians.org/programs/future-leaders/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1.5 mt-2 px-2.5 py-1 rounded-full text-xs font-medium text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: colors.primary }}
-            >
-              <span>Future Leader</span>
-              <ExternalLink size={12} />
-            </a>
+            <div className="mt-2">
+              <span
+                className="inline-block px-2.5 py-1 rounded-full text-xs font-medium text-white"
+                style={{ backgroundColor: colors.primary }}
+              >
+                ASA Future Leader
+              </span>
+              <a
+                href="https://www.amphibians.org"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block mt-1.5 text-xs text-[#6B7280] dark:text-[#9CA3AF] hover:underline"
+              >
+                amphibians.org
+              </a>
+            </div>
           )}
         </div>
       </div>

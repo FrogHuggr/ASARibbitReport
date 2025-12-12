@@ -1,9 +1,7 @@
-import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, ChevronDown, ChevronUp } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import type { ResearcherSection } from '../data/dispatches';
-import { futureLeadersIntro } from '../data/futureLeaders';
 import { Footer } from '../components/layout/Footer';
 
 // Helper to get researcher from dispatch sections
@@ -15,77 +13,23 @@ function getResearcher(dispatch: (typeof dispatches)[0]) {
 }
 
 export function Dispatches() {
-  const [isIntroExpanded, setIsIntroExpanded] = useState(true);
-
   return (
     <div className="pb-6">
       {/* Header */}
-      <header className="container-app px-4 py-6">
+      <header className="container-app px-4 pt-6 pb-8">
         <div className="flex items-center gap-3">
           <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white">
             Dispatches
           </h1>
           {/* Count Badge */}
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-[#4CAF50] to-[#2D5A3D] rounded-full blur-sm opacity-60 animate-pulse" />
-            <div className="relative bg-gradient-to-r from-[#4CAF50] to-[#2D5A3D] text-white text-sm font-bold px-3 py-1 rounded-full shadow-lg">
-              {dispatches.length} adventures
-            </div>
+          <div className="bg-gradient-to-r from-[#4CAF50] to-[#2D5A3D] text-white text-sm font-bold px-3 py-1 rounded-full shadow-sm">
+            {dispatches.length}
           </div>
         </div>
-        <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-1">
+        <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-2">
           Choose your adventure
         </p>
       </header>
-
-      {/* MarshMellow Future Leaders Intro */}
-      <section className="container-app px-4 mb-6">
-        <div className="bg-gradient-to-br from-[#E8F5E9] to-[#FFF8E1] dark:from-[#1B3D2F] dark:to-[#3D3520] rounded-2xl p-4 shadow-sm">
-          <button
-            onClick={() => setIsIntroExpanded(!isIntroExpanded)}
-            className="w-full flex items-center gap-3"
-          >
-            {/* MarshMellow Avatar */}
-            <img
-              src="/images/marshmellow/marshmellow-head.png"
-              alt="MarshMellow"
-              className="w-12 h-12 flex-shrink-0"
-            />
-            <div className="flex-1 text-left">
-              <h2 className="font-display font-bold text-[#2D5A3D] dark:text-[#8FBC8F]">
-                {futureLeadersIntro.sectionIntro.title}
-              </h2>
-              <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">
-                A message from MarshMellow
-              </p>
-            </div>
-            {isIntroExpanded ? (
-              <ChevronUp size={20} className="text-[#6B7280] dark:text-[#9CA3AF]" />
-            ) : (
-              <ChevronDown size={20} className="text-[#6B7280] dark:text-[#9CA3AF]" />
-            )}
-          </button>
-
-          {isIntroExpanded && (
-            <div className="mt-4 pl-15">
-              {/* Speech bubble */}
-              <div className="relative bg-white dark:bg-[#242424] rounded-2xl rounded-tl-sm p-4 shadow-sm">
-                <p className="text-sm text-[#4B5563] dark:text-[#D1D5DB] leading-relaxed">
-                  {futureLeadersIntro.sectionIntro.content}
-                </p>
-                <a
-                  href={futureLeadersIntro.program.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-3 text-xs font-medium text-[#2D5A3D] dark:text-[#8FBC8F] hover:underline"
-                >
-                  Learn more about the Future Leaders program →
-                </a>
-              </div>
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* Grid of Cards */}
       <section className="container-app px-4">
@@ -203,7 +147,7 @@ export function Dispatches() {
               </p>
 
               <p className="text-sm font-medium text-[#4B5563] dark:text-[#D1D5DB] mb-3">
-                "Which frog will we meet next?"
+                "Which amphibian will we meet next?"
               </p>
 
               {/* Mystery researcher */}
