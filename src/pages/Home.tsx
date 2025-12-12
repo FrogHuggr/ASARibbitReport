@@ -1,88 +1,214 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
-import { MarshMellow } from '../components/ui/MarshMellow';
 import { dispatches } from '../data/dispatches';
 
 export function Home() {
   return (
-    <div className="container-app px-4 py-6">
-      {/* Issue Header */}
-      <header className="text-center mb-8">
-        <p className="text-xs font-medium text-[#6B7280] dark:text-[#9CA3AF] uppercase tracking-wider mb-1">
-          Issue 2 • 2025
-        </p>
-        <h1 className="font-display text-2xl font-bold text-[#2D2D2D] dark:text-white">
-          Postcards from the Field
-        </h1>
-      </header>
-
-      {/* MarshMellow Welcome */}
-      <section className="mb-8">
-        <MarshMellow
-          message="Welcome to The Ribbit Report! I'm so excited you're here. This issue, we're traveling the world to meet incredible frogs and the amazing researchers working to protect them. Ready to hop in?"
+    <div className="pb-10">
+      {/* HERO SECTION - Full bleed magazine cover */}
+      <section className="relative h-[55vh] min-h-[400px] overflow-hidden">
+        {/* Background image with Ken Burns animation */}
+        <div
+          className="absolute inset-0 bg-cover bg-center animate-kenburns"
+          style={{
+            backgroundImage: 'url(/images/dispatches/india-resplendent-grass-frog/hero.jpeg)',
+          }}
         />
+        {/* Dark gradient overlay for text legibility */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+        {/* Text overlay - positioned bottom-left */}
+        <div className="absolute bottom-24 left-6 right-6 text-white">
+          <p
+            className="text-xs font-medium uppercase tracking-widest mb-2"
+            style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
+          >
+            Issue 2 • 2025
+          </p>
+          <h1
+            className="font-display text-3xl font-bold leading-tight"
+            style={{ textShadow: '0 2px 8px rgba(0,0,0,0.4)' }}
+          >
+            Postcards from the Field
+          </h1>
+        </div>
       </section>
 
-      {/* Featured Content */}
-      <section className="mb-6">
-        <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white mb-4">
-          Featured
-        </h2>
+      {/* MARSHMELLOW WELCOME - Floating card overlapping hero */}
+      <section className="container-app px-4 -mt-16 relative z-10 mb-6">
+        <div
+          className="bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-2xl p-5 flex gap-4 items-start max-w-md mx-auto"
+          style={{
+            boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+          }}
+        >
+          <img
+            src="/images/marshmellow/marshmellow-wave.png"
+            alt="MarshMellow waving"
+            className="w-20 h-20 flex-shrink-0 object-contain"
+          />
+          <div className="flex-1 pt-1">
+            <p className="font-display font-bold text-lg text-[#2D5A3D] dark:text-[#81C784] mb-1">
+              Hey there, explorer!
+            </p>
+            <p className="text-[#374151] dark:text-[#D1D5DB] text-sm leading-relaxed">
+              Welcome to The Ribbit Report! This issue, we're traveling the world to meet incredible frogs...
+            </p>
+            <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] italic mt-2">
+              — MarshMellow
+            </p>
+          </div>
+        </div>
+      </section>
 
-        {/* Dispatches Card */}
-        <Link to="/dispatches" className="block mb-4 group">
-          <div className="card relative overflow-hidden hover:shadow-lg transition-shadow">
-            <div
-              className="absolute inset-0 opacity-10"
-              style={{
-                background:
-                  'linear-gradient(135deg, #2D5A3D 0%, #6B3FA0 50%, #2E6A8E 100%)',
-              }}
-            />
-            <div className="relative p-2">
-              <div className="flex items-center justify-between">
+      {/* CONTENT CARDS */}
+      <section className="px-4 space-y-4">
+        {/* DISPATCHES CARD - 4-face collage background */}
+        <Link to="/dispatches" className="block group">
+          <div
+            className="relative h-44 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+            }}
+          >
+            {/* 4-face collage background */}
+            <div className="absolute inset-0 flex">
+              <div
+                className="flex-1 bg-cover bg-center"
+                style={{
+                  backgroundImage: 'url(/images/dispatches/india-resplendent-grass-frog/hero.jpeg)',
+                }}
+              />
+              <div
+                className="flex-1 bg-cover bg-center"
+                style={{
+                  backgroundImage: 'url(/images/dispatches/india-indigo-bush-frog/hero.jpeg)',
+                }}
+              />
+              <div
+                className="flex-1 bg-cover bg-center"
+                style={{
+                  backgroundImage: 'url(/images/dispatches/panama-spiny-headed-treefrog/hero.jpeg)',
+                }}
+              />
+              <div
+                className="flex-1 bg-cover bg-center"
+                style={{
+                  backgroundImage: 'url(/images/dispatches/argentina-valcheta-frog/hero.jpg)',
+                }}
+              />
+            </div>
+
+            {/* Dark gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+              <div className="flex items-end justify-between">
                 <div>
-                  <h3 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white">
+                  <h3 className="font-display text-2xl font-bold text-white mb-1">
                     Dispatches
                   </h3>
-                  <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-1">
+                  <p className="text-white/90 text-sm">
                     {dispatches.length} adventures from around the world
                   </p>
                 </div>
                 <ChevronRight
-                  size={24}
-                  className="text-[#6B7280] dark:text-[#9CA3AF] group-hover:translate-x-1 transition-transform"
+                  size={28}
+                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
                 />
               </div>
             </div>
+
+            {/* Hover shadow enhancement */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl"
+              style={{
+                boxShadow: '0 12px 32px rgba(0,0,0,0.2)',
+              }}
+            />
           </div>
         </Link>
 
-        {/* The Real Story Card */}
+        {/* THE REAL STORY CARD - Split screen showdown */}
         <Link to="/real-story/frogs-vs-toads" className="block group">
-          <div className="card relative overflow-hidden hover:shadow-lg transition-shadow">
-            <div
-              className="absolute inset-0 opacity-10"
-              style={{
-                background: 'linear-gradient(135deg, #4A7B5C 0%, #8B7355 100%)',
-              }}
-            />
-            <div className="relative p-2">
-              <div className="flex items-center justify-between">
+          <div
+            className="relative h-44 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+            }}
+          >
+            {/* Split background - Frog vs Toad */}
+            <div className="absolute inset-0 flex">
+              {/* Left - Frog with green tint */}
+              <div className="flex-1 relative">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: 'url(/images/realstory/frog.png)',
+                    backgroundColor: '#E8F5E9',
+                  }}
+                />
+                <div className="absolute inset-0 bg-[#4A7B5C]/25" />
+              </div>
+              {/* Right - Toad with brown tint */}
+              <div className="flex-1 relative">
+                <div
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{
+                    backgroundImage: 'url(/images/realstory/toad.png)',
+                    backgroundColor: '#F5E6D3',
+                  }}
+                />
+                <div className="absolute inset-0 bg-[#8B7355]/25" />
+              </div>
+            </div>
+
+            {/* VS badge in center */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+              <div
+                className="w-14 h-14 rounded-full bg-[#E85D4C] flex items-center justify-center transform rotate-3"
+                style={{
+                  boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
+                }}
+              >
+                <span
+                  className="font-display font-extrabold text-xl text-white"
+                  style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
+                >
+                  VS
+                </span>
+              </div>
+            </div>
+
+            {/* Dark gradient overlay at bottom */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+              <div className="flex items-end justify-between">
                 <div>
-                  <h3 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white">
+                  <h3 className="font-display text-2xl font-bold text-white mb-1">
                     The Real Story
                   </h3>
-                  <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-1">
+                  <p className="text-white/90 text-sm">
                     Frogs vs. Toads
                   </p>
                 </div>
                 <ChevronRight
-                  size={24}
-                  className="text-[#6B7280] dark:text-[#9CA3AF] group-hover:translate-x-1 transition-transform"
+                  size={28}
+                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
                 />
               </div>
             </div>
+
+            {/* Hover shadow enhancement */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl"
+              style={{
+                boxShadow: '0 12px 32px rgba(0,0,0,0.2)',
+              }}
+            />
           </div>
         </Link>
       </section>
