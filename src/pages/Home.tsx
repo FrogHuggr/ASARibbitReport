@@ -35,9 +35,9 @@ export function Home() {
       </section>
 
       {/* MARSHMELLOW WELCOME - Floating card overlapping hero */}
-      <section className="container-app px-4 -mt-16 relative z-10 mb-6">
+      <section className="px-4 -mt-16 relative z-10 mb-6">
         <div
-          className="bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-2xl p-5 flex gap-4 items-start max-w-md mx-auto"
+          className="bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-2xl p-5 flex gap-4 items-start"
           style={{
             boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
           }}
@@ -63,7 +63,7 @@ export function Home() {
 
       {/* CONTENT CARDS */}
       <section className="px-4 space-y-4">
-        {/* DISPATCHES CARD - 4-face collage background */}
+        {/* DISPATCHES CARD - 3-face collage background */}
         <Link to="/dispatches" className="block group">
           <div
             className="relative h-44 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
@@ -71,7 +71,7 @@ export function Home() {
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
             }}
           >
-            {/* 4-face collage background */}
+            {/* 3-face collage background */}
             <div className="absolute inset-0 flex">
               <div
                 className="flex-1 bg-cover bg-center"
@@ -89,12 +89,6 @@ export function Home() {
                 className="flex-1 bg-cover bg-center"
                 style={{
                   backgroundImage: 'url(/images/dispatches/panama-spiny-headed-treefrog/hero.jpeg)',
-                }}
-              />
-              <div
-                className="flex-1 bg-cover bg-center"
-                style={{
-                  backgroundImage: 'url(/images/dispatches/argentina-valcheta-frog/hero.jpg)',
                 }}
               />
             </div>
@@ -130,7 +124,7 @@ export function Home() {
           </div>
         </Link>
 
-        {/* THE REAL STORY CARD - Split screen showdown */}
+        {/* THE REAL STORY CARD - Split with illustrated frog/toad in circles */}
         <Link to="/real-story/frogs-vs-toads" className="block group">
           <div
             className="relative h-44 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
@@ -138,51 +132,53 @@ export function Home() {
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
             }}
           >
-            {/* Split background - Frog vs Toad */}
+            {/* Split color background */}
             <div className="absolute inset-0 flex">
-              {/* Left - Frog with green tint */}
-              <div className="flex-1 relative">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: 'url(/images/realstory/frog.png)',
-                    backgroundColor: '#E8F5E9',
-                  }}
-                />
-                <div className="absolute inset-0 bg-[#4A7B5C]/25" />
-              </div>
-              {/* Right - Toad with brown tint */}
-              <div className="flex-1 relative">
-                <div
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{
-                    backgroundImage: 'url(/images/realstory/toad.png)',
-                    backgroundColor: '#F5E6D3',
-                  }}
-                />
-                <div className="absolute inset-0 bg-[#8B7355]/25" />
-              </div>
+              {/* Left - Green */}
+              <div className="flex-1 bg-[#4A7B5C]" />
+              {/* Right - Brown */}
+              <div className="flex-1 bg-[#8B7355]" />
             </div>
 
-            {/* VS badge in center */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
+            {/* Frog and Toad illustrations in circles */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              {/* Frog circle - left side */}
               <div
-                className="w-14 h-14 rounded-full bg-[#E85D4C] flex items-center justify-center transform rotate-3"
-                style={{
-                  boxShadow: '0 4px 16px rgba(0,0,0,0.3)',
-                }}
+                className="w-24 h-24 rounded-full bg-[#E8F5E9] flex items-center justify-center overflow-hidden border-3 border-white/50 -mr-3 z-10"
+                style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
               >
-                <span
-                  className="font-display font-extrabold text-xl text-white"
-                  style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
-                >
+                <img
+                  src="/images/realstory/frog.png"
+                  alt="Frog"
+                  className="w-20 h-20 object-contain"
+                />
+              </div>
+
+              {/* VS badge in center */}
+              <div
+                className="w-12 h-12 rounded-full bg-[#E85D4C] flex items-center justify-center transform rotate-3 z-20"
+                style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.3)' }}
+              >
+                <span className="font-display font-extrabold text-lg text-white">
                   VS
                 </span>
+              </div>
+
+              {/* Toad circle - right side */}
+              <div
+                className="w-24 h-24 rounded-full bg-[#F5E6D3] flex items-center justify-center overflow-hidden border-3 border-white/50 -ml-3 z-10"
+                style={{ boxShadow: '0 4px 12px rgba(0,0,0,0.2)' }}
+              >
+                <img
+                  src="/images/realstory/toad.png"
+                  alt="Toad"
+                  className="w-20 h-20 object-contain"
+                />
               </div>
             </div>
 
             {/* Dark gradient overlay at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
             {/* Content */}
             <div className="absolute inset-0 p-5 flex flex-col justify-end">
