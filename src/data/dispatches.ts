@@ -203,7 +203,7 @@ export const dispatches: Dispatch[] = [
     },
 
     heroImage: {
-      src: '/images/dispatches/india-western-ghats/hero.jpg',
+      src: '/images/dispatches/india-resplendent-grass-frog/hero.jpeg',
       alt: 'A tiny orange-gold Resplendent Grass Frog perched on a grass blade in the Western Ghats',
       credit: 'Harikrishnan S',
     },
@@ -217,7 +217,7 @@ export const dispatches: Dispatch[] = [
         content: 'Resplendent Grass Frogs are tiny, direct-developing tree frogs that have evolved to survive in the cold, open grasslands in the mountains of Western Ghats. More than 70% of these grasslands have disappeared during the 20th century due to exotic plantations. Now, the surviving frogs are threatened by degradation of their remaining habitat, and the looming climate change crisis.',
         attribution: 'Harikrishnan S',
         image: {
-          src: '/images/dispatches/india-western-ghats/habitat.jpg',
+          src: '/images/dispatches/india-resplendent-grass-frog/detail.jpg',
           alt: 'Resplendent Grass Frog in its montane grassland habitat',
           credit: 'Harikrishnan S',
           caption: 'Found only in the montane grasslands of the southern Western Ghats.',
@@ -232,19 +232,19 @@ export const dispatches: Dispatch[] = [
         facts: [
           {
             id: 'no-tadpole',
-            icon: '🥚',
-            iconLibrary: 'emoji',
+            icon: 'egg',
+            iconLibrary: 'lucide',
             text: 'They skip the tadpole stage, the eggs hatch straight into miniature frogs!',
             cardColor: '#FDF8E8',
             accentColor: '#E8B84A',
           },
           {
             id: 'walkers',
-            icon: '🚶',
-            iconLibrary: 'emoji',
+            icon: 'footprints',
+            iconLibrary: 'lucide',
             text: "These little hoppers actually don't like to hop much at all... Instead, they walk clumsily along grass blades.",
             cardColor: '#F0F7F1',
-            accentColor: '#6B8E4E',
+            accentColor: '#E8B84A',
           },
         ],
       },
@@ -277,7 +277,7 @@ export const dispatches: Dispatch[] = [
           organization: 'Wildlife Trust of India',
           project: 'Amphibian Recovery Project',
           photo: {
-            src: '/images/dispatches/india-western-ghats/researcher.jpg',
+            src: '/images/dispatches/india-resplendent-grass-frog/researcher.jpg',
             alt: 'Harikrishnan S in the field wearing a cap',
             credit: 'Sreenanth K',
           },
@@ -293,11 +293,6 @@ export const dispatches: Dispatch[] = [
         title: 'On the Ground',
         titleColor: '#2D5A3D',
         content: "Wildlife Trust of India's Amphibian Recovery Project works to conserve threatened amphibians of the Western Ghats.",
-        image: {
-          src: '/images/dispatches/india-western-ghats/field-team.jpg',
-          alt: 'Wildlife Trust of India team conducting amphibian surveys in the Western Ghats',
-          credit: 'Sreenanth K',
-        },
       },
     ],
 

@@ -128,7 +128,7 @@ function FactsBlock({ section, colors }: { section: FactsSection; colors: Dispat
           );
         })}
       </div>
-      <p className="text-xs text-[#9CA3AF] text-center mt-2">← swipe for more →</p>
+      <p className="text-xs text-center mt-2" style={{ color: colors.secondary }}>← swipe for more →</p>
     </section>
   );
 }
@@ -231,7 +231,7 @@ function ResearcherBlock({ section, colors }: { section: ResearcherSection; colo
 
       {researcher.quote && (
         <blockquote
-          className="bg-white dark:bg-[#1A1A1A] rounded-r-lg p-4 pl-4 border-l-[3px] italic text-[#2D2D2D] dark:text-[#E5E5E5]"
+          className="bg-white dark:bg-[#1A1A1A] rounded-r-lg p-4 pl-4 border-l-4 italic text-[#2D2D2D] dark:text-[#E5E5E5]"
           style={{ borderColor: researcher.quote.borderColor || colors.primary }}
         >
           "{researcher.quote.text}"
