@@ -920,6 +920,141 @@ export const dispatches: Dispatch[] = [
       issue: 2,
     },
   },
+  {
+    id: 'india-indigo-bush-frog',
+    slug: 'indigo-bush-frog',
+    title: "India's Hidden Jewel",
+    subtitle: 'The Indigo Bush Frog',
+    species: {
+      commonName: 'Indigo Bush Frog',
+      scientificName: 'Raorchestes indigo',
+    },
+    location: {
+      country: 'India',
+      countryCode: 'IN',
+      region: 'Kudremukh National Park',
+      displayLocation: 'Kudremukh National Park, India',
+    },
+    iucnStatus: {
+      code: 'VU',
+      label: 'Vulnerable',
+    },
+    colors: {
+      primary: '#4A6670',
+      secondary: '#5B8A51',
+      accent: '#8B6E4E',
+    },
+    countryStamp: {
+      label: 'INDIA',
+      backgroundColor: '#4A6670',
+      textColor: '#FFFFFF',
+      rotation: 3,
+    },
+    heroImage: {
+      src: '/images/dispatches/india-indigo-bush-frog/hero.jpeg',
+      alt: 'A close-up look at the tiny Indigo Bush Frog resting on a dead fern leaf in its misty mountain home',
+      credit: 'Amoghavarsha M',
+    },
+    sections: [
+      {
+        id: 'story',
+        type: 'story',
+        title: 'A Secret Treasure',
+        titleColor: '#4A6670',
+        content: "High in the misty grasslands of Kudremukh National Park, there's a frog that lives nowhere else on Earth. The Indigo Bush Frog makes its home on just one small hill in southern India. Scientists call animals like this endemic species, which means if something happens to their home, the whole species could disappear forever.\n\nFinding this tiny frog is like searching for a secret treasure. The weather up here is cold, wet, and misty. To reach the place where it lives, researchers have to hike about 6 miles up a steep mountain trail, sometimes in heavy rain! The habitat is called shola, a special mix of grasslands and patches of forest found only in the Western Ghats mountains.",
+        attribution: 'Amoghavarsha M',
+        image: {
+          src: '/images/dispatches/india-indigo-bush-frog/detail.jpeg',
+          alt: 'The Indigo Bush Frog showing its beautiful indigo coloring near the thighs, which gives this species its name',
+          credit: 'Amoghavarsha M',
+        },
+      },
+      {
+        id: 'fun-facts',
+        type: 'facts',
+        title: 'Fun Facts',
+        titleColor: '#4A6670',
+        displayAs: 'cards',
+        facts: [
+          {
+            id: 'one-hill',
+            icon: 'map-pin',
+            iconLibrary: 'lucide',
+            text: 'This frog lives on only ONE hill in the entire world. That\'s it. Nowhere else!',
+            cardColor: '#FDF8E8',
+            accentColor: '#5B8A51',
+          },
+          {
+            id: 'indigo-color',
+            icon: 'palette',
+            iconLibrary: 'lucide',
+            text: "It's named for the beautiful indigo-blue coloring near its thighs. Look closely at the photos!",
+            cardColor: '#F0F7F1',
+            accentColor: '#5B8A51',
+          },
+          {
+            id: 'hard-to-find',
+            icon: 'search',
+            iconLibrary: 'lucide',
+            text: 'So hard to find that it took Amoghavarsha more than three trips before spotting his first one!',
+            cardColor: '#FFF8F0',
+            accentColor: '#5B8A51',
+          },
+        ],
+      },
+      {
+        id: 'researcher',
+        type: 'researcher',
+        title: 'Meet the Researcher',
+        titleColor: '#4A6670',
+        displayAs: 'card',
+        cardColor: '#F7F5F0',
+        borderColor: '#5B8A51',
+        researcher: {
+          name: 'Amoghavarsha M',
+          organization: 'Wildlife Researcher',
+          photo: {
+            src: '/images/dispatches/india-indigo-bush-frog/researcher.jpeg',
+            alt: 'Amoghavarsha M',
+            credit: 'Arpithamol C. Joy',
+          },
+          quote: {
+            text: "What I love most about my work is that I get to explore wild places and discover creatures that few people have ever seen. Every trip feels like solving a little mystery—tracking clues, listening for frog calls, and waiting quietly in the dark to spot them.",
+            borderColor: '#4A6670',
+          },
+        },
+      },
+      {
+        id: 'dive-deeper',
+        type: 'links',
+        title: 'Dive Deeper',
+        titleColor: '#4A6670',
+        links: [
+          {
+            id: 'iucn',
+            label: 'IUCN Red List',
+            url: 'https://www.iucnredlist.org/species/73787889/73787915',
+            icon: 'circle-alert',
+            iconLibrary: 'lucide',
+          },
+          {
+            id: 'amphibiaweb',
+            label: 'AmphibiaWeb',
+            url: 'https://amphibiaweb.org/species/8270',
+            icon: 'book-open',
+            iconLibrary: 'lucide',
+          },
+        ],
+      },
+    ],
+    meta: {
+      photographer: 'Amoghavarsha M',
+      fieldPhotoCredit: 'Arpithamol C. Joy',
+      contentSource: 'Amoghavarsha M',
+      dateAdded: '2025-01',
+      issue: 2,
+    },
+  },
 ];
 
 export const getDispatchById = (id: string): Dispatch | undefined => {
