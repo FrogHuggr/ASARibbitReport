@@ -338,7 +338,7 @@ export function Home() {
               Did you know?
             </span>
           </div>
-          <p className="text-[#4B5563] dark:text-[#D1D5DB] text-sm leading-relaxed max-w-xs sm:max-w-md">
+          <p className="text-[#4B5563] dark:text-[#D1D5DB] text-sm leading-relaxed w-full max-w-md px-4">
             {fact.text}
           </p>
         </div>
