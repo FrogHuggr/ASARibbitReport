@@ -128,11 +128,11 @@ export function Home() {
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
             }}
           >
-            {/* Illustrated map background */}
+            {/* Salamander under log illustration */}
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: 'url(/images/wilddecision/wilddecision1.jpg)',
+                backgroundImage: 'url(/images/wilddecision/wilddecision3.jpg)',
               }}
             />
 
