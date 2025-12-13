@@ -41,7 +41,7 @@ function MythBustersLanding({ onStart }: { onStart: () => void }) {
       {/* MarshMellow */}
       <div className="mb-6">
         <img
-          src="/images/marshmellow/marshmellow-thinking.png"
+          src="/images/marshmellow/marshmellow-thinking3.png"
           alt="MarshMellow thinking"
           className="w-44 h-44 object-contain"
         />

@@ -1,8 +1,30 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight } from 'lucide-react';
 import { dilemmas } from '../data/wildDecisions';
 
+// Display order that mixes North American and international dilemmas
+// Order: Trail(NA), Cloud Forest(Ecuador), Backyard Toad(NA), Rice Paddy(Vietnam),
+//        Salamander(NA), Cane Toad(Australia), Frog Chorus(NA), Waterhole(Kenya)
+const displayOrder = [
+  'trail-wet-patch',      // North America
+  'cloud-forest-spring',  // Latin America (Ecuador)
+  'backyard-toad',        // North America
+  'rice-paddy-frogs',     // Asia (Vietnam)
+  'salamander-log',       // North America
+  'cane-toad-problem',    // Australia
+  'frog-chorus',          // North America
+  'vanishing-waterhole',  // Africa (Kenya)
+];
+
 export function WildDecisions() {
+  // Sort dilemmas according to display order
+  const [sortedDilemmas] = useState(() => {
+    return displayOrder
+      .map(id => dilemmas.find(d => d.id === id))
+      .filter((d): d is NonNullable<typeof d> => d !== undefined);
+  });
+
   return (
     <div className="pb-10">
       {/* Hero intro section with MarshMellow */}
@@ -38,7 +60,7 @@ export function WildDecisions() {
           Choose a dilemma
         </p>
 
-        {dilemmas.map((dilemma) => (
+        {sortedDilemmas.map((dilemma) => (
           <Link
             key={dilemma.id}
             to={`/wild-decisions/${dilemma.slug}`}
