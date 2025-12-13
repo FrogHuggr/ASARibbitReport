@@ -1103,7 +1103,7 @@ export const dispatches: Dispatch[] = [
       rotation: -3,
     },
     heroImage: {
-      src: '/images/dispatches/peru-Lake-Junin-Frog/hero.jpg',
+      src: '/images/dispatches/peru-lake-junin-frog/hero.jpg',
       alt: 'Underwater view of a Lake Junin Frog resting on the rocky bottom, showing its massive body, golden-ringed eyes, and grayish-brown skin',
       credit: 'Roberto Elías Piperis',
     },
@@ -1156,7 +1156,7 @@ export const dispatches: Dispatch[] = [
         titleColor: '#2E6A8E',
         content: "Luis and his team work in the Junín National Reserve and Huayllay National Sanctuary to monitor and protect the Lake Junin Frog. They wade into cold mountain streams and even go snorkeling to find frogs hiding under rocks. When they catch one, they carefully weigh and measure it before releasing it back. Luis has been working with this species for over ten years and is dedicated to protecting it until it's no longer endangered.",
         image: {
-          src: '/images/dispatches/peru-Lake-Junin-Frog/field.jpeg',
+          src: '/images/dispatches/peru-lake-junin-frog/field.jpeg',
           alt: 'Luis Castillo giving a thumbs up while weighing a large Lake Junin Frog on a yellow scale tray beside a stream, with field equipment nearby',
           credit: 'Miguel Manrique',
           caption: 'Weighing a Lake Junin Frog during fieldwork at the Huayllay National Sanctuary.',
@@ -1176,7 +1176,7 @@ export const dispatches: Dispatch[] = [
           program: 'Future Leaders of Amphibian Conservation',
           bio: 'Luis is a zoologist from Peru who co-founded Grupo Rana, an organization dedicated to saving endangered water frogs at Lake Junín. In 2018, he became a National Geographic Explorer and discovered new places where endangered frogs still survive. He runs citizen science programs where local people help monitor frog populations.',
           photo: {
-            src: '/images/dispatches/peru-Lake-Junin-Frog/researcher.jpeg',
+            src: '/images/dispatches/peru-lake-junin-frog/researcher.jpeg',
             alt: 'Luis with two Lake Junin Frogs at the Huayllay National Sanctuary, with the famous Rock Forest in the background',
             credit: 'Miguel Manrique',
           },
@@ -1248,7 +1248,7 @@ export const dispatches: Dispatch[] = [
       rotation: 3,
     },
     heroImage: {
-      src: '/images/dispatches/argentina-Valcheta-Frog/hero.jpg',
+      src: '/images/dispatches/argentina-valcheta-frog/hero.jpg',
       alt: 'A pair of Valcheta Frogs with striking golden eyes among bright green aquatic vegetation during breeding season',
       credit: 'Rodrigo Calvo',
     },
@@ -1301,7 +1301,7 @@ export const dispatches: Dispatch[] = [
         titleColor: '#2D7A7A',
         content: "Rodrigo searches for Valcheta Frogs after dark, when they're most active. He wades carefully through the warm stream with his headlamp, looking for the golden gleam of frog eyes. But these frogs are clever escape artists. The moment they spot light or sense movement, they zip away or dive under stones and sand.\n\nScientists here have worked for years to remove invasive trout that were eating the frogs, fence off areas where cattle were trampling the stream banks, and even release captive-bred frogs back into restored habitats. Thanks to this hard work, the Valcheta Frog is making a comeback.",
         image: {
-          src: '/images/dispatches/argentina-Valcheta-Frog/researcher.jpeg',
+          src: '/images/dispatches/argentina-valcheta-frog/researcher.jpeg',
           alt: 'Biologist Rodrigo Calvo kneeling by the stream at night with a headlamp, carefully holding small Valcheta Frogs in his hands',
           credit: 'Rodrigo Calvo',
           caption: 'Rodrigo monitors Valcheta Frog populations during nighttime surveys in the thermal stream.',
@@ -1321,7 +1321,7 @@ export const dispatches: Dispatch[] = [
           program: 'Future Leaders of Amphibian Conservation',
           bio: 'Rodrigo is an Argentine biologist devoted to saving the Critically Endangered Valcheta Frog, which lives only in hot springs in Patagonia. He believes conservation works best when scientists and local communities work together. His goal is to make sure future generations can still find these unique frogs in the wild.',
           photo: {
-            src: '/images/dispatches/argentina-Valcheta-Frog/researcher.jpeg',
+            src: '/images/dispatches/argentina-valcheta-frog/researcher.jpeg',
             alt: 'Rodrigo Calvo during nighttime fieldwork',
             credit: 'Rodrigo Calvo',
           },

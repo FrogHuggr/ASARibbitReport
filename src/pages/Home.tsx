@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, FlaskConical, MapPin } from 'lucide-react';
+import { ChevronRight, MapPin } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { mythBusterCards } from '../data/mythbusters';
 import { getRandomHeroImage } from '../data/heroImages';
@@ -132,8 +132,8 @@ export function Home() {
               <div className="flex-1 bg-[#8B7355]" />
             </div>
 
-            {/* Frog and Toad illustrations in circles - BIGGER */}
-            <div className="absolute inset-0 flex items-center justify-center -mt-4">
+            {/* Frog and Toad illustrations in circles - positioned higher to avoid text overlap */}
+            <div className="absolute inset-0 flex items-center justify-center -mt-12">
               {/* Frog circle - left side */}
               <div
                 className="w-28 h-28 rounded-full bg-[#E8F5E9] flex items-center justify-center overflow-hidden border-4 border-white/60 -mr-4 z-10"
@@ -200,10 +200,10 @@ export function Home() {
           </div>
         </Link>
 
-        {/* MYTH BUSTERS CARD */}
+        {/* MYTH BUSTERS CARD - MarshMellow with speech bubble */}
         <Link to="/myths" className="block group">
           <div
-            className="relative h-44 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            className="relative h-48 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
             style={{
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
             }}
@@ -213,21 +213,38 @@ export function Home() {
 
             {/* Question mark pattern overlay */}
             <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-4 left-8 text-6xl font-bold text-white rotate-12">?</div>
-              <div className="absolute top-12 right-12 text-4xl font-bold text-white -rotate-6">?</div>
-              <div className="absolute bottom-16 left-16 text-3xl font-bold text-white rotate-3">?</div>
-              <div className="absolute bottom-8 right-6 text-5xl font-bold text-white -rotate-12">?</div>
+              <div className="absolute top-2 left-4 text-5xl font-bold text-white rotate-12">?</div>
+              <div className="absolute top-16 left-12 text-3xl font-bold text-white -rotate-6">?</div>
+              <div className="absolute bottom-20 left-6 text-4xl font-bold text-white rotate-3">?</div>
             </div>
 
-            {/* Flask icon */}
-            <div className="absolute top-4 right-4">
-              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
-                <FlaskConical size={24} className="text-white" />
+            {/* MarshMellow with speech bubble */}
+            <div className="absolute right-4 top-2 flex items-start gap-2">
+              {/* Speech bubble */}
+              <div className="relative bg-white rounded-xl px-3 py-2 mt-4 shadow-lg">
+                <p className="text-[#7C3AED] font-bold text-sm whitespace-nowrap">
+                  Myth or Fact?
+                </p>
+                {/* Bubble tail */}
+                <div
+                  className="absolute -right-2 top-3 w-0 h-0"
+                  style={{
+                    borderTop: '6px solid transparent',
+                    borderBottom: '6px solid transparent',
+                    borderLeft: '8px solid white',
+                  }}
+                />
               </div>
+              {/* MarshMellow */}
+              <img
+                src="/images/marshmellow/marshmellow-thinking.png"
+                alt="MarshMellow wondering"
+                className="w-20 h-20 object-contain"
+              />
             </div>
 
             {/* Dark gradient overlay at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
 
             {/* Content */}
             <div className="absolute inset-0 p-5 flex flex-col justify-end">
