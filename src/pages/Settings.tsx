@@ -1,11 +1,46 @@
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ExternalLink } from 'lucide-react';
+import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useTextSize, type TextSize } from '../context/TextSizeContext';
+
+// Detect if app is running as installed PWA
+function useIsInstalled() {
+  const [isInstalled, setIsInstalled] = useState(false);
+
+  useEffect(() => {
+    // Check if running in standalone mode (installed PWA)
+    const isStandalone = window.matchMedia('(display-mode: standalone)').matches
+      || (window.navigator as { standalone?: boolean }).standalone === true;
+    setIsInstalled(isStandalone);
+  }, []);
+
+  return isInstalled;
+}
+
+// Detect device type
+function useDeviceType() {
+  const [device, setDevice] = useState<'ios' | 'android' | 'desktop'>('desktop');
+
+  useEffect(() => {
+    const ua = navigator.userAgent.toLowerCase();
+    if (/iphone|ipad|ipod/.test(ua)) {
+      setDevice('ios');
+    } else if (/android/.test(ua)) {
+      setDevice('android');
+    } else {
+      setDevice('desktop');
+    }
+  }, []);
+
+  return device;
+}
 
 export function Settings() {
   const { isDark, toggleDark } = useTheme();
   const { textSize, setTextSize } = useTextSize();
+  const isInstalled = useIsInstalled();
+  const device = useDeviceType();
 
   return (
     <div className="container-app px-4 py-6 pb-10">
@@ -84,6 +119,105 @@ export function Settings() {
           </div>
         </div>
       </div>
+
+      {/* Install as App Section - only show if not already installed */}
+      {!isInstalled && (
+        <div className="card mb-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="w-10 h-10 rounded-full bg-[#2D5A3D]/10 dark:bg-[#6B9B7A]/10 flex items-center justify-center">
+              <Smartphone size={20} className="text-[#2D5A3D] dark:text-[#6B9B7A]" />
+            </div>
+            <div>
+              <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white">
+                Install as App
+              </h2>
+              <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
+                Add to your home screen
+              </p>
+            </div>
+          </div>
+
+          {device === 'ios' && (
+            <div className="bg-[#F7F5F0] dark:bg-[#1a1a1a] rounded-xl p-4">
+              <p className="text-sm font-medium text-[#2D2D2D] dark:text-white mb-3">
+                On iPhone or iPad:
+              </p>
+              <ol className="space-y-3 text-sm text-[#4B5563] dark:text-[#D1D5DB]">
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#2D5A3D] text-white text-xs font-bold flex items-center justify-center">1</span>
+                  <span>Tap the <Share size={16} className="inline mx-1 text-[#007AFF]" /> Share button at the bottom of Safari</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#2D5A3D] text-white text-xs font-bold flex items-center justify-center">2</span>
+                  <span>Scroll down and tap <span className="font-medium">"Add to Home Screen"</span> <Plus size={14} className="inline mx-1" /></span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#2D5A3D] text-white text-xs font-bold flex items-center justify-center">3</span>
+                  <span>Tap <span className="font-medium">"Add"</span> in the top right corner</span>
+                </li>
+              </ol>
+              <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mt-4">
+                MarshMellow will appear on your home screen!
+              </p>
+            </div>
+          )}
+
+          {device === 'android' && (
+            <div className="bg-[#F7F5F0] dark:bg-[#1a1a1a] rounded-xl p-4">
+              <p className="text-sm font-medium text-[#2D2D2D] dark:text-white mb-3">
+                On Android:
+              </p>
+              <ol className="space-y-3 text-sm text-[#4B5563] dark:text-[#D1D5DB]">
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#2D5A3D] text-white text-xs font-bold flex items-center justify-center">1</span>
+                  <span>Tap the <MoreVertical size={16} className="inline mx-1" /> menu button in Chrome</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#2D5A3D] text-white text-xs font-bold flex items-center justify-center">2</span>
+                  <span>Tap <span className="font-medium">"Add to Home screen"</span> or <span className="font-medium">"Install app"</span></span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="flex-shrink-0 w-6 h-6 rounded-full bg-[#2D5A3D] text-white text-xs font-bold flex items-center justify-center">3</span>
+                  <span>Tap <span className="font-medium">"Add"</span> to confirm</span>
+                </li>
+              </ol>
+              <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mt-4">
+                MarshMellow will appear on your home screen!
+              </p>
+            </div>
+          )}
+
+          {device === 'desktop' && (
+            <div className="bg-[#F7F5F0] dark:bg-[#1a1a1a] rounded-xl p-4">
+              <p className="text-sm text-[#4B5563] dark:text-[#D1D5DB]">
+                The Ribbit Report works best on mobile devices! Visit this site on your phone or tablet to install it as an app.
+              </p>
+              <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mt-3">
+                On desktop Chrome, look for the install icon <Plus size={12} className="inline mx-1" /> in the address bar.
+              </p>
+            </div>
+          )}
+        </div>
+      )}
+
+      {/* Already installed message */}
+      {isInstalled && (
+        <div className="card mb-6 bg-[#E8F5E9] dark:bg-[#1B3D2F] border border-[#4CAF50]/30">
+          <div className="flex items-center gap-3">
+            <div className="w-10 h-10 rounded-full bg-[#4CAF50]/20 flex items-center justify-center">
+              <Smartphone size={20} className="text-[#4CAF50]" />
+            </div>
+            <div>
+              <p className="font-medium text-[#2D5A3D] dark:text-[#8FBC8F]">
+                App Installed!
+              </p>
+              <p className="text-sm text-[#4B5563] dark:text-[#9CA3AF]">
+                You're using The Ribbit Report as an app
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Divider */}
       <hr className="border-[#E5E7EB] dark:border-[#374151] my-6" />
