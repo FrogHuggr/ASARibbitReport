@@ -238,6 +238,25 @@ button {
   animation: fade-in 0.2s ease-out;
 }
 
+/* Scale in animation for modals */
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.animate-scale-in {
+  animation: scale-in 0.3s ease-out forwards;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+}
+
 /* Text Size Settings */
 /* Small - slightly smaller than default */
 .text-size-small {

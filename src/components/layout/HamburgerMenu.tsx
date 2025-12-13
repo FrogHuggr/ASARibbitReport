@@ -50,9 +50,9 @@ export function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
       />
 
       {/* Menu drawer */}
-      <div className="fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-white dark:bg-[#1a1a1a] z-50 shadow-xl animate-slide-in-right">
+      <div className="fixed top-0 right-0 bottom-0 w-[280px] max-w-[80vw] bg-white dark:bg-[#1a1a1a] z-50 shadow-xl animate-slide-in-right flex flex-col">
         {/* Close button */}
-        <div className="flex justify-end p-4">
+        <div className="flex justify-end p-4 flex-shrink-0">
           <button
             onClick={onClose}
             className="p-2 -mr-2 text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#2D2D2D] dark:hover:text-white transition-colors"
@@ -62,8 +62,8 @@ export function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
           </button>
         </div>
 
-        {/* Menu sections */}
-        <nav className="px-5">
+        {/* Menu sections - scrollable */}
+        <nav className="px-5 pb-8 overflow-y-auto flex-1">
           {/* EXPLORE Section */}
           <p className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#808080] mb-3">
             Explore

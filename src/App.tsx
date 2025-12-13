@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
 import { TextSizeProvider } from './context/TextSizeContext';
 import { AppShell } from './components/layout/AppShell';
+import { WelcomeModal } from './components/WelcomeModal';
 import { Home } from './pages/Home';
 import { Explore } from './pages/Explore';
 import { Dispatches } from './pages/Dispatches';
@@ -23,6 +24,7 @@ function App() {
     <ThemeProvider>
       <TextSizeProvider>
         <BrowserRouter>
+          <WelcomeModal />
           <Routes>
             <Route element={<AppShell />}>
               <Route path="/" element={<Home />} />
