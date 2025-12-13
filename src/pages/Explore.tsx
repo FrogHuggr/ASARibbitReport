@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { ChevronRight, Shuffle, FileText, Wrench } from 'lucide-react';
+import { ChevronRight, FileText, Wrench } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { dilemmas } from '../data/wildDecisions';
 import { mythBusterCards } from '../data/mythbusters';
@@ -112,20 +112,42 @@ export function Explore() {
             </div>
           </Link>
 
-          {/* MYTH BUSTERS - Purple */}
+          {/* MYTH BUSTERS - Fact check detective theme */}
           <Link to="/myths" className="block group">
             <div
               className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
               style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
             >
-              {/* Purple gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] to-[#5B21B6]" />
+              {/* Deep purple/indigo gradient - mysterious */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#4C1D95] via-[#5B21B6] to-[#7C3AED] dark:from-[#2E1065] dark:via-[#3B0764] dark:to-[#4C1D95]" />
 
-              {/* Question mark pattern overlay */}
-              <div className="absolute inset-0 opacity-10">
-                <div className="absolute top-2 left-3 text-4xl font-bold text-white">?</div>
-                <div className="absolute top-8 right-4 text-2xl font-bold text-white rotate-12">?</div>
-                <div className="absolute bottom-12 left-6 text-3xl font-bold text-white -rotate-6">?</div>
+              {/* Fact check decorations */}
+              <div className="absolute inset-0 opacity-25">
+                {/* X mark (myth) */}
+                <div className="absolute top-3 left-3 text-[#EF4444] font-bold text-xl">✗</div>
+                {/* Check mark (fact) */}
+                <div className="absolute top-2 right-12 text-[#22C55E] font-bold text-lg">✓</div>
+                {/* Question marks */}
+                <div className="absolute top-8 left-8 text-white/60 font-bold text-sm rotate-12">?</div>
+                <div className="absolute bottom-14 right-4 text-white/40 font-bold text-lg -rotate-6">?</div>
+              </div>
+
+              {/* BUSTED stamp effect */}
+              <div className="absolute top-2 right-2 rotate-12">
+                <div className="border-2 border-[#EF4444]/60 rounded px-1.5 py-0.5">
+                  <span className="text-[7px] font-bold uppercase tracking-wider text-[#EF4444]/80">
+                    Busted
+                  </span>
+                </div>
+              </div>
+
+              {/* MarshMellow with notepad - positioned right */}
+              <div className="absolute right-0 bottom-0 w-24 h-24 group-hover:scale-105 transition-transform">
+                <img
+                  src="/images/marshmellow/marshmellow-thinking6.png"
+                  alt="MarshMellow fact-checking"
+                  className="w-full h-full object-contain"
+                />
               </div>
 
               {/* Content */}
@@ -277,7 +299,7 @@ export function Explore() {
             </div>
           </div>
 
-          {/* SURPRISE ME - Fun random dispatch picker */}
+          {/* SURPRISE ME - Adventure map theme with MarshMellow */}
           <button
             onClick={handleSurpriseMe}
             className="block group w-full text-left"
@@ -286,30 +308,39 @@ export function Explore() {
               className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
               style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
             >
-              {/* Fun gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#10B981] via-[#059669] to-[#047857]" />
+              {/* Treasure map gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A574] via-[#C4956A] to-[#A67C52] dark:from-[#8B6914] dark:via-[#6B5210] dark:to-[#4A3A0A]" />
 
-              {/* Animated sparkle pattern */}
-              <div className="absolute inset-0 opacity-20">
-                <div className="absolute top-3 left-4 text-2xl animate-pulse">*</div>
-                <div className="absolute top-6 right-5 text-lg animate-pulse delay-100">*</div>
-                <div className="absolute bottom-10 left-8 text-xl animate-pulse delay-200">*</div>
-                <div className="absolute bottom-14 right-3 text-sm animate-pulse">*</div>
-              </div>
-
-              {/* Shuffle icon */}
-              <div className="absolute inset-0 flex items-center justify-center -mt-4">
-                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Shuffle size={28} className="text-white" />
+              {/* Map texture pattern - dotted trail lines */}
+              <div className="absolute inset-0 opacity-30">
+                {/* Compass rose hint in corner */}
+                <div className="absolute top-2 left-2 w-8 h-8 border border-[#8B6914]/50 rounded-full flex items-center justify-center">
+                  <div className="w-4 h-4 border-t border-l border-[#8B6914]/50 rotate-45" />
                 </div>
+                {/* Dotted path lines */}
+                <div className="absolute top-6 right-4 w-12 border-t-2 border-dashed border-[#8B6914]/40" />
+                <div className="absolute top-10 right-8 w-8 border-t-2 border-dashed border-[#8B6914]/40 rotate-45" />
+                <div className="absolute bottom-16 left-4 w-10 border-t-2 border-dashed border-[#8B6914]/40 -rotate-12" />
+                {/* Question marks for mystery */}
+                <div className="absolute top-3 right-3 text-[#8B6914]/60 font-bold text-lg">?</div>
+                <div className="absolute bottom-14 left-6 text-[#8B6914]/40 font-bold text-sm rotate-12">?</div>
               </div>
 
-              {/* Content */}
+              {/* MarshMellow with compass - positioned right */}
+              <div className="absolute right-1 bottom-0 w-28 h-28 group-hover:scale-105 transition-transform">
+                <img
+                  src="/images/marshmellow/marshmellow-map-pointing.png"
+                  alt="MarshMellow pointing the way"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* Content - positioned left */}
               <div className="absolute inset-0 p-3 flex flex-col justify-end">
-                <h3 className="font-display text-lg font-bold text-white leading-tight">
+                <h3 className="font-display text-lg font-bold text-[#4A3728] dark:text-[#F5E6D3] leading-tight">
                   Surprise Me!
                 </h3>
-                <p className="text-white/80 text-xs mt-0.5">
+                <p className="text-[#6B5240] dark:text-[#D4C4A8] text-xs mt-0.5">
                   Random adventure
                 </p>
               </div>
