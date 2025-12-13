@@ -319,16 +319,16 @@ button {
   background-color: #F0F4F8; /* soft blue */
 }
 
-/* Fact card colors - dark mode */
+/* Fact card colors - dark mode (muted but readable) */
 .dark .fact-card-1 {
-  background-color: #3D3520; /* warm brown */
+  background-color: #3D3D3D; /* neutral dark gray */
 }
 .dark .fact-card-2 {
-  background-color: #1B3D2F; /* dark sage */
+  background-color: #2D4038; /* muted forest */
 }
 .dark .fact-card-3 {
-  background-color: #3D2D20; /* dark peach */
+  background-color: #3D3838; /* warm gray */
 }
 .dark .fact-card-4 {
-  background-color: #1A2D3D; /* dark blue */
+  background-color: #2D3640; /* slate */
 }

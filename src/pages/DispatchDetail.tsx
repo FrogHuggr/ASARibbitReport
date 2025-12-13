@@ -135,7 +135,7 @@ function FactsBlock({ section, colors }: { section: FactsSection; colors: Dispat
               </div>
 
               {/* Fact text */}
-              <p className="text-sm text-[#2D2D2D] dark:text-[#E5E5E5] leading-relaxed text-center">
+              <p className="text-sm text-[#2D2D2D] dark:text-white leading-relaxed text-center">
                 {fact.text}
               </p>
             </div>
