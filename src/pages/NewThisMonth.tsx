@@ -147,7 +147,7 @@ export function NewThisMonth() {
             </h2>
           </div>
           <p className="text-sm text-[#9CA3AF] dark:text-[#6B7280]">
-            Wild Decisions, Myth Busters, and Species Spotlight content will appear here as they're added.
+            Species Spotlight content will appear here as it's added.
           </p>
         </section>
       </div>

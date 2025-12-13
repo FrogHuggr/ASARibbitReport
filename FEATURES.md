@@ -284,6 +284,40 @@ Dedicated Conservation Status page explains each category with examples.
 
 ---
 
+## Glossary System
+
+Kid-friendly definitions for scientific, conservation, and geographic terms.
+
+### Data Structure
+
+- **58 terms** with definitions written for ages 9-12
+- **Three categories**: scientific, conservation, geographic
+- **Pronunciation guides** for difficult words (e.g., "am-FIB-ee-un" for amphibian)
+- **Helper functions** for lookups and filtering
+
+### Term Categories
+
+- **Scientific**: amphibian, ecosystem, endemic, metamorphosis, species, habitat, etc.
+- **Conservation**: biodiversity, Critically Endangered, habitat loss, restoration, sanctuary, etc.
+- **Geographic**: Andes, Himalayas, monsoon, Patagonia, Western Ghats, wetlands, etc.
+
+### Interactive Tooltips
+
+- **`<GlossaryTerm>` component**: Wraps individual terms with interactive tooltips
+- **`<GlossaryText>` component**: Automatically detects and wraps glossary terms in text blocks
+- **Visual styling**: Green dotted underline indicates clickable terms
+- **Tooltip content**: Shows term, pronunciation (if available), definition, and category badge
+- **Mobile**: Tap to show/hide definition tooltip
+- **Desktop**: Click to show/hide (with outside-click to dismiss)
+- **Smart positioning**: Tooltips appear above or below based on available screen space
+- **First-occurrence only**: Each term is only highlighted once per text block to avoid clutter
+
+### Future Enhancements
+
+- Optional dedicated Glossary page for browsing all terms alphabetically
+
+---
+
 ## Future Features (Coming Soon)
 
 ### Species Files

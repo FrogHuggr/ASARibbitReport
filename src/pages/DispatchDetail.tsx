@@ -5,6 +5,7 @@ import { CountryStamp } from '../components/ui/CountryStamp';
 import { StatusBadge } from '../components/ui/StatusBadge';
 import { ReadingProgress } from '../components/ui/ReadingProgress';
 import { BackToTop } from '../components/ui/BackToTop';
+import { GlossaryText } from '../components/GlossaryText';
 
 // Map icon names to Lucide components
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>> = {
@@ -60,7 +61,7 @@ function StoryBlock({ section, colors }: { section: StorySection; colors: Dispat
         style={{ backgroundColor: colors.secondary }}
       />
       <p className="text-[#2D2D2D] dark:text-[#E5E5E5] leading-relaxed mb-4">
-        {section.content}
+        <GlossaryText>{section.content}</GlossaryText>
       </p>
       {section.attribution && (
         <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] italic">
@@ -186,7 +187,7 @@ function AlertBlock({ section, colors }: { section: AlertSection; colors: Dispat
       )}
 
       <p className="text-[#2D2D2D] dark:text-[#E5E5E5] leading-relaxed">
-        {section.content}
+        <GlossaryText>{section.content}</GlossaryText>
       </p>
     </section>
   );
@@ -265,7 +266,7 @@ function ResearcherBlock({ section, colors }: { section: ResearcherSection; colo
       {/* Bio */}
       {researcher.bio && (
         <p className="text-sm text-[#4B5563] dark:text-[#D1D5DB] mb-4 leading-relaxed">
-          {researcher.bio}
+          <GlossaryText>{researcher.bio}</GlossaryText>
         </p>
       )}
 
@@ -301,7 +302,7 @@ function OrganizationBlock({ section, colors }: { section: OrganizationSection; 
         style={{ backgroundColor: colors.secondary }}
       />
       <p className="text-[#2D2D2D] dark:text-[#E5E5E5] leading-relaxed mb-4">
-        {section.content}
+        <GlossaryText>{section.content}</GlossaryText>
       </p>
       {section.image && (
         <div className="rounded-lg overflow-hidden">
