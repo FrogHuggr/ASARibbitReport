@@ -331,14 +331,14 @@ export function Home() {
 
       {/* DID YOU KNOW? Section */}
       <section className="px-4 pt-8 pb-4">
-        <div className="flex flex-col items-center text-center">
-          <div className="flex items-center gap-2 mb-2">
-            <Lightbulb size={16} className="text-[#F59E0B] flex-shrink-0" />
+        <div className="text-center mx-auto" style={{ maxWidth: '400px' }}>
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Lightbulb size={16} className="text-[#F59E0B]" />
             <span className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#9CA3AF]">
               Did you know?
             </span>
           </div>
-          <p className="text-[#4B5563] dark:text-[#D1D5DB] text-sm leading-relaxed w-full max-w-md px-4">
+          <p className="text-[#4B5563] dark:text-[#D1D5DB] text-sm leading-relaxed">
             {fact.text}
           </p>
         </div>

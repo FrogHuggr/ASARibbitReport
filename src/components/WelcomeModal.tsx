@@ -97,7 +97,7 @@ export function WelcomeModal() {
             </div>
 
             <p className="text-[#4B5563] dark:text-[#D1D5DB] mb-4">
-              I'm <span className="font-bold text-[#2D5A3D] dark:text-[#81C784]">MarshMellow</span>, your guide to the amazing world of frogs, toads, and salamanders!
+              I'm <span className="font-bold text-[#2D5A3D] dark:text-[#81C784]">MarshMellow</span>, your guide to the amazing world of amphibians!
             </p>
 
             {/* Install tip - device specific */}
