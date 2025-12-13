@@ -72,6 +72,7 @@ function StoryBlock({ section, colors }: { section: StorySection; colors: Dispat
           <img
             src={section.image.src}
             alt={section.image.alt}
+            loading="lazy"
             className="w-full h-auto"
           />
           {(section.image.caption || section.image.credit) && (
@@ -220,6 +221,7 @@ function ResearcherBlock({ section, colors }: { section: ResearcherSection; colo
           <img
             src={researcher.photo.src}
             alt={researcher.photo.alt}
+            loading="lazy"
             className="w-20 h-20 rounded-full flex-shrink-0 object-cover"
           />
         ) : (
@@ -309,6 +311,7 @@ function OrganizationBlock({ section, colors }: { section: OrganizationSection; 
           <img
             src={section.image.src}
             alt={section.image.alt}
+            loading="lazy"
             className="w-full h-auto"
           />
           {section.image.credit && (

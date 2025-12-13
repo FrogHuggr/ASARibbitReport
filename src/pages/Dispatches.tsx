@@ -121,6 +121,7 @@ export function Dispatches() {
                   <img
                     src={dispatch.heroImage.src}
                     alt={dispatch.heroImage.alt}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   {/* IUCN Status Badge */}
@@ -171,6 +172,7 @@ export function Dispatches() {
                         <img
                           src={researcher.photo.src}
                           alt={researcher.name}
+                          loading="lazy"
                           className="w-7 h-7 rounded-full object-cover flex-shrink-0"
                         />
                       )}
