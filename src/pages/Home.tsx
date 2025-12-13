@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, MapPin, Lightbulb } from 'lucide-react';
+import { ChevronRight, MapPin, Lightbulb, Camera } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { mythBusterCards } from '../data/mythbusters';
 import { dilemmas } from '../data/wildDecisions';
@@ -27,8 +27,8 @@ export function Home() {
         {/* Dark gradient overlay for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
-        {/* Species caption - bottom left of image */}
-        <div className="absolute bottom-24 left-4">
+        {/* Species caption and photographer credit - bottom left of image */}
+        <div className="absolute bottom-24 left-4 flex flex-col gap-1">
           <div
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-white text-sm font-medium"
             style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
@@ -38,16 +38,13 @@ export function Home() {
               {heroImage.species} | {heroImage.location}
             </span>
           </div>
-        </div>
-
-        {/* Photographer credit - bottom right of image */}
-        <div className="absolute bottom-24 right-4">
-          <span
-            className="text-white/80 text-xs"
-            style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}
+          <div
+            className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md text-white/90 text-xs"
+            style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}
           >
-            📷 {heroImage.photographer}
-          </span>
+            <Camera size={12} className="text-white/70" />
+            <span>{heroImage.photographer}</span>
+          </div>
         </div>
 
         {/* Text overlay - positioned bottom-left */}
