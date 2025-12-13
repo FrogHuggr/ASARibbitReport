@@ -63,7 +63,11 @@ export function Settings() {
             className="flex items-center justify-between p-4 bg-white dark:bg-[#262626] rounded-xl border border-[#E5E7EB] dark:border-[#374151] hover:border-[#2D5A3D] dark:hover:border-[#6B9B7A] transition-colors"
           >
             <div className="flex items-center gap-3">
-              <span className="text-2xl">🐸</span>
+              <img
+                src="/images/marshmellow/marshmellow-searching.png"
+                alt="MarshMellow"
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-medium text-[#2D2D2D] dark:text-white">Meet MarshMellow</span>
             </div>
             <ChevronRight size={20} className="text-[#9CA3AF]" />
@@ -74,7 +78,11 @@ export function Settings() {
             className="flex items-center justify-between p-4 bg-white dark:bg-[#262626] rounded-xl border border-[#E5E7EB] dark:border-[#374151] hover:border-[#2D5A3D] dark:hover:border-[#6B9B7A] transition-colors"
           >
             <div className="flex items-center gap-3">
-              <span className="text-2xl">📊</span>
+              <img
+                src="/images/marshmellow/marshmellow-thinking6.png"
+                alt="MarshMellow thinking"
+                className="w-10 h-10 object-contain"
+              />
               <span className="font-medium text-[#2D2D2D] dark:text-white">Conservation Status Guide</span>
             </div>
             <ChevronRight size={20} className="text-[#9CA3AF]" />
