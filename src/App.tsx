@@ -9,6 +9,9 @@ import { MythBusters } from './pages/MythBusters';
 import { MythBusterDetail } from './pages/MythBusterDetail';
 import { RealStory } from './pages/RealStory';
 import { Settings } from './pages/Settings';
+import { NewThisMonth } from './pages/NewThisMonth';
+import { MarshMellowPicks } from './pages/MarshMellowPicks';
+import { MostPopular } from './pages/MostPopular';
 
 function App() {
   return (
@@ -24,6 +27,10 @@ function App() {
             <Route path="/myths/:id" element={<MythBusterDetail />} />
             <Route path="/real-story/:id" element={<RealStory />} />
             <Route path="/settings" element={<Settings />} />
+            {/* Collection pages */}
+            <Route path="/new" element={<NewThisMonth />} />
+            <Route path="/picks" element={<MarshMellowPicks />} />
+            <Route path="/popular" element={<MostPopular />} />
           </Route>
         </Routes>
       </BrowserRouter>

@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Map, Search, FlaskConical, Gamepad2, ChevronRight } from 'lucide-react';
+import { Map, Search, FlaskConical, Zap, Sparkles, ChevronRight } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { realStories } from '../data/realStory';
 
@@ -34,6 +34,16 @@ const contentTypes: ContentTypeCard[] = [
     available: true,
   },
   {
+    id: 'wild-decisions',
+    icon: Zap,
+    title: 'Wild Decisions',
+    description: 'What would you do?',
+    count: null,
+    route: '/wild-decisions',
+    available: false,
+    comingSoon: true,
+  },
+  {
     id: 'myth-busters',
     icon: FlaskConical,
     title: 'Myth Busters',
@@ -44,12 +54,12 @@ const contentTypes: ContentTypeCard[] = [
     comingSoon: true,
   },
   {
-    id: 'activities',
-    icon: Gamepad2,
-    title: 'Activities',
-    description: 'Quizzes, games, and challenges',
+    id: 'species-spotlight',
+    icon: Sparkles,
+    title: 'Species Spotlight',
+    description: 'Meet amazing amphibians',
     count: null,
-    route: '/activities',
+    route: '/species',
     available: false,
     comingSoon: true,
   },
@@ -147,7 +157,7 @@ export function Explore() {
           Explore
         </h1>
         <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-2">
-          Discover stories, facts, and adventures
+          Discover amphibian stories from around the world
         </p>
       </header>
 

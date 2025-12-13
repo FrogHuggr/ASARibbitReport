@@ -50,23 +50,27 @@ export function Settings() {
       {/* Divider */}
       <hr className="border-[#E5E7EB] dark:border-[#374151] my-6" />
 
-      {/* About Section */}
+      {/* About The Ribbit Report */}
       <section className="mb-8">
         <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white mb-4">
-          About
+          About The Ribbit Report
         </h2>
-        <div className="space-y-4 text-[#2D2D2D] dark:text-[#E5E5E5]">
+        <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
           <p>
-            <strong>The Ribbit Report</strong> is a digital magazine created by the{' '}
-            <span className="text-[#2D5A3D] dark:text-[#81C784] font-semibold">
+            The Ribbit Report is an educational app from the{' '}
+            <span className="text-[#2D5A3D] dark:text-[#6B9B7A] font-medium">
               Amphibian Survival Alliance
-            </span>{' '}
-            to inspire the next generation of amphibian conservationists.
+            </span>
+            , designed to connect kids ages 9-12 with the amazing world of amphibians and the scientists working to protect them.
           </p>
           <p>
-            Each issue features field reports from researchers around the world, fun facts
-            about amazing frog species, and interactive content to help you learn about
-            amphibian conservation.
+            Through Dispatches from the Field, you'll meet real researchers from the Future Leaders of Amphibian Conservation program. Through Wild Decisions and Myth Busters, you'll learn to think like a conservationist.
+          </p>
+          <p>
+            Amphibians — frogs, toads, salamanders, newts, and caecilians — are among the most threatened animals on Earth. More than 40% of amphibian species are at risk of extinction. But there's hope. Scientists, communities, and young people around the world are working together to protect them.
+          </p>
+          <p>
+            The Ribbit Report is free and always will be. New content is added regularly.
           </p>
         </div>
       </section>
@@ -74,64 +78,34 @@ export function Settings() {
       {/* Divider */}
       <hr className="border-[#E5E7EB] dark:border-[#374151] my-6" />
 
-      {/* Contact Section */}
+      {/* About ASA */}
       <section className="mb-8">
         <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white mb-4">
-          Contact
+          About the Amphibian Survival Alliance
         </h2>
-        <p className="text-[#2D2D2D] dark:text-[#E5E5E5] mb-3">
-          Have questions or feedback? We'd love to hear from you!
-        </p>
-        <a
-          href="mailto:ribbitreport@amphibians.org"
-          className="inline-flex items-center gap-2 text-[#2D5A3D] dark:text-[#81C784] font-semibold hover:underline"
-        >
-          <svg
-            width="20"
-            height="20"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
+        <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
+          <p>
+            The Amphibian Survival Alliance (ASA) is a global partnership working to save amphibians and their habitats. We coordinate conservation efforts, support research, and inspire the next generation of amphibian champions.
+          </p>
+          <a
+            href="https://www.amphibians.org"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-[#2D5A3D] dark:text-[#6B9B7A] font-medium hover:underline"
           >
-            <rect width="20" height="16" x="2" y="4" rx="2" />
-            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-          </svg>
-          ribbitreport@amphibians.org
-        </a>
-      </section>
-
-      {/* Divider */}
-      <hr className="border-[#E5E7EB] dark:border-[#374151] my-6" />
-
-      {/* Credits */}
-      <section className="mb-8">
-        <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white mb-4">
-          Credits
-        </h2>
-        <div className="space-y-2 text-sm text-[#6B7280] dark:text-[#9CA3AF]">
-          <p>
-            <strong>Mascot:</strong> MarshMellow the Frog
-          </p>
-          <p>
-            <strong>Content:</strong> Amphibian Survival Alliance Research Team
-          </p>
-          <p>
-            <strong>Design:</strong> Built with care for young explorers
-          </p>
+            Learn more at amphibians.org
+          </a>
         </div>
       </section>
 
-      {/* App Version */}
-      <div className="text-center text-sm text-[#6B7280] dark:text-[#9CA3AF]">
-        Version 1.0.0
-      </div>
-
-      {/* Copyright */}
-      <div className="text-center text-xs text-[#9CA3AF] dark:text-[#6B7280] mt-4">
-        © 2025 Amphibian Survival Alliance
+      {/* Version & Copyright */}
+      <div className="text-center space-y-2 pt-4">
+        <p className="text-[13px] text-[#808080] dark:text-[#808080]">
+          Version 1.0.0
+        </p>
+        <p className="text-[13px] text-[#808080] dark:text-[#808080]">
+          © 2025 Amphibian Survival Alliance
+        </p>
       </div>
     </div>
   );

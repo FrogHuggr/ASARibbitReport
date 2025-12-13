@@ -1,46 +1,42 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ChevronDown, X } from 'lucide-react';
+import { ChevronRight, X, Sparkles } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 
-// MarshMellow welcome content
-const welcomeContent = {
-  short: {
-    greeting: "Hello, explorers!",
-    body: "I'm MarshMellow — your travel buddy through the wide, wonderful world of amphibians! This issue, we're meeting young conservationists protecting frogs across the globe. Ready to hop in?",
-    signature: "— MarshMellow",
-  },
-  full: {
-    greeting: "Hello, explorers!",
-    paragraphs: [
-      "It's me, MarshMellow — your travel buddy through the wide, wonderful world of amphibians! This issue, we're hopping across borders, continents, and cultures to find out just how many stories amphibians can tell.",
-      "From ancient myths that made them rain-bringers to scientists studying their secret superpowers, amphibians have always had a way of connecting people and places. And now, through our Postcards from the Field, you'll meet the next generation of explorers — young conservationists who are protecting amphibians in their own countries and proving that passion for wildlife has no borders!",
-      "But adventure isn't just out there — it's right where you are. Even your backyard or neighborhood pond holds mysteries waiting to be discovered! Maybe you'll hear a new chorus after rain, or spot tiny tadpoles swimming in the shallows. Every sound, splash, and shadow is part of a much bigger story — one that connects your home to wetlands, forests, and habitats all around the globe.",
-      "So grab your explorer's notebook, open your ears, and get ready to experience the world the way an amphibian does — connected, curious, and full of surprises. The adventure starts here, and it starts with you!"
-    ],
-    signOff: "Hop on,",
-    signature: "MarshMellow"
-  }
+// First-time welcome content
+const firstTimeWelcome = {
+  greeting: "Hello, explorer!",
+  paragraphs: [
+    "I'm MarshMellow — your guide to the wide, wonderful world of amphibians!",
+    "Here you'll meet real scientists protecting frogs, toads, salamanders, and more. You'll explore Wild Decisions, bust myths, and discover new species.",
+    "New adventures are added all the time, so keep checking back!"
+  ],
+  cta: "Let's go!"
 };
 
-// Bottom sheet modal for full letter
-function WelcomeModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
+// First-time welcome modal (shown only once)
+function FirstTimeWelcomeModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
   if (!isOpen) return null;
+
+  const handleClose = () => {
+    localStorage.setItem('ribbit-welcomed', 'true');
+    onClose();
+  };
 
   return (
     <>
       {/* Scrim */}
       <div
         className="fixed inset-0 bg-black/50 z-50 animate-fade-in"
-        onClick={onClose}
+        onClick={handleClose}
       />
       {/* Modal */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-white dark:bg-[#1A1A1A] rounded-t-3xl max-h-[85vh] overflow-y-auto animate-slide-up">
+      <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#FDFBF7] rounded-t-3xl max-h-[85vh] overflow-y-auto animate-slide-up">
         {/* Close button */}
-        <div className="sticky top-0 bg-white dark:bg-[#1A1A1A] p-4 flex justify-end border-b border-gray-100 dark:border-gray-800">
+        <div className="sticky top-0 bg-[#FDFBF7] p-4 flex justify-end">
           <button
-            onClick={onClose}
-            className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-500 hover:text-gray-700 dark:hover:text-gray-300"
+            onClick={handleClose}
+            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:text-gray-700"
             aria-label="Close"
           >
             <X size={20} />
@@ -48,7 +44,7 @@ function WelcomeModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
         </div>
 
         {/* Content */}
-        <div className="p-6 pt-4">
+        <div className="p-6 pt-0 text-center">
           {/* MarshMellow image */}
           <div className="flex justify-center mb-6">
             <img
@@ -58,26 +54,27 @@ function WelcomeModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
             />
           </div>
 
-          {/* Letter content */}
-          <h2 className="font-display text-2xl font-bold text-[#2D5A3D] dark:text-[#81C784] mb-4">
-            {welcomeContent.full.greeting}
+          {/* Welcome content */}
+          <h2 className="font-display text-2xl font-bold text-[#2D5A3D] mb-4">
+            {firstTimeWelcome.greeting}
           </h2>
 
-          <div className="space-y-4 text-[#374151] dark:text-[#D1D5DB] leading-relaxed">
-            {welcomeContent.full.paragraphs.map((paragraph, idx) => (
+          <div className="space-y-4 text-[#374151] leading-relaxed text-left">
+            {firstTimeWelcome.paragraphs.map((paragraph, idx) => (
               <p key={idx}>{paragraph}</p>
             ))}
           </div>
 
-          {/* Sign off */}
-          <div className="mt-6 pt-4">
-            <p className="text-[#374151] dark:text-[#D1D5DB] italic">
-              {welcomeContent.full.signOff}
-            </p>
-            <p className="font-display text-lg font-semibold text-[#2D5A3D] dark:text-[#81C784] italic">
-              {welcomeContent.full.signature}
-            </p>
-          </div>
+          {/* Ready prompt */}
+          <p className="text-[#6B7280] mt-6 mb-4">Ready to start exploring?</p>
+
+          {/* CTA Button */}
+          <button
+            onClick={handleClose}
+            className="w-full py-4 bg-[#2D5A3D] hover:bg-[#1f4a2f] text-white font-display font-bold text-lg rounded-xl transition-colors"
+          >
+            {firstTimeWelcome.cta}
+          </button>
         </div>
       </div>
     </>
@@ -85,7 +82,15 @@ function WelcomeModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => voi
 }
 
 export function Home() {
-  const [isWelcomeOpen, setIsWelcomeOpen] = useState(false);
+  const [showFirstTimeWelcome, setShowFirstTimeWelcome] = useState(false);
+
+  // Check if this is a first-time user
+  useEffect(() => {
+    const hasSeenWelcome = localStorage.getItem('ribbit-welcomed');
+    if (!hasSeenWelcome) {
+      setShowFirstTimeWelcome(true);
+    }
+  }, []);
 
   return (
     <div className="pb-10">
@@ -107,51 +112,49 @@ export function Home() {
             className="text-xs font-medium uppercase tracking-widest mb-2"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
-            Issue 2 • 2025
+            The Ribbit Report
           </p>
           <h1
             className="font-display text-3xl font-bold leading-tight"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.4)' }}
           >
-            Postcards from the Field
+            Your field guide to amphibian adventures
           </h1>
         </div>
       </section>
 
-      {/* MARSHMELLOW WELCOME - Floating card overlapping hero */}
+      {/* WHAT'S NEW CARD - Small floating card overlapping hero */}
       <section className="px-4 -mt-16 relative z-10 mb-6">
-        <button
-          onClick={() => setIsWelcomeOpen(true)}
-          className="w-full text-left bg-[#E8F5E9] dark:bg-[#2d2d2d] rounded-2xl p-5 flex gap-4 items-start transition-transform active:scale-[0.99] dark:border dark:border-[#404040]"
+        <Link
+          to="/new"
+          className="w-full text-left bg-[#E8F5E9] dark:bg-[#2d2d2d] rounded-2xl p-4 flex gap-3 items-center transition-transform active:scale-[0.99] dark:border dark:border-[#404040]"
           style={{
             boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
           }}
         >
           <img
             src="/images/marshmellow/marshmellow-wave.png"
-            alt="MarshMellow the frog explorer waving hello"
-            className="w-20 h-20 flex-shrink-0 object-contain"
+            alt="MarshMellow"
+            className="w-12 h-12 flex-shrink-0 object-contain"
           />
-          <div className="flex-1 pt-1">
-            <p className="font-display font-bold text-lg text-[#2D5A3D] dark:text-[#81C784] mb-1">
-              {welcomeContent.short.greeting}
-            </p>
-            <p className="text-[#374151] dark:text-[#D1D5DB] text-sm leading-relaxed">
-              {welcomeContent.short.body}
-            </p>
-            <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] italic mt-2">
-              {welcomeContent.short.signature}
-            </p>
-            {/* Read more link */}
-            <p className="text-sm font-medium text-[#4A7B5C] dark:text-[#81C784] mt-3 flex items-center gap-1">
-              Read more <ChevronDown size={16} />
+          <div className="flex-1">
+            <div className="flex items-center gap-2 mb-0.5">
+              <Sparkles size={14} className="text-[#F4B942]" />
+              <span className="text-xs font-semibold text-[#F4B942] uppercase tracking-wide">New content</span>
+            </div>
+            <p className="text-[#374151] dark:text-[#D1D5DB] text-sm leading-snug">
+              {dispatches.length} dispatches and counting!
             </p>
           </div>
-        </button>
+          <ChevronRight size={20} className="text-[#9CA3AF] flex-shrink-0" />
+        </Link>
       </section>
 
-      {/* Welcome Modal */}
-      <WelcomeModal isOpen={isWelcomeOpen} onClose={() => setIsWelcomeOpen(false)} />
+      {/* First-Time Welcome Modal */}
+      <FirstTimeWelcomeModal
+        isOpen={showFirstTimeWelcome}
+        onClose={() => setShowFirstTimeWelcome(false)}
+      />
 
       {/* CONTENT CARDS */}
       <section className="px-4 space-y-4">
@@ -196,7 +199,7 @@ export function Home() {
                     Dispatches
                   </h3>
                   <p className="text-white/90 text-sm">
-                    {dispatches.length} adventures from around the world
+                    {dispatches.length} adventures and counting...
                   </p>
                 </div>
                 <ChevronRight
