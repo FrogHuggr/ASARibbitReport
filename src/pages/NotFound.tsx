@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Home, Compass, ArrowLeft } from 'lucide-react';
+import { Home, Compass } from 'lucide-react';
 import { triggerHaptic } from '../utils/haptics';
 
 export function NotFound() {
