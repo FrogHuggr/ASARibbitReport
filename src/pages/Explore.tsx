@@ -1,10 +1,21 @@
-import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ChevronRight, Shuffle } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { dilemmas } from '../data/wildDecisions';
 import { mythBusterCards } from '../data/mythbusters';
+import { triggerHaptic } from '../utils/haptics';
 
 export function Explore() {
+  const navigate = useNavigate();
+
+  // Navigate to a random dispatch
+  const handleSurpriseMe = () => {
+    triggerHaptic('medium');
+    const randomIndex = Math.floor(Math.random() * dispatches.length);
+    const randomDispatch = dispatches[randomIndex];
+    navigate(`/dispatches/${randomDispatch.id}`);
+  };
+
   return (
     <div className="pb-10">
       {/* Header with MarshMellow */}
@@ -177,29 +188,44 @@ export function Explore() {
             </div>
           </Link>
 
-          {/* SPECIES SPOTLIGHT - Coming Soon */}
-          <div
-            className="relative h-40 rounded-2xl overflow-hidden opacity-60"
-            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.05)' }}
+          {/* SURPRISE ME - Fun random dispatch picker */}
+          <button
+            onClick={handleSurpriseMe}
+            className="block group w-full text-left"
           >
-            {/* Blue-gray gradient background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#64748B] to-[#475569]" />
+            <div
+              className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+              style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
+            >
+              {/* Fun gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#10B981] via-[#059669] to-[#047857]" />
 
-            {/* Content */}
-            <div className="absolute inset-0 p-3 flex flex-col justify-between">
-              <span className="self-start text-[10px] font-semibold uppercase tracking-wider text-white/70 bg-white/20 px-2 py-0.5 rounded">
-                Coming Soon
-              </span>
-              <div>
+              {/* Animated sparkle pattern */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute top-3 left-4 text-2xl animate-pulse">*</div>
+                <div className="absolute top-6 right-5 text-lg animate-pulse delay-100">*</div>
+                <div className="absolute bottom-10 left-8 text-xl animate-pulse delay-200">*</div>
+                <div className="absolute bottom-14 right-3 text-sm animate-pulse">*</div>
+              </div>
+
+              {/* Shuffle icon */}
+              <div className="absolute inset-0 flex items-center justify-center -mt-4">
+                <div className="w-16 h-16 rounded-full bg-white/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Shuffle size={28} className="text-white" />
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="absolute inset-0 p-3 flex flex-col justify-end">
                 <h3 className="font-display text-lg font-bold text-white leading-tight">
-                  Species Spotlight
+                  Surprise Me!
                 </h3>
-                <p className="text-white/70 text-xs mt-0.5">
-                  Meet amazing amphibians
+                <p className="text-white/80 text-xs mt-0.5">
+                  Random adventure
                 </p>
               </div>
             </div>
-          </div>
+          </button>
         </div>
       </section>
 

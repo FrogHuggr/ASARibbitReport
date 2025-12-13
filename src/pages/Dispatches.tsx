@@ -1,7 +1,19 @@
-import { Link } from 'react-router-dom';
-import { MapPin } from 'lucide-react';
+import { useState, useMemo } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { MapPin, Shuffle } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import type { ResearcherSection } from '../data/dispatches';
+import { triggerHaptic } from '../utils/haptics';
+
+// Region filter configuration
+type RegionFilter = 'all' | 'asia' | 'americas' | 'africa';
+
+const regionFilters: { id: RegionFilter; label: string; countries: string[] }[] = [
+  { id: 'all', label: 'All', countries: [] },
+  { id: 'asia', label: 'Asia', countries: ['India', 'Nepal'] },
+  { id: 'americas', label: 'Americas', countries: ['Argentina', 'United States', 'Panama', 'Peru'] },
+  { id: 'africa', label: 'Africa', countries: ['Ghana'] },
+];
 
 // Helper to get researcher from dispatch sections
 function getResearcher(dispatch: (typeof dispatches)[0]) {
@@ -12,22 +24,91 @@ function getResearcher(dispatch: (typeof dispatches)[0]) {
 }
 
 export function Dispatches() {
+  const navigate = useNavigate();
+  const [activeFilter, setActiveFilter] = useState<RegionFilter>('all');
+
+  // Filter dispatches based on selected region
+  const filteredDispatches = useMemo(() => {
+    if (activeFilter === 'all') return dispatches;
+    const regionConfig = regionFilters.find((r) => r.id === activeFilter);
+    if (!regionConfig) return dispatches;
+    return dispatches.filter((d) => regionConfig.countries.includes(d.location.country));
+  }, [activeFilter]);
+
+  // Get count per region for display
+  const getRegionCount = (regionId: RegionFilter) => {
+    if (regionId === 'all') return dispatches.length;
+    const regionConfig = regionFilters.find((r) => r.id === regionId);
+    if (!regionConfig) return 0;
+    return dispatches.filter((d) => regionConfig.countries.includes(d.location.country)).length;
+  };
+
+  // Surprise me - navigate to random dispatch
+  const handleSurpriseMe = () => {
+    triggerHaptic('medium');
+    const randomIndex = Math.floor(Math.random() * dispatches.length);
+    const randomDispatch = dispatches[randomIndex];
+    navigate(`/dispatches/${randomDispatch.id}`);
+  };
+
+  const handleFilterChange = (filterId: RegionFilter) => {
+    triggerHaptic('light');
+    setActiveFilter(filterId);
+  };
+
   return (
     <div className="pb-6">
       {/* Header */}
-      <header className="container-app px-4 pt-6 pb-8">
-        <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white">
-          Dispatches
-        </h1>
-        <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-2">
-          {dispatches.length} adventures and counting...
-        </p>
+      <header className="container-app px-4 pt-6 pb-4">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white">
+              Dispatches
+            </h1>
+            <p className="text-[#6B7280] dark:text-[#9CA3AF] mt-1">
+              {filteredDispatches.length} adventure{filteredDispatches.length !== 1 ? 's' : ''}{activeFilter !== 'all' ? ` in ${regionFilters.find(r => r.id === activeFilter)?.label}` : ''}
+            </p>
+          </div>
+
+          {/* Surprise Me Button */}
+          <button
+            onClick={handleSurpriseMe}
+            className="flex items-center gap-2 px-4 py-2 bg-[#2D5A3D] hover:bg-[#234A31] text-white rounded-full font-medium text-sm transition-colors active:scale-95"
+          >
+            <Shuffle size={16} />
+            <span className="hidden sm:inline">Surprise me!</span>
+          </button>
+        </div>
+
+        {/* Region Filter Pills */}
+        <div className="flex gap-2 mt-4 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide">
+          {regionFilters.map((region) => {
+            const count = getRegionCount(region.id);
+            const isActive = activeFilter === region.id;
+            return (
+              <button
+                key={region.id}
+                onClick={() => handleFilterChange(region.id)}
+                className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  isActive
+                    ? 'bg-[#2D5A3D] text-white'
+                    : 'bg-[#F3F4F6] dark:bg-[#374151] text-[#4B5563] dark:text-[#D1D5DB] hover:bg-[#E5E7EB] dark:hover:bg-[#4B5563]'
+                }`}
+              >
+                {region.label}
+                <span className={`ml-1.5 ${isActive ? 'text-white/70' : 'text-[#9CA3AF]'}`}>
+                  {count}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </header>
 
       {/* Grid of Cards */}
       <section className="container-app px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {dispatches.map((dispatch) => {
+          {filteredDispatches.map((dispatch) => {
             const researcher = getResearcher(dispatch);
             return (
               <Link

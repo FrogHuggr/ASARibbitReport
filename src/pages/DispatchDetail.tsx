@@ -3,6 +3,8 @@ import { ArrowLeft, MapPin, AlertTriangle, Egg, Footprints, EyeOff, Volume2, Dro
 import { getDispatchById, type Dispatch, type DispatchSection, type StorySection, type FactsSection, type AlertSection, type ResearcherSection, type OrganizationSection, type LinksSection } from '../data/dispatches';
 import { CountryStamp } from '../components/ui/CountryStamp';
 import { StatusBadge } from '../components/ui/StatusBadge';
+import { ReadingProgress } from '../components/ui/ReadingProgress';
+import { BackToTop } from '../components/ui/BackToTop';
 
 // Map icon names to Lucide components
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>> = {
@@ -408,6 +410,12 @@ export function DispatchDetail() {
 
   return (
     <div className="pb-6 w-full">
+      {/* Reading Progress Bar */}
+      <ReadingProgress color={dispatch.colors.primary} />
+
+      {/* Back To Top Button */}
+      <BackToTop color={dispatch.colors.primary} />
+
       {/* Back Button */}
       <div className="container-app px-4 py-4">
         <Link
