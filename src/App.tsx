@@ -7,6 +7,8 @@ import { Dispatches } from './pages/Dispatches';
 import { DispatchDetail } from './pages/DispatchDetail';
 import { MythBusters } from './pages/MythBusters';
 import { RealStory } from './pages/RealStory';
+import { WildDecisions } from './pages/WildDecisions';
+import { WildDecisionDetail } from './pages/WildDecisionDetail';
 import { Settings } from './pages/Settings';
 import { NewThisMonth } from './pages/NewThisMonth';
 import { MarshMellowPicks } from './pages/MarshMellowPicks';
@@ -24,6 +26,8 @@ function App() {
             <Route path="/dispatches/:id" element={<DispatchDetail />} />
             <Route path="/myths" element={<MythBusters />} />
             <Route path="/real-story/:id" element={<RealStory />} />
+            <Route path="/wild-decisions" element={<WildDecisions />} />
+            <Route path="/wild-decisions/:slug" element={<WildDecisionDetail />} />
             <Route path="/settings" element={<Settings />} />
             {/* Collection pages */}
             <Route path="/new" element={<NewThisMonth />} />

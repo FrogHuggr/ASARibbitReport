@@ -37,7 +37,7 @@ const chipColors: Record<string, { bg: string; text: string; darkBg: string }> =
 // Landing page with MarshMellow intro
 function MythBustersLanding({ onStart }: { onStart: () => void }) {
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-8 text-center">
+    <div className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-8">
       {/* MarshMellow */}
       <div className="mb-6">
         <img
@@ -48,20 +48,23 @@ function MythBustersLanding({ onStart }: { onStart: () => void }) {
       </div>
 
       {/* Title and intro */}
-      <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white mb-4">
+      <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white mb-4 text-center">
         Myth Busters
       </h1>
-      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-lg max-w-xs mb-2">
-        Think you know amphibians? Let's find out!
+      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-lg mb-2 text-center px-4">
+        Think you know amphibians?
       </p>
-      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-sm max-w-xs mb-8">
+      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-lg mb-6 text-center px-4">
+        Let's find out!
+      </p>
+      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-sm mb-8 text-center px-4">
         Tap through {mythBusterCards.length} cards and test what you think you know.
       </p>
 
-      {/* Start button */}
+      {/* Start button - vibrant purple to match Myth Busters branding */}
       <button
         onClick={onStart}
-        className="bg-[#2D5A3D] hover:bg-[#234A31] text-white font-bold py-4 px-10 rounded-full text-xl transition-colors shadow-lg"
+        className="bg-[#7C3AED] hover:bg-[#6D28D9] active:scale-95 text-white font-bold py-5 px-12 rounded-full text-2xl transition-all shadow-xl border-4 border-[#A78BFA]/50"
       >
         Let's Go!
       </button>

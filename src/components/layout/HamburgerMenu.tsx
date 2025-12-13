@@ -71,7 +71,7 @@ export function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
           <div className="space-y-0">
             <MenuItem to="/dispatches" label="Dispatches" onClose={onClose} />
             <MenuItem to="/real-story/frogs-vs-toads" label="The Real Story" onClose={onClose} />
-            <MenuItem to="/wild-decisions" label="Wild Decisions" onClose={onClose} disabled />
+            <MenuItem to="/wild-decisions" label="Wild Decisions" onClose={onClose} />
             <MenuItem to="/myths" label="Myth Busters" onClose={onClose} />
             <MenuItem to="/species" label="Species Spotlight" onClose={onClose} disabled />
           </div>

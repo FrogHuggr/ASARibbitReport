@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ChevronRight, MapPin } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { mythBusterCards } from '../data/mythbusters';
+import { dilemmas } from '../data/wildDecisions';
 import { getRandomHeroImage } from '../data/heroImages';
 
 export function Home() {
@@ -255,6 +256,56 @@ export function Home() {
                   </h3>
                   <p className="text-white/90 text-sm">
                     {mythBusterCards.length} myths to bust
+                  </p>
+                </div>
+                <ChevronRight
+                  size={28}
+                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
+                />
+              </div>
+            </div>
+
+            {/* Hover shadow enhancement */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl"
+              style={{
+                boxShadow: '0 12px 32px rgba(0,0,0,0.2)',
+              }}
+            />
+          </div>
+        </Link>
+
+        {/* WILD DECISIONS CARD - Illustrated map background */}
+        <Link to="/wild-decisions" className="block group">
+          <div
+            className="relative h-48 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+            }}
+          >
+            {/* Illustrated map background */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/wilddecision/wilddecision1.jpg)',
+              }}
+            />
+
+            {/* Dark gradient overlay */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+              <div className="flex items-end justify-between">
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-white mb-1">
+                    Wild Decisions
+                  </h3>
+                  <p className="text-white/90 text-sm">
+                    Tiny dilemmas. Big thinking.
+                  </p>
+                  <p className="text-white/70 text-xs mt-1">
+                    {dilemmas.length} scenarios to explore
                   </p>
                 </div>
                 <ChevronRight
