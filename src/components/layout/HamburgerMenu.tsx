@@ -73,7 +73,8 @@ export function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
             <MenuItem to="/real-story/frogs-vs-toads" label="The Real Story" onClose={onClose} />
             <MenuItem to="/wild-decisions" label="Wild Decisions" onClose={onClose} />
             <MenuItem to="/myths" label="Myth Busters" onClose={onClose} />
-            <MenuItem to="/species" label="Species Spotlight" onClose={onClose} disabled />
+            <MenuItem to="/species" label="Species Files" onClose={onClose} disabled />
+            <MenuItem to="/toolkit" label="Conservation Toolkit" onClose={onClose} disabled />
           </div>
 
           {/* Divider */}
