@@ -61,8 +61,8 @@ export function WelcomeModal() {
       />
 
       {/* Modal */}
-      <div className="animate-scale-in z-[100] w-[calc(100%-2rem)] max-w-sm">
-        <div className="bg-white dark:bg-[#242424] rounded-3xl shadow-2xl overflow-hidden">
+      <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 pointer-events-none">
+        <div className="bg-white dark:bg-[#242424] rounded-3xl shadow-2xl overflow-hidden w-full max-w-sm pointer-events-auto animate-fade-in relative">
           {/* Close button */}
           <button
             onClick={handleClose}
@@ -138,3 +138,4 @@ export function WelcomeModal() {
     </>
   );
 }
+
