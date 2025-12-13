@@ -12,32 +12,35 @@ export function Settings() {
         </h1>
       </header>
 
-      {/* Dark Mode Toggle */}
+      {/* Appearance Toggle */}
       <div className="card mb-6">
+        <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white mb-4">
+          Appearance
+        </h2>
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">
             <span className="text-2xl">{isDark ? '🌙' : '☀️'}</span>
             <div>
               <p className="font-semibold text-[#2D2D2D] dark:text-white">
-                Dark Mode
+                Light Mode
               </p>
               <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
-                {isDark ? 'Currently on' : 'Currently off'}
+                {isDark ? 'Off (using dark theme)' : 'On (using light theme)'}
               </p>
             </div>
           </div>
 
-          {/* Toggle Switch */}
+          {/* Toggle Switch - now toggles light mode on/off */}
           <button
             onClick={toggleDark}
             className={`relative w-14 h-8 rounded-full transition-colors ${
-              isDark ? 'bg-[#2D5A3D]' : 'bg-[#E5E7EB]'
+              !isDark ? 'bg-[#2D5A3D]' : 'bg-[#404040]'
             }`}
-            aria-label="Toggle dark mode"
+            aria-label="Toggle light mode"
           >
             <span
               className={`absolute top-1 w-6 h-6 rounded-full bg-white shadow-md transition-transform ${
-                isDark ? 'translate-x-7' : 'translate-x-1'
+                !isDark ? 'translate-x-7' : 'translate-x-1'
               }`}
             />
           </button>

@@ -122,9 +122,9 @@ export function Home() {
       <section className="px-4 -mt-16 relative z-10 mb-6">
         <button
           onClick={() => setIsWelcomeOpen(true)}
-          className="w-full text-left bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-2xl p-5 flex gap-4 items-start transition-transform active:scale-[0.99]"
+          className="w-full text-left bg-[#E8F5E9] dark:bg-[#2d2d2d] rounded-2xl p-5 flex gap-4 items-start transition-transform active:scale-[0.99] dark:border dark:border-[#404040]"
           style={{
-            boxShadow: '0 8px 24px rgba(0,0,0,0.12)',
+            boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
           }}
         >
           <img
@@ -163,12 +163,12 @@ export function Home() {
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
             }}
           >
-            {/* 3-face collage background */}
+            {/* 3-face collage background - different species than hero to avoid repetition */}
             <div className="absolute inset-0 flex">
               <div
                 className="flex-1 bg-cover bg-center"
                 style={{
-                  backgroundImage: 'url(/images/dispatches/india-resplendent-grass-frog/hero.jpeg)',
+                  backgroundImage: 'url(/images/dispatches/peru-lake-junin-frog/hero.jpg)',
                 }}
               />
               <div
@@ -180,7 +180,7 @@ export function Home() {
               <div
                 className="flex-1 bg-cover bg-center"
                 style={{
-                  backgroundImage: 'url(/images/dispatches/panama-spiny-headed-treefrog/hero.jpeg)',
+                  backgroundImage: 'url(/images/dispatches/ghana-afiabirago-puddle-frog/hero.jpg)',
                 }}
               />
             </div>

@@ -8,9 +8,12 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
+  // Default to dark mode - only use light if explicitly saved as false
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('ribbit-dark-mode');
-    return saved ? JSON.parse(saved) : false;
+    // If no preference saved, default to dark (true)
+    // If saved, parse the value
+    return saved !== null ? JSON.parse(saved) : true;
   });
 
   useEffect(() => {
