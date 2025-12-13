@@ -97,7 +97,7 @@ export function ConservationStatus() {
           Understanding Conservation Status
         </h1>
         <p className="text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
-          When scientists want to know how much trouble a species is in, they use a system created by the <span className="font-semibold">IUCN</span> (International Union for Conservation of Nature). It's like a health check for wildlife.
+          When scientists want to know how much trouble a species is in, they use a system called the <span className="font-semibold">IUCN Red List Categories and Criteria</span>. It's like a health check for wildlife.
         </p>
       </section>
 
@@ -122,7 +122,7 @@ export function ConservationStatus() {
               </div>
             ))}
           </div>
-          <div className="flex justify-between mt-2 text-[10px] text-[#6B7280] dark:text-[#9CA3AF]">
+          <div className="flex justify-between mt-2 text-xs font-semibold text-[#6B7280] dark:text-[#9CA3AF]">
             <span>Most concern</span>
             <span>Least concern</span>
           </div>
@@ -164,7 +164,7 @@ export function ConservationStatus() {
       {/* IUCN Credit */}
       <section className="px-4 pt-2 pb-8">
         <p className="text-center text-xs text-[#9CA3AF] dark:text-[#6B7280]">
-          Status categories from the IUCN Red List of Threatened Species
+          Status categories from the IUCN Red List of Threatened Species™
         </p>
       </section>
     </div>
