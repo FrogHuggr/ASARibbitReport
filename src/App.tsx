@@ -10,6 +10,8 @@ import { RealStory } from './pages/RealStory';
 import { WildDecisions } from './pages/WildDecisions';
 import { WildDecisionDetail } from './pages/WildDecisionDetail';
 import { Settings } from './pages/Settings';
+import { MeetMarshMellow } from './pages/MeetMarshMellow';
+import { ConservationStatus } from './pages/ConservationStatus';
 import { NewThisMonth } from './pages/NewThisMonth';
 import { MarshMellowPicks } from './pages/MarshMellowPicks';
 import { MostPopular } from './pages/MostPopular';
@@ -29,6 +31,8 @@ function App() {
             <Route path="/wild-decisions" element={<WildDecisions />} />
             <Route path="/wild-decisions/:slug" element={<WildDecisionDetail />} />
             <Route path="/settings" element={<Settings />} />
+            <Route path="/meet-marshmellow" element={<MeetMarshMellow />} />
+            <Route path="/conservation-status" element={<ConservationStatus />} />
             {/* Collection pages */}
             <Route path="/new" element={<NewThisMonth />} />
             <Route path="/picks" element={<MarshMellowPicks />} />
