@@ -77,13 +77,7 @@ export const dilemmas: Dilemma[] = [
         ]
       }
     ],
-    miniLesson: 'Seasonal wetlands can be small, temporary, and still extremely important.',
-    crossLink: {
-      section: 'Myth Busters',
-      item: 'Temporary Pools',
-      label: 'Learn more about temporary pools',
-      path: '/myths'
-    }
+    miniLesson: 'Seasonal wetlands can be small, temporary, and still extremely important.'
   },
   {
     id: 'backyard-toad',
@@ -131,13 +125,7 @@ export const dilemmas: Dilemma[] = [
         ]
       }
     ],
-    miniLesson: 'Amphibians absorb chemicals through their skin, so what goes on your garden can end up in their bodies.',
-    crossLink: {
-      section: 'Myth Busters',
-      item: 'Drinking Water',
-      label: 'Learn how frogs absorb water',
-      path: '/myths'
-    }
+    miniLesson: 'Amphibians absorb chemicals through their skin, so what goes on your garden can end up in their bodies.'
   },
   {
     id: 'salamander-log',
