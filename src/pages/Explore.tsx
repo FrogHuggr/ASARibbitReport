@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { ChevronRight, Shuffle } from 'lucide-react';
+import { ChevronRight, Shuffle, FileText } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { dilemmas } from '../data/wildDecisions';
 import { mythBusterCards } from '../data/mythbusters';
@@ -187,6 +187,48 @@ export function Explore() {
               </div>
             </div>
           </Link>
+
+          {/* SPECIES FILES - Coming Soon - Classified dossier aesthetic */}
+          <div
+            className="relative h-40 rounded-2xl overflow-hidden"
+            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }}
+          >
+            {/* Aged paper/manila folder background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F5E6D3] via-[#E8D5B7] to-[#D4C4A8] dark:from-[#3D3528] dark:via-[#32291E] dark:to-[#2A2318]" />
+
+            {/* Subtle paper texture lines */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-4 left-3 right-3 h-px bg-[#8B7355]" />
+              <div className="absolute top-8 left-3 right-3 h-px bg-[#8B7355]" />
+              <div className="absolute top-12 left-3 w-16 h-px bg-[#8B7355]" />
+            </div>
+
+            {/* Classified stamp effect */}
+            <div className="absolute top-3 right-3 -rotate-12">
+              <div className="border-2 border-[#B45309]/60 dark:border-[#D97706]/50 rounded px-2 py-0.5">
+                <span className="text-[8px] font-bold uppercase tracking-wider text-[#B45309]/80 dark:text-[#D97706]/70">
+                  Coming Soon
+                </span>
+              </div>
+            </div>
+
+            {/* File icon */}
+            <div className="absolute inset-0 flex items-center justify-center -mt-2">
+              <div className="w-14 h-14 rounded-lg bg-[#8B7355]/20 dark:bg-[#D4C4A8]/10 flex items-center justify-center">
+                <FileText size={28} className="text-[#8B7355] dark:text-[#D4C4A8]/70" />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="absolute inset-0 p-3 flex flex-col justify-end">
+              <h3 className="font-display text-lg font-bold text-[#5D4E37] dark:text-[#D4C4A8] leading-tight">
+                Species Files
+              </h3>
+              <p className="text-[#8B7355] dark:text-[#A89880] text-xs mt-0.5">
+                Classified dossiers
+              </p>
+            </div>
+          </div>
 
           {/* SURPRISE ME - Fun random dispatch picker */}
           <button
