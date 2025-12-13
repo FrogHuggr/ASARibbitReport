@@ -1,97 +1,8 @@
-import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, X, Sparkles } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 
-// First-time welcome content
-const firstTimeWelcome = {
-  greeting: "Hello, explorer!",
-  paragraphs: [
-    "I'm MarshMellow — your guide to the wide, wonderful world of amphibians!",
-    "Here you'll meet real scientists protecting frogs, toads, salamanders, and more. You'll explore Wild Decisions, bust myths, and discover new species.",
-    "New adventures are added all the time, so keep checking back!"
-  ],
-  cta: "Let's go!"
-};
-
-// First-time welcome modal (shown only once)
-function FirstTimeWelcomeModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-  if (!isOpen) return null;
-
-  const handleClose = () => {
-    localStorage.setItem('ribbit-welcomed', 'true');
-    onClose();
-  };
-
-  return (
-    <>
-      {/* Scrim */}
-      <div
-        className="fixed inset-0 bg-black/50 z-50 animate-fade-in"
-        onClick={handleClose}
-      />
-      {/* Modal */}
-      <div className="fixed bottom-0 left-0 right-0 z-50 bg-[#FDFBF7] rounded-t-3xl max-h-[85vh] overflow-y-auto animate-slide-up">
-        {/* Close button */}
-        <div className="sticky top-0 bg-[#FDFBF7] p-4 flex justify-end">
-          <button
-            onClick={handleClose}
-            className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-500 hover:text-gray-700"
-            aria-label="Close"
-          >
-            <X size={20} />
-          </button>
-        </div>
-
-        {/* Content */}
-        <div className="p-6 pt-0 text-center">
-          {/* MarshMellow image */}
-          <div className="flex justify-center mb-6">
-            <img
-              src="/images/marshmellow/marshmellow-wave.png"
-              alt="MarshMellow the frog explorer waving hello"
-              className="w-28 h-28 object-contain"
-            />
-          </div>
-
-          {/* Welcome content */}
-          <h2 className="font-display text-2xl font-bold text-[#2D5A3D] mb-4">
-            {firstTimeWelcome.greeting}
-          </h2>
-
-          <div className="space-y-4 text-[#374151] leading-relaxed text-left">
-            {firstTimeWelcome.paragraphs.map((paragraph, idx) => (
-              <p key={idx}>{paragraph}</p>
-            ))}
-          </div>
-
-          {/* Ready prompt */}
-          <p className="text-[#6B7280] mt-6 mb-4">Ready to start exploring?</p>
-
-          {/* CTA Button */}
-          <button
-            onClick={handleClose}
-            className="w-full py-4 bg-[#2D5A3D] hover:bg-[#1f4a2f] text-white font-display font-bold text-lg rounded-xl transition-colors"
-          >
-            {firstTimeWelcome.cta}
-          </button>
-        </div>
-      </div>
-    </>
-  );
-}
-
 export function Home() {
-  const [showFirstTimeWelcome, setShowFirstTimeWelcome] = useState(false);
-
-  // Check if this is a first-time user
-  useEffect(() => {
-    const hasSeenWelcome = localStorage.getItem('ribbit-welcomed');
-    if (!hasSeenWelcome) {
-      setShowFirstTimeWelcome(true);
-    }
-  }, []);
-
   return (
     <div className="pb-10">
       {/* HERO SECTION - Full bleed magazine cover */}
@@ -107,7 +18,7 @@ export function Home() {
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
         {/* Text overlay - positioned bottom-left */}
-        <div className="absolute bottom-24 left-6 right-6 text-white">
+        <div className="absolute bottom-8 left-6 right-6 text-white">
           <p
             className="text-xs font-medium uppercase tracking-widest mb-2"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
@@ -123,41 +34,8 @@ export function Home() {
         </div>
       </section>
 
-      {/* WHAT'S NEW CARD - Small floating card overlapping hero */}
-      <section className="px-4 -mt-16 relative z-10 mb-6">
-        <Link
-          to="/new"
-          className="w-full text-left bg-[#E8F5E9] dark:bg-[#2d2d2d] rounded-2xl p-4 flex gap-3 items-center transition-transform active:scale-[0.99] dark:border dark:border-[#404040]"
-          style={{
-            boxShadow: '0 8px 24px rgba(0,0,0,0.25)',
-          }}
-        >
-          <img
-            src="/images/marshmellow/marshmellow-wave.png"
-            alt="MarshMellow"
-            className="w-12 h-12 flex-shrink-0 object-contain"
-          />
-          <div className="flex-1">
-            <div className="flex items-center gap-2 mb-0.5">
-              <Sparkles size={14} className="text-[#F4B942]" />
-              <span className="text-xs font-semibold text-[#F4B942] uppercase tracking-wide">New content</span>
-            </div>
-            <p className="text-[#374151] dark:text-[#D1D5DB] text-sm leading-snug">
-              {dispatches.length} dispatches and counting!
-            </p>
-          </div>
-          <ChevronRight size={20} className="text-[#9CA3AF] flex-shrink-0" />
-        </Link>
-      </section>
-
-      {/* First-Time Welcome Modal */}
-      <FirstTimeWelcomeModal
-        isOpen={showFirstTimeWelcome}
-        onClose={() => setShowFirstTimeWelcome(false)}
-      />
-
       {/* CONTENT CARDS */}
-      <section className="px-4 space-y-4">
+      <section className="px-4 pt-6 space-y-4">
         {/* DISPATCHES CARD - 3-face collage background */}
         <Link to="/dispatches" className="block group">
           <div
@@ -166,12 +44,12 @@ export function Home() {
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
             }}
           >
-            {/* 3-face collage background - different species than hero to avoid repetition */}
+            {/* 3-face collage background - colorful species different from hero */}
             <div className="absolute inset-0 flex">
               <div
                 className="flex-1 bg-cover bg-center"
                 style={{
-                  backgroundImage: 'url(/images/dispatches/peru-lake-junin-frog/hero.jpg)',
+                  backgroundImage: 'url(/images/dispatches/panama-spiny-headed-treefrog/hero.jpeg)',
                 }}
               />
               <div
@@ -183,7 +61,7 @@ export function Home() {
               <div
                 className="flex-1 bg-cover bg-center"
                 style={{
-                  backgroundImage: 'url(/images/dispatches/ghana-afiabirago-puddle-frog/hero.jpg)',
+                  backgroundImage: 'url(/images/dispatches/nepal-mahabharat-torrent-frog/hero.jpg)',
                 }}
               />
             </div>
