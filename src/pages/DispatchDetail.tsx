@@ -197,9 +197,8 @@ function ResearcherBlock({ section, colors }: { section: ResearcherSection; colo
 
   return (
     <section
-      className="rounded-xl rounded-l-none p-5 mb-6"
+      className="rounded-xl rounded-l-none p-5 mb-6 bg-[#F7F5F0] dark:bg-[#242424]"
       style={{
-        backgroundColor: section.cardColor || colors.cardBackground || '#F7F5F0',
         borderLeft: `5px solid ${section.borderColor || colors.secondary}`,
       }}
     >
@@ -237,7 +236,7 @@ function ResearcherBlock({ section, colors }: { section: ResearcherSection; colo
             {researcher.organization}
           </p>
           {researcher.project && (
-            <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
+            <p className="text-sm" style={{ color: colors.primary }}>
               {researcher.project}
             </p>
           )}
