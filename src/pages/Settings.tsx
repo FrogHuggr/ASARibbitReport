@@ -1,9 +1,11 @@
 import { Link } from 'react-router-dom';
 import { ChevronRight, ExternalLink } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
+import { useTextSize, type TextSize } from '../context/TextSizeContext';
 
 export function Settings() {
   const { isDark, toggleDark } = useTheme();
+  const { textSize, setTextSize } = useTextSize();
 
   return (
     <div className="container-app px-4 py-6 pb-10">
@@ -14,12 +16,14 @@ export function Settings() {
         </h1>
       </header>
 
-      {/* Appearance Toggle */}
+      {/* Appearance Section */}
       <div className="card mb-6">
         <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white mb-4">
           Appearance
         </h2>
-        <div className="flex items-center justify-between">
+
+        {/* Dark/Light Mode Toggle */}
+        <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
             <span className="text-2xl">{isDark ? '🌙' : '☀️'}</span>
             <div>
@@ -46,6 +50,38 @@ export function Settings() {
               }`}
             />
           </button>
+        </div>
+
+        {/* Text Size Selector */}
+        <div className="pt-4 border-t border-[#E5E7EB] dark:border-[#374151]">
+          <div className="flex items-center gap-3 mb-3">
+            <span className="text-2xl">Aa</span>
+            <div>
+              <p className="font-semibold text-[#2D2D2D] dark:text-white">
+                Text Size
+              </p>
+              <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
+                Adjust reading comfort
+              </p>
+            </div>
+          </div>
+
+          {/* Size buttons */}
+          <div className="flex gap-2">
+            {(['small', 'medium', 'large'] as TextSize[]).map((size) => (
+              <button
+                key={size}
+                onClick={() => setTextSize(size)}
+                className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm capitalize transition-colors ${
+                  textSize === size
+                    ? 'bg-[#2D5A3D] text-white'
+                    : 'bg-[#F3F4F6] dark:bg-[#374151] text-[#2D2D2D] dark:text-white hover:bg-[#E5E7EB] dark:hover:bg-[#4B5563]'
+                }`}
+              >
+                {size}
+              </button>
+            ))}
+          </div>
         </div>
       </div>
 

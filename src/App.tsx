@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from './context/ThemeContext';
+import { TextSizeProvider } from './context/TextSizeContext';
 import { AppShell } from './components/layout/AppShell';
 import { Home } from './pages/Home';
 import { Explore } from './pages/Explore';
@@ -19,27 +20,29 @@ import { MostPopular } from './pages/MostPopular';
 function App() {
   return (
     <ThemeProvider>
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AppShell />}>
-            <Route path="/" element={<Home />} />
-            <Route path="/explore" element={<Explore />} />
-            <Route path="/dispatches" element={<Dispatches />} />
-            <Route path="/dispatches/:id" element={<DispatchDetail />} />
-            <Route path="/myths" element={<MythBusters />} />
-            <Route path="/real-story/:id" element={<RealStory />} />
-            <Route path="/wild-decisions" element={<WildDecisions />} />
-            <Route path="/wild-decisions/:slug" element={<WildDecisionDetail />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/meet-marshmellow" element={<MeetMarshMellow />} />
-            <Route path="/conservation-status" element={<ConservationStatus />} />
-            {/* Collection pages */}
-            <Route path="/new" element={<NewThisMonth />} />
-            <Route path="/picks" element={<MarshMellowPicks />} />
-            <Route path="/popular" element={<MostPopular />} />
-          </Route>
-        </Routes>
-      </BrowserRouter>
+      <TextSizeProvider>
+        <BrowserRouter>
+          <Routes>
+            <Route element={<AppShell />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/explore" element={<Explore />} />
+              <Route path="/dispatches" element={<Dispatches />} />
+              <Route path="/dispatches/:id" element={<DispatchDetail />} />
+              <Route path="/myths" element={<MythBusters />} />
+              <Route path="/real-story/:id" element={<RealStory />} />
+              <Route path="/wild-decisions" element={<WildDecisions />} />
+              <Route path="/wild-decisions/:slug" element={<WildDecisionDetail />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/meet-marshmellow" element={<MeetMarshMellow />} />
+              <Route path="/conservation-status" element={<ConservationStatus />} />
+              {/* Collection pages */}
+              <Route path="/new" element={<NewThisMonth />} />
+              <Route path="/picks" element={<MarshMellowPicks />} />
+              <Route path="/popular" element={<MostPopular />} />
+            </Route>
+          </Routes>
+        </BrowserRouter>
+      </TextSizeProvider>
     </ThemeProvider>
   );
 }

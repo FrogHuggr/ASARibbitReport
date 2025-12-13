@@ -237,3 +237,51 @@ button {
 .animate-fade-in {
   animation: fade-in 0.2s ease-out;
 }
+
+/* Text Size Settings */
+/* Small - slightly smaller than default */
+.text-size-small {
+  --text-scale: 0.9;
+}
+
+.text-size-small body {
+  font-size: 14px;
+}
+
+.text-size-small p,
+.text-size-small li,
+.text-size-small span:not(.text-2xl):not(.text-xl):not(.text-lg) {
+  font-size: 0.9em;
+}
+
+/* Medium - default size */
+.text-size-medium {
+  --text-scale: 1;
+}
+
+.text-size-medium body {
+  font-size: 16px;
+}
+
+/* Large - bigger for easier reading */
+.text-size-large {
+  --text-scale: 1.15;
+}
+
+.text-size-large body {
+  font-size: 18px;
+}
+
+.text-size-large p,
+.text-size-large li {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
+
+.text-size-large .text-sm {
+  font-size: 0.95rem;
+}
+
+.text-size-large .text-xs {
+  font-size: 0.85rem;
+}
