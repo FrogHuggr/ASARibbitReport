@@ -16,6 +16,7 @@ import { ConservationStatus } from './pages/ConservationStatus';
 import { NewThisMonth } from './pages/NewThisMonth';
 import { MarshMellowPicks } from './pages/MarshMellowPicks';
 import { MostPopular } from './pages/MostPopular';
+import { NotFound } from './pages/NotFound';
 
 function App() {
   return (
@@ -39,6 +40,8 @@ function App() {
               <Route path="/new" element={<NewThisMonth />} />
               <Route path="/picks" element={<MarshMellowPicks />} />
               <Route path="/popular" element={<MostPopular />} />
+              {/* 404 catch-all */}
+              <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
         </BrowserRouter>
