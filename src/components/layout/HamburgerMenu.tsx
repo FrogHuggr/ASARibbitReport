@@ -63,7 +63,7 @@ export function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
         </div>
 
         {/* Menu sections - scrollable */}
-        <nav className="px-5 pb-8 overflow-y-auto flex-1">
+        <nav className="px-5 pb-8 overflow-y-auto flex-1" style={{ paddingBottom: 'max(2rem, env(safe-area-inset-bottom, 2rem))' }}>
           {/* EXPLORE Section */}
           <p className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#808080] mb-3">
             Explore

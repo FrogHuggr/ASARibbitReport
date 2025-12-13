@@ -74,14 +74,16 @@ export function Settings() {
           {/* Toggle Switch - now toggles light mode on/off */}
           <button
             onClick={toggleDark}
-            className={`relative w-14 h-8 rounded-full transition-colors ${
-              !isDark ? 'bg-[#2D5A3D]' : 'bg-[#404040]'
+            className={`relative w-14 h-8 rounded-full transition-colors border-2 ${
+              !isDark
+                ? 'bg-[#2D5A3D] border-[#2D5A3D]'
+                : 'bg-[#D1D5DB] dark:bg-[#404040] border-[#9CA3AF] dark:border-[#404040]'
             }`}
             aria-label="Toggle light mode"
           >
             <span
-              className={`absolute top-1 w-6 h-6 rounded-full bg-white shadow-md transition-transform ${
-                !isDark ? 'translate-x-7' : 'translate-x-1'
+              className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-md transition-transform ${
+                !isDark ? 'translate-x-7' : 'translate-x-0.5'
               }`}
             />
           </button>

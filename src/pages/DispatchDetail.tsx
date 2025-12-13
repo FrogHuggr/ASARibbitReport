@@ -87,14 +87,6 @@ function StoryBlock({ section, colors }: { section: StorySection; colors: Dispat
   );
 }
 
-// Rotating background colors for fact cards
-const factCardColors = [
-  '#FDF8E8', // warm cream
-  '#F0F7F1', // soft sage
-  '#FFF8F0', // soft peach
-  '#F0F4F8', // soft blue
-];
-
 function FactsBlock({ section, colors }: { section: FactsSection; colors: Dispatch['colors'] }) {
   return (
     <section className="mb-6">
@@ -111,7 +103,7 @@ function FactsBlock({ section, colors }: { section: FactsSection; colors: Dispat
 
       {/* Horizontal scroll container */}
       <div
-        className="flex gap-3 overflow-x-auto pb-2 -mx-4 px-4 scrollbar-hide"
+        className="flex gap-3 overflow-x-auto pb-2 -mx-4 pl-4 scrollbar-hide"
         style={{
           scrollSnapType: 'x mandatory',
           WebkitOverflowScrolling: 'touch',
@@ -119,14 +111,14 @@ function FactsBlock({ section, colors }: { section: FactsSection; colors: Dispat
       >
         {section.facts.map((fact, index) => {
           const IconComponent = fact.iconLibrary !== 'emoji' ? getIconComponent(fact.icon) : null;
-          const bgColor = fact.cardColor || factCardColors[index % factCardColors.length];
+          // Use color classes based on index
+          const colorClass = `fact-card-${(index % 4) + 1}`;
 
           return (
             <div
               key={fact.id}
-              className="rounded-xl p-4 shadow-sm"
+              className={`rounded-xl p-4 shadow-sm ${colorClass}`}
               style={{
-                backgroundColor: bgColor,
                 scrollSnapAlign: 'start',
                 width: '176px',
                 minWidth: '176px',
@@ -149,6 +141,8 @@ function FactsBlock({ section, colors }: { section: FactsSection; colors: Dispat
             </div>
           );
         })}
+        {/* Spacer element to ensure last card is fully visible when scrolling */}
+        <div className="pr-4" style={{ minWidth: '16px', flexShrink: 0 }} aria-hidden="true" />
       </div>
     </section>
   );

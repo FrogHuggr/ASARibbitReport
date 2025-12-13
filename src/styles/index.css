@@ -304,3 +304,31 @@ button {
 .text-size-large .text-xs {
   font-size: 0.85rem;
 }
+
+/* Fact card colors - light mode */
+.fact-card-1 {
+  background-color: #FDF8E8; /* warm cream */
+}
+.fact-card-2 {
+  background-color: #F0F7F1; /* soft sage */
+}
+.fact-card-3 {
+  background-color: #FFF8F0; /* soft peach */
+}
+.fact-card-4 {
+  background-color: #F0F4F8; /* soft blue */
+}
+
+/* Fact card colors - dark mode */
+.dark .fact-card-1 {
+  background-color: #3D3520; /* warm brown */
+}
+.dark .fact-card-2 {
+  background-color: #1B3D2F; /* dark sage */
+}
+.dark .fact-card-3 {
+  background-color: #3D2D20; /* dark peach */
+}
+.dark .fact-card-4 {
+  background-color: #1A2D3D; /* dark blue */
+}
