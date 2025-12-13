@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { ChevronRight, Shuffle, FileText } from 'lucide-react';
+import { ChevronRight, Shuffle, FileText, Wrench } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { dilemmas } from '../data/wildDecisions';
 import { mythBusterCards } from '../data/mythbusters';
@@ -22,8 +22,8 @@ export function Explore() {
       <header className="px-4 pt-6 pb-6">
         <div className="flex items-center gap-4">
           <img
-            src="/images/marshmellow/marshmellow-wave.png"
-            alt="MarshMellow waving"
+            src="/images/marshmellow/marshmellow-thinking4.png"
+            alt="MarshMellow thinking"
             className="w-20 h-20 object-contain flex-shrink-0"
           />
           <div>
@@ -226,6 +226,53 @@ export function Explore() {
               </h3>
               <p className="text-[#8B7355] dark:text-[#A89880] text-xs mt-0.5">
                 Classified dossiers
+              </p>
+            </div>
+          </div>
+
+          {/* CONSERVATION TOOLKIT - Coming Soon - Blueprint aesthetic */}
+          <div
+            className="relative h-40 rounded-2xl overflow-hidden"
+            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.08)' }}
+          >
+            {/* Blueprint background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#1E3A5F] via-[#1A3352] to-[#152945] dark:from-[#0F1F33] dark:via-[#0D1A2B] dark:to-[#0A1422]" />
+
+            {/* Blueprint grid pattern */}
+            <div className="absolute inset-0 opacity-20">
+              {/* Vertical lines */}
+              <div className="absolute top-0 bottom-0 left-4 w-px bg-[#60A5FA]" />
+              <div className="absolute top-0 bottom-0 left-1/2 w-px bg-[#60A5FA]" />
+              <div className="absolute top-0 bottom-0 right-4 w-px bg-[#60A5FA]" />
+              {/* Horizontal lines */}
+              <div className="absolute left-0 right-0 top-4 h-px bg-[#60A5FA]" />
+              <div className="absolute left-0 right-0 top-1/2 h-px bg-[#60A5FA]" />
+              <div className="absolute left-0 right-0 bottom-12 h-px bg-[#60A5FA]" />
+            </div>
+
+            {/* Coming Soon stamp */}
+            <div className="absolute top-3 right-3 -rotate-12">
+              <div className="border-2 border-[#60A5FA]/60 rounded px-2 py-0.5">
+                <span className="text-[8px] font-bold uppercase tracking-wider text-[#60A5FA]/80">
+                  Coming Soon
+                </span>
+              </div>
+            </div>
+
+            {/* Wrench icon */}
+            <div className="absolute inset-0 flex items-center justify-center -mt-2">
+              <div className="w-14 h-14 rounded-lg bg-[#60A5FA]/20 flex items-center justify-center">
+                <Wrench size={28} className="text-[#60A5FA]/80" />
+              </div>
+            </div>
+
+            {/* Content */}
+            <div className="absolute inset-0 p-3 flex flex-col justify-end">
+              <h3 className="font-display text-lg font-bold text-white leading-tight">
+                Conservation Toolkit
+              </h3>
+              <p className="text-[#93C5FD] text-xs mt-0.5">
+                How scientists save species
               </p>
             </div>
           </div>
