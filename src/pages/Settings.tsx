@@ -109,10 +109,10 @@ export function Settings() {
               <button
                 key={size}
                 onClick={() => setTextSize(size)}
-                className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm capitalize transition-colors ${
+                className={`flex-1 py-2 px-3 rounded-lg font-medium text-sm capitalize transition-colors border-2 ${
                   textSize === size
-                    ? 'bg-[#2D5A3D] text-white'
-                    : 'bg-[#F3F4F6] dark:bg-[#374151] text-[#2D2D2D] dark:text-white hover:bg-[#E5E7EB] dark:hover:bg-[#4B5563]'
+                    ? 'bg-[#2D5A3D] text-white border-[#2D5A3D]'
+                    : 'bg-[#F3F4F6] dark:bg-[#374151] text-[#4B5563] dark:text-white border-[#D1D5DB] dark:border-[#4B5563] hover:bg-[#E5E7EB] dark:hover:bg-[#4B5563]'
                 }`}
               >
                 {size}
