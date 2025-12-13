@@ -40,6 +40,16 @@ export function Home() {
           </div>
         </div>
 
+        {/* Photographer credit - bottom right of image */}
+        <div className="absolute bottom-24 right-4">
+          <span
+            className="text-white/80 text-xs"
+            style={{ textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}
+          >
+            📷 {heroImage.photographer}
+          </span>
+        </div>
+
         {/* Text overlay - positioned bottom-left */}
         <div className="absolute bottom-6 left-4 right-4 text-white">
           <p
