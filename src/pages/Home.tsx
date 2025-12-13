@@ -1,14 +1,17 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, MapPin } from 'lucide-react';
+import { ChevronRight, MapPin, Lightbulb } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { mythBusterCards } from '../data/mythbusters';
 import { dilemmas } from '../data/wildDecisions';
 import { getRandomHeroImage } from '../data/heroImages';
+import { getRandomFact } from '../data/didYouKnowFacts';
 
 export function Home() {
   // Random hero image selection on each mount
   const [heroImage] = useState(() => getRandomHeroImage());
+  // Random fact selection on each mount
+  const [fact] = useState(() => getRandomFact());
 
   return (
     <div className="pb-10">
@@ -324,6 +327,21 @@ export function Home() {
             />
           </div>
         </Link>
+      </section>
+
+      {/* DID YOU KNOW? Section */}
+      <section className="px-4 pt-8 pb-4">
+        <div className="text-center">
+          <div className="flex items-center justify-center gap-2 mb-2">
+            <Lightbulb size={16} className="text-[#F59E0B]" />
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#9CA3AF]">
+              Did you know?
+            </span>
+          </div>
+          <p className="text-[#4B5563] dark:text-[#D1D5DB] text-sm leading-relaxed max-w-md mx-auto">
+            {fact.text}
+          </p>
+        </div>
       </section>
     </div>
   );
