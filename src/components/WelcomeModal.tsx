@@ -62,7 +62,7 @@ export function WelcomeModal() {
 
       {/* Modal */}
       <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 pointer-events-none">
-        <div className="bg-white dark:bg-[#242424] rounded-3xl shadow-2xl overflow-hidden w-full max-w-sm pointer-events-auto animate-fade-in relative">
+        <div className="bg-white dark:bg-[#242424] rounded-3xl shadow-2xl overflow-hidden pointer-events-auto animate-fade-in relative" style={{ width: '100%', maxWidth: '384px', minWidth: '300px' }}>
           {/* Close button */}
           <button
             onClick={handleClose}

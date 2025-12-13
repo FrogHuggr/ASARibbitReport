@@ -124,23 +124,26 @@ function FactsBlock({ section, colors }: { section: FactsSection; colors: Dispat
           return (
             <div
               key={fact.id}
-              className="flex-shrink-0 w-40 min-h-[180px] rounded-xl p-4 flex flex-col items-center text-center shadow-sm"
+              className="rounded-xl p-4 shadow-sm"
               style={{
                 backgroundColor: bgColor,
                 scrollSnapAlign: 'start',
+                width: '176px',
+                minWidth: '176px',
+                minHeight: '180px',
               }}
             >
               {/* Icon */}
-              <div className="mb-3">
+              <div className="mb-3 text-center">
                 {IconComponent ? (
-                  <IconComponent size={32} style={{ color: fact.accentColor || colors.secondary }} />
+                  <IconComponent size={32} className="mx-auto" style={{ color: fact.accentColor || colors.secondary }} />
                 ) : (
-                  <span className="text-3xl">{fact.icon}</span>
+                  <span className="text-3xl block">{fact.icon}</span>
                 )}
               </div>
 
               {/* Fact text */}
-              <p className="text-sm text-[#2D2D2D] leading-relaxed">
+              <p className="text-sm text-[#2D2D2D] dark:text-[#E5E5E5] leading-relaxed text-center">
                 {fact.text}
               </p>
             </div>
