@@ -18,7 +18,7 @@ export function Header() {
               className="h-10 w-auto"
             />
             <span className="font-display text-xl font-bold text-[#2D5A3D] dark:text-[#81C784]">
-              Ribbit Report
+              The Ribbit Report
             </span>
           </Link>
 
