@@ -9,6 +9,8 @@ import {
   Eye,
   MessageCircle,
   Lightbulb,
+  X,
+  Check,
 } from 'lucide-react';
 import { mythBusterCards } from '../data/mythbusters';
 import type { BonusChip, MythBusterCard } from '../data/mythbusters';
@@ -35,31 +37,31 @@ const chipColors: Record<string, { bg: string; text: string; darkBg: string }> =
 // Landing page with MarshMellow intro
 function MythBustersLanding({ onStart }: { onStart: () => void }) {
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-8">
+    <div className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-8 text-center">
       {/* MarshMellow */}
       <div className="mb-6">
         <img
-          src="/images/marshmellow/thinking.png"
+          src="/images/marshmellow/marshmellow-thinking.png"
           alt="MarshMellow thinking"
-          className="w-40 h-40 object-contain"
+          className="w-44 h-44 object-contain"
         />
       </div>
 
       {/* Title and intro */}
-      <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white text-center mb-4">
+      <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white mb-4">
         Myth Busters
       </h1>
-      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-center max-w-sm mb-2">
+      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-lg max-w-xs mb-2">
         Think you know amphibians? Let's find out!
       </p>
-      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-center text-sm max-w-sm mb-8">
-        Swipe through {mythBusterCards.length} cards and test what you think you know.
+      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-sm max-w-xs mb-8">
+        Tap through {mythBusterCards.length} cards and test what you think you know.
       </p>
 
       {/* Start button */}
       <button
         onClick={onStart}
-        className="bg-[#2D5A3D] hover:bg-[#234A31] text-white font-bold py-4 px-8 rounded-full text-lg transition-colors shadow-lg"
+        className="bg-[#2D5A3D] hover:bg-[#234A31] text-white font-bold py-4 px-10 rounded-full text-xl transition-colors shadow-lg"
       >
         Let's Go!
       </button>
@@ -130,14 +132,16 @@ function MythBusterCardView({
           <div className="flex gap-4 mt-6">
             <button
               onClick={() => onAnswer('myth')}
-              className="flex-1 bg-[#E85D4C] hover:bg-[#D14D3D] text-white font-bold py-4 rounded-xl text-lg transition-colors shadow-md"
+              className="flex-1 bg-[#E85D4C] hover:bg-[#D14D3D] active:scale-95 text-white font-bold py-5 rounded-2xl text-xl transition-all shadow-lg border-2 border-[#C94A3A] flex items-center justify-center gap-2"
             >
+              <X size={24} strokeWidth={3} />
               Myth!
             </button>
             <button
               onClick={() => onAnswer('fact')}
-              className="flex-1 bg-[#2D5A3D] hover:bg-[#234A31] text-white font-bold py-4 rounded-xl text-lg transition-colors shadow-md"
+              className="flex-1 bg-[#2D5A3D] hover:bg-[#234A31] active:scale-95 text-white font-bold py-5 rounded-2xl text-xl transition-all shadow-lg border-2 border-[#1E4A2D] flex items-center justify-center gap-2"
             >
+              <Check size={24} strokeWidth={3} />
               Fact!
             </button>
           </div>

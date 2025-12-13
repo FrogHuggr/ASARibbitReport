@@ -1,36 +1,54 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, FlaskConical } from 'lucide-react';
+import { ChevronRight, FlaskConical, MapPin } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { mythBusterCards } from '../data/mythbusters';
+import { getRandomHeroImage } from '../data/heroImages';
 
 export function Home() {
+  // Random hero image selection on each mount
+  const [heroImage] = useState(() => getRandomHeroImage());
+
   return (
     <div className="pb-10">
-      {/* HERO SECTION - Full bleed magazine cover */}
+      {/* HERO SECTION - Full bleed magazine cover with random rotation */}
       <section className="relative h-[55vh] min-h-[400px] overflow-hidden">
         {/* Background image with Ken Burns animation */}
         <div
           className="absolute inset-0 bg-cover bg-center animate-kenburns"
           style={{
-            backgroundImage: 'url(/images/dispatches/india-resplendent-grass-frog/hero.jpeg)',
+            backgroundImage: `url(${heroImage.src})`,
           }}
         />
         {/* Dark gradient overlay for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
+        {/* Species caption - bottom left of image */}
+        <div className="absolute bottom-24 left-4">
+          <div
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-md text-white text-sm font-medium"
+            style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}
+          >
+            <MapPin size={14} className="text-[#F97316]" />
+            <span>
+              {heroImage.species} | {heroImage.location}
+            </span>
+          </div>
+        </div>
+
         {/* Text overlay - positioned bottom-left */}
-        <div className="absolute bottom-8 left-6 right-6 text-white">
+        <div className="absolute bottom-6 left-4 right-4 text-white">
           <p
-            className="text-xs font-medium uppercase tracking-widest mb-2"
+            className="text-xs font-medium uppercase tracking-widest mb-1"
             style={{ textShadow: '0 2px 4px rgba(0,0,0,0.3)' }}
           >
             The Ribbit Report
           </p>
           <h1
-            className="font-display text-3xl font-bold leading-tight"
+            className="font-display text-2xl font-bold leading-tight"
             style={{ textShadow: '0 2px 8px rgba(0,0,0,0.4)' }}
           >
-            Your field guide to amphibian adventures
+            The amphibian world, up close.
           </h1>
         </div>
       </section>
