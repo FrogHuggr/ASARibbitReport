@@ -34,11 +34,11 @@ export function Explore() {
             className="relative h-36 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
             style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
           >
-            {/* Background image - use Panama field photo for visual interest */}
+            {/* Background image - Melisa's field work in Nepal */}
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: 'url(/images/dispatches/panama-spiny-headed-treefrog/field.jpeg)',
+                backgroundImage: 'url(/images/dispatches/nepal-mahabharat-torrent-frog/field.jpeg)',
               }}
             />
             {/* Green tint overlay */}
