@@ -74,24 +74,7 @@ export const heroImages: HeroImage[] = [
     contentType: 'dispatch',
     photographer: 'Facundo De los Santos',
   },
-  {
-    id: 'ghana-afiabirago-puddle-frog',
-    src: '/images/dispatches/ghana-afiabirago-puddle-frog/hero.jpg',
-    alt: 'A tiny brown Afiabirago Puddle Frog perched on wet leaf litter in the Atewa Forest',
-    species: 'Afiabirago Puddle Frog',
-    location: 'Ghana',
-    contentType: 'dispatch',
-    photographer: 'Caleb Ofori-Boateng',
-  },
-  {
-    id: 'us-green-frog',
-    src: '/images/dispatches/us-green-frog/hero.jpg',
-    alt: 'Green Frog peeking out of the water at Holland Ponds, showing its distinctive green upper lip and golden eyes',
-    species: 'Green Frog',
-    location: 'USA',
-    contentType: 'dispatch',
-    photographer: 'Tom Favazza',
-  },
+  // Note: Ghana (Afiabirago Puddle Frog) and USA (Green Frog) excluded due to image quality
 ];
 
 // Get a random hero image
