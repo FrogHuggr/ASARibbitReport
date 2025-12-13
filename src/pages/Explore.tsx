@@ -77,11 +77,11 @@ export function Explore() {
               className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
               style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
             >
-              {/* Background with illustration */}
+              {/* Background with illustration - salamander under log */}
               <div
                 className="absolute inset-0 bg-cover bg-center"
                 style={{
-                  backgroundImage: 'url(/images/wilddecision/wilddecision1.jpg)',
+                  backgroundImage: 'url(/images/wilddecision/wilddecision3.jpg)',
                 }}
               />
               {/* Amber tint overlay */}
