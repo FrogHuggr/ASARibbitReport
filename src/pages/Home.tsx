@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
-import { ChevronRight } from 'lucide-react';
+import { ChevronRight, FlaskConical } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
+import { mythBusterCards } from '../data/mythbusters';
 
 export function Home() {
   return (
@@ -162,6 +163,63 @@ export function Home() {
                   </h3>
                   <p className="text-white/90 text-sm">
                     Frogs vs. Toads
+                  </p>
+                </div>
+                <ChevronRight
+                  size={28}
+                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
+                />
+              </div>
+            </div>
+
+            {/* Hover shadow enhancement */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl"
+              style={{
+                boxShadow: '0 12px 32px rgba(0,0,0,0.2)',
+              }}
+            />
+          </div>
+        </Link>
+
+        {/* MYTH BUSTERS CARD */}
+        <Link to="/myths" className="block group">
+          <div
+            className="relative h-44 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+            }}
+          >
+            {/* Gradient background with playful colors */}
+            <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] via-[#EC4899] to-[#F59E0B]" />
+
+            {/* Question mark pattern overlay */}
+            <div className="absolute inset-0 opacity-10">
+              <div className="absolute top-4 left-8 text-6xl font-bold text-white rotate-12">?</div>
+              <div className="absolute top-12 right-12 text-4xl font-bold text-white -rotate-6">?</div>
+              <div className="absolute bottom-16 left-16 text-3xl font-bold text-white rotate-3">?</div>
+              <div className="absolute bottom-8 right-6 text-5xl font-bold text-white -rotate-12">?</div>
+            </div>
+
+            {/* Flask icon */}
+            <div className="absolute top-4 right-4">
+              <div className="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center">
+                <FlaskConical size={24} className="text-white" />
+              </div>
+            </div>
+
+            {/* Dark gradient overlay at bottom */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+              <div className="flex items-end justify-between">
+                <div>
+                  <h3 className="font-display text-2xl font-bold text-white mb-1">
+                    Myth Busters
+                  </h3>
+                  <p className="text-white/90 text-sm">
+                    {mythBusterCards.length} myths to bust
                   </p>
                 </div>
                 <ChevronRight

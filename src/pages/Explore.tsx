@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import { Map, Search, FlaskConical, Zap, Sparkles, ChevronRight } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { realStories } from '../data/realStory';
+import { mythBusterCards } from '../data/mythbusters';
 
 interface ContentTypeCard {
   id: string;
@@ -48,10 +49,9 @@ const contentTypes: ContentTypeCard[] = [
     icon: FlaskConical,
     title: 'Myth Busters',
     description: 'Test what you think you know',
-    count: null,
+    count: mythBusterCards.length,
     route: '/myths',
-    available: false,
-    comingSoon: true,
+    available: true,
   },
   {
     id: 'species-spotlight',
