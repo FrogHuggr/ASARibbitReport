@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail, X, Shield } from 'lucide-react';
+import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail, X, Shield, Ban, CheckCircle, Settings as SettingsIcon, Users } from 'lucide-react';
 import { useTheme, languageLabels, type Language } from '../context/ThemeContext';
 import { useTextSize, type TextSize } from '../context/TextSizeContext';
 
@@ -633,7 +633,7 @@ export function Settings() {
               {/* What we DON'T collect */}
               <div className="mb-5">
                 <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2 flex items-center gap-2 text-sm sm:text-base">
-                  <span>🚫</span> What We DON'T Collect
+                  <Ban size={18} className="text-[#EF4444]" /> What We DON'T Collect
                 </h3>
                 <ul className="space-y-1.5 text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB]">
                   <li className="flex items-start gap-2">
@@ -662,7 +662,7 @@ export function Settings() {
               {/* What we DO collect */}
               <div className="mb-5">
                 <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2 flex items-center gap-2 text-sm sm:text-base">
-                  <span>✅</span> What We DO Collect (Anonymously)
+                  <CheckCircle size={18} className="text-[#22C55E]" /> What We DO Collect (Anonymously)
                 </h3>
                 <ul className="space-y-1.5 text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB]">
                   <li className="flex items-start gap-2">
@@ -682,7 +682,7 @@ export function Settings() {
               {/* Your preferences */}
               <div className="mb-5">
                 <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2 flex items-center gap-2 text-sm sm:text-base">
-                  <span>📱</span> Your Preferences
+                  <SettingsIcon size={18} className="text-[#6B7280] dark:text-[#9CA3AF]" /> Your Preferences
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB]">
                   Settings like dark mode and text size are saved only on YOUR device. We never see them.
@@ -692,7 +692,7 @@ export function Settings() {
               {/* For parents section */}
               <div className="bg-[#F3F4F6] dark:bg-[#1A1A1A] rounded-xl p-3 sm:p-4 mb-5">
                 <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2 flex items-center gap-2 text-sm sm:text-base">
-                  <span>👨‍👩‍👧</span> For Parents & Guardians
+                  <Users size={18} className="text-[#3B82F6]" /> For Parents & Guardians
                 </h3>
                 <p className="text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB] mb-2">
                   COPPA (Children's Online Privacy Protection Act) compliant:
