@@ -414,6 +414,198 @@ export const dilemmas: Dilemma[] = [
       }
     ],
     miniLesson: 'Conservation often works best when local communities are partners, not obstacles.'
+  },
+  {
+    id: 'toad-tunnel',
+    slug: 'toad-tunnel',
+    label: 'tiny conservation dilemma',
+    title: 'The toad tunnel',
+    illustration: '/images/wilddecision/wilddecision9.jpg',
+    paragraphs: [
+      "You're visiting your cousin in Germany during spring break. One evening, your aunt drives you down a country road and suddenly slows to a crawl. Volunteers in bright vests are walking along the roadside, carrying buckets. \"Toad patrol,\" your aunt explains. Every spring, thousands of toads wake from hibernation and cross this road to reach their breeding pond. Without help, many get run over. Volunteers come out at night to carry them safely across. But it's exhausting work, and last year someone nearly got hit by a car.",
+      "Now the town council is debating whether to build a special tunnel under the road so toads can cross safely on their own. Some people think it's too expensive for \"just toads.\" Others say it would save the volunteers and the animals. Your cousin asks what you think."
+    ],
+    prompt: 'what do you say?',
+    choices: [
+      {
+        id: 'A',
+        label: "Building a tunnel sounds like a waste of money. Just keep using volunteers.",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "Volunteers are dedicated, but they can't be there every night of migration season. Bad weather, busy schedules, and the risk of accidents make it hard to rely on people alone year after year. Volunteer groups sometimes burn out after a few seasons, and then no one is there to help. The toads keep coming whether people show up or not.",
+        questions: [
+          'How many volunteers show up on an average night, and how many nights does migration last?',
+          'Have there been close calls or accidents with cars?',
+          'What happens in years when fewer volunteers are available?'
+        ]
+      },
+      {
+        id: 'B',
+        label: "Build the tunnel. It's safer for everyone and lasts longer.",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "Wildlife tunnels can work for decades once installed. They protect toads without needing people to show up every night in the cold and dark. But they're expensive, and the money has to come from somewhere. Some residents might prefer that money go toward schools or roads. And tunnels only work if toads actually use them, which means getting the design and location right.",
+        questions: [
+          'How much does a wildlife tunnel cost compared to other town projects?',
+          'Are there examples of tunnels that worked well in other places?',
+          'How do engineers figure out where toads will actually use a tunnel?'
+        ]
+      },
+      {
+        id: 'C',
+        label: "Can we try something in between, like temporary barriers that guide toads to one safe crossing point?",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "Some communities install drift fences along the road during migration season. The fences guide toads toward a single crossing point, where volunteers can focus their efforts or where a smaller tunnel could be built. It's cheaper than a full tunnel system but still requires some volunteer labor. It might be a good first step while the town decides whether to invest in something permanent.",
+        questions: [
+          'How long does migration season last, and could temporary barriers cover that whole time?',
+          'Would fewer volunteers be needed if toads were funneled to one spot?',
+          'Could this be a trial run to see if a permanent tunnel is worth it?'
+        ]
+      }
+    ],
+    miniLesson: 'Sometimes the best conservation solutions are the ones that keep working even when people can\'t show up.'
+  },
+  {
+    id: 'school-wetland',
+    slug: 'school-wetland',
+    label: 'tiny conservation dilemma',
+    title: 'The school wetland',
+    illustration: '/images/wilddecision/wilddecision10.jpg',
+    paragraphs: [
+      "Your school in England wants to create a wildlife pond to attract newts, frogs, and dragonflies. The head teacher thinks it would be a brilliant outdoor classroom. Students could watch tadpoles grow and learn about ecosystems right outside.",
+      "But some parents are worried. What about younger children falling in? What about mosquitoes? The school asks students to help decide where to put it. Option one: near the classrooms where everyone can see it from the windows, but where younger kids play nearby. Option two: in the quiet back corner of the grounds, safer but harder to visit and easier to forget about."
+    ],
+    prompt: 'what do you say?',
+    choices: [
+      {
+        id: 'A',
+        label: "Put it near the classrooms so everyone can enjoy it and learn from it.",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "A pond near the classrooms means more students will notice it every day. Teachers can point things out through the window. It becomes part of the school's identity. But the location means more foot traffic, more curious little kids, and more worried parents. The school would need good fencing or a design that makes falling in difficult, which adds cost.",
+        questions: [
+          'What safety features could make a visible pond safe for all ages?',
+          'How do other schools handle ponds near play areas?',
+          'Would being visible actually help kids learn more about wildlife?'
+        ]
+      },
+      {
+        id: 'B',
+        label: "Put it in the back corner where it's safer and quieter for wildlife.",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "A secluded pond might attract more wildlife because it's calmer. Frogs and newts don't love lots of noise and activity. But out of sight often means out of mind. If students rarely visit, the pond might get neglected. Weeds could take over, and the educational value disappears. A pond no one sees is a pond no one cares about.",
+        questions: [
+          'How would classes actually get to the pond for lessons?',
+          'Would a "wildlife club" be enough to keep it maintained?',
+          'Could we add a camera to stream video to classrooms?'
+        ]
+      },
+      {
+        id: 'C',
+        label: "Can we design a pond that's both visible and safe, with a boardwalk or viewing platform?",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "Some schools build raised viewing platforms or boardwalks that let students observe without getting too close to the water's edge. This takes more planning and money, but it addresses both concerns. The pond stays visible and educational, while barriers keep younger children safe. It might even become a source of pride for the school.",
+        questions: [
+          'What would a safe viewing platform cost, and could we fundraise for it?',
+          'Are there grants for school wildlife projects?',
+          'Could older students help design and build it as a project?'
+        ]
+      }
+    ],
+    miniLesson: 'The best wildlife habitats are often the ones people can see and connect with.'
+  },
+  {
+    id: 'bromeliad-harvest',
+    slug: 'bromeliad-harvest',
+    label: 'tiny conservation dilemma',
+    title: 'The bromeliad harvest',
+    illustration: '/images/wilddecision/wilddecision11.jpg',
+    paragraphs: [
+      "You're visiting a friend in Colombia whose family lives near a cloud forest. Her older brother makes money collecting bromeliads, the spiky plants that grow on tree branches and hold little pools of water in their leaves. Florists in the city pay well for them.",
+      "One afternoon, you go with him into the forest. As he reaches for a bromeliad, you notice a tiny bright-orange frog sitting inside. Your friend explains that poison dart frogs lay their eggs in these little pools and carry their tadpoles from plant to plant. Without bromeliads, the frogs can't raise their young. But without this income, her brother can't pay for school."
+    ],
+    prompt: 'what do you say?',
+    choices: [
+      {
+        id: 'A',
+        label: "He should keep harvesting. His education matters too.",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "The income is real and important. Telling someone to stop earning money without offering an alternative isn't fair. But if too many bromeliads disappear, poison dart frog populations could crash. These frogs are already threatened, and they depend on these plants in ways most harvesters don't realize. The forest might look the same, but something invisible would be missing.",
+        questions: [
+          'How many bromeliads does he take compared to how many grow back?',
+          'Do other harvesters work in the same area?',
+          'Are the frogs already declining, or is the population stable?'
+        ]
+      },
+      {
+        id: 'B',
+        label: "He should stop. The frogs are more important.",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "Protecting the frogs matters, but telling someone their livelihood is less important than wildlife can backfire. People who feel ignored by conservation often stop caring about it. If the family can't afford school, that's a real cost too. Conservation that only works for wildlife and not for people rarely lasts.",
+        questions: [
+          'Are there other ways the family could earn money from the forest?',
+          'Would eco-tourism or guided frog-watching tours bring income?',
+          'Are there organizations that help harvesters transition to sustainable work?'
+        ]
+      },
+      {
+        id: 'C',
+        label: "Could he harvest in a way that leaves enough bromeliads for the frogs?",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "Some harvesters learn to rotate their collection areas, giving plants time to regrow. Others leave the largest bromeliads, which hold the most water and shelter the most frogs. This kind of sustainable harvesting takes more planning but lets people and wildlife share the forest. It might even become a selling point: \"frog-friendly bromeliads.\"",
+        questions: [
+          'Which bromeliads are most important for frogs, and could those be left alone?',
+          'Are there programs that certify sustainably harvested forest products?',
+          'Could teaching other harvesters help protect more of the forest?'
+        ]
+      }
+    ],
+    miniLesson: 'Conservation works best when it finds ways for people and wildlife to thrive together.'
+  },
+  {
+    id: 'temple-release',
+    slug: 'temple-release',
+    label: 'tiny conservation dilemma',
+    title: 'The temple release',
+    illustration: '/images/wilddecision/wilddecision12.jpg',
+    paragraphs: [
+      "Your family is visiting Thailand and spending a day at a famous Buddhist temple. Outside the temple gates, vendors sell small animals in cages: birds, fish, turtles, and frogs. For a small payment, you can release an animal as an act of merit, bringing good karma.",
+      "Your aunt wants to release some frogs. It feels like a kind thing to do. But your cousin whispers that she read these releases can actually hurt wildlife. The frogs might carry diseases, be the wrong species for the area, or die quickly because they don't know how to find food. Some vendors even recapture the same animals to sell again."
+    ],
+    prompt: 'what do you say?',
+    choices: [
+      {
+        id: 'A',
+        label: "Let's release them anyway. The intention is what matters.",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "The spiritual meaning of the act is real, and your aunt's kindness is genuine. But good intentions don't protect wild frog populations from disease. If the released frogs carry chytrid fungus or other pathogens, they could infect local frogs that have no resistance. An act of compassion could accidentally cause harm no one can see.",
+        questions: [
+          'Where do these frogs actually come from?',
+          'Have there been disease outbreaks linked to temple releases?',
+          'Is there a way to know if the frogs are healthy and local?'
+        ]
+      },
+      {
+        id: 'B',
+        label: "We shouldn't do it. It causes more harm than good.",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "You might be right, but refusing outright could embarrass your aunt or seem disrespectful of a meaningful tradition. Religious practices deserve thoughtful engagement, not just rejection. Simply saying \"no\" without offering an alternative misses a chance to share what you've learned in a way that respects everyone.",
+        questions: [
+          'How can we talk about this without dismissing the tradition?',
+          'Are there temples working to change this practice from within?',
+          'What do Thai conservation groups say about it?'
+        ]
+      },
+      {
+        id: 'C',
+        label: "Could we find a different way to practice compassion that doesn't risk harming wildlife?",
+        outcomeTitle: 'What could happen',
+        outcomeBody: "Some temples now offer alternatives: donating to wildlife rescue organizations, sponsoring habitat restoration, or symbolically releasing digital animals in apps designed for this purpose. These options honor the intention behind the tradition while avoiding ecological harm. Change is slow, but it often starts with people asking thoughtful questions.",
+        questions: [
+          'Does this temple offer any alternative merit-making options?',
+          'Are there Buddhist leaders speaking out about wildlife-friendly practices?',
+          'Could we make a donation to a local conservation group instead?'
+        ]
+      }
+    ],
+    miniLesson: 'Respecting traditions and protecting wildlife aren\'t opposites. Sometimes the most respectful thing is asking how both can thrive.'
   }
 ];
 
