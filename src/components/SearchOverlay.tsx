@@ -18,6 +18,7 @@ import {
   type SearchResultType
 } from '../utils/searchIndex';
 import { triggerHaptic } from '../utils/haptics';
+import { trackEvent } from '../hooks/useAnalytics';
 
 interface SearchOverlayProps {
   isOpen: boolean;
@@ -62,11 +63,28 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
   useEffect(() => {
     const searchResults = search(query);
     setResults(searchResults);
+
+    // Track searches with no results (debounced - only after user stops typing)
+    if (query.trim().length >= 3 && searchResults.length === 0) {
+      const debounceTimer = setTimeout(() => {
+        trackEvent('search_no_results', {
+          searchQuery: query.toLowerCase().trim(),
+        });
+      }, 1000); // Wait 1 second after typing stops
+      return () => clearTimeout(debounceTimer);
+    }
   }, [query]);
 
   // Handle result click
   const handleResultClick = (result: SearchResult) => {
     triggerHaptic('light');
+
+    // Track the search with result click
+    trackEvent('search', {
+      searchQuery: query.toLowerCase().trim(),
+      resultClicked: result.title,
+      resultType: result.type,
+    });
 
     // For glossary items, we'll just close for now (until glossary page exists)
     if (result.type === 'glossary') {
