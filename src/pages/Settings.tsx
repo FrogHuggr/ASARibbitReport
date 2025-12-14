@@ -542,16 +542,13 @@ export function Settings() {
         </h2>
         <div className="space-y-3 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3]">
           <div>
-            <p className="font-medium text-[#2D2D2D] dark:text-white">App Development</p>
-            <p>Candace M. Hansen, ASA Programs Director</p>
+            <p className="font-medium text-[#2D2D2D] dark:text-white">App Development & MarshMellow Character Design</p>
+            <p className="font-semibold text-[#2D5A3D] dark:text-[#81C784]">Candace M. Hansen</p>
+            <p className="text-[13px] text-[#6B7280] dark:text-[#9CA3AF]">Amphibian Survival Alliance, Programs Director</p>
           </div>
           <div>
             <p className="font-medium text-[#2D2D2D] dark:text-white">Content & Editorial</p>
             <p>Amphibian Survival Alliance</p>
-          </div>
-          <div>
-            <p className="font-medium text-[#2D2D2D] dark:text-white">MarshMellow Character Design</p>
-            <p>Candace M. Hansen</p>
           </div>
           <div>
             <p className="font-medium text-[#2D2D2D] dark:text-white">Photography</p>
