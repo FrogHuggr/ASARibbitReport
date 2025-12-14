@@ -4,8 +4,6 @@ import { ChevronRight } from 'lucide-react';
 import { dilemmas } from '../data/wildDecisions';
 
 // Display order that mixes North American and international dilemmas
-// Order: Trail(NA), Cloud Forest(Ecuador), Backyard Toad(NA), Rice Paddy(Vietnam),
-//        Salamander(NA), Cane Toad(Australia), Frog Chorus(NA), Waterhole(Kenya)
 const displayOrder = [
   'trail-wet-patch',      // North America
   'cloud-forest-spring',  // Latin America (Ecuador)
@@ -15,6 +13,10 @@ const displayOrder = [
   'cane-toad-problem',    // Australia
   'frog-chorus',          // North America
   'vanishing-waterhole',  // Africa (Kenya)
+  'toad-tunnel',          // Europe (Germany)
+  'school-wetland',       // Europe (England)
+  'bromeliad-harvest',    // Latin America (Colombia)
+  'temple-release',       // Asia (Thailand)
 ];
 
 export function WildDecisions() {
