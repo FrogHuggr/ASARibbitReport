@@ -146,10 +146,10 @@ export function ConservationStatus() {
         <hr className="border-[#E5E5E5] dark:border-[#374151]" />
       </div>
 
-      {/* Why It Matters */}
+      {/* What MarshMellow Wants You to Know */}
       <section className="px-4 py-6">
         <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white mb-4">
-          Why It Matters
+          What MarshMellow Wants You to Know
         </h2>
         <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
           <p>
