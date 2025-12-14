@@ -49,7 +49,7 @@ function App() {
               <Route path="/new" element={<NewThisMonth />} />
               <Route path="/picks" element={<MarshMellowPicks />} />
               <Route path="/popular" element={<MostPopular />} />
-              <Route path="/analytics" element={<Analytics />} />
+              <Route path="/admin/analytics" element={<Analytics />} />
               {/* 404 catch-all */}
               <Route path="*" element={<NotFound />} />
             </Route>

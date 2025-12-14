@@ -374,6 +374,116 @@ New content types can be added to search by simply adding entries to the unified
 
 ---
 
+## Analytics
+
+Privacy-focused analytics for tracking app usage without collecting personal data.
+
+### Data Collected
+
+| Data | Example | Purpose |
+|------|---------|---------|
+| Page path | `/dispatches/india-western-ghats` | Track which content is popular |
+| Page title | `Western Ghats Frog \| The Ribbit Report` | Readable page names in dashboard |
+| Referrer | `https://google.com` | Understand how users find the app |
+| Timestamp | Auto-generated | Track trends over time |
+
+### Data NOT Collected
+
+- No IP addresses
+- No device information
+- No user IDs or identifiers
+- No cookies
+- No location data
+- No personal information
+- No tracking across sessions
+
+### Admin Dashboard
+
+- **Location**: `/admin/analytics` (password protected)
+- **Access**: Hidden route, not linked in app UI
+- **Authentication**: Session-based password protection
+- **Displays**:
+  - Total page views (all time)
+  - Today's page views
+  - This week's page views
+  - Top 10 most popular pages
+  - Daily stats for last 30 days
+
+### Technical Implementation
+
+- **Frontend**: `AnalyticsTracker` component tracks page views on route changes
+- **Backend**: Express server with PostgreSQL database (hosted on Replit)
+- **API Endpoints**:
+  - `POST /api/analytics/event` - Record page view
+  - `GET /api/analytics/stats` - Fetch dashboard data
+
+### Future Tracking Options
+
+Additional COPPA-compliant events that could be tracked:
+- Search queries used
+- Glossary term clicks
+- Wild Decision choices
+- Content section expansions
+
+---
+
+## Privacy & Compliance
+
+### COPPA Compliance
+
+The Children's Online Privacy Protection Act (COPPA) applies to apps directed at children under 13. The Ribbit Report is designed for ages 9-12 and maintains strict COPPA compliance.
+
+**How we comply:**
+
+1. **No Personal Data Collection**
+   - No account creation required
+   - No names, emails, or identifiers collected
+   - No location tracking
+   - No device fingerprinting
+
+2. **No Cookies**
+   - All preferences stored in localStorage (device-only, not transmitted)
+   - No tracking cookies
+   - No third-party cookies
+
+3. **Privacy-Friendly Analytics**
+   - Only aggregate page view counts
+   - No way to identify individual users
+   - No cross-session tracking
+   - No behavioral profiling
+
+4. **No Third-Party Services**
+   - No Google Analytics
+   - No Facebook Pixel
+   - No advertising networks
+   - No social media trackers
+
+5. **No External Data Sharing**
+   - Analytics data stays on our servers
+   - No data sold or shared with third parties
+
+### Data Storage
+
+| Data Type | Storage Location | Duration |
+|-----------|------------------|----------|
+| Theme preference | localStorage | Until cleared |
+| Text size preference | localStorage | Until cleared |
+| Language preference | localStorage | Until cleared |
+| Glossary toggle state | localStorage | Until cleared |
+| Welcome modal seen | localStorage | Until cleared |
+| Admin session auth | sessionStorage | Until tab closed |
+| Page view events | PostgreSQL (Replit) | Indefinite |
+
+### Privacy Notice
+
+The app displays "Privacy-friendly analytics. No cookies. No personal data." on the analytics dashboard.
+
+### Contact
+
+For privacy questions: info@amphibians.org
+
+---
+
 ## Future Features (Coming Soon)
 
 ### Species Files
