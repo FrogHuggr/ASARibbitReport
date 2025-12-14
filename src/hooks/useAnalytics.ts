@@ -1,9 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-const API_URL = import.meta.env.PROD 
-  ? '/api/analytics/event'
-  : 'http://localhost:3001/api/analytics/event';
+// Always use relative URL - Vite proxy handles in dev, and production should have proper routing
+const API_URL = '/api/analytics/event';
 
 export function usePageTracking() {
   const location = useLocation();
@@ -48,11 +47,7 @@ export async function trackEvent(eventType: string, data?: Record<string, string
 }
 
 export async function fetchAnalyticsStats() {
-  const statsUrl = import.meta.env.PROD 
-    ? '/api/analytics/stats'
-    : 'http://localhost:3001/api/analytics/stats';
-    
-  const response = await fetch(statsUrl);
+  const response = await fetch('/api/analytics/stats');
   if (!response.ok) throw new Error('Failed to fetch stats');
   return response.json();
 }
