@@ -94,10 +94,10 @@ export function Analytics() {
               </div>
             </div>
 
-            <h1 className="font-display text-2xl font-bold text-[#2D2D2D] dark:text-white text-center mb-2">
+            <h1 className="font-display text-2xl font-bold text-[#2D2D2D] dark:text-white text-center mb-2 whitespace-nowrap">
               Admin Access
             </h1>
-            <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] text-center mb-6">
+            <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] text-center mb-6 whitespace-nowrap">
               Enter password to view analytics
             </p>
 
@@ -122,7 +122,7 @@ export function Analytics() {
               )}
               <button
                 type="submit"
-                className="w-full mt-4 bg-[#2D5A3D] hover:bg-[#234A31] text-white font-medium py-3 px-6 rounded-xl transition-colors"
+                className="w-full mt-4 bg-[#2D5A3D] hover:bg-[#234A31] text-white font-medium py-3 px-6 rounded-xl transition-colors whitespace-nowrap"
               >
                 Access Dashboard
               </button>
@@ -130,7 +130,7 @@ export function Analytics() {
 
             <Link
               to="/"
-              className="block text-center mt-6 text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#2D5A3D] dark:hover:text-[#81C784] transition-colors"
+              className="block text-center mt-6 text-sm text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#2D5A3D] dark:hover:text-[#81C784] transition-colors whitespace-nowrap"
             >
               Return to home
             </Link>
