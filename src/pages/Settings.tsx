@@ -673,6 +673,10 @@ export function Settings() {
                     <Check size={14} className="text-[#22C55E] mt-0.5 flex-shrink-0" />
                     <span><strong>Popular content</strong> – Which articles are most read</span>
                   </li>
+                  <li className="flex items-start gap-2">
+                    <Check size={14} className="text-[#22C55E] mt-0.5 flex-shrink-0" />
+                    <span><strong>Search terms</strong> – What topics people look for</span>
+                  </li>
                 </ul>
                 <p className="text-[10px] sm:text-xs text-[#6B7280] dark:text-[#9CA3AF] mt-2">
                   Like a tally counter at a museum door – we count visits but don't know who walked in!
