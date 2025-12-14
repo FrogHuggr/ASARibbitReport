@@ -148,23 +148,27 @@ export function ConservationStatus() {
 
       {/* What MarshMellow Wants You to Know */}
       <section className="px-4 py-6">
-        <div className="flex items-start gap-3 mb-4">
-          <img
-            src="/images/marshmellow/marshmellow-thinking6.png"
-            alt="MarshMellow thinking"
-            className="w-12 h-12 object-contain flex-shrink-0"
-          />
-          <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white pt-2">
-            What MarshMellow Wants You to Know
-          </h2>
-        </div>
-        <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
-          <p>
-            Conservation status helps scientists, governments, and communities decide where to focus their efforts. When a species is listed as Critically Endangered, it can unlock funding, legal protection, and attention.
-          </p>
-          <p>
-            But the list isn't just for scientists. When you see a status in The Ribbit Report, you'll know exactly what's at stake.
-          </p>
+        <div className="bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-2xl p-4">
+          <div className="flex gap-4">
+            <img
+              src="/images/marshmellow/marshmellow-thinking6.png"
+              alt="MarshMellow thinking"
+              className="w-20 h-20 object-contain flex-shrink-0"
+            />
+            <div className="flex-1 min-w-0">
+              <p className="font-display font-bold text-[#2D5A3D] dark:text-[#81C784] mb-2">
+                What MarshMellow Wants You to Know
+              </p>
+              <div className="space-y-3 text-sm text-[#2D5A3D] dark:text-[#A5D6A7] leading-relaxed">
+                <p>
+                  Conservation status helps scientists, governments, and communities decide where to focus their efforts. When a species is listed as Critically Endangered, it can unlock funding, legal protection, and attention.
+                </p>
+                <p>
+                  But the list isn't just for scientists. When you see a status in The Ribbit Report, you'll know exactly what's at stake.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
