@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail, X } from 'lucide-react';
+import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail, X, BarChart2 } from 'lucide-react';
 import { useTheme, languageLabels, type Language } from '../context/ThemeContext';
 import { useTextSize, type TextSize } from '../context/TextSizeContext';
 
@@ -396,6 +396,19 @@ export function Settings() {
                 className="w-10 h-10 object-contain"
               />
               <span className="font-medium text-[#2D2D2D] dark:text-white">Conservation Status Guide</span>
+            </div>
+            <ChevronRight size={20} className="text-[#9CA3AF]" />
+          </Link>
+
+          <Link
+            to="/analytics"
+            className="flex items-center justify-between p-4 bg-white dark:bg-[#262626] rounded-xl border border-[#E5E7EB] dark:border-[#374151] hover:border-[#2D5A3D] dark:hover:border-[#6B9B7A] transition-colors"
+          >
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#E8F5E9] dark:bg-[#1B3D2F] flex items-center justify-center">
+                <BarChart2 size={20} className="text-[#2D5A3D] dark:text-[#81C784]" />
+              </div>
+              <span className="font-medium text-[#2D2D2D] dark:text-white">Analytics Dashboard</span>
             </div>
             <ChevronRight size={20} className="text-[#9CA3AF]" />
           </Link>

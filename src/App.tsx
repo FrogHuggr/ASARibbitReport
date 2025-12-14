@@ -4,6 +4,7 @@ import { TextSizeProvider } from './context/TextSizeContext';
 import { AppShell } from './components/layout/AppShell';
 import { ScrollToTop } from './components/ScrollToTop';
 import { WelcomeModal } from './components/WelcomeModal';
+import { AnalyticsTracker } from './components/AnalyticsTracker';
 import { Home } from './pages/Home';
 import { Explore } from './pages/Explore';
 import { Dispatches } from './pages/Dispatches';
@@ -18,6 +19,7 @@ import { ConservationStatus } from './pages/ConservationStatus';
 import { NewThisMonth } from './pages/NewThisMonth';
 import { MarshMellowPicks } from './pages/MarshMellowPicks';
 import { MostPopular } from './pages/MostPopular';
+import { Analytics } from './pages/Analytics';
 import { NotFound } from './pages/NotFound';
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
       <TextSizeProvider>
         <BrowserRouter>
           <ScrollToTop />
+          <AnalyticsTracker />
           <WelcomeModal />
           <Routes>
             <Route element={<AppShell />}>
@@ -44,6 +47,7 @@ function App() {
               <Route path="/new" element={<NewThisMonth />} />
               <Route path="/picks" element={<MarshMellowPicks />} />
               <Route path="/popular" element={<MostPopular />} />
+              <Route path="/analytics" element={<Analytics />} />
               {/* 404 catch-all */}
               <Route path="*" element={<NotFound />} />
             </Route>
