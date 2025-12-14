@@ -576,29 +576,41 @@ export function Settings() {
 
       {/* Privacy Modal */}
       {showPrivacyModal && (
-        <div className="fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4 overflow-y-auto">
-          <div className="bg-white dark:bg-[#242424] rounded-2xl w-full max-w-[340px] sm:max-w-lg max-h-[85vh] overflow-hidden shadow-xl flex flex-col my-auto">
-            {/* Modal Header */}
-            <div className="flex items-center justify-between p-3 sm:p-4 border-b border-[#E5E7EB] dark:border-[#374151] flex-shrink-0">
-              <div className="flex items-center gap-2 sm:gap-3">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#E8F5E9] dark:bg-[#1B3D2F] flex items-center justify-center flex-shrink-0">
-                  <Shield size={18} className="text-[#2D5A3D] dark:text-[#81C784]" />
+        <>
+          {/* Backdrop */}
+          <div
+            className="fixed inset-0 bg-black/60 z-[100]"
+            onClick={() => setShowPrivacyModal(false)}
+            aria-hidden="true"
+          />
+
+          {/* Modal */}
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 pointer-events-none">
+            <div
+              className="bg-white dark:bg-[#242424] rounded-2xl shadow-xl overflow-hidden pointer-events-auto relative flex flex-col"
+              style={{ width: '100%', maxWidth: '380px', minWidth: '300px', maxHeight: '85vh' }}
+            >
+              {/* Close button */}
+              <button
+                onClick={() => setShowPrivacyModal(false)}
+                className="absolute top-3 right-3 p-2 text-[#9CA3AF] hover:text-[#6B7280] dark:hover:text-white transition-colors z-10"
+                aria-label="Close"
+              >
+                <X size={20} />
+              </button>
+
+              {/* Modal Header */}
+              <div className="flex items-center gap-3 p-4 border-b border-[#E5E7EB] dark:border-[#374151] flex-shrink-0 pr-12">
+                <div className="w-10 h-10 rounded-full bg-[#E8F5E9] dark:bg-[#1B3D2F] flex items-center justify-center flex-shrink-0">
+                  <Shield size={20} className="text-[#2D5A3D] dark:text-[#81C784]" />
                 </div>
-                <h2 className="font-display text-lg sm:text-xl font-bold text-[#2D2D2D] dark:text-white whitespace-nowrap">
+                <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white">
                   Your Privacy
                 </h2>
               </div>
-              <button
-                onClick={() => setShowPrivacyModal(false)}
-                className="p-1.5 sm:p-2 hover:bg-[#F3F4F6] dark:hover:bg-[#374151] rounded-full transition-colors flex-shrink-0"
-                aria-label="Close"
-              >
-                <X size={20} className="text-[#6B7280]" />
-              </button>
-            </div>
 
-            {/* Modal Content */}
-            <div className="p-4 sm:p-5 overflow-y-auto flex-1">
+              {/* Modal Content */}
+              <div className="p-4 overflow-y-auto flex-1">
               {/* Kid-friendly summary */}
               <div className="bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-xl p-3 sm:p-4 mb-5">
                 <div className="flex gap-2 sm:gap-3">
@@ -708,8 +720,9 @@ export function Settings() {
                 </a>
               </div>
             </div>
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );
