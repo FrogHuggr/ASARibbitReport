@@ -1,14 +1,25 @@
 import express from 'express';
 import cors from 'cors';
 import pg from 'pg';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const { Pool } = pg;
 
 const app = express();
-const port = process.env.PORT || 3001;
+// In production, use PORT env (typically 5000), in dev use 3001 for Vite proxy
+const port = Number(process.env.PORT) || (process.env.NODE_ENV === 'production' ? 5000 : 3001);
 
 app.use(cors());
 app.use(express.json());
+
+// Serve static files in production
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../dist')));
+}
 
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
@@ -84,6 +95,13 @@ app.get('/api/analytics/stats', async (req, res) => {
   }
 });
 
+// Serve React app for all other routes in production
+if (process.env.NODE_ENV === 'production') {
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../dist/index.html'));
+  });
+}
+
 app.listen(port, '0.0.0.0', () => {
-  console.log(`Analytics API running on port ${port}`);
+  console.log(`Server running on port ${port}`);
 });
