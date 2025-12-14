@@ -247,8 +247,8 @@ function InteractiveScale({ statuses }: { statuses: Status[] }) {
           <span>Least concern</span>
         </div>
 
-        {/* Tooltip - appears below the scale on mobile */}
-        {selectedStatus && (
+        {/* Tooltip - appears below the scale on mobile (only for main statuses) */}
+        {selectedStatus && mainStatuses.some(s => s.code === selectedStatus.code) && (
           <div
             ref={tooltipRef}
             className="mt-4 bg-[#F7F5F0] dark:bg-[#1a1a1a] rounded-xl p-4 animate-fade-in relative"
