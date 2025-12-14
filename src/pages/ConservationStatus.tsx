@@ -1,5 +1,6 @@
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, X } from 'lucide-react';
 
 // Status data with colors and descriptions
 const statuses = [
@@ -101,45 +102,8 @@ export function ConservationStatus() {
         </p>
       </section>
 
-      {/* Visual Scale */}
-      <section className="px-4 pb-6">
-        <div className="bg-white dark:bg-[#262626] rounded-2xl p-4 border border-[#E5E7EB] dark:border-[#374151]">
-          <p className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#9CA3AF] mb-3 text-center">
-            The Scale
-          </p>
-          <div className="flex justify-center gap-1">
-            {statuses.slice(0, 7).map((status) => (
-              <div
-                key={status.code}
-                className="flex-1 max-w-[40px]"
-              >
-                <div
-                  className="h-8 rounded-md flex items-center justify-center text-[10px] font-bold"
-                  style={{ backgroundColor: status.color, color: status.textColor }}
-                >
-                  {status.code}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="flex justify-between mt-2 text-xs font-semibold text-[#6B7280] dark:text-[#9CA3AF]">
-            <span>Most concern</span>
-            <span>Least concern</span>
-          </div>
-        </div>
-      </section>
-
-      {/* Divider */}
-      <div className="px-4">
-        <hr className="border-[#E5E5E5] dark:border-[#374151]" />
-      </div>
-
-      {/* Status Details */}
-      <section className="px-4 py-6 space-y-6">
-        {statuses.map((status) => (
-          <StatusCard key={status.code} status={status} />
-        ))}
-      </section>
+      {/* Interactive Visual Scale */}
+      <InteractiveScale statuses={statuses} />
 
       {/* Divider */}
       <div className="px-4">
@@ -192,38 +156,216 @@ interface Status {
   note?: string;
 }
 
-function StatusCard({ status }: { status: Status }) {
+// Interactive scale with staggered fade-in and tap-to-learn
+function InteractiveScale({ statuses }: { statuses: Status[] }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const [selectedStatus, setSelectedStatus] = useState<Status | null>(null);
+  const scaleRef = useRef<HTMLDivElement>(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
+
+  // Intersection observer for fade-in animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.3 }
+    );
+
+    if (scaleRef.current) {
+      observer.observe(scaleRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Close tooltip when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (tooltipRef.current && !tooltipRef.current.contains(e.target as Node)) {
+        setSelectedStatus(null);
+      }
+    };
+
+    if (selectedStatus) {
+      document.addEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [selectedStatus]);
+
+  const mainStatuses = statuses.slice(0, 7); // EX through LC
+
   return (
-    <div className="space-y-2">
-      {/* Status badge and name */}
-      <div className="flex items-center gap-3">
-        <span
-          className="inline-flex items-center justify-center w-10 h-6 rounded text-xs font-bold"
-          style={{ backgroundColor: status.color, color: status.textColor }}
-        >
-          {status.code}
-        </span>
-        <h3 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white">
-          {status.name}
-        </h3>
+    <section className="px-4 pb-6" ref={scaleRef}>
+      <div className="bg-white dark:bg-[#262626] rounded-2xl p-4 border border-[#E5E7EB] dark:border-[#374151]">
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#9CA3AF] mb-3 text-center">
+          The Scale
+        </p>
+
+        {/* Instruction */}
+        <p className="text-xs text-[#9CA3AF] dark:text-[#6B7280] text-center mb-3">
+          Tap a badge to learn more
+        </p>
+
+        {/* Badges with staggered animation */}
+        <div className="flex justify-center gap-1.5 relative">
+          {mainStatuses.map((status, index) => (
+            <button
+              key={status.code}
+              onClick={() => setSelectedStatus(selectedStatus?.code === status.code ? null : status)}
+              className={`flex-1 max-w-[44px] transition-all duration-300 ${
+                isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-4'
+              } ${
+                selectedStatus?.code === status.code
+                  ? 'scale-110 z-10'
+                  : 'hover:scale-105'
+              }`}
+              style={{
+                transitionDelay: isVisible ? `${index * 100}ms` : '0ms',
+              }}
+            >
+              <div
+                className={`h-10 rounded-lg flex items-center justify-center text-xs font-bold shadow-sm transition-shadow ${
+                  selectedStatus?.code === status.code ? 'shadow-lg ring-2 ring-white/50' : ''
+                }`}
+                style={{ backgroundColor: status.color, color: status.textColor }}
+              >
+                {status.code}
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <div className="flex justify-between mt-2 text-xs font-semibold text-[#6B7280] dark:text-[#9CA3AF]">
+          <span>Most concern</span>
+          <span>Least concern</span>
+        </div>
+
+        {/* Tooltip - appears below the scale on mobile */}
+        {selectedStatus && (
+          <div
+            ref={tooltipRef}
+            className="mt-4 bg-[#F7F5F0] dark:bg-[#1a1a1a] rounded-xl p-4 animate-fade-in relative"
+          >
+            <button
+              onClick={() => setSelectedStatus(null)}
+              className="absolute top-2 right-2 p-1 text-[#9CA3AF] hover:text-[#6B7280] dark:hover:text-white transition-colors"
+              aria-label="Close"
+            >
+              <X size={18} />
+            </button>
+
+            <div className="flex items-center gap-2 mb-2 pr-6">
+              <span
+                className="inline-flex items-center justify-center w-8 h-5 rounded text-[10px] font-bold"
+                style={{ backgroundColor: selectedStatus.color, color: selectedStatus.textColor }}
+              >
+                {selectedStatus.code}
+              </span>
+              <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white">
+                {selectedStatus.name}
+              </h3>
+            </div>
+
+            <p className="text-sm text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed mb-2">
+              {selectedStatus.description}
+            </p>
+
+            {selectedStatus.example && (
+              <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] italic">
+                Example: {selectedStatus.example}
+              </p>
+            )}
+            {selectedStatus.note && !selectedStatus.example && (
+              <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">
+                {selectedStatus.note}
+              </p>
+            )}
+          </div>
+        )}
       </div>
 
-      {/* Description */}
-      <p className="text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
-        {status.description}
-      </p>
+      {/* Additional statuses below (DD, NE) */}
+      <div className="mt-4 bg-white dark:bg-[#262626] rounded-2xl p-4 border border-[#E5E7EB] dark:border-[#374151]">
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#9CA3AF] mb-3 text-center">
+          Other Categories
+        </p>
+        <p className="text-xs text-[#9CA3AF] dark:text-[#6B7280] text-center mb-3">
+          Tap to learn more
+        </p>
+        <div className="flex justify-center gap-3">
+          {statuses.slice(7).map((status, index) => (
+            <button
+              key={status.code}
+              onClick={() => setSelectedStatus(selectedStatus?.code === status.code ? null : status)}
+              className={`transition-all duration-300 ${
+                isVisible
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-4'
+              } ${
+                selectedStatus?.code === status.code
+                  ? 'scale-110'
+                  : 'hover:scale-105'
+              }`}
+              style={{
+                transitionDelay: isVisible ? `${(index + 7) * 100}ms` : '0ms',
+              }}
+            >
+              <div
+                className={`w-12 h-10 rounded-lg flex items-center justify-center text-xs font-bold shadow-sm transition-shadow ${
+                  selectedStatus?.code === status.code ? 'shadow-lg ring-2 ring-white/50' : ''
+                }`}
+                style={{ backgroundColor: status.color, color: status.textColor }}
+              >
+                {status.code}
+              </div>
+            </button>
+          ))}
+        </div>
 
-      {/* Example or Note */}
-      {status.example && (
-        <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] italic">
-          Example: {status.example}
-        </p>
-      )}
-      {status.note && (
-        <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
-          {status.note}
-        </p>
-      )}
-    </div>
+        {/* Tooltip for other categories */}
+        {selectedStatus && statuses.slice(7).some(s => s.code === selectedStatus.code) && (
+          <div
+            className="mt-4 bg-[#F7F5F0] dark:bg-[#1a1a1a] rounded-xl p-4 animate-fade-in relative"
+          >
+            <button
+              onClick={() => setSelectedStatus(null)}
+              className="absolute top-2 right-2 p-1 text-[#9CA3AF] hover:text-[#6B7280] dark:hover:text-white transition-colors"
+              aria-label="Close"
+            >
+              <X size={18} />
+            </button>
+
+            <div className="flex items-center gap-2 mb-2 pr-6">
+              <span
+                className="inline-flex items-center justify-center w-8 h-5 rounded text-[10px] font-bold"
+                style={{ backgroundColor: selectedStatus.color, color: selectedStatus.textColor }}
+              >
+                {selectedStatus.code}
+              </span>
+              <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white">
+                {selectedStatus.name}
+              </h3>
+            </div>
+
+            <p className="text-sm text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed mb-2">
+              {selectedStatus.description}
+            </p>
+
+            {selectedStatus.note && (
+              <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">
+                {selectedStatus.note}
+              </p>
+            )}
+          </div>
+        )}
+      </div>
+    </section>
   );
 }
