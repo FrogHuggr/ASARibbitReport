@@ -556,7 +556,7 @@ export function Settings() {
           </div>
           <div>
             <p className="font-medium text-[#2D2D2D] dark:text-white">Special Thanks</p>
-            <p>The ASA's Future Leaders of Amphibian Conservation program, who shared their stories, photos, and passion for the launch!</p>
+            <p>The ASA's Future Leaders of Amphibian Conservation, who shared their stories, photos, and passion for the launch!</p>
           </div>
         </div>
       </section>
