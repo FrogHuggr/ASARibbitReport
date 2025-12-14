@@ -86,8 +86,8 @@ export function Analytics() {
   if (!isAuthenticated) {
     return (
       <div className="min-h-screen bg-[#F9FAFB] dark:bg-[#1A1A1A] flex items-center justify-center px-4">
-        <div className="w-full max-w-sm">
-          <div className="bg-white dark:bg-[#242424] rounded-2xl p-8 shadow-lg">
+        <div className="w-full max-w-[320px]">
+          <div className="bg-white dark:bg-[#242424] rounded-2xl p-6 shadow-lg min-w-[280px]">
             <div className="flex justify-center mb-6">
               <div className="w-16 h-16 rounded-full bg-[#E8F5E9] dark:bg-[#1B3D2F] flex items-center justify-center">
                 <Lock size={32} className="text-[#2D5A3D] dark:text-[#81C784]" />
