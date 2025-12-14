@@ -576,21 +576,21 @@ export function Settings() {
 
       {/* Privacy Modal */}
       {showPrivacyModal && (
-        <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
-          <div className="bg-white dark:bg-[#242424] rounded-2xl max-w-lg w-full max-h-[85vh] overflow-hidden shadow-xl">
+        <div className="fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4 overflow-y-auto">
+          <div className="bg-white dark:bg-[#242424] rounded-2xl w-full max-w-[340px] sm:max-w-lg max-h-[85vh] overflow-hidden shadow-xl flex flex-col my-auto">
             {/* Modal Header */}
-            <div className="flex items-center justify-between p-4 border-b border-[#E5E7EB] dark:border-[#374151]">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-[#E8F5E9] dark:bg-[#1B3D2F] flex items-center justify-center">
-                  <Shield size={20} className="text-[#2D5A3D] dark:text-[#81C784]" />
+            <div className="flex items-center justify-between p-3 sm:p-4 border-b border-[#E5E7EB] dark:border-[#374151] flex-shrink-0">
+              <div className="flex items-center gap-2 sm:gap-3">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-[#E8F5E9] dark:bg-[#1B3D2F] flex items-center justify-center flex-shrink-0">
+                  <Shield size={18} className="text-[#2D5A3D] dark:text-[#81C784]" />
                 </div>
-                <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white">
+                <h2 className="font-display text-lg sm:text-xl font-bold text-[#2D2D2D] dark:text-white whitespace-nowrap">
                   Your Privacy
                 </h2>
               </div>
               <button
                 onClick={() => setShowPrivacyModal(false)}
-                className="p-2 hover:bg-[#F3F4F6] dark:hover:bg-[#374151] rounded-full transition-colors"
+                className="p-1.5 sm:p-2 hover:bg-[#F3F4F6] dark:hover:bg-[#374151] rounded-full transition-colors flex-shrink-0"
                 aria-label="Close"
               >
                 <X size={20} className="text-[#6B7280]" />
@@ -598,20 +598,20 @@ export function Settings() {
             </div>
 
             {/* Modal Content */}
-            <div className="p-5 overflow-y-auto max-h-[calc(85vh-80px)]">
+            <div className="p-4 sm:p-5 overflow-y-auto flex-1">
               {/* Kid-friendly summary */}
-              <div className="bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-xl p-4 mb-6">
-                <div className="flex gap-3">
+              <div className="bg-[#E8F5E9] dark:bg-[#1B3D2F] rounded-xl p-3 sm:p-4 mb-5">
+                <div className="flex gap-2 sm:gap-3">
                   <img
                     src="/images/marshmellow/marshmellow-thinking6.png"
                     alt="MarshMellow"
-                    className="w-16 h-16 object-contain flex-shrink-0"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain flex-shrink-0"
                   />
-                  <div>
-                    <p className="font-display font-bold text-[#2D5A3D] dark:text-[#81C784] mb-1">
+                  <div className="min-w-0">
+                    <p className="font-display font-bold text-[#2D5A3D] dark:text-[#81C784] mb-1 text-sm sm:text-base">
                       MarshMellow says:
                     </p>
-                    <p className="text-sm text-[#2D5A3D] dark:text-[#A5D6A7] leading-relaxed">
+                    <p className="text-xs sm:text-sm text-[#2D5A3D] dark:text-[#A5D6A7] leading-relaxed">
                       "The Ribbit Report is a safe place to explore! We don't ask for your name, email, or any personal stuff. We just want to help you learn about amazing amphibians!"
                     </p>
                   </div>
@@ -619,95 +619,91 @@ export function Settings() {
               </div>
 
               {/* What we DON'T collect */}
-              <div className="mb-6">
-                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-3 flex items-center gap-2">
-                  <span className="text-lg">🚫</span> What We DON'T Collect
+              <div className="mb-5">
+                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2 flex items-center gap-2 text-sm sm:text-base">
+                  <span>🚫</span> What We DON'T Collect
                 </h3>
-                <ul className="space-y-2 text-sm text-[#4B5563] dark:text-[#D1D5DB]">
+                <ul className="space-y-1.5 text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB]">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5">✕</span>
-                    <span><strong>No names or emails</strong> – You don't need an account</span>
+                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
+                    <span><strong>No names or emails</strong> – No account needed</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5">✕</span>
+                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
                     <span><strong>No location tracking</strong> – We don't know where you are</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5">✕</span>
-                    <span><strong>No cookies</strong> – We don't track you across websites</span>
+                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
+                    <span><strong>No cookies</strong> – No tracking across websites</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5">✕</span>
-                    <span><strong>No device info</strong> – We don't identify your phone or tablet</span>
+                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
+                    <span><strong>No device info</strong> – We don't identify your device</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5">✕</span>
-                    <span><strong>No ads or trackers</strong> – No third-party companies watching</span>
+                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
+                    <span><strong>No ads or trackers</strong> – No third-party companies</span>
                   </li>
                 </ul>
               </div>
 
               {/* What we DO collect */}
-              <div className="mb-6">
-                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-3 flex items-center gap-2">
-                  <span className="text-lg">✅</span> What We DO Collect (Anonymously)
+              <div className="mb-5">
+                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2 flex items-center gap-2 text-sm sm:text-base">
+                  <span>✅</span> What We DO Collect (Anonymously)
                 </h3>
-                <ul className="space-y-2 text-sm text-[#4B5563] dark:text-[#D1D5DB]">
+                <ul className="space-y-1.5 text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB]">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#22C55E] mt-0.5">✓</span>
-                    <span><strong>Page views</strong> – We count how many times pages are visited (but not who visits)</span>
+                    <span className="text-[#22C55E] mt-0.5 flex-shrink-0">✓</span>
+                    <span><strong>Page views</strong> – We count visits (but not who visits)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#22C55E] mt-0.5">✓</span>
-                    <span><strong>Popular content</strong> – We see which articles are most read to create more of what you love</span>
+                    <span className="text-[#22C55E] mt-0.5 flex-shrink-0">✓</span>
+                    <span><strong>Popular content</strong> – Which articles are most read</span>
                   </li>
                 </ul>
-                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mt-3">
-                  Think of it like a tally counter at a museum door – we count visits but don't know who walked in!
+                <p className="text-[10px] sm:text-xs text-[#6B7280] dark:text-[#9CA3AF] mt-2">
+                  Like a tally counter at a museum door – we count visits but don't know who walked in!
                 </p>
               </div>
 
               {/* Your preferences */}
-              <div className="mb-6">
-                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-3 flex items-center gap-2">
-                  <span className="text-lg">📱</span> Your Preferences
+              <div className="mb-5">
+                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2 flex items-center gap-2 text-sm sm:text-base">
+                  <span>📱</span> Your Preferences
                 </h3>
-                <p className="text-sm text-[#4B5563] dark:text-[#D1D5DB] mb-2">
-                  Settings like dark mode, text size, and language are saved only on YOUR device. We never see them, and they stay with you.
-                </p>
-                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">
-                  Clear your browser data anytime to reset these.
+                <p className="text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB]">
+                  Settings like dark mode and text size are saved only on YOUR device. We never see them.
                 </p>
               </div>
 
               {/* For parents section */}
-              <div className="bg-[#F3F4F6] dark:bg-[#1A1A1A] rounded-xl p-4 mb-6">
-                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2 flex items-center gap-2">
-                  <span className="text-lg">👨‍👩‍👧</span> For Parents & Guardians
+              <div className="bg-[#F3F4F6] dark:bg-[#1A1A1A] rounded-xl p-3 sm:p-4 mb-5">
+                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2 flex items-center gap-2 text-sm sm:text-base">
+                  <span>👨‍👩‍👧</span> For Parents & Guardians
                 </h3>
-                <p className="text-sm text-[#4B5563] dark:text-[#D1D5DB] mb-3">
-                  The Ribbit Report is designed with COPPA (Children's Online Privacy Protection Act) compliance in mind:
+                <p className="text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB] mb-2">
+                  COPPA (Children's Online Privacy Protection Act) compliant:
                 </p>
-                <ul className="space-y-1.5 text-sm text-[#4B5563] dark:text-[#D1D5DB]">
-                  <li>• No account creation or personal data collection</li>
+                <ul className="space-y-1 text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB]">
+                  <li>• No personal data collection</li>
                   <li>• No behavioral tracking or profiling</li>
-                  <li>• No third-party analytics (Google, Facebook, etc.)</li>
+                  <li>• No third-party analytics</li>
                   <li>• No advertising or data monetization</li>
-                  <li>• All preferences stored locally on device only</li>
-                  <li>• Anonymous aggregate page view counts only</li>
+                  <li>• Preferences stored locally only</li>
                 </ul>
               </div>
 
               {/* Contact */}
-              <div className="text-center pt-2 border-t border-[#E5E7EB] dark:border-[#374151]">
-                <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-2">
+              <div className="text-center pt-3 border-t border-[#E5E7EB] dark:border-[#374151]">
+                <p className="text-xs sm:text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-1.5">
                   Questions about privacy?
                 </p>
                 <a
                   href="mailto:info@amphibians.org?subject=Ribbit%20Report%20Privacy%20Question"
-                  className="inline-flex items-center gap-1.5 text-[#2D5A3D] dark:text-[#81C784] font-medium hover:underline"
+                  className="inline-flex items-center gap-1.5 text-[#2D5A3D] dark:text-[#81C784] font-medium hover:underline text-sm"
                 >
-                  <Mail size={16} />
+                  <Mail size={14} />
                   info@amphibians.org
                 </a>
               </div>
