@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail } from 'lucide-react';
+import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail, X } from 'lucide-react';
 import { useTheme, languageLabels, type Language } from '../context/ThemeContext';
 import { useTextSize, type TextSize } from '../context/TextSizeContext';
 
@@ -41,8 +41,16 @@ export function Settings() {
   const { textSize, setTextSize } = useTextSize();
   const isInstalled = useIsInstalled();
   const device = useDeviceType();
+  const [showTranslationInfo, setShowTranslationInfo] = useState(true);
 
   const languages: Language[] = ['en', 'es', 'fr', 'pt', 'de'];
+
+  // Reset info box visibility when language changes to non-English
+  useEffect(() => {
+    if (language !== 'en') {
+      setShowTranslationInfo(true);
+    }
+  }, [language]);
 
   return (
     <div className="container-app px-4 py-6 pb-10">
@@ -190,10 +198,19 @@ export function Settings() {
           </div>
         </div>
 
-        {/* Beta Warning - only shown when non-English selected */}
-        {language !== 'en' && (
-          <div className="bg-[#FEF3C7] dark:bg-[#78350F]/30 rounded-xl p-4 border border-[#F59E0B]/30">
-            <div className="flex gap-4">
+        {/* Beta Warning - only shown when non-English selected and not dismissed */}
+        {language !== 'en' && showTranslationInfo && (
+          <div className="bg-[#FEF3C7] dark:bg-[#78350F]/30 rounded-xl p-4 border border-[#F59E0B]/30 relative">
+            {/* Close button */}
+            <button
+              onClick={() => setShowTranslationInfo(false)}
+              className="absolute top-3 right-3 p-1 text-[#92400E] dark:text-[#FCD34D] hover:bg-[#F59E0B]/20 rounded-full transition-colors"
+              aria-label="Dismiss"
+            >
+              <X size={18} />
+            </button>
+
+            <div className="flex gap-4 pr-6">
               {/* MarshMellow with dictionary */}
               <div className="flex-shrink-0">
                 <img
@@ -211,22 +228,18 @@ export function Settings() {
                 <p className="text-sm text-[#92400E] dark:text-[#FDE68A] mb-3 leading-relaxed">
                   Ribbit! I'm using my dictionary to help you read in {languageLabels[language].replace(' (Beta)', '')}! Here's what to know:
                 </p>
-                <ul className="text-sm text-[#92400E] dark:text-[#FDE68A] space-y-2 mb-3">
-                  <li className="flex items-start gap-2">
-                    <span className="flex-shrink-0 mt-1">•</span>
-                    <span><strong>Scientific names stay the same</strong> – words like <em>Atelopus zeteki</em> are universal so scientists everywhere can understand!</span>
+                <ul className="text-sm text-[#92400E] dark:text-[#FDE68A] space-y-2 mb-3 list-disc list-inside">
+                  <li>
+                    <strong>Scientific names stay the same</strong> – words like <em>Atelopus zeteki</em> are universal so scientists everywhere can understand!
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="flex-shrink-0 mt-1">•</span>
-                    <span><strong>Some translations might be a little off</strong> – my dictionary is still learning</span>
+                  <li>
+                    <strong>Some translations might be a little off</strong> – my dictionary is still learning
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="flex-shrink-0 mt-1">•</span>
-                    <span><strong>Check the Glossary</strong> – tap underlined words for original English definitions</span>
+                  <li>
+                    <strong>Check the Glossary</strong> – tap underlined words for original English definitions
                   </li>
-                  <li className="flex items-start gap-2">
-                    <span className="flex-shrink-0 mt-1">•</span>
-                    <span><strong>You'll need internet</strong> – my translator works online</span>
+                  <li>
+                    <strong>You'll need internet</strong> – my translator works online
                   </li>
                 </ul>
                 <p className="text-sm text-[#92400E] dark:text-[#FDE68A] font-medium">
