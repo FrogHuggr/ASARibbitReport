@@ -1,0 +1,8 @@
+# The Ribbit Report - Amphibian Conservation Magazine for Kids
+# https://ribbitreport.org
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://ribbitreport.org/sitemap.xml

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ChevronRight, MapPin, Lightbulb, Camera } from 'lucide-react';
+import { SEO } from '../components/SEO';
 import { dispatches } from '../data/dispatches';
 import { mythBusterCards } from '../data/mythbusters';
 import { dilemmas } from '../data/wildDecisions';
@@ -15,6 +16,8 @@ export function Home() {
 
   return (
     <div className="pb-10">
+      <SEO url="/" />
+
       {/* HERO SECTION - Full bleed magazine cover with random rotation */}
       <section className="relative h-[55vh] min-h-[400px] overflow-hidden">
         {/* Background image with Ken Burns animation */}

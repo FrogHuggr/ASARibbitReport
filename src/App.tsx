@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HelmetProvider } from 'react-helmet-async';
 import { ThemeProvider } from './context/ThemeContext';
 import { TextSizeProvider } from './context/TextSizeContext';
 import { AppShell } from './components/layout/AppShell';
@@ -24,9 +25,10 @@ import { NotFound } from './pages/NotFound';
 
 function App() {
   return (
-    <ThemeProvider>
-      <TextSizeProvider>
-        <BrowserRouter>
+    <HelmetProvider>
+      <ThemeProvider>
+        <TextSizeProvider>
+          <BrowserRouter>
           <ScrollToTop />
           <AnalyticsTracker />
           <WelcomeModal />
@@ -52,9 +54,10 @@ function App() {
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>
-        </BrowserRouter>
-      </TextSizeProvider>
-    </ThemeProvider>
+          </BrowserRouter>
+        </TextSizeProvider>
+      </ThemeProvider>
+    </HelmetProvider>
   );
 }
 
