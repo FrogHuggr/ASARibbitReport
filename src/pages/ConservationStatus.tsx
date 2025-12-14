@@ -148,9 +148,16 @@ export function ConservationStatus() {
 
       {/* What MarshMellow Wants You to Know */}
       <section className="px-4 py-6">
-        <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white mb-4">
-          What MarshMellow Wants You to Know
-        </h2>
+        <div className="flex items-start gap-3 mb-4">
+          <img
+            src="/images/marshmellow/marshmellow-thinking6.png"
+            alt="MarshMellow thinking"
+            className="w-12 h-12 object-contain flex-shrink-0"
+          />
+          <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white pt-2">
+            What MarshMellow Wants You to Know
+          </h2>
+        </div>
         <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
           <p>
             Conservation status helps scientists, governments, and communities decide where to focus their efforts. When a species is listed as Critically Endangered, it can unlock funding, legal protection, and attention.
