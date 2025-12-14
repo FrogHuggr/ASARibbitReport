@@ -151,10 +151,10 @@ export function Analytics() {
           <span>Back to Home</span>
         </Link>
 
-        <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white mb-2">
+        <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white mb-2 whitespace-nowrap">
           Analytics Dashboard
         </h1>
-        <p className="text-[#6B7280] dark:text-[#9CA3AF] mb-6">
+        <p className="text-[#6B7280] dark:text-[#9CA3AF] mb-6 whitespace-nowrap">
           Anonymous usage stats for The Ribbit Report
         </p>
 
@@ -166,7 +166,7 @@ export function Analytics() {
         )}
 
         {error && (
-          <div className="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 p-4 rounded-xl">
+          <div className="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 p-4 rounded-xl whitespace-normal">
             {error}
           </div>
         )}
