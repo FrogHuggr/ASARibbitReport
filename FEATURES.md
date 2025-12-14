@@ -147,6 +147,19 @@ MarshMellow is a friendly frog character serving as the app's guide and mascot.
   - When enabled: Glossary terms show with dotted underline and tap-for-definition tooltips
   - When disabled: Plain text without interactive highlights
 
+### Language / Translation Helper (Beta)
+
+- **Browser-Based Translation**: Leverages browser translation APIs for multilingual support
+- **Supported Languages**: English (default), Spanish, French, Portuguese, German
+- **Beta Designation**: All non-English options clearly marked as beta
+- **MarshMellow Info Box**: When non-English selected, shows friendly explanation:
+  - Scientific names remain unchanged (universal across languages)
+  - Translations may be imperfect (browser-based)
+  - Glossary still shows original English definitions
+  - Requires internet connection
+- **Feedback Link**: Easy email link to report translation issues (info@amphibians.org)
+- **Multilingual Section Header**: "Language / Idioma / Langue" for discoverability
+
 ### Install as App Section
 
 - **Device Detection**: Identifies iOS, Android, or desktop

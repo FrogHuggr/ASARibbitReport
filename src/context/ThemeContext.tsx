@@ -1,10 +1,22 @@
 import { createContext, useContext, useEffect, useState, type ReactNode } from 'react';
 
+export type Language = 'en' | 'es' | 'fr' | 'pt' | 'de';
+
+export const languageLabels: Record<Language, string> = {
+  en: 'English',
+  es: 'Español (Beta)',
+  fr: 'Français (Beta)',
+  pt: 'Português (Beta)',
+  de: 'Deutsch (Beta)',
+};
+
 interface ThemeContextType {
   isDark: boolean;
   toggleDark: () => void;
   glossaryEnabled: boolean;
   toggleGlossary: () => void;
+  language: Language;
+  setLanguage: (lang: Language) => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -33,6 +45,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const [glossaryEnabled, setGlossaryEnabled] = useState(() => {
     const saved = localStorage.getItem('ribbit-glossary-enabled');
     return saved !== null ? JSON.parse(saved) : true;
+  });
+
+  // Language preference - default to English
+  const [language, setLanguageState] = useState<Language>(() => {
+    const saved = localStorage.getItem('ribbit-language');
+    return (saved as Language) || 'en';
   });
 
   // Track if user has manually set preference
@@ -73,6 +91,22 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     localStorage.setItem('ribbit-glossary-enabled', JSON.stringify(glossaryEnabled));
   }, [glossaryEnabled]);
 
+  // Save language preference and update document lang attribute
+  useEffect(() => {
+    localStorage.setItem('ribbit-language', language);
+    document.documentElement.lang = language;
+    // Set translate attribute - 'yes' enables browser translation for non-English
+    if (language !== 'en') {
+      document.documentElement.setAttribute('translate', 'yes');
+    } else {
+      document.documentElement.removeAttribute('translate');
+    }
+  }, [language]);
+
+  const setLanguage = (lang: Language) => {
+    setLanguageState(lang);
+  };
+
   const toggleDark = () => {
     setHasManualPreference(true);
     setIsDark((prev: boolean) => !prev);
@@ -80,7 +114,7 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
   const toggleGlossary = () => setGlossaryEnabled((prev: boolean) => !prev);
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleDark, glossaryEnabled, toggleGlossary }}>
+    <ThemeContext.Provider value={{ isDark, toggleDark, glossaryEnabled, toggleGlossary, language, setLanguage }}>
       {children}
     </ThemeContext.Provider>
   );

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen } from 'lucide-react';
-import { useTheme } from '../context/ThemeContext';
+import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail } from 'lucide-react';
+import { useTheme, languageLabels, type Language } from '../context/ThemeContext';
 import { useTextSize, type TextSize } from '../context/TextSizeContext';
 
 // Detect if app is running as installed PWA
@@ -37,10 +37,12 @@ function useDeviceType() {
 }
 
 export function Settings() {
-  const { isDark, toggleDark, glossaryEnabled, toggleGlossary } = useTheme();
+  const { isDark, toggleDark, glossaryEnabled, toggleGlossary, language, setLanguage } = useTheme();
   const { textSize, setTextSize } = useTextSize();
   const isInstalled = useIsInstalled();
   const device = useDeviceType();
+
+  const languages: Language[] = ['en', 'es', 'fr', 'pt', 'de'];
 
   return (
     <div className="container-app px-4 py-6 pb-10">
@@ -154,6 +156,97 @@ export function Settings() {
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Language Section */}
+      <div className="card mb-6">
+        <div className="flex items-center gap-3 mb-4">
+          <Globe size={24} className="text-[#2D5A3D] dark:text-[#6ABF8A]" />
+          <div>
+            <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white">
+              Language / Idioma / Langue
+            </h2>
+            <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
+              Translation Helper (Beta)
+            </p>
+          </div>
+        </div>
+
+        {/* Language Selector */}
+        <div className="relative mb-4">
+          <select
+            value={language}
+            onChange={(e) => setLanguage(e.target.value as Language)}
+            className="w-full appearance-none bg-[#F3F4F6] dark:bg-[#374151] border-2 border-[#D1D5DB] dark:border-[#4B5563] rounded-lg py-3 px-4 pr-10 font-medium text-[#2D2D2D] dark:text-white focus:outline-none focus:border-[#2D5A3D] dark:focus:border-[#6ABF8A] transition-colors"
+          >
+            {languages.map((lang) => (
+              <option key={lang} value={lang}>
+                {languageLabels[lang]}
+              </option>
+            ))}
+          </select>
+          <div className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none">
+            <ChevronRight size={20} className="rotate-90 text-[#6B7280]" />
+          </div>
+        </div>
+
+        {/* Beta Warning - only shown when non-English selected */}
+        {language !== 'en' && (
+          <div className="bg-[#FEF3C7] dark:bg-[#78350F]/30 rounded-xl p-4 border border-[#F59E0B]/30">
+            <div className="flex gap-4">
+              {/* MarshMellow with dictionary */}
+              <div className="flex-shrink-0">
+                <img
+                  src="/images/marshmellow/marshmellow-glossary.png"
+                  alt="MarshMellow with dictionary"
+                  className="w-20 h-20 object-contain"
+                />
+              </div>
+
+              {/* Info content */}
+              <div className="flex-1 min-w-0">
+                <p className="font-display font-bold text-[#92400E] dark:text-[#FCD34D] mb-2">
+                  MarshMellow's Translation Helper (Beta)
+                </p>
+                <p className="text-sm text-[#92400E] dark:text-[#FDE68A] mb-3 leading-relaxed">
+                  Ribbit! I'm using my dictionary to help you read in {languageLabels[language].replace(' (Beta)', '')}! Here's what to know:
+                </p>
+                <ul className="text-sm text-[#92400E] dark:text-[#FDE68A] space-y-2 mb-3">
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span><strong>Scientific names stay the same</strong> – words like <em>Atelopus zeteki</em> are universal so scientists everywhere can understand!</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span><strong>Some translations might be a little off</strong> – my dictionary is still learning</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span><strong>Check the Glossary</strong> – tap underlined words for original English definitions</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="flex-shrink-0 mt-1">•</span>
+                    <span><strong>You'll need internet</strong> – my translator works online</span>
+                  </li>
+                </ul>
+                <p className="text-sm text-[#92400E] dark:text-[#FDE68A] font-medium">
+                  Happy exploring!
+                </p>
+              </div>
+            </div>
+
+            {/* Feedback link */}
+            <div className="mt-3 pt-3 border-t border-[#F59E0B]/20">
+              <a
+                href="mailto:info@amphibians.org?subject=Ribbit%20Report%20Translation%20Feedback"
+                className="inline-flex items-center gap-1.5 text-xs text-[#92400E] dark:text-[#FCD34D] hover:underline"
+              >
+                <Mail size={12} />
+                Something sound wrong? Let us know!
+              </a>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* Install as App Section - only show if not already installed */}
