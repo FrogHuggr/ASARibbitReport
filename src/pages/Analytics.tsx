@@ -142,7 +142,7 @@ export function Analytics() {
 
   return (
     <div className="min-h-screen bg-[#F9FAFB] dark:bg-[#1A1A1A]">
-      <div className="px-4 py-6 max-w-2xl mx-auto">
+      <div className="px-4 py-6 max-w-2xl mx-auto min-w-[320px]">
         <Link
           to="/"
           className="inline-flex items-center gap-2 text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#2D5A3D] dark:hover:text-[#81C784] mb-6 transition-colors"
@@ -174,29 +174,29 @@ export function Analytics() {
         {stats && (
           <>
             {/* Summary Cards */}
-            <div className="grid grid-cols-3 gap-3 mb-6">
-              <div className="bg-white dark:bg-[#242424] rounded-xl p-4 text-center shadow-sm">
-                <Eye size={24} className="mx-auto text-[#2D5A3D] dark:text-[#81C784] mb-2" />
-                <p className="text-2xl font-bold text-[#2D2D2D] dark:text-white">
+            <div className="grid grid-cols-3 gap-3 mb-6 min-w-[300px]">
+              <div className="bg-white dark:bg-[#242424] rounded-xl p-3 sm:p-4 text-center shadow-sm min-w-0">
+                <Eye size={20} className="mx-auto text-[#2D5A3D] dark:text-[#81C784] mb-1 sm:mb-2 flex-shrink-0" />
+                <p className="text-lg sm:text-2xl font-bold text-[#2D2D2D] dark:text-white whitespace-nowrap">
                   {stats.totalViews.toLocaleString()}
                 </p>
-                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">Total</p>
+                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] whitespace-nowrap">Total</p>
               </div>
 
-              <div className="bg-white dark:bg-[#242424] rounded-xl p-4 text-center shadow-sm">
-                <Calendar size={24} className="mx-auto text-[#F59E0B] mb-2" />
-                <p className="text-2xl font-bold text-[#2D2D2D] dark:text-white">
+              <div className="bg-white dark:bg-[#242424] rounded-xl p-3 sm:p-4 text-center shadow-sm min-w-0">
+                <Calendar size={20} className="mx-auto text-[#F59E0B] mb-1 sm:mb-2 flex-shrink-0" />
+                <p className="text-lg sm:text-2xl font-bold text-[#2D2D2D] dark:text-white whitespace-nowrap">
                   {stats.todayViews.toLocaleString()}
                 </p>
-                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">Today</p>
+                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] whitespace-nowrap">Today</p>
               </div>
 
-              <div className="bg-white dark:bg-[#242424] rounded-xl p-4 text-center shadow-sm">
-                <TrendingUp size={24} className="mx-auto text-[#3B82F6] mb-2" />
-                <p className="text-2xl font-bold text-[#2D2D2D] dark:text-white">
+              <div className="bg-white dark:bg-[#242424] rounded-xl p-3 sm:p-4 text-center shadow-sm min-w-0">
+                <TrendingUp size={20} className="mx-auto text-[#3B82F6] mb-1 sm:mb-2 flex-shrink-0" />
+                <p className="text-lg sm:text-2xl font-bold text-[#2D2D2D] dark:text-white whitespace-nowrap">
                   {stats.weekViews.toLocaleString()}
                 </p>
-                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF]">Week</p>
+                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] whitespace-nowrap">Week</p>
               </div>
             </div>
 
@@ -204,8 +204,8 @@ export function Analytics() {
             {stats.dailyStats && stats.dailyStats.length > 0 && (
               <div className="bg-white dark:bg-[#242424] rounded-xl p-5 shadow-sm mb-6">
                 <div className="flex items-center gap-2 mb-4">
-                  <BarChart3 size={20} className="text-[#3B82F6]" />
-                  <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white">
+                  <BarChart3 size={20} className="text-[#3B82F6] flex-shrink-0" />
+                  <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white whitespace-nowrap">
                     Last 30 Days
                   </h2>
                 </div>
@@ -247,8 +247,8 @@ export function Analytics() {
             {/* Popular Pages */}
             <div className="bg-white dark:bg-[#242424] rounded-xl p-5 shadow-sm mb-6">
               <div className="flex items-center gap-2 mb-4">
-                <Award size={20} className="text-[#F59E0B]" />
-                <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white">
+                <Award size={20} className="text-[#F59E0B] flex-shrink-0" />
+                <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white whitespace-nowrap">
                   Popular Pages
                 </h2>
               </div>
