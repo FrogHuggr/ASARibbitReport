@@ -14,6 +14,8 @@ The Ribbit Report is a mobile-first Progressive Web App (PWA) designed as an edu
 - **Offline Support**: Service worker caches core assets for offline access
 - **Native-like Experience**: Runs in standalone mode without browser chrome when installed
 - **App Icons**: Custom MarshMellow mascot icons in 192x192 and 512x512 sizes
+- **Favicon**: MarshMellow favicon in 16x16 and 32x32 sizes for browser tabs
+- **Loading Splash**: MarshMellow with toolbox "Building your page..." animation shown before React loads
 - **Web App Manifest**: Full PWA configuration with theme colors and display settings
 
 ### Welcome Experience
@@ -86,6 +88,7 @@ Curated content groupings for easy discovery.
 ### Header
 
 - **Logo Link**: MarshMellow waving image with "The Ribbit Report" text, links to home
+- **Search Button**: Magnifying glass icon opens full-screen search overlay
 - **Hamburger Menu**: Three-line icon opens the navigation drawer
 
 ### Hamburger Menu
@@ -140,6 +143,9 @@ MarshMellow is a friendly frog character serving as the app's guide and mascot.
 - **Text Size Options**: Three sizes (Small, Medium, Large) for accessibility
   - Affects body text, paragraphs, and readable content
   - Preserves heading hierarchy
+- **Glossary Highlights Toggle**: Enable/disable interactive glossary term highlighting
+  - When enabled: Glossary terms show with dotted underline and tap-for-definition tooltips
+  - When disabled: Plain text without interactive highlights
 
 ### Install as App Section
 
@@ -309,12 +315,49 @@ Kid-friendly definitions for scientific, conservation, and geographic terms.
 - **Tooltip content**: Shows term, pronunciation (if available), definition, and category badge
 - **Mobile**: Tap to show/hide definition tooltip
 - **Desktop**: Click to show/hide (with outside-click to dismiss)
-- **Smart positioning**: Tooltips appear above or below based on available screen space
+- **Smart positioning**: Tooltips appear above or below based on available screen space, and align left/center/right to stay on screen
 - **First-occurrence only**: Each term is only highlighted once per text block to avoid clutter
+- **User preference**: Can be disabled via Settings toggle for distraction-free reading
 
 ### Future Enhancements
 
 - Optional dedicated Glossary page for browsing all terms alphabetically
+
+---
+
+## Search
+
+Full-screen search overlay for finding content across the entire app.
+
+### Search Index
+
+Unified search system that indexes all content types:
+- **Dispatches**: Species names (common and scientific), countries, regions, researcher names, article titles, and content
+- **Glossary Terms**: Term names, definitions, and categories
+- **Myth Busters**: Claims, reveals, and answers
+- **Real Stories**: Titles, subtitles, and content
+- **Wild Decisions**: Titles, labels, prompts, and story content
+
+### Search Interface
+
+- **Full-screen overlay**: Clean, focused search experience
+- **Live search**: Results update as you type
+- **Grouped results**: Results organized by content type with color-coded badges
+- **Type indicators**: Icons and labels for each content type (Dispatch, Glossary, Myth Buster, etc.)
+- **Popular searches**: Suggested search terms when search is empty
+- **No results state**: Friendly MarshMellow illustration with helpful message
+
+### Search Scoring
+
+Smart relevance scoring prioritizes results:
+- Exact title match: Highest priority
+- Title starts with query: High priority
+- Title contains query: Medium priority
+- Content contains query words: Standard priority
+
+### Future-Proof Design
+
+New content types can be added to search by simply adding entries to the unified search index.
 
 ---
 

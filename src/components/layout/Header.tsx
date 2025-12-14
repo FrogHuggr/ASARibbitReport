@@ -1,10 +1,18 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu } from 'lucide-react';
+import { Menu, Search } from 'lucide-react';
 import { HamburgerMenu } from './HamburgerMenu';
+import { SearchOverlay } from '../SearchOverlay';
+import { triggerHaptic } from '../../utils/haptics';
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const handleSearchClick = () => {
+    triggerHaptic('light');
+    setIsSearchOpen(true);
+  };
 
   return (
     <>
@@ -22,16 +30,31 @@ export function Header() {
             </span>
           </Link>
 
-          {/* Hamburger menu button */}
-          <button
-            onClick={() => setIsMenuOpen(true)}
-            className="p-2 -mr-2 text-[#4A4A4A] dark:text-[#9CA3AF] hover:text-[#2D5A3D] dark:hover:text-[#81C784] transition-colors"
-            aria-label="Open menu"
-          >
-            <Menu size={24} />
-          </button>
+          {/* Right side buttons */}
+          <div className="flex items-center gap-1">
+            {/* Search button */}
+            <button
+              onClick={handleSearchClick}
+              className="p-2 text-[#4A4A4A] dark:text-[#9CA3AF] hover:text-[#2D5A3D] dark:hover:text-[#81C784] transition-colors"
+              aria-label="Search"
+            >
+              <Search size={22} />
+            </button>
+
+            {/* Hamburger menu button */}
+            <button
+              onClick={() => setIsMenuOpen(true)}
+              className="p-2 -mr-2 text-[#4A4A4A] dark:text-[#9CA3AF] hover:text-[#2D5A3D] dark:hover:text-[#81C784] transition-colors"
+              aria-label="Open menu"
+            >
+              <Menu size={24} />
+            </button>
+          </div>
         </div>
       </header>
+
+      {/* Search Overlay */}
+      <SearchOverlay isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
 
       {/* Hamburger Menu Drawer */}
       <HamburgerMenu isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />

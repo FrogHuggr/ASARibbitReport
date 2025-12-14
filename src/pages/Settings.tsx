@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical } from 'lucide-react';
+import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen } from 'lucide-react';
 import { useTheme } from '../context/ThemeContext';
 import { useTextSize, type TextSize } from '../context/TextSizeContext';
 
@@ -37,7 +37,7 @@ function useDeviceType() {
 }
 
 export function Settings() {
-  const { isDark, toggleDark } = useTheme();
+  const { isDark, toggleDark, glossaryEnabled, toggleGlossary } = useTheme();
   const { textSize, setTextSize } = useTextSize();
   const isInstalled = useIsInstalled();
   const device = useDeviceType();
@@ -118,6 +118,40 @@ export function Settings() {
                 {size}
               </button>
             ))}
+          </div>
+        </div>
+
+        {/* Glossary Highlighting Toggle */}
+        <div className="pt-4 border-t border-[#E5E7EB] dark:border-[#374151]">
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <BookOpen size={24} className="text-[#2D5A3D] dark:text-[#6ABF8A]" />
+              <div>
+                <p className="font-semibold text-[#2D2D2D] dark:text-white">
+                  Glossary Highlights
+                </p>
+                <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF]">
+                  {glossaryEnabled ? 'Tap highlighted words for definitions' : 'Word definitions hidden'}
+                </p>
+              </div>
+            </div>
+
+            {/* Toggle Switch */}
+            <button
+              onClick={toggleGlossary}
+              className={`relative w-14 h-8 rounded-full transition-colors border-2 ${
+                glossaryEnabled
+                  ? 'bg-[#2D5A3D] border-[#2D5A3D]'
+                  : 'bg-[#D1D5DB] dark:bg-[#404040] border-[#9CA3AF] dark:border-[#404040]'
+              }`}
+              aria-label="Toggle glossary highlights"
+            >
+              <span
+                className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-md transition-transform ${
+                  glossaryEnabled ? 'translate-x-7' : 'translate-x-0.5'
+                }`}
+              />
+            </button>
           </div>
         </div>
       </div>

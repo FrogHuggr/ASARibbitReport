@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 import { GlossaryTerm } from './GlossaryTerm';
 import { glossaryTerms } from '../data/glossary';
+import { useTheme } from '../context/ThemeContext';
 
 interface GlossaryTextProps {
   children: string;
@@ -20,9 +21,17 @@ const glossaryRegex = new RegExp(`\\b(${termPattern})\\b`, 'gi');
 /**
  * Automatically wraps glossary terms in text with interactive tooltips.
  * Only wraps the first occurrence of each term to avoid cluttering the text.
+ * Respects the glossaryEnabled setting from ThemeContext.
  */
 export function GlossaryText({ children, className }: GlossaryTextProps) {
+  const { glossaryEnabled } = useTheme();
+
   if (!children || typeof children !== 'string') {
+    return <span className={className}>{children}</span>;
+  }
+
+  // If glossary is disabled, just return plain text
+  if (!glossaryEnabled) {
     return <span className={className}>{children}</span>;
   }
 

@@ -12,8 +12,22 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// Hide loading splash once React is ready
+const hideSplash = () => {
+  const splash = document.getElementById('loading-splash');
+  if (splash) {
+    splash.classList.add('fade-out');
+    setTimeout(() => splash.remove(), 300);
+  }
+};
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <App />
   </StrictMode>,
 );
+
+// Hide splash after a brief moment to ensure content is painted
+requestAnimationFrame(() => {
+  requestAnimationFrame(hideSplash);
+});

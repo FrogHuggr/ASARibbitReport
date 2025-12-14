@@ -34,10 +34,9 @@ export function NotFound() {
       </div>
 
       {/* Message */}
-      <div className="text-center max-w-sm mb-8">
-        <p className="text-[#6B7280] dark:text-[#9CA3AF] leading-relaxed">
-          Hmm, this trail doesn't seem to lead anywhere!
-          Even MarshMellow can't find this page on his maps.
+      <div className="mb-8 px-4" style={{ maxWidth: '320px', width: '100%' }}>
+        <p className="text-[#6B7280] dark:text-[#9CA3AF] leading-relaxed text-center">
+          Hmm, this trail doesn't seem to lead anywhere! Even MarshMellow can't find this page on his maps.
         </p>
       </div>
 

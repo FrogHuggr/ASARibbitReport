@@ -9,6 +9,7 @@ interface GlossaryTermProps {
 export function GlossaryTerm({ term, children }: GlossaryTermProps) {
   const [isOpen, setIsOpen] = useState(false);
   const [position, setPosition] = useState<'above' | 'below'>('above');
+  const [horizontalAlign, setHorizontalAlign] = useState<'center' | 'left' | 'right'>('center');
   const triggerRef = useRef<HTMLSpanElement>(null);
   const tooltipRef = useRef<HTMLDivElement>(null);
 
@@ -39,9 +40,28 @@ export function GlossaryTerm({ term, children }: GlossaryTermProps) {
 
     const rect = triggerRef.current.getBoundingClientRect();
     const spaceAbove = rect.top;
-    const tooltipHeight = 120; // Approximate height
+    const tooltipHeight = 150; // Approximate height
+    const tooltipWidth = 288; // w-72 = 18rem = 288px
+    const screenWidth = window.innerWidth;
+    const padding = 16; // Keep 16px from edges
 
+    // Vertical positioning
     setPosition(spaceAbove > tooltipHeight ? 'above' : 'below');
+
+    // Horizontal positioning - check if tooltip would go off screen
+    const triggerCenter = rect.left + rect.width / 2;
+    const halfTooltip = tooltipWidth / 2;
+
+    if (triggerCenter - halfTooltip < padding) {
+      // Would go off left edge - align left
+      setHorizontalAlign('left');
+    } else if (triggerCenter + halfTooltip > screenWidth - padding) {
+      // Would go off right edge - align right
+      setHorizontalAlign('right');
+    } else {
+      // Centered is fine
+      setHorizontalAlign('center');
+    }
   }, [isOpen]);
 
   // If term not found in glossary, just render the text
@@ -65,6 +85,36 @@ export function GlossaryTerm({ term, children }: GlossaryTermProps) {
     }
   };
 
+  // Get horizontal position classes
+  const getHorizontalClasses = () => {
+    switch (horizontalAlign) {
+      case 'left':
+        return 'left-0';
+      case 'right':
+        return 'right-0';
+      default:
+        return 'left-1/2 -translate-x-1/2';
+    }
+  };
+
+  // Get arrow position classes
+  const getArrowClasses = () => {
+    const baseClasses = `absolute w-3 h-3 bg-white dark:bg-[#2D2D2D] border-[#E5E7EB] dark:border-[#404040] transform rotate-45 ${
+      position === 'above'
+        ? 'bottom-0 translate-y-1/2 border-r border-b'
+        : 'top-0 -translate-y-1/2 border-l border-t'
+    }`;
+
+    switch (horizontalAlign) {
+      case 'left':
+        return `${baseClasses} left-4`;
+      case 'right':
+        return `${baseClasses} right-4`;
+      default:
+        return `${baseClasses} left-1/2 -translate-x-1/2`;
+    }
+  };
+
   return (
     <span className="relative inline">
       <span
@@ -85,24 +135,18 @@ export function GlossaryTerm({ term, children }: GlossaryTermProps) {
           ref={tooltipRef}
           id={`glossary-${term}`}
           role="tooltip"
-          className={`absolute z-50 w-72 max-w-[90vw] p-3 bg-white dark:bg-[#2D2D2D] rounded-lg shadow-lg border border-[#E5E7EB] dark:border-[#404040] text-left ${
+          className={`absolute z-50 w-72 max-w-[calc(100vw-32px)] p-3 bg-white dark:bg-[#2D2D2D] rounded-lg shadow-lg border border-[#E5E7EB] dark:border-[#404040] text-left ${
             position === 'above'
               ? 'bottom-full mb-2'
               : 'top-full mt-2'
-          } left-1/2 -translate-x-1/2`}
+          } ${getHorizontalClasses()}`}
         >
           {/* Arrow */}
-          <div
-            className={`absolute left-1/2 -translate-x-1/2 w-3 h-3 bg-white dark:bg-[#2D2D2D] border-[#E5E7EB] dark:border-[#404040] transform rotate-45 ${
-              position === 'above'
-                ? 'bottom-0 translate-y-1/2 border-r border-b'
-                : 'top-0 -translate-y-1/2 border-l border-t'
-            }`}
-          />
+          <div className={getArrowClasses()} />
 
           {/* Content */}
           <div className="relative">
-            <div className="flex items-baseline gap-2 mb-1">
+            <div className="flex items-baseline gap-2 mb-1 flex-wrap">
               <span className="font-bold text-[#2D2D2D] dark:text-white capitalize">
                 {glossaryEntry.term}
               </span>

@@ -2,7 +2,8 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" href="/icons/marshmellow-192.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16.png" />
     <link rel="apple-touch-icon" href="/icons/marshmellow-192.png" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
@@ -15,8 +16,57 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
     <title>The Ribbit Report</title>
+    <style>
+      /* Loading splash styles - shown before React loads */
+      #loading-splash {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: #1a1a1a;
+        z-index: 9999;
+        transition: opacity 0.3s ease-out;
+      }
+      #loading-splash.fade-out {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #loading-splash img {
+        width: 140px;
+        height: auto;
+        animation: bounce 1.5s ease-in-out infinite;
+      }
+      #loading-splash p {
+        margin-top: 16px;
+        font-family: 'Baloo 2', cursive;
+        font-size: 18px;
+        font-weight: 600;
+        color: #81C784;
+      }
+      #loading-splash .dots::after {
+        content: '';
+        animation: dots 1.5s steps(4, end) infinite;
+      }
+      @keyframes bounce {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+      @keyframes dots {
+        0% { content: ''; }
+        25% { content: '.'; }
+        50% { content: '..'; }
+        75% { content: '...'; }
+      }
+    </style>
   </head>
   <body>
+    <!-- Loading splash - hidden once React mounts -->
+    <div id="loading-splash">
+      <img src="/images/marshmellow/marshmellow-settings.png" alt="MarshMellow building your page" />
+      <p>Building your page<span class="dots"></span></p>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

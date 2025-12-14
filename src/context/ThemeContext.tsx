@@ -3,6 +3,8 @@ import { createContext, useContext, useEffect, useState, type ReactNode } from '
 interface ThemeContextType {
   isDark: boolean;
   toggleDark: () => void;
+  glossaryEnabled: boolean;
+  toggleGlossary: () => void;
 }
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -16,6 +18,12 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     return saved !== null ? JSON.parse(saved) : true;
   });
 
+  // Glossary highlighting - default to enabled (true)
+  const [glossaryEnabled, setGlossaryEnabled] = useState(() => {
+    const saved = localStorage.getItem('ribbit-glossary-enabled');
+    return saved !== null ? JSON.parse(saved) : true;
+  });
+
   useEffect(() => {
     localStorage.setItem('ribbit-dark-mode', JSON.stringify(isDark));
     if (isDark) {
@@ -25,10 +33,15 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
   }, [isDark]);
 
+  useEffect(() => {
+    localStorage.setItem('ribbit-glossary-enabled', JSON.stringify(glossaryEnabled));
+  }, [glossaryEnabled]);
+
   const toggleDark = () => setIsDark((prev: boolean) => !prev);
+  const toggleGlossary = () => setGlossaryEnabled((prev: boolean) => !prev);
 
   return (
-    <ThemeContext.Provider value={{ isDark, toggleDark }}>
+    <ThemeContext.Provider value={{ isDark, toggleDark, glossaryEnabled, toggleGlossary }}>
       {children}
     </ThemeContext.Provider>
   );

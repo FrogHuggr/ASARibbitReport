@@ -381,15 +381,15 @@ export function RealStory() {
               >
                 {/* MarshMellow avatar - larger with white background */}
                 <div
-                  className="w-20 h-20 rounded-full bg-white flex-shrink-0 flex items-center justify-center overflow-hidden border-2 border-white/50"
+                  className="w-24 h-24 rounded-full bg-white flex-shrink-0 flex items-center justify-center overflow-hidden border-2 border-white/50"
                   style={{
                     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
                   }}
                 >
                   <img
-                    src="/images/marshmellow/marshmellow-celebrating.png"
-                    alt="MarshMellow celebrating"
-                    className="w-16 h-16 object-contain"
+                    src="/images/marshmellow/marshmellow-thinking4.png"
+                    alt="MarshMellow thinking"
+                    className="w-20 h-20 object-contain"
                   />
                 </div>
                 {/* Quote */}
