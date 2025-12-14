@@ -9,13 +9,24 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
+// Get system preference for dark mode
+function getSystemPreference(): boolean {
+  if (typeof window !== 'undefined' && window.matchMedia) {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+  return true; // Default to dark if can't detect
+}
+
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // Default to dark mode - only use light if explicitly saved as false
+  // Check for saved preference, otherwise use system preference
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('ribbit-dark-mode');
-    // If no preference saved, default to dark (true)
-    // If saved, parse the value
-    return saved !== null ? JSON.parse(saved) : true;
+    // If user has manually set a preference, use it
+    if (saved !== null) {
+      return JSON.parse(saved);
+    }
+    // Otherwise, follow system preference
+    return getSystemPreference();
   });
 
   // Glossary highlighting - default to enabled (true)
@@ -24,8 +35,13 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     return saved !== null ? JSON.parse(saved) : true;
   });
 
+  // Track if user has manually set preference
+  const [hasManualPreference, setHasManualPreference] = useState(() => {
+    return localStorage.getItem('ribbit-dark-mode') !== null;
+  });
+
+  // Apply dark mode class
   useEffect(() => {
-    localStorage.setItem('ribbit-dark-mode', JSON.stringify(isDark));
     if (isDark) {
       document.documentElement.classList.add('dark');
     } else {
@@ -33,11 +49,34 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
   }, [isDark]);
 
+  // Save preference when manually toggled
+  useEffect(() => {
+    if (hasManualPreference) {
+      localStorage.setItem('ribbit-dark-mode', JSON.stringify(isDark));
+    }
+  }, [isDark, hasManualPreference]);
+
+  // Listen for system preference changes (only if user hasn't manually set preference)
+  useEffect(() => {
+    if (hasManualPreference) return;
+
+    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+    const handleChange = (e: MediaQueryListEvent) => {
+      setIsDark(e.matches);
+    };
+
+    mediaQuery.addEventListener('change', handleChange);
+    return () => mediaQuery.removeEventListener('change', handleChange);
+  }, [hasManualPreference]);
+
   useEffect(() => {
     localStorage.setItem('ribbit-glossary-enabled', JSON.stringify(glossaryEnabled));
   }, [glossaryEnabled]);
 
-  const toggleDark = () => setIsDark((prev: boolean) => !prev);
+  const toggleDark = () => {
+    setHasManualPreference(true);
+    setIsDark((prev: boolean) => !prev);
+  };
   const toggleGlossary = () => setGlossaryEnabled((prev: boolean) => !prev);
 
   return (
