@@ -56,9 +56,17 @@ Preferred communication style: Simple, everyday language.
 - `vite` / `@vitejs/plugin-react`: Build tooling
 - `eslint` with React and TypeScript plugins: Code linting
 
+### Analytics System
+- **Privacy-friendly tracking**: Anonymous page view tracking without cookies or personal data
+- **Backend API**: Express server on port 3001 with `/api/analytics/event` (POST) and `/api/analytics/stats` (GET)
+- **Frontend integration**: `usePageTracking` hook automatically logs page visits on route changes
+- **Dashboard**: `/analytics` page shows total views, today's views, weekly views, and popular pages
+- **Database**: PostgreSQL `analytics_events` table stores event_type, page_path, page_title, referrer, and timestamp
+
 ### External Services
 - **Google Fonts**: Baloo 2 and Nunito font families loaded via CDN
 - **Amphibian Survival Alliance**: Referenced organization (content partner, not API integration)
+- **PostgreSQL Database**: Replit's built-in Neon-backed database for analytics storage
 
 ### Static Assets
 - Images stored in `/public/images/` organized by content type (dispatches, marshmellow mascot, wild decisions)
