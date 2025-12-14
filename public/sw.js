@@ -1,5 +1,5 @@
 // Service Worker for The Ribbit Report PWA
-const CACHE_NAME = 'ribbit-report-v1';
+const CACHE_NAME = 'ribbit-report-v2';
 
 // Assets to cache on install
 const PRECACHE_ASSETS = [
@@ -8,6 +8,11 @@ const PRECACHE_ASSETS = [
   '/manifest.json',
   '/icons/marshmellow-192.png',
   '/icons/marshmellow-512.png',
+  // MarshMellow images for offline
+  '/images/marshmellow/marshmellow-wave.png',
+  '/images/marshmellow/marshmellow-thinking6.png',
+  '/images/marshmellow/marshmellow-searching.png',
+  '/images/marshmellow/marshmellow-glossary.png',
 ];
 
 // Install event - cache core assets

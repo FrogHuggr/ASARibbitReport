@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail, X, Shield, Ban, CheckCircle, Settings as SettingsIcon, Users } from 'lucide-react';
+import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail, X, Shield, Ban, CheckCircle, Settings as SettingsIcon, Users, Check } from 'lucide-react';
 import { useTheme, languageLabels, type Language } from '../context/ThemeContext';
 import { useTextSize, type TextSize } from '../context/TextSizeContext';
 
@@ -637,23 +637,23 @@ export function Settings() {
                 </h3>
                 <ul className="space-y-1.5 text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB]">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
+                    <X size={14} className="text-[#EF4444] mt-0.5 flex-shrink-0" />
                     <span><strong>No names or emails</strong> – No account needed</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
+                    <X size={14} className="text-[#EF4444] mt-0.5 flex-shrink-0" />
                     <span><strong>No location tracking</strong> – We don't know where you are</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
+                    <X size={14} className="text-[#EF4444] mt-0.5 flex-shrink-0" />
                     <span><strong>No cookies</strong> – No tracking across websites</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
+                    <X size={14} className="text-[#EF4444] mt-0.5 flex-shrink-0" />
                     <span><strong>No device info</strong> – We don't identify your device</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#EF4444] mt-0.5 flex-shrink-0">✕</span>
+                    <X size={14} className="text-[#EF4444] mt-0.5 flex-shrink-0" />
                     <span><strong>No ads or trackers</strong> – No third-party companies</span>
                   </li>
                 </ul>
@@ -666,11 +666,11 @@ export function Settings() {
                 </h3>
                 <ul className="space-y-1.5 text-xs sm:text-sm text-[#4B5563] dark:text-[#D1D5DB]">
                   <li className="flex items-start gap-2">
-                    <span className="text-[#22C55E] mt-0.5 flex-shrink-0">✓</span>
+                    <Check size={14} className="text-[#22C55E] mt-0.5 flex-shrink-0" />
                     <span><strong>Page views</strong> – We count visits (but not who visits)</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-[#22C55E] mt-0.5 flex-shrink-0">✓</span>
+                    <Check size={14} className="text-[#22C55E] mt-0.5 flex-shrink-0" />
                     <span><strong>Popular content</strong> – Which articles are most read</span>
                   </li>
                 </ul>
