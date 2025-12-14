@@ -364,9 +364,6 @@ export function Settings() {
 
       {/* Why a Web App explanation */}
       <div className="bg-[#F7F5F0] dark:bg-[#1a1a1a] rounded-xl p-4 mb-6">
-        <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white mb-2">
-          Why a Web App?
-        </h3>
         <p className="text-sm text-[#4B5563] dark:text-[#D1D5DB] leading-relaxed">
           Ribbit Report isn't just a website – add it to your home screen and it works like a real app, even offline! It runs on any device (phones, tablets, computers, school Chromebooks), updates automatically, and there's nothing to download from an app store. Best of all, it's completely free and works anywhere in the world.
         </p>
