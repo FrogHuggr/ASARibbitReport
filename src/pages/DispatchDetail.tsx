@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, MapPin, AlertTriangle, Egg, Footprints, EyeOff, Volume2, Droplets, Ruler, Moon, Mountain, Zap, Layers, Heart, User, ExternalLink, CircleAlert, BookOpen, Users, Snowflake, HelpCircle, Palette, Search, Crown, AudioLines, Baby, Trophy, Waves, Glasses, Thermometer, Sparkles, Shield } from 'lucide-react';
+import { SEO } from '../components/SEO';
 import { getDispatchById, type Dispatch, type DispatchSection, type StorySection, type FactsSection, type AlertSection, type ResearcherSection, type OrganizationSection, type LinksSection } from '../data/dispatches';
 import { CountryStamp } from '../components/ui/CountryStamp';
 import { StatusBadge } from '../components/ui/StatusBadge';
@@ -411,6 +412,14 @@ export function DispatchDetail() {
 
   return (
     <div className="pb-6 w-full">
+      <SEO
+        title={`${dispatch.species.commonName} - ${dispatch.location.country}`}
+        description={`${dispatch.title}. Learn about ${dispatch.species.commonName} (${dispatch.species.scientificName}) conservation in ${dispatch.location.country}.`}
+        image={dispatch.heroImage.src}
+        url={`/dispatches/${dispatch.id}`}
+        type="article"
+      />
+
       {/* Reading Progress Bar */}
       <ReadingProgress color={dispatch.colors.primary} />
 

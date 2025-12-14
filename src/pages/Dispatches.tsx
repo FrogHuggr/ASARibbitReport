@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { MapPin, Shuffle } from 'lucide-react';
+import { SEO } from '../components/SEO';
 import { dispatches } from '../data/dispatches';
 import type { ResearcherSection } from '../data/dispatches';
 import { triggerHaptic } from '../utils/haptics';
@@ -58,6 +59,12 @@ export function Dispatches() {
 
   return (
     <div className="pb-6">
+      <SEO
+        title="Dispatches from the Field"
+        description="Read field reports from amphibian researchers around the world. Meet real scientists and discover the species they're working to protect."
+        url="/dispatches"
+      />
+
       {/* Header */}
       <header className="container-app px-4 pt-6 pb-4">
         <div className="flex items-start justify-between gap-4">
