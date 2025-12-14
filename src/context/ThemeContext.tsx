@@ -41,10 +41,10 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     return getSystemPreference();
   });
 
-  // Glossary highlighting - default to enabled (true)
+  // Glossary highlighting - default to disabled (false) to avoid distracting older readers
   const [glossaryEnabled, setGlossaryEnabled] = useState(() => {
     const saved = localStorage.getItem('ribbit-glossary-enabled');
-    return saved !== null ? JSON.parse(saved) : true;
+    return saved !== null ? JSON.parse(saved) : false;
   });
 
   // Language preference - default to English
