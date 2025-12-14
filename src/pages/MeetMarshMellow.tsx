@@ -52,6 +52,9 @@ export function MeetMarshMellow() {
             <p className="text-[#6B7280] dark:text-[#9CA3AF] uppercase text-xs font-semibold tracking-wider mb-1">Role</p>
             <p className="font-medium text-[#2D2D2D] dark:text-white">Explorer, guide, and amphibian ambassador</p>
           </div>
+          <p className="mt-4 pt-4 border-t border-[#C8E6C9] dark:border-[#2D5A3D] text-sm text-[#6B7280] dark:text-[#9CA3AF] italic">
+            Sharp-eyed visitors might notice MarshMellow's eyes aren't quite the classic red. Why? That's MarshMellow's little secret... for now.
+          </p>
         </div>
       </section>
 
