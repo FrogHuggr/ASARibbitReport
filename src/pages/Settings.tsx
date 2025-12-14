@@ -87,12 +87,12 @@ export function Settings() {
             className={`relative w-14 h-8 rounded-full transition-colors border-2 ${
               !isDark
                 ? 'bg-[#2D5A3D] border-[#2D5A3D]'
-                : 'bg-[#D1D5DB] dark:bg-[#404040] border-[#9CA3AF] dark:border-[#404040]'
+                : 'bg-[#E5E7EB] dark:bg-[#404040] border-[#9CA3AF] dark:border-[#404040]'
             }`}
             aria-label="Toggle light mode"
           >
             <span
-              className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-md transition-transform ${
+              className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-md transition-transform border border-[#D1D5DB] dark:border-transparent ${
                 !isDark ? 'translate-x-7' : 'translate-x-0.5'
               }`}
             />
@@ -152,12 +152,12 @@ export function Settings() {
               className={`relative w-14 h-8 rounded-full transition-colors border-2 ${
                 glossaryEnabled
                   ? 'bg-[#2D5A3D] border-[#2D5A3D]'
-                  : 'bg-[#D1D5DB] dark:bg-[#404040] border-[#9CA3AF] dark:border-[#404040]'
+                  : 'bg-[#E5E7EB] dark:bg-[#404040] border-[#9CA3AF] dark:border-[#404040]'
               }`}
               aria-label="Toggle glossary highlights"
             >
               <span
-                className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-md transition-transform ${
+                className={`absolute top-0.5 w-6 h-6 rounded-full bg-white shadow-md transition-transform border border-[#D1D5DB] dark:border-transparent ${
                   glossaryEnabled ? 'translate-x-7' : 'translate-x-0.5'
                 }`}
               />
