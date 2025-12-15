@@ -1,5 +1,5 @@
 import { Link, useNavigate } from 'react-router-dom';
-import { ChevronRight, FileText, Wrench, Notebook } from 'lucide-react';
+import { ChevronRight, Notebook } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { dilemmas } from '../data/wildDecisions';
 import { mythBusterCards } from '../data/mythbusters';
@@ -53,27 +53,38 @@ export function Explore() {
               }}
             />
             {/* Dark gradient for text */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+
+            {/* Passport MarshMellow - positioned right */}
+            <div className="absolute right-1 bottom-0 w-28 h-28 z-10">
+              <img
+                src="/images/marshmellow/marshmellow-stampcollecting.png"
+                alt="MarshMellow with passport"
+                className="w-full h-full object-contain"
+              />
+            </div>
 
             {/* Content */}
             <div className="absolute inset-0 p-4 flex flex-col justify-end">
-              <div className="flex items-end justify-between">
-                <div>
-                  <h3 className="font-display text-xl font-bold text-white mb-0.5">
-                    Dispatches
-                  </h3>
-                  <p className="text-white/90 text-sm">
-                    Field reports from Future Leaders
-                  </p>
-                  <p className="text-white/70 text-xs mt-1">
-                    {dispatches.length} stories
-                  </p>
-                </div>
-                <ChevronRight
-                  size={24}
-                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
-                />
+              <div className="max-w-[60%]">
+                <h3 className="font-display text-xl font-bold text-white mb-0.5">
+                  Dispatches
+                </h3>
+                <p className="text-white/90 text-sm">
+                  Field reports from Future Leaders
+                </p>
+                <p className="text-white/70 text-xs mt-1">
+                  {dispatches.length} stories
+                </p>
               </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="absolute right-3 bottom-3 z-10">
+              <ChevronRight
+                size={24}
+                className="text-white/60 group-hover:translate-x-1 transition-transform"
+              />
             </div>
           </div>
         </Link>
@@ -432,11 +443,13 @@ export function Explore() {
               </div>
             </div>
 
-            {/* File icon */}
-            <div className="absolute inset-0 flex items-center justify-center -mt-2">
-              <div className="w-14 h-14 rounded-lg bg-[#8B7355]/20 dark:bg-[#D4C4A8]/10 flex items-center justify-center">
-                <FileText size={28} className="text-[#8B7355] dark:text-[#D4C4A8]/70" />
-              </div>
+            {/* Detective MarshMellow - positioned right */}
+            <div className="absolute right-0 bottom-0 w-24 h-24 z-10">
+              <img
+                src="/images/marshmellow/marshmellow-detective.png"
+                alt="MarshMellow detective"
+                className="w-full h-full object-contain"
+              />
             </div>
 
             {/* Content */}
@@ -479,11 +492,13 @@ export function Explore() {
               </div>
             </div>
 
-            {/* Wrench icon */}
-            <div className="absolute inset-0 flex items-center justify-center -mt-2">
-              <div className="w-14 h-14 rounded-lg bg-[#60A5FA]/20 flex items-center justify-center">
-                <Wrench size={28} className="text-[#60A5FA]/80" />
-              </div>
+            {/* Scientist MarshMellow - positioned right */}
+            <div className="absolute right-0 bottom-0 w-24 h-24 z-10">
+              <img
+                src="/images/marshmellow/marshmellow-scientist.png"
+                alt="MarshMellow scientist"
+                className="w-full h-full object-contain"
+              />
             </div>
 
             {/* Content */}
