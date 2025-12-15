@@ -317,12 +317,14 @@ export function Explore() {
 
               {/* Content */}
               <div className="absolute inset-0 p-3 flex flex-col justify-end">
-                <h3 className="font-display text-lg font-bold text-white leading-tight">
-                  Surprise Me!
-                </h3>
-                <p className="text-white/80 text-xs mt-0.5">
-                  Random adventure
-                </p>
+                <div className="max-w-[55%]">
+                  <h3 className="font-display text-lg font-bold text-white leading-tight">
+                    Surprise Me!
+                  </h3>
+                  <p className="text-white/80 text-xs mt-0.5">
+                    Random adventure
+                  </p>
+                </div>
               </div>
             </div>
           </button>
@@ -454,12 +456,14 @@ export function Explore() {
 
             {/* Content */}
             <div className="absolute inset-0 p-3 flex flex-col justify-end">
-              <h3 className="font-display text-lg font-bold text-[#5D4E37] dark:text-[#D4C4A8] leading-tight">
-                Species Files
-              </h3>
-              <p className="text-[#8B7355] dark:text-[#A89880] text-xs mt-0.5">
-                Classified dossiers
-              </p>
+              <div className="max-w-[55%]">
+                <h3 className="font-display text-lg font-bold text-[#5D4E37] dark:text-[#D4C4A8] leading-tight">
+                  Species Files
+                </h3>
+                <p className="text-[#8B7355] dark:text-[#A89880] text-xs mt-0.5">
+                  Classified dossiers
+                </p>
+              </div>
             </div>
           </div>
 
@@ -503,12 +507,14 @@ export function Explore() {
 
             {/* Content */}
             <div className="absolute inset-0 p-3 flex flex-col justify-end">
-              <h3 className="font-display text-lg font-bold text-white leading-tight">
-                Conservation Toolkit
-              </h3>
-              <p className="text-[#93C5FD] text-xs mt-0.5">
-                How scientists save species
-              </p>
+              <div className="max-w-[55%]">
+                <h3 className="font-display text-lg font-bold text-white leading-tight">
+                  Conservation Toolkit
+                </h3>
+                <p className="text-[#93C5FD] text-xs mt-0.5">
+                  How scientists save species
+                </p>
+              </div>
             </div>
           </div>
         </div>
