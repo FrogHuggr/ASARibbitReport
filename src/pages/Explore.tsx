@@ -39,6 +39,45 @@ export function Explore() {
 
       {/* Visual Card Grid */}
       <section className="px-4 space-y-4">
+        {/* MEET MARSHMELLOW - Full width, adventure map theme */}
+        <Link to="/meet-marshmellow" className="block group">
+          <div
+            className="relative h-44 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
+          >
+            {/* Background image - Adventures of MarshMellow */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/explore/adventuresofmarshmellow.jpg)',
+              }}
+            />
+            {/* Minimal gradient for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-4 flex flex-col justify-end">
+              <div className="flex items-end justify-between">
+                <div>
+                  <p className="text-white/70 text-xs font-medium uppercase tracking-wider mb-0.5">
+                    Your Guide
+                  </p>
+                  <h3 className="font-display text-xl font-bold text-white mb-0.5">
+                    Meet MarshMellow
+                  </h3>
+                  <p className="text-white/90 text-sm">
+                    The adventurer behind The Ribbit Report
+                  </p>
+                </div>
+                <ChevronRight
+                  size={24}
+                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
+                />
+              </div>
+            </div>
+          </div>
+        </Link>
+
         {/* DISPATCHES - Full width, photo background */}
         <Link to="/dispatches" className="block group">
           <div
@@ -200,45 +239,6 @@ export function Explore() {
             </div>
           </Link>
         </div>
-
-        {/* MEET MARSHMELLOW - Full width, adventure map theme */}
-        <Link to="/meet-marshmellow" className="block group">
-          <div
-            className="relative h-44 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
-            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
-          >
-            {/* Background image - Adventures of MarshMellow */}
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: 'url(/images/explore/adventuresofmarshmellow.jpg)',
-              }}
-            />
-            {/* Minimal gradient for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-
-            {/* Content */}
-            <div className="absolute inset-0 p-4 flex flex-col justify-end">
-              <div className="flex items-end justify-between">
-                <div>
-                  <p className="text-white/70 text-xs font-medium uppercase tracking-wider mb-0.5">
-                    Your Guide
-                  </p>
-                  <h3 className="font-display text-xl font-bold text-white mb-0.5">
-                    Meet MarshMellow
-                  </h3>
-                  <p className="text-white/90 text-sm">
-                    The adventurer behind The Ribbit Report
-                  </p>
-                </div>
-                <ChevronRight
-                  size={24}
-                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
-                />
-              </div>
-            </div>
-          </div>
-        </Link>
 
         {/* FIELD NOTES - Full width, map background with MarshMellow */}
         <Link to="/field-notes/glass-half-full" className="block group">
