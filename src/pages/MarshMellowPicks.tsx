@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Quote } from 'lucide-react';
+import { ArrowLeft, MapPin, Quote, ChevronRight } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
 import { realStories } from '../data/realStory';
 import type { ResearcherSection } from '../data/dispatches';
@@ -66,6 +66,47 @@ export function MarshMellowPicks() {
           </div>
         </div>
       </header>
+
+      {/* Meet MarshMellow Card */}
+      <div className="container-app px-4 mb-6">
+        <Link to="/meet-marshmellow" className="block group">
+          <div
+            className="relative h-32 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
+          >
+            {/* Background image */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/explore/adventuresofmarshmellow.jpg)',
+              }}
+            />
+            {/* Gradient for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-4 flex flex-col justify-end">
+              <div className="flex items-end justify-between">
+                <div>
+                  <p className="text-white/70 text-xs font-medium uppercase tracking-wider mb-0.5">
+                    Your Guide
+                  </p>
+                  <h3 className="font-display text-lg font-bold text-white">
+                    Meet MarshMellow
+                  </h3>
+                  <p className="text-white/80 text-xs">
+                    The adventurer behind The Ribbit Report
+                  </p>
+                </div>
+                <ChevronRight
+                  size={22}
+                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
+                />
+              </div>
+            </div>
+          </div>
+        </Link>
+      </div>
 
       {/* Picks List */}
       <div className="container-app px-4 space-y-4">
