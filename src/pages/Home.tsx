@@ -99,25 +99,36 @@ export function Home() {
               />
             </div>
 
-            {/* Dark gradient overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+            {/* Dark gradient for text */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+
+            {/* Passport MarshMellow - positioned right */}
+            <div className="absolute right-1 bottom-0 w-28 h-28 z-10">
+              <img
+                src="/images/marshmellow/marshmellow-stampcollecting.png"
+                alt="MarshMellow with passport"
+                className="w-full h-full object-contain"
+              />
+            </div>
 
             {/* Content */}
             <div className="absolute inset-0 p-5 flex flex-col justify-end">
-              <div className="flex items-end justify-between">
-                <div>
-                  <h3 className="font-display text-2xl font-bold text-white mb-1">
-                    Dispatches
-                  </h3>
-                  <p className="text-white/90 text-sm">
-                    {dispatches.length} adventures and counting...
-                  </p>
-                </div>
-                <ChevronRight
-                  size={28}
-                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
-                />
+              <div className="max-w-[60%]">
+                <h3 className="font-display text-2xl font-bold text-white mb-1">
+                  Dispatches
+                </h3>
+                <p className="text-white/90 text-sm">
+                  {dispatches.length} adventures and counting...
+                </p>
               </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="absolute right-4 bottom-4 z-10">
+              <ChevronRight
+                size={28}
+                className="text-white/60 group-hover:translate-x-1 transition-transform"
+              />
             </div>
 
             {/* Hover shadow enhancement */}
