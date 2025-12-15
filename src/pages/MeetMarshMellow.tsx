@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronLeft, UtensilsCrossed, Volume2, Lightbulb, Map, MessageCircle } from 'lucide-react';
+import { ChevronLeft, UtensilsCrossed, Volume2, Lightbulb, Map, MessageCircle, Notebook } from 'lucide-react';
 import { type LucideIcon } from 'lucide-react';
 
 export function MeetMarshMellow() {
@@ -80,17 +80,95 @@ export function MeetMarshMellow() {
         </h2>
         <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
           <p>
-            MarshMellow wasn't always an explorer. He grew up in the rainforests of Costa Rica, spending his nights catching insects and his days sleeping on the undersides of big green leaves.
+            MarshMellow wasn't always an explorer. He grew up in the rainforests of Costa Rica, spending his nights catching moths (crunchy, 10/10 would recommend) and his days sleeping on the undersides of big green leaves. Life was simple. Predictable. Honestly? A little boring.
           </p>
           <p>
-            One day, a researcher studying his species gently picked him up, took a photo, and placed him right back on his leaf. That moment changed everything. MarshMellow realized there were humans out there who cared about frogs. Who studied them, protected them, and traveled the world to find them.
+            Then came the storm.
           </p>
           <p>
-            He decided he wanted to do the same. Not study frogs (he already knew plenty about being one), but help kids discover how amazing amphibians are. He traded his leaf for an explorer's hat, packed a tiny satchel, and set off to find the best stories the amphibian world has to offer.
+            A flash flood swept through his forest, and before he knew it, MarshMellow was clinging to a leaf like his life depended on it. (It did.) Two days later, soggy and slightly traumatized, he washed up somewhere completely unexpected: a research station at the edge of the jungle.
           </p>
           <p>
-            Now he's your guide. Wherever there's a frog chorus to hear, a salamander to spot, or a conservation mystery to solve, MarshMellow is ready to lead the way.
+            A scientist found him, took his photo, measured him carefully, and spoke into a recorder: <em>"Another survivor. Remarkable resilience."</em> MarshMellow had never been called remarkable before. He decided he liked it.
           </p>
+          <p>
+            While recovering in a terrarium (the room service was excellent), he noticed something on the walls: maps. Maps covered in pins marking frog sightings across the world. Photographs of species he'd never imagined: purple frogs that lived underground, glass frogs with see-through skin, salamanders the size of a human child. There was a whole world of amphibians out there—and humans who dedicated their lives to finding and protecting them.
+          </p>
+          <p>
+            When the scientist released him back into the forest, MarshMellow made a decision. He wasn't going back to his old leaf. He was going to see those places. Meet those frogs. Maybe even become remarkable for real.
+          </p>
+          <p>
+            He traded his leaf for an explorer's hat, packed a tiny satchel (one spare fly, just in case), and set off on his first expedition. He hasn't stopped since. Well, except for naps. Naps are non-negotiable.
+          </p>
+          <p>
+            Now he's your guide. Wherever there's a frog chorus to hear, a salamander to spot, or a conservation mystery to solve, MarshMellow is ready to lead the way. Just don't ask him to swim through any more floods. Once was enough.
+          </p>
+        </div>
+      </section>
+
+      {/* Divider */}
+      <div className="px-4">
+        <hr className="border-[#E5E5E5] dark:border-[#374151]" />
+      </div>
+
+      {/* Field Notes */}
+      <section className="px-4 py-6">
+        <div className="flex items-center gap-2 mb-4">
+          <Notebook size={20} className="text-[#8B6914] dark:text-[#D4A574]" />
+          <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white">
+            Field Notes
+          </h2>
+        </div>
+        <div className="bg-[#F5E6D3] dark:bg-[#3D2E1F] rounded-2xl p-4 space-y-3">
+          <FieldNote
+            day={23}
+            note="Hitched a ride in a researcher's backpack. Accidentally traveled to Panama. No regrets."
+          />
+          <FieldNote
+            day={47}
+            note="Found a purple frog in India that hadn't been seen in months. It lives underground and only comes out for two weeks a year. Relatable, honestly."
+          />
+          <FieldNote
+            day={89}
+            note="Tried to interview a poison dart frog. She said I 'wasn't her type.' Fair enough."
+          />
+          <FieldNote
+            day={112}
+            note="Almost stepped on by an elephant in Nepal. Worth it for the salamander sighting."
+          />
+          <FieldNote
+            day={156}
+            note="Met a frog in Ecuador that can survive being frozen solid. Asked for tips. She just stared at me."
+          />
+          <FieldNote
+            day={203}
+            note="Discovered a new species! Just kidding, it was my reflection in a pond. The humidity is getting to me."
+          />
+          <FieldNote
+            day={267}
+            note="Spent three hours camouflaged on a branch waiting for a rare tree frog. A bird tried to eat me. Twice."
+          />
+          <FieldNote
+            day={298}
+            note="Local guide asked if I was someone's pet that escaped. I chose to take it as a compliment."
+          />
+          <FieldNote
+            day={341}
+            note="Finally found the golden toad's last known habitat in Costa Rica. No toads. Just me, the mist, and a lot of feelings."
+          />
+          <FieldNote
+            day={389}
+            note="Attended a scientific conference. Sat in a water glass the whole time. Nobody noticed. 10/10 infiltration."
+          />
+        </div>
+
+        {/* Travel Map */}
+        <div className="mt-4 rounded-xl overflow-hidden">
+          <img
+            src="/images/explore/travellocations.jpg"
+            alt="MarshMellow's expedition map showing locations around the world"
+            className="w-full h-auto"
+          />
         </div>
       </section>
 
@@ -168,6 +246,23 @@ function FavoriteItem({
       <div className="pt-0.5">
         <p className="font-medium text-[#2D2D2D] dark:text-white text-sm">{label}</p>
         <p className="text-[#6B7280] dark:text-[#9CA3AF] text-[15px]">{value}</p>
+      </div>
+    </div>
+  );
+}
+
+function FieldNote({ day, note }: { day: number; note: string }) {
+  return (
+    <div className="flex gap-3">
+      <div className="flex-shrink-0 w-14 text-right">
+        <span className="text-xs font-bold text-[#8B6914] dark:text-[#D4A574] uppercase tracking-wide">
+          Day {day}
+        </span>
+      </div>
+      <div className="flex-1 border-l-2 border-[#D4A574]/40 dark:border-[#8B6914]/40 pl-3">
+        <p className="text-sm text-[#4A3728] dark:text-[#E8D5B7] leading-relaxed italic">
+          "{note}"
+        </p>
       </div>
     </div>
   );
