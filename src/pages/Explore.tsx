@@ -297,7 +297,7 @@ export function Explore() {
 
         {/* Row 2: Surprise Me + The Real Story */}
         <div className="grid grid-cols-2 gap-4">
-          {/* SURPRISE ME - Adventure map theme with MarshMellow */}
+          {/* SURPRISE ME - Photo collage from dispatches */}
           <button
             onClick={handleSurpriseMe}
             className="block group w-full text-left"
@@ -306,26 +306,46 @@ export function Explore() {
               className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
               style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
             >
-              {/* Treasure map gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A574] via-[#C4956A] to-[#A67C52] dark:from-[#8B6914] dark:via-[#6B5210] dark:to-[#4A3A0A]" />
-
-              {/* Map texture pattern - dotted trail lines */}
-              <div className="absolute inset-0 opacity-30">
-                {/* Compass rose hint in corner */}
-                <div className="absolute top-2 left-2 w-8 h-8 border border-[#8B6914]/50 rounded-full flex items-center justify-center">
-                  <div className="w-4 h-4 border-t border-l border-[#8B6914]/50 rotate-45" />
+              {/* Photo collage grid */}
+              <div className="absolute inset-0 grid grid-cols-2 grid-rows-2">
+                <div className="relative overflow-hidden">
+                  <img
+                    src="/images/dispatches/ghana-afiabirago-puddle-frog/detail.jpeg"
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                 </div>
-                {/* Dotted path lines */}
-                <div className="absolute top-6 right-4 w-12 border-t-2 border-dashed border-[#8B6914]/40" />
-                <div className="absolute top-10 right-8 w-8 border-t-2 border-dashed border-[#8B6914]/40 rotate-45" />
-                <div className="absolute bottom-16 left-4 w-10 border-t-2 border-dashed border-[#8B6914]/40 -rotate-12" />
-                {/* Question marks for mystery */}
-                <div className="absolute top-3 right-3 text-[#8B6914]/60 font-bold text-lg">?</div>
-                <div className="absolute bottom-14 left-6 text-[#8B6914]/40 font-bold text-sm rotate-12">?</div>
+                <div className="relative overflow-hidden">
+                  <img
+                    src="/images/dispatches/india-resplendent-grass-frog/detail.jpg"
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative overflow-hidden">
+                  <img
+                    src="/images/dispatches/nepal-mahabharat-torrent-frog/detail.jpeg"
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative overflow-hidden">
+                  <img
+                    src="/images/dispatches/panama-spiny-headed-treefrog/detail.jpg"
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
               </div>
 
-              {/* MarshMellow with compass - positioned right */}
-              <div className="absolute right-1 bottom-0 w-28 h-28 group-hover:scale-105 transition-transform">
+              {/* Color overlay for cohesion */}
+              <div className="absolute inset-0 bg-[#2D5A3D]/30" />
+
+              {/* Dark gradient for text */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+
+              {/* MarshMellow pointing */}
+              <div className="absolute right-0 bottom-0 w-28 h-28 z-10 group-hover:scale-105 transition-transform">
                 <img
                   src="/images/marshmellow/marshmellow-map-pointing.png"
                   alt="MarshMellow pointing the way"
@@ -333,53 +353,57 @@ export function Explore() {
                 />
               </div>
 
-              {/* Content - positioned left */}
+              {/* Content */}
               <div className="absolute inset-0 p-3 flex flex-col justify-end">
-                <h3 className="font-display text-lg font-bold text-[#4A3728] dark:text-[#F5E6D3] leading-tight">
+                <h3 className="font-display text-lg font-bold text-white leading-tight">
                   Surprise Me!
                 </h3>
-                <p className="text-[#6B5240] dark:text-[#D4C4A8] text-xs mt-0.5">
+                <p className="text-white/80 text-xs mt-0.5">
                   Random adventure
                 </p>
               </div>
             </div>
           </button>
 
-          {/* THE REAL STORY - Teal */}
+          {/* THE REAL STORY - Bold VS battle style */}
           <Link to="/real-story/frogs-vs-toads" className="block group">
             <div
               className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
               style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
             >
-              {/* Split background */}
+              {/* Split background with zoomed specimens */}
               <div className="absolute inset-0 flex">
-                <div className="flex-1 bg-[#4A7B5C]" />
-                <div className="flex-1 bg-[#8B7355]" />
+                {/* Frog side - green tint */}
+                <div className="flex-1 relative overflow-hidden bg-[#2D5A3D]">
+                  <img
+                    src="/images/realstory/realstoryfrog.PNG"
+                    alt="Frog"
+                    className="absolute inset-0 w-full h-full object-cover object-[30%_15%] scale-[2.5] opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-[#2D5A3D]/40" />
+                </div>
+                {/* Toad side - brown tint */}
+                <div className="flex-1 relative overflow-hidden bg-[#6B5344]">
+                  <img
+                    src="/images/realstory/realstorytoad.jpg"
+                    alt="Toad"
+                    className="absolute inset-0 w-full h-full object-cover object-[70%_20%] scale-[2.5] opacity-80"
+                  />
+                  <div className="absolute inset-0 bg-[#6B5344]/40" />
+                </div>
               </div>
 
-              {/* Frog and Toad mini illustrations */}
-              <div className="absolute inset-0 flex items-center justify-center -mt-4">
-                <div className="w-14 h-14 rounded-full bg-[#E8F5E9] flex items-center justify-center overflow-hidden border-2 border-white/60 -mr-2 z-10">
-                  <img
-                    src="/images/realstory/frog.png"
-                    alt="Frog"
-                    className="w-12 h-12 object-contain"
-                  />
-                </div>
-                <div className="w-8 h-8 rounded-full bg-[#E85D4C] flex items-center justify-center z-20">
+              {/* Diagonal divider with VS */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div
+                  className="w-9 h-9 rounded-full bg-[#8B6914] flex items-center justify-center z-20 shadow-lg"
+                >
                   <span className="font-display font-extrabold text-xs text-white">VS</span>
-                </div>
-                <div className="w-14 h-14 rounded-full bg-[#F5E6D3] flex items-center justify-center overflow-hidden border-2 border-white/60 -ml-2 z-10">
-                  <img
-                    src="/images/realstory/toad.png"
-                    alt="Toad"
-                    className="w-12 h-12 object-contain"
-                  />
                 </div>
               </div>
 
               {/* Dark gradient for text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
 
               {/* Content */}
               <div className="absolute inset-0 p-3 flex flex-col justify-end">

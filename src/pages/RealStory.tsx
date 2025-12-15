@@ -214,55 +214,8 @@ export function RealStory() {
 
       {/* Hero Section */}
       <section className="container-app px-4 mb-8">
-        <div className="bg-gradient-to-br from-[#E8F5E9] to-[#FFF8E1] dark:from-[#1B3D2F] dark:to-[#3D3520] rounded-2xl p-8 text-center shadow-sm">
-          {/* VS Images - overlapping with different sizes */}
-          <div className="flex items-center justify-center mb-6">
-            {/* Frog Image - slightly smaller, positioned to overlap */}
-            <div
-              className="w-28 h-28 rounded-full overflow-hidden p-2 relative z-10 border-4 border-white"
-              style={{
-                backgroundColor: '#E8F5E9',
-                boxShadow: '0 8px 24px rgba(74, 123, 92, 0.3)',
-                marginRight: '-16px',
-              }}
-            >
-              <img
-                src={`${story.images.frog.path}${story.images.frog.file}`}
-                alt={story.images.frog.alt}
-                className="w-full h-full object-contain"
-              />
-            </div>
-
-            {/* VS Badge - elevated in the middle */}
-            <div
-              className="w-14 h-14 rounded-full bg-[#E85D4C] flex items-center justify-center transform rotate-3 z-20 border-3 border-white"
-              style={{
-                boxShadow: '0 6px 20px rgba(232, 93, 76, 0.4)',
-              }}
-            >
-              <span className="font-display font-extrabold text-xl text-white">
-                VS
-              </span>
-            </div>
-
-            {/* Toad Image - larger, positioned to overlap */}
-            <div
-              className="w-36 h-36 rounded-full overflow-hidden p-2 relative z-10 border-4 border-white"
-              style={{
-                backgroundColor: '#F5E6D3',
-                boxShadow: '0 10px 30px rgba(139, 115, 85, 0.35)',
-                marginLeft: '-16px',
-              }}
-            >
-              <img
-                src={`${story.images.toad.path}${story.images.toad.file}`}
-                alt={story.images.toad.alt}
-                className="w-full h-full object-contain"
-              />
-            </div>
-          </div>
-
-          {/* Title */}
+        {/* Title Card */}
+        <div className="bg-gradient-to-br from-[#E8F5E9] to-[#FFF8E1] dark:from-[#1B3D2F] dark:to-[#3D3520] rounded-2xl p-6 text-center shadow-sm mb-4">
           <p className="text-sm font-semibold text-[#2D5A3D] dark:text-[#81C784] uppercase tracking-wider mb-2">
             The Real Story
           </p>
@@ -270,6 +223,43 @@ export function RealStory() {
             {story.title}
           </h1>
           <p className="text-lg text-[#6B7280] dark:text-[#9CA3AF]">{story.subtitle}</p>
+        </div>
+
+        {/* Naturalist Specimen Illustrations */}
+        <div className="bg-[#F5E6D3] dark:bg-[#3D3528] rounded-2xl p-4 shadow-sm">
+          {/* Field guide style header */}
+          <p className="text-center text-xs font-semibold text-[#8B6914] dark:text-[#D4A574] uppercase tracking-wider mb-4">
+            Meet the Contenders
+          </p>
+
+          {/* Specimens side by side */}
+          <div className="flex items-center justify-center gap-2">
+            {/* Frog specimen */}
+            <div className="flex-1 flex justify-center">
+              <img
+                src="/images/realstory/realstoryfrog.PNG"
+                alt="Panamanian Golden Frog - Atelopus zeteki"
+                className="h-36 w-auto object-contain drop-shadow-md"
+              />
+            </div>
+
+            {/* VS Badge */}
+            <div
+              className="w-12 h-12 rounded-full bg-[#8B6914] flex items-center justify-center flex-shrink-0 z-10"
+              style={{ boxShadow: '0 4px 12px rgba(139, 105, 20, 0.4)' }}
+            >
+              <span className="font-display font-extrabold text-base text-white">VS</span>
+            </div>
+
+            {/* Toad specimen */}
+            <div className="flex-1 flex justify-center">
+              <img
+                src="/images/realstory/realstorytoad.jpg"
+                alt="Common Toad - Bufo bufo"
+                className="h-36 w-auto object-contain drop-shadow-md"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
