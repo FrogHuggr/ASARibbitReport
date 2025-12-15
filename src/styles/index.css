@@ -59,6 +59,7 @@
 
   /* Typography */
   --font-display: 'Baloo 2', 'Nunito', sans-serif;
+  --font-adventure: 'Bangers', 'Impact', sans-serif;
   --font-body: 'Nunito', system-ui, sans-serif;
 
   /* Spacing */
@@ -112,6 +113,29 @@ body {
 
 .font-body {
   font-family: var(--font-body);
+}
+
+.font-adventure {
+  font-family: var(--font-adventure);
+}
+
+/* Adventure title with warm gradient - Indiana Jones inspired */
+.adventure-title {
+  font-family: var(--font-adventure);
+  background: linear-gradient(180deg, #D4A574 0%, #B8860B 50%, #8B6914 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.02em;
+  text-shadow: none;
+  padding-right: 2px;
+}
+
+.dark .adventure-title {
+  background: linear-gradient(180deg, #F5E6D3 0%, #D4A574 50%, #B8860B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 /* Headline styles */

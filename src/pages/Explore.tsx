@@ -241,56 +241,8 @@ export function Explore() {
           </div>
         </Link>
 
-        {/* Row 2: The Real Story + Surprise Me */}
+        {/* Row 2: Surprise Me + The Real Story */}
         <div className="grid grid-cols-2 gap-4">
-          {/* THE REAL STORY - Teal */}
-          <Link to="/real-story/frogs-vs-toads" className="block group">
-            <div
-              className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
-              style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
-            >
-              {/* Split background */}
-              <div className="absolute inset-0 flex">
-                <div className="flex-1 bg-[#4A7B5C]" />
-                <div className="flex-1 bg-[#8B7355]" />
-              </div>
-
-              {/* Frog and Toad mini illustrations */}
-              <div className="absolute inset-0 flex items-center justify-center -mt-4">
-                <div className="w-14 h-14 rounded-full bg-[#E8F5E9] flex items-center justify-center overflow-hidden border-2 border-white/60 -mr-2 z-10">
-                  <img
-                    src="/images/realstory/frog.png"
-                    alt="Frog"
-                    className="w-12 h-12 object-contain"
-                  />
-                </div>
-                <div className="w-8 h-8 rounded-full bg-[#E85D4C] flex items-center justify-center z-20">
-                  <span className="font-display font-extrabold text-xs text-white">VS</span>
-                </div>
-                <div className="w-14 h-14 rounded-full bg-[#F5E6D3] flex items-center justify-center overflow-hidden border-2 border-white/60 -ml-2 z-10">
-                  <img
-                    src="/images/realstory/toad.png"
-                    alt="Toad"
-                    className="w-12 h-12 object-contain"
-                  />
-                </div>
-              </div>
-
-              {/* Dark gradient for text */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-
-              {/* Content */}
-              <div className="absolute inset-0 p-3 flex flex-col justify-end">
-                <h3 className="font-display text-lg font-bold text-white leading-tight">
-                  The Real Story
-                </h3>
-                <p className="text-white/80 text-xs mt-0.5">
-                  Frogs vs. Toads
-                </p>
-              </div>
-            </div>
-          </Link>
-
           {/* SURPRISE ME - Adventure map theme with MarshMellow */}
           <button
             onClick={handleSurpriseMe}
@@ -338,6 +290,54 @@ export function Explore() {
               </div>
             </div>
           </button>
+
+          {/* THE REAL STORY - Teal */}
+          <Link to="/real-story/frogs-vs-toads" className="block group">
+            <div
+              className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+              style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
+            >
+              {/* Split background */}
+              <div className="absolute inset-0 flex">
+                <div className="flex-1 bg-[#4A7B5C]" />
+                <div className="flex-1 bg-[#8B7355]" />
+              </div>
+
+              {/* Frog and Toad mini illustrations */}
+              <div className="absolute inset-0 flex items-center justify-center -mt-4">
+                <div className="w-14 h-14 rounded-full bg-[#E8F5E9] flex items-center justify-center overflow-hidden border-2 border-white/60 -mr-2 z-10">
+                  <img
+                    src="/images/realstory/frog.png"
+                    alt="Frog"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+                <div className="w-8 h-8 rounded-full bg-[#E85D4C] flex items-center justify-center z-20">
+                  <span className="font-display font-extrabold text-xs text-white">VS</span>
+                </div>
+                <div className="w-14 h-14 rounded-full bg-[#F5E6D3] flex items-center justify-center overflow-hidden border-2 border-white/60 -ml-2 z-10">
+                  <img
+                    src="/images/realstory/toad.png"
+                    alt="Toad"
+                    className="w-12 h-12 object-contain"
+                  />
+                </div>
+              </div>
+
+              {/* Dark gradient for text */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+
+              {/* Content */}
+              <div className="absolute inset-0 p-3 flex flex-col justify-end">
+                <h3 className="font-display text-lg font-bold text-white leading-tight">
+                  The Real Story
+                </h3>
+                <p className="text-white/80 text-xs mt-0.5">
+                  Frogs vs. Toads
+                </p>
+              </div>
+            </div>
+          </Link>
         </div>
 
         {/* Row 3: Coming Soon - Species Files + Conservation Toolkit */}
