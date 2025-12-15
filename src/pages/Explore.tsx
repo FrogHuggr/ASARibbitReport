@@ -128,45 +128,6 @@ export function Explore() {
           </div>
         </Link>
 
-        {/* CONSERVATION STATUS - Full width, photo background */}
-        <Link to="/conservation-status" className="block group">
-          <div
-            className="relative h-36 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
-            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
-          >
-            {/* Background image - Glass frog */}
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{
-                backgroundImage: 'url(/images/explore/conservationstatus-explore.jpg)',
-              }}
-            />
-            {/* Subtle gradient - just at the bottom for text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
-
-            {/* Content */}
-            <div className="absolute inset-0 p-4 flex flex-col justify-end">
-              <div className="flex items-end justify-between">
-                <div>
-                  <h3 className="font-display text-xl font-bold text-white mb-0.5">
-                    Conservation Status
-                  </h3>
-                  <p className="text-white/90 text-sm">
-                    Understanding the IUCN Red List
-                  </p>
-                  <p className="text-white/80 text-xs mt-1">
-                    41% of amphibians at risk
-                  </p>
-                </div>
-                <ChevronRight
-                  size={24}
-                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
-                />
-              </div>
-            </div>
-          </div>
-        </Link>
-
         {/* Row 1: Wild Decisions + Myth Busters */}
         <div className="grid grid-cols-2 gap-4">
           {/* WILD DECISIONS - Amber/Orange */}
@@ -416,6 +377,45 @@ export function Explore() {
             </div>
           </Link>
         </div>
+
+        {/* CONSERVATION STATUS - Full width, photo background */}
+        <Link to="/conservation-status" className="block group">
+          <div
+            className="relative h-36 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
+          >
+            {/* Background image - Glass frog */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/explore/conservationstatus-explore.jpg)',
+              }}
+            />
+            {/* Subtle gradient - just at the bottom for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-4 flex flex-col justify-end">
+              <div className="flex items-end justify-between">
+                <div>
+                  <h3 className="font-display text-xl font-bold text-white mb-0.5">
+                    Conservation Status
+                  </h3>
+                  <p className="text-white/90 text-sm">
+                    Understanding the IUCN Red List
+                  </p>
+                  <p className="text-white/80 text-xs mt-1">
+                    41% of amphibians at risk
+                  </p>
+                </div>
+                <ChevronRight
+                  size={24}
+                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
+                />
+              </div>
+            </div>
+          </div>
+        </Link>
 
         {/* Row 3: Coming Soon - Species Files + Conservation Toolkit */}
         <div className="grid grid-cols-2 gap-4">
