@@ -73,6 +73,7 @@ export function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
             <MenuItem to="/real-story/frogs-vs-toads" label="The Real Story" onClose={onClose} />
             <MenuItem to="/wild-decisions" label="Wild Decisions" onClose={onClose} />
             <MenuItem to="/myths" label="Myth Busters" onClose={onClose} />
+            <MenuItem to="/field-notes/glass-half-full" label="Field Notes" onClose={onClose} />
             <MenuItem to="/species" label="Species Files" onClose={onClose} disabled />
             <MenuItem to="/toolkit" label="Conservation Toolkit" onClose={onClose} disabled />
           </div>
@@ -93,7 +94,8 @@ export function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
           {/* Divider */}
           <hr className="my-5 border-[#e5e5e5] dark:border-[#404040]" />
 
-          {/* About Link */}
+          {/* About Section */}
+          <MenuItem to="/meet-marshmellow" label="Meet MarshMellow" onClose={onClose} />
           <MenuItem to="/settings" label="About The Ribbit Report" onClose={onClose} />
         </nav>
       </div>
