@@ -82,13 +82,13 @@ export function GlassHalfFull() {
         </div>
         <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
           <p>
-            I've seen a lot of weird things in my travels. Purple frogs that look like deflated balloons. Salamanders the size of a carry-on bag. A toad that survived being frozen solid (she was not interested in chatting afterwards).
+            I've seen a lot of weird things in my travels. Purple frogs that look like deflated balloons. Salamanders the size of a carry-on bag. A toad that survived being frozen solid (she was not interested in chatting afterwards—fair enough, honestly).
           </p>
           <p>
             But nothing—<em>nothing</em>—prepared me for my first glass frog.
           </p>
           <p>
-            It was Day 47. I was perched on a leaf in the Costa Rican cloud forest, minding my own business, when I noticed something strange on the branch below. A frog. Tiny. Lime green. Looking perfectly normal from above.
+            It was Day 47. I was perched on a leaf in the Costa Rican cloud forest, minding my own business, writing in my field journal, feeling very professional and explorer-y. Then I noticed something on the branch below. A frog. Tiny. Lime green. Perfectly normal looking from above.
           </p>
           <p>
             Then it shifted, and I caught a glimpse of its underside.
@@ -97,10 +97,25 @@ export function GlassHalfFull() {
             I could see its <em>heart beating</em>.
           </p>
           <p>
-            Not in a poetic way. In an actual, literal, "that is definitely a cardiovascular system" way. The skin on its belly was completely transparent. I could see its liver. Its intestines. The blood flowing through its veins like tiny red highways.
+            Not in a poetic way. Not in a "I could feel its life force" way. In an actual, literal, "THAT IS DEFINITELY A CARDIOVASCULAR SYSTEM" way.
           </p>
           <p>
-            I stared for a solid five minutes. The frog stared back. Neither of us blinked. (Well, I didn't. Frogs don't really blink much anyway. We're just built different.)
+            The skin on its belly was completely transparent. Like someone had forgotten to finish rendering it. I could see its liver. Its intestines. The blood flowing through its veins like tiny red highways during rush hour.
+          </p>
+          <p>
+            I dropped my field journal.
+          </p>
+          <p>
+            I stared for a solid five minutes. The frog stared back. Neither of us blinked. (Well, I didn't. Frogs don't really blink much anyway. We're just built different. Literally. Our eyes are on top of our heads. It's a whole thing.)
+          </p>
+          <p>
+            My first thought was: "That frog is inside out."
+          </p>
+          <p>
+            My second thought was: "No wait, it's just... see-through?"
+          </p>
+          <p>
+            My third thought was: "I need to sit down." (I was already sitting. I sat down harder.)
           </p>
         </div>
       </section>
@@ -120,19 +135,31 @@ export function GlassHalfFull() {
         </div>
         <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
           <p>
-            Here's what I learned after bothering several patient scientists at the research station:
+            Here's what I learned after bothering several very patient scientists at the research station. (Shoutout to Dr. Martinez, who only sighed twice when I asked if the frogs ever feel self-conscious about being transparent. Valid question, I think.)
           </p>
           <p>
             Glass frogs (family <em>Centrolenidae</em>) have evolved transparent skin as camouflage. When they rest on green leaves, their see-through bodies let the color of the leaf show through, making them nearly invisible to predators. It's called "edge diffusion"—the transparency blurs their outline so they don't look like a delicious frog-shaped snack.
           </p>
           <p>
-            But here's where it gets really wild: they can actually <em>hide their blood</em>.
+            It's basically a biological invisibility cloak. Which is deeply unfair, because I've wanted an invisibility cloak since I was four.
           </p>
           <p>
-            When glass frogs sleep (which is during the day, because they're nocturnal like all sensible frogs), they somehow pack about 90% of their red blood cells into their liver. This makes their body even more transparent—essentially becoming living glass. When they wake up, the blood goes back to circulating normally.
+            But here's where it gets <em>really</em> wild: they can actually <em>hide their blood</em>.
           </p>
           <p>
-            Scientists are still figuring out how they do this without, you know, dying. In any other animal, concentrating blood like that would cause fatal clots. Glass frogs just... don't. They said "blood clots" and the glass frog said "no thank you."
+            When glass frogs sleep (which is during the day, because they're nocturnal like all sensible frogs and most college students), they somehow pack about 90% of their red blood cells into their liver. Just... shove it all in there. Like cramming clothes into a suitcase. This makes their body even MORE transparent—essentially becoming living glass.
+          </p>
+          <p>
+            When they wake up, the blood goes back to circulating normally. Business as usual. Nothing to see here except literally everything.
+          </p>
+          <p>
+            Scientists are still figuring out how they do this without, you know, dying. In any other animal, concentrating blood like that would cause fatal clots. Your circulatory system would stage a protest. Your organs would file complaints.
+          </p>
+          <p>
+            Glass frogs just... don't get clots. They said "blood clots" and the glass frog said "no thank you, I have plans."
+          </p>
+          <p>
+            Honestly? Iconic behavior.
           </p>
         </div>
       </section>
@@ -147,22 +174,22 @@ export function GlassHalfFull() {
             <QuickFact
               icon={Droplets}
               label="Found in"
-              value="Central & South American rainforests, usually near streams"
+              value="Central & South American rainforests, usually near streams (where they're invisible) (rude)"
             />
             <QuickFact
               icon={Eye}
               label="Size"
-              value="Most are tiny—about 2-3 cm (smaller than a grape)"
+              value="Most are tiny—about 2-3 cm (smaller than a grape, with significantly more organs visible)"
             />
             <QuickFact
               icon={Heart}
               label="Coolest feature"
-              value="Males guard their eggs until they hatch (good dads!)"
+              value="Males guard their eggs until they hatch (good dads! 10/10!)"
             />
             <QuickFact
               icon={Camera}
               label="Species count"
-              value="Over 150 known species, and scientists keep finding more"
+              value="Over 150 known species, and scientists keep finding more (probably because they keep overlooking them, on account of the whole INVISIBLE thing)"
             />
           </div>
         </div>
@@ -183,19 +210,28 @@ export function GlassHalfFull() {
         </div>
         <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
           <p>
-            I spent three hours with that glass frog. (It didn't seem to mind. Or maybe it was just too polite to say anything.) And somewhere between watching its third heartbeat-per-second and its forty-thousandth, I had a thought:
+            I spent three hours with that glass frog. (It didn't seem to mind. Or maybe it was just too polite to say anything. Very Canadian energy for a Costa Rican frog.)
           </p>
           <p>
-            We spend so much time hiding who we are. What we feel. What's happening inside us.
+            And somewhere between watching its third heartbeat-per-second and its forty-thousandth, I had a thought:
           </p>
           <p>
-            Glass frogs figured out how to survive by doing the opposite. By being completely, literally transparent. Their vulnerability isn't a weakness—it's their superpower.
+            We spend so much time hiding who we are. What we feel. What's happening inside us. We've got walls and masks and carefully curated social media posts and "I'm fine, how are you?" on repeat.
           </p>
           <p>
-            Now, I'm not saying you should show everyone your internal organs. (Please don't. That would be weird and also medically concerning.) But maybe there's something to learn from a frog that survives by letting the world see through it.
+            Glass frogs figured out how to survive by doing the opposite. By being completely, literally transparent. Their vulnerability isn't a weakness—it's their superpower. It's the thing that keeps them alive.
+          </p>
+          <p>
+            Now, I'm not saying you should show everyone your internal organs. (Please don't. That would be weird and also medically concerning and also possibly illegal depending on your local ordinances.)
+          </p>
+          <p>
+            But maybe there's something to learn from a frog that survives by letting the world see through it. Maybe it's okay to be a little more transparent. A little more visible. A little more "yes this is my actual heart, it beats weird sometimes, that's just what it does."
+          </p>
+          <p>
+            Sometimes the glass really is half full. And sometimes it's completely transparent. And somehow, against all odds, that's exactly what it needs to be.
           </p>
           <p className="font-medium text-[#2D5A3D] dark:text-[#81C784]">
-            Sometimes the glass really is half full. And sometimes it's completely transparent. And somehow, against all odds, that's exactly what it needs to be.
+            Stay visible, friends. Even if it's terrifying. Especially if it's terrifying.
           </p>
         </div>
       </section>
