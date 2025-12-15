@@ -436,8 +436,8 @@ export function Explore() {
 
             {/* Classified stamp effect */}
             <div className="absolute top-3 right-3 -rotate-12">
-              <div className="border-2 border-[#B45309]/60 dark:border-[#D97706]/50 rounded px-2 py-0.5">
-                <span className="text-[8px] font-bold uppercase tracking-wider text-[#B45309]/80 dark:text-[#D97706]/70">
+              <div className="border-2 border-[#8B4513] dark:border-[#D97706]/50 rounded px-2 py-0.5">
+                <span className="text-[8px] font-bold uppercase tracking-wider text-[#8B4513] dark:text-[#D97706]/70">
                   Coming Soon
                 </span>
               </div>
