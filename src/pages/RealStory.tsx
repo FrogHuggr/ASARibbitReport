@@ -367,11 +367,11 @@ export function RealStory() {
             return (
               <section
                 key={index}
-                className="bg-gradient-to-r from-[#4CAF50] to-[#2D5A3D] rounded-2xl p-5 flex items-center gap-4"
+                className="bg-[#F5E6D3] dark:bg-[#3D3528] rounded-2xl p-5 flex items-center gap-4 border border-[#E0C9A8] dark:border-[#5A4632]"
               >
-                {/* MarshMellow avatar - larger with white background */}
+                {/* MarshMellow avatar */}
                 <div
-                  className="w-24 h-24 rounded-full bg-white flex-shrink-0 flex items-center justify-center overflow-hidden border-2 border-white/50"
+                  className="w-24 h-24 rounded-full bg-white dark:bg-[#2D2D2D] flex-shrink-0 flex items-center justify-center overflow-hidden border-2 border-[#D4A574] dark:border-[#8B6914]"
                   style={{
                     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.15)',
                   }}
@@ -384,10 +384,10 @@ export function RealStory() {
                 </div>
                 {/* Quote */}
                 <div className="flex-1">
-                  <p className="text-xs font-semibold text-white/80 uppercase tracking-wider mb-1">
+                  <p className="text-xs font-semibold text-[#8B6914] dark:text-[#D4A574] uppercase tracking-wider mb-1">
                     {section.speaker}'s Takeaway
                   </p>
-                  <p className="font-display font-bold text-lg text-white leading-snug">
+                  <p className="font-display font-bold text-lg text-[#4A3728] dark:text-[#E8D5B7] leading-snug">
                     "{section.content}"
                   </p>
                 </div>
