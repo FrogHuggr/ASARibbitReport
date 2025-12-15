@@ -80,28 +80,43 @@ export function MeetMarshMellow() {
         </h2>
         <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
           <p>
-            MarshMellow wasn't always an explorer. He grew up in the rainforests of Costa Rica, spending his nights catching moths (crunchy, 10/10 would recommend) and his days sleeping on the undersides of big green leaves. Life was simple. Predictable. Honestly? A little boring.
+            MarshMellow wasn't always an explorer. He grew up in the rainforests of Costa Rica, spending his nights catching moths (crunchy, 10/10, no notes) and his days sleeping on the undersides of big green leaves. Life was simple. Predictable. Honestly? A little boring. He was the frog equivalent of someone who eats the same lunch every day and thinks "maybe I'll try something different" but never does.
           </p>
           <p>
             Then came the storm.
           </p>
           <p>
-            A flash flood swept through his forest, and before he knew it, MarshMellow was clinging to a leaf like his life depended on it. (It did.) Two days later, soggy and slightly traumatized, he washed up somewhere completely unexpected: a research station at the edge of the jungle.
+            A flash flood swept through his forest, and before he knew it, MarshMellow was clinging to a leaf like his life depended on it. (It did.) He had exactly one thought, on repeat, for 48 hours: <em>"This is fine. This is fine. This is NOT fine. This is fine."</em>
           </p>
           <p>
-            A scientist found him, took his photo, measured him carefully, and spoke into a recorder: <em>"Another survivor. Remarkable resilience."</em> MarshMellow had never been called remarkable before. He decided he liked it.
+            Two days later, soggy, slightly traumatized, and missing one of his favorite flies (rest in peace, Gerald), he washed up somewhere completely unexpected: a research station at the edge of the jungle.
           </p>
           <p>
-            While recovering in a terrarium (the room service was excellent), he noticed something on the walls: maps. Maps covered in pins marking frog sightings across the world. Photographs of species he'd never imagined: purple frogs that lived underground, glass frogs with see-through skin, salamanders the size of a human child. There was a whole world of amphibians out there—and humans who dedicated their lives to finding and protecting them.
+            A scientist found him, took his photo, measured him carefully, and spoke into a recorder: <em>"Another survivor. Remarkable resilience."</em>
           </p>
           <p>
-            When the scientist released him back into the forest, MarshMellow made a decision. He wasn't going back to his old leaf. He was going to see those places. Meet those frogs. Maybe even become remarkable for real.
+            MarshMellow had never been called remarkable before. He'd been called "small," "green," and once, memorably, "AAAAH THERE'S A FROG IN MY BOOT." But never remarkable. He decided he liked it.
           </p>
           <p>
-            He traded his leaf for an explorer's hat, packed a tiny satchel (one spare fly, just in case), and set off on his first expedition. He hasn't stopped since. Well, except for naps. Naps are non-negotiable.
+            While recovering in a terrarium (the room service was excellent, the fruit flies were <em>chef's kiss</em>), he noticed something on the walls: maps. Maps covered in pins marking frog sightings across the world. Photographs of species he'd never imagined: purple frogs that lived underground, glass frogs with see-through skin, salamanders the size of a canoe. There was a whole world of amphibians out there—and humans who dedicated their lives to finding and protecting them.
           </p>
           <p>
-            Now he's your guide. Wherever there's a frog chorus to hear, a salamander to spot, or a conservation mystery to solve, MarshMellow is ready to lead the way. Just don't ask him to swim through any more floods. Once was enough.
+            Wild.
+          </p>
+          <p>
+            When the scientist released him back into the forest, MarshMellow made a decision. He wasn't going back to his old leaf. That leaf could find a new frog. He was going to see those places. Meet those frogs. Maybe even become remarkable for real.
+          </p>
+          <p>
+            He traded his leaf for an explorer's hat (found it floating in the river, barely chewed), packed a tiny satchel (one spare fly, emergency use only), and set off on his first expedition. He hasn't stopped since.
+          </p>
+          <p>
+            Well, except for naps. Naps are non-negotiable. He's not a monster.
+          </p>
+          <p>
+            Now he's your guide. Wherever there's a frog chorus to hear, a salamander to spot, or a conservation mystery to solve, MarshMellow is ready to lead the way. He's enthusiastic, he's curious, and he only screams at large salamanders <em>sometimes</em>.
+          </p>
+          <p>
+            Just don't ask him to swim through any more floods. Once was enough. Gerald would have wanted it that way.
           </p>
         </div>
       </section>
