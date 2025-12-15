@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronRight, MapPin, Lightbulb, Camera } from 'lucide-react';
+import { ChevronRight, MapPin, Lightbulb, Camera, Notebook } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { dispatches } from '../data/dispatches';
 import { mythBusterCards } from '../data/mythbusters';
@@ -130,6 +130,94 @@ export function Home() {
           </div>
         </Link>
 
+        {/* FIELD NOTES CARD - Map background with MarshMellow */}
+        <Link to="/field-notes/glass-half-full" className="block group">
+          <div
+            className="relative h-48 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+            }}
+          >
+            {/* Map background */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/fieldnotes/glasshalffull/glasshalffullmap.jpg)',
+              }}
+            />
+
+            {/* Warm overlay for cohesion */}
+            <div className="absolute inset-0 bg-[#3D2E1F]/30" />
+
+            {/* NEW badge */}
+            <div className="absolute top-4 left-4 bg-[#2D5A3D] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md z-10">
+              <Notebook size={12} />
+              New
+            </div>
+
+            {/* Philosophical MarshMellow - positioned right */}
+            <div className="absolute right-2 bottom-0 w-36 h-36 z-10">
+              <img
+                src="/images/fieldnotes/glasshalffull/glasshalffullmarshmellow.png"
+                alt="MarshMellow looking philosophical"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Dark gradient for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+              <div className="max-w-[55%]">
+                <p className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider mb-1">
+                  Field Notes
+                </p>
+                <h3 className="font-display text-2xl font-bold text-white mb-1">
+                  Glass Half Full
+                </h3>
+                <p className="text-white/90 text-sm">
+                  Day 47: A frog with nothing to hide
+                </p>
+              </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="absolute right-4 bottom-4 z-10">
+              <ChevronRight
+                size={28}
+                className="text-white/60 group-hover:translate-x-1 transition-transform"
+              />
+            </div>
+
+            {/* Hover shadow enhancement */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl"
+              style={{
+                boxShadow: '0 12px 32px rgba(0,0,0,0.2)',
+              }}
+            />
+          </div>
+        </Link>
+
+        {/* FIELD NOTES - Coming Soon teaser */}
+        <div className="bg-gradient-to-r from-[#3D2E1F] to-[#4A3728] rounded-2xl p-4 flex items-center gap-4">
+          <div className="w-12 h-12 rounded-full bg-[#5A4632] flex items-center justify-center flex-shrink-0">
+            <Notebook size={22} className="text-[#D4A574]" />
+          </div>
+          <div className="flex-1">
+            <p className="text-[#D4A574] text-[10px] font-bold uppercase tracking-wider mb-0.5">
+              Next Field Note
+            </p>
+            <p className="text-[#E8D5B7] text-sm font-medium">
+              The Salamander That's Older Than Dinosaurs
+            </p>
+            <p className="text-[#B8A082] text-xs mt-0.5">
+              Coming soon
+            </p>
+          </div>
+        </div>
+
         {/* WILD DECISIONS CARD - Illustrated map background */}
         <Link to="/wild-decisions" className="block group">
           <div
@@ -180,7 +268,7 @@ export function Home() {
           </div>
         </Link>
 
-        {/* MYTH BUSTERS CARD - MarshMellow with speech bubble */}
+        {/* MYTH BUSTERS CARD - Field journal background with investigator MarshMellow */}
         <Link to="/myths" className="block group">
           <div
             className="relative h-48 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
@@ -188,60 +276,50 @@ export function Home() {
               boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
             }}
           >
-            {/* Gradient background with playful colors */}
-            <div className="absolute inset-0 bg-gradient-to-br from-[#7C3AED] via-[#EC4899] to-[#F59E0B]" />
+            {/* Field journal background */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/mythbusters/mythbusters.jpg)',
+              }}
+            />
 
-            {/* Question mark pattern overlay */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute top-2 left-4 text-5xl font-bold text-white rotate-12">?</div>
-              <div className="absolute top-16 left-12 text-3xl font-bold text-white -rotate-6">?</div>
-              <div className="absolute bottom-20 left-6 text-4xl font-bold text-white rotate-3">?</div>
-            </div>
+            {/* Warm overlay for cohesion */}
+            <div className="absolute inset-0 bg-[#3D2E1F]/25" />
 
-            {/* MarshMellow with speech bubble */}
-            <div className="absolute right-4 top-2 flex items-start gap-2">
-              {/* Speech bubble */}
-              <div className="relative bg-white rounded-xl px-3 py-2 mt-4 shadow-lg">
-                <p className="text-[#7C3AED] font-bold text-sm whitespace-nowrap">
-                  Myth or Fact?
-                </p>
-                {/* Bubble tail */}
-                <div
-                  className="absolute -right-2 top-3 w-0 h-0"
-                  style={{
-                    borderTop: '6px solid transparent',
-                    borderBottom: '6px solid transparent',
-                    borderLeft: '8px solid white',
-                  }}
-                />
-              </div>
-              {/* MarshMellow */}
+            {/* Investigator MarshMellow - positioned right */}
+            <div className="absolute right-2 bottom-0 w-32 h-32 z-10">
               <img
-                src="/images/marshmellow/marshmellow-thinking.png"
-                alt="MarshMellow wondering"
-                className="w-20 h-20 object-contain"
+                src="/images/marshmellow/marshmellow-thinking5.png"
+                alt="MarshMellow investigating"
+                className="w-full h-full object-contain"
               />
             </div>
 
-            {/* Dark gradient overlay at bottom */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+            {/* Dark gradient for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
 
             {/* Content */}
             <div className="absolute inset-0 p-5 flex flex-col justify-end">
-              <div className="flex items-end justify-between">
-                <div>
-                  <h3 className="font-display text-2xl font-bold text-white mb-1">
-                    Myth Busters
-                  </h3>
-                  <p className="text-white/90 text-sm">
-                    {mythBusterCards.length} myths to bust
-                  </p>
-                </div>
-                <ChevronRight
-                  size={28}
-                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
-                />
+              <div className="max-w-[55%]">
+                <p className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider mb-1">
+                  Investigate
+                </p>
+                <h3 className="font-display text-2xl font-bold text-white mb-1">
+                  Myth Busters
+                </h3>
+                <p className="text-white/90 text-sm">
+                  {mythBusterCards.length} myths to bust
+                </p>
               </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="absolute right-4 bottom-4 z-10">
+              <ChevronRight
+                size={28}
+                className="text-white/60 group-hover:translate-x-1 transition-transform"
+              />
             </div>
 
             {/* Hover shadow enhancement */}

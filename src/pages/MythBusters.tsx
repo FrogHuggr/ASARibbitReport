@@ -34,40 +34,59 @@ const chipColors: Record<string, { bg: string; text: string; darkBg: string }> =
   try: { bg: 'bg-[#FFFDE7]', text: 'text-[#F9A825]', darkBg: 'dark:bg-[#4A4000]' },
 };
 
-// Landing page with MarshMellow intro
+// Landing page with MarshMellow intro - field journal theme
 function MythBustersLanding({ onStart }: { onStart: () => void }) {
   return (
-    <div className="min-h-[80vh] flex flex-col items-center justify-center px-6 py-8">
-      {/* MarshMellow */}
-      <div className="mb-6">
-        <img
-          src="/images/marshmellow/marshmellow-thinking3.png"
-          alt="MarshMellow thinking"
-          className="w-44 h-44 object-contain"
+    <div className="min-h-[80vh] flex flex-col">
+      {/* Hero with field journal background */}
+      <div className="relative">
+        {/* Background image */}
+        <div
+          className="h-56 sm:h-64 bg-cover bg-center"
+          style={{
+            backgroundImage: 'url(/images/mythbusters/mythbusters.jpg)',
+          }}
         />
+        {/* Gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#F7F5F0] dark:from-[#1a1a1a] via-transparent to-black/30" />
+
+        {/* Investigator MarshMellow */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2 z-10">
+          <img
+            src="/images/marshmellow/marshmellow-thinking5.png"
+            alt="MarshMellow investigating"
+            className="w-36 h-36 object-contain"
+          />
+        </div>
       </div>
 
-      {/* Title and intro */}
-      <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white mb-4 text-center">
-        Myth Busters
-      </h1>
-      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-lg mb-2 text-center px-4">
-        Think you know amphibians?
-      </p>
-      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-lg mb-6 text-center px-4">
-        Let's find out!
-      </p>
-      <p className="text-[#6B7280] dark:text-[#9CA3AF] text-sm mb-8 text-center px-4">
-        Tap through {mythBusterCards.length} cards and test what you think you know.
-      </p>
+      {/* Content */}
+      <div className="flex-1 flex flex-col items-center justify-center px-6 pt-20 pb-8 bg-[#F7F5F0] dark:bg-[#1a1a1a]">
+        {/* Title and intro */}
+        <p className="text-[#8B6914] dark:text-[#D4A574] text-xs font-semibold uppercase tracking-wider mb-2">
+          Investigate
+        </p>
+        <h1 className="font-display text-3xl font-bold text-[#2D2D2D] dark:text-white mb-4 text-center">
+          Myth Busters
+        </h1>
+        <p className="text-[#4A3728] dark:text-[#E8D5B7] text-lg mb-2 text-center px-4">
+          Think you know amphibians?
+        </p>
+        <p className="text-[#6B5344] dark:text-[#B8A082] text-base mb-6 text-center px-4">
+          Let's find out!
+        </p>
+        <p className="text-[#6B7280] dark:text-[#9CA3AF] text-sm mb-8 text-center px-4">
+          Tap through {mythBusterCards.length} cards and test what you think you know.
+        </p>
 
-      {/* Start button - vibrant purple to match Myth Busters branding */}
-      <button
-        onClick={onStart}
-        className="bg-[#7C3AED] hover:bg-[#6D28D9] active:scale-95 text-white font-bold py-5 px-12 rounded-full text-2xl transition-all shadow-xl border-4 border-[#A78BFA]/50"
-      >
-        Let's Go!
-      </button>
+        {/* Start button - adventure gold/brown to match theme */}
+        <button
+          onClick={onStart}
+          className="bg-gradient-to-r from-[#8B6914] to-[#6B5344] hover:from-[#7A5A10] hover:to-[#5A4636] active:scale-95 text-white font-bold py-5 px-12 rounded-full text-2xl transition-all shadow-xl border-2 border-[#D4A574]/30"
+        >
+          Let's Go!
+        </button>
+      </div>
     </div>
   );
 }
