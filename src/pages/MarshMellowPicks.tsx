@@ -128,22 +128,28 @@ export function MarshMellowPicks() {
               >
                 {/* Card content */}
                 <div className="flex gap-4 p-4">
-                  {/* Thumbnail - split circles for frog vs toad */}
-                  <div className="w-24 h-24 rounded-lg bg-gradient-to-r from-[#4A7B5C] to-[#8B7355] flex items-center justify-center flex-shrink-0">
-                    <div className="flex items-center">
-                      <div className="w-10 h-10 rounded-full bg-[#E8F5E9] border-2 border-white overflow-hidden -mr-2">
+                  {/* Thumbnail - VS split style */}
+                  <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 relative">
+                    <div className="absolute inset-0 flex">
+                      <div className="flex-1 relative overflow-hidden">
                         <img
                           src={`${story.images.frog.path}${story.images.frog.file}`}
                           alt="Frog"
-                          className="w-full h-full object-contain"
+                          className="absolute inset-0 w-full h-full object-cover scale-150"
                         />
                       </div>
-                      <div className="w-10 h-10 rounded-full bg-[#F5E6D3] border-2 border-white overflow-hidden">
+                      <div className="flex-1 relative overflow-hidden">
                         <img
                           src={`${story.images.toad.path}${story.images.toad.file}`}
                           alt="Toad"
-                          className="w-full h-full object-contain"
+                          className="absolute inset-0 w-full h-full object-cover scale-150"
                         />
+                      </div>
+                    </div>
+                    {/* VS badge */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <div className="w-7 h-7 rounded-full bg-[#8B6914] flex items-center justify-center z-10 shadow-md">
+                        <span className="font-display font-bold text-[10px] text-white">VS</span>
                       </div>
                     </div>
                   </div>
