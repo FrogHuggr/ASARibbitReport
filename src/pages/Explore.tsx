@@ -52,8 +52,6 @@ export function Explore() {
                 backgroundImage: 'url(/images/dispatches/ghana-afiabirago-puddle-frog/field1.jpeg)',
               }}
             />
-            {/* Green tint overlay */}
-            <div className="absolute inset-0 bg-[#2D5A3D]/60" />
             {/* Dark gradient for text */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
 
@@ -134,8 +132,6 @@ export function Explore() {
                   backgroundImage: 'url(/images/wilddecision/wilddecision3.jpg)',
                 }}
               />
-              {/* Amber tint overlay */}
-              <div className="absolute inset-0 bg-[#D97706]/50" />
               {/* Dark gradient for text */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
@@ -165,8 +161,6 @@ export function Explore() {
                 }}
               />
 
-              {/* Warm overlay for cohesion */}
-              <div className="absolute inset-0 bg-[#3D2E1F]/25" />
 
               {/* Investigator MarshMellow - positioned right */}
               <div className="absolute right-0 bottom-0 w-24 h-24 z-10">
@@ -249,8 +243,6 @@ export function Explore() {
               }}
             />
 
-            {/* Warm overlay for cohesion */}
-            <div className="absolute inset-0 bg-[#3D2E1F]/30" />
 
             {/* NEW badge */}
             <div className="absolute top-3 left-3 bg-[#2D5A3D] text-white text-[10px] font-bold uppercase tracking-wider px-2 py-1 rounded-full flex items-center gap-1 z-10">
@@ -338,8 +330,6 @@ export function Explore() {
                 </div>
               </div>
 
-              {/* Color overlay for cohesion */}
-              <div className="absolute inset-0 bg-[#2D5A3D]/30" />
 
               {/* Dark gradient for text */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
@@ -373,23 +363,21 @@ export function Explore() {
             >
               {/* Split background with zoomed specimens */}
               <div className="absolute inset-0 flex">
-                {/* Frog side - green tint */}
-                <div className="flex-1 relative overflow-hidden bg-[#2D5A3D]">
+                {/* Frog side */}
+                <div className="flex-1 relative overflow-hidden">
                   <img
-                    src="/images/realstory/realstoryfrog.PNG"
+                    src="/images/realstory/realstoryfrog.png"
                     alt="Frog"
-                    className="absolute inset-0 w-full h-full object-cover object-[30%_15%] scale-[2.5] opacity-80"
+                    className="absolute inset-0 w-full h-full object-cover object-[70%_30%] scale-[1.8]"
                   />
-                  <div className="absolute inset-0 bg-[#2D5A3D]/40" />
                 </div>
-                {/* Toad side - brown tint */}
-                <div className="flex-1 relative overflow-hidden bg-[#6B5344]">
+                {/* Toad side */}
+                <div className="flex-1 relative overflow-hidden">
                   <img
-                    src="/images/realstory/realstorytoad.jpg"
+                    src="/images/realstory/realstorytoad.png"
                     alt="Toad"
-                    className="absolute inset-0 w-full h-full object-cover object-[70%_20%] scale-[2.5] opacity-80"
+                    className="absolute inset-0 w-full h-full object-cover object-[70%_30%] scale-[1.8]"
                   />
-                  <div className="absolute inset-0 bg-[#6B5344]/40" />
                 </div>
               </div>
 

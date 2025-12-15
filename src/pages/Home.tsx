@@ -146,8 +146,6 @@ export function Home() {
               }}
             />
 
-            {/* Warm overlay for cohesion */}
-            <div className="absolute inset-0 bg-[#3D2E1F]/30" />
 
             {/* NEW badge */}
             <div className="absolute top-4 left-4 bg-[#2D5A3D] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md z-10">
@@ -284,8 +282,6 @@ export function Home() {
               }}
             />
 
-            {/* Warm overlay for cohesion */}
-            <div className="absolute inset-0 bg-[#3D2E1F]/25" />
 
             {/* Investigator MarshMellow - positioned right */}
             <div className="absolute right-2 bottom-0 w-32 h-32 z-10">
@@ -342,23 +338,21 @@ export function Home() {
           >
             {/* Split background with zoomed specimens */}
             <div className="absolute inset-0 flex">
-              {/* Frog side - green tint */}
-              <div className="flex-1 relative overflow-hidden bg-[#2D5A3D]">
+              {/* Frog side */}
+              <div className="flex-1 relative overflow-hidden">
                 <img
-                  src="/images/realstory/realstoryfrog.PNG"
+                  src="/images/realstory/realstoryfrog.png"
                   alt="Frog"
-                  className="absolute inset-0 w-full h-full object-cover object-[30%_15%] scale-[2.2] opacity-80"
+                  className="absolute inset-0 w-full h-full object-cover object-[70%_30%] scale-[1.8]"
                 />
-                <div className="absolute inset-0 bg-[#2D5A3D]/40" />
               </div>
-              {/* Toad side - brown tint */}
-              <div className="flex-1 relative overflow-hidden bg-[#6B5344]">
+              {/* Toad side */}
+              <div className="flex-1 relative overflow-hidden">
                 <img
-                  src="/images/realstory/realstorytoad.jpg"
+                  src="/images/realstory/realstorytoad.png"
                   alt="Toad"
-                  className="absolute inset-0 w-full h-full object-cover object-[70%_20%] scale-[2.2] opacity-80"
+                  className="absolute inset-0 w-full h-full object-cover object-[70%_30%] scale-[1.8]"
                 />
-                <div className="absolute inset-0 bg-[#6B5344]/40" />
               </div>
             </div>
 

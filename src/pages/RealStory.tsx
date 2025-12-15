@@ -13,6 +13,8 @@ import {
   Waves,
   TreeDeciduous,
   Lightbulb,
+  MapPin,
+  Camera,
 } from 'lucide-react';
 import { getRealStoryById } from '../data/realStory';
 import type { Comparison, FaceOffSection } from '../data/realStory';
@@ -233,31 +235,63 @@ export function RealStory() {
           </p>
 
           {/* Specimens side by side */}
-          <div className="flex items-center justify-center gap-2">
+          <div className="flex items-start justify-center gap-2">
             {/* Frog specimen */}
-            <div className="flex-1 flex justify-center">
+            <div className="flex-1 flex flex-col items-center">
               <img
-                src="/images/realstory/realstoryfrog.PNG"
-                alt="Panamanian Golden Frog - Atelopus zeteki"
-                className="h-36 w-auto object-contain drop-shadow-md"
+                src="/images/realstory/realstoryfrog.png"
+                alt="Wood Frog - Lithobates sylvaticus"
+                className="h-32 w-auto object-contain drop-shadow-md mb-3"
               />
+              <div className="text-center">
+                <p className="font-display font-bold text-sm text-[#2D5A3D] dark:text-[#81C784]">
+                  Wood Frog
+                </p>
+                <p className="text-xs italic text-[#6B7280] dark:text-[#9CA3AF] mb-2">
+                  Lithobates sylvaticus
+                </p>
+                <div className="flex items-center justify-center gap-1 text-[10px] text-[#8B7355] dark:text-[#B8A082]">
+                  <MapPin size={10} />
+                  <span>North America</span>
+                </div>
+                <div className="flex items-center justify-center gap-1 text-[10px] text-[#8B7355] dark:text-[#B8A082] mt-0.5">
+                  <Camera size={10} />
+                  <span>Yves Derry</span>
+                </div>
+              </div>
             </div>
 
             {/* VS Badge */}
             <div
-              className="w-12 h-12 rounded-full bg-[#8B6914] flex items-center justify-center flex-shrink-0 z-10"
+              className="w-10 h-10 rounded-full bg-[#8B6914] flex items-center justify-center flex-shrink-0 z-10 mt-12"
               style={{ boxShadow: '0 4px 12px rgba(139, 105, 20, 0.4)' }}
             >
-              <span className="font-display font-extrabold text-base text-white">VS</span>
+              <span className="font-display font-extrabold text-sm text-white">VS</span>
             </div>
 
             {/* Toad specimen */}
-            <div className="flex-1 flex justify-center">
+            <div className="flex-1 flex flex-col items-center">
               <img
-                src="/images/realstory/realstorytoad.jpg"
-                alt="Common Toad - Bufo bufo"
-                className="h-36 w-auto object-contain drop-shadow-md"
+                src="/images/realstory/realstorytoad.png"
+                alt="Guttural Toad - Sclerophrys gutturalis"
+                className="h-32 w-auto object-contain drop-shadow-md mb-3"
               />
+              <div className="text-center">
+                <p className="font-display font-bold text-sm text-[#6B5344] dark:text-[#D4A574]">
+                  Guttural Toad
+                </p>
+                <p className="text-xs italic text-[#6B7280] dark:text-[#9CA3AF] mb-2">
+                  Sclerophrys gutturalis
+                </p>
+                <div className="flex items-center justify-center gap-1 text-[10px] text-[#8B7355] dark:text-[#B8A082]">
+                  <MapPin size={10} />
+                  <span>Southern Africa</span>
+                </div>
+                <div className="flex items-center justify-center gap-1 text-[10px] text-[#8B7355] dark:text-[#B8A082] mt-0.5">
+                  <Camera size={10} />
+                  <span>Nico Smit</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
