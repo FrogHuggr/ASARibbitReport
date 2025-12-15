@@ -80,7 +80,46 @@ export function Explore() {
           </div>
         </Link>
 
-        {/* 2x2 Grid for main content types */}
+        {/* CONSERVATION STATUS - Full width, photo background */}
+        <Link to="/conservation-status" className="block group">
+          <div
+            className="relative h-36 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
+          >
+            {/* Background image - Glass frog */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/explore/conservationstatus-explore.jpg)',
+              }}
+            />
+            {/* Subtle gradient - just at the bottom for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-4 flex flex-col justify-end">
+              <div className="flex items-end justify-between">
+                <div>
+                  <h3 className="font-display text-xl font-bold text-white mb-0.5">
+                    Conservation Status
+                  </h3>
+                  <p className="text-white/90 text-sm">
+                    Understanding the IUCN Red List
+                  </p>
+                  <p className="text-white/80 text-xs mt-1">
+                    41% of amphibians at risk
+                  </p>
+                </div>
+                <ChevronRight
+                  size={24}
+                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
+                />
+              </div>
+            </div>
+          </div>
+        </Link>
+
+        {/* Row 1: Wild Decisions + Myth Busters */}
         <div className="grid grid-cols-2 gap-4">
           {/* WILD DECISIONS - Amber/Orange */}
           <Link to="/wild-decisions" className="block group">
@@ -161,7 +200,49 @@ export function Explore() {
               </div>
             </div>
           </Link>
+        </div>
 
+        {/* MEET MARSHMELLOW - Full width, adventure map theme */}
+        <Link to="/meet-marshmellow" className="block group">
+          <div
+            className="relative h-44 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
+          >
+            {/* Background image - Adventures of MarshMellow */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/explore/adventuresofmarshmellow.jpg)',
+              }}
+            />
+            {/* Minimal gradient for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-4 flex flex-col justify-end">
+              <div className="flex items-end justify-between">
+                <div>
+                  <p className="text-white/70 text-xs font-medium uppercase tracking-wider mb-0.5">
+                    Your Guide
+                  </p>
+                  <h3 className="font-display text-xl font-bold text-white mb-0.5">
+                    Meet MarshMellow
+                  </h3>
+                  <p className="text-white/90 text-sm">
+                    The adventurer behind The Ribbit Report
+                  </p>
+                </div>
+                <ChevronRight
+                  size={24}
+                  className="text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0"
+                />
+              </div>
+            </div>
+          </div>
+        </Link>
+
+        {/* Row 2: The Real Story + Surprise Me */}
+        <div className="grid grid-cols-2 gap-4">
           {/* THE REAL STORY - Teal */}
           <Link to="/real-story/frogs-vs-toads" className="block group">
             <div
@@ -210,6 +291,57 @@ export function Explore() {
             </div>
           </Link>
 
+          {/* SURPRISE ME - Adventure map theme with MarshMellow */}
+          <button
+            onClick={handleSurpriseMe}
+            className="block group w-full text-left"
+          >
+            <div
+              className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+              style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
+            >
+              {/* Treasure map gradient background */}
+              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A574] via-[#C4956A] to-[#A67C52] dark:from-[#8B6914] dark:via-[#6B5210] dark:to-[#4A3A0A]" />
+
+              {/* Map texture pattern - dotted trail lines */}
+              <div className="absolute inset-0 opacity-30">
+                {/* Compass rose hint in corner */}
+                <div className="absolute top-2 left-2 w-8 h-8 border border-[#8B6914]/50 rounded-full flex items-center justify-center">
+                  <div className="w-4 h-4 border-t border-l border-[#8B6914]/50 rotate-45" />
+                </div>
+                {/* Dotted path lines */}
+                <div className="absolute top-6 right-4 w-12 border-t-2 border-dashed border-[#8B6914]/40" />
+                <div className="absolute top-10 right-8 w-8 border-t-2 border-dashed border-[#8B6914]/40 rotate-45" />
+                <div className="absolute bottom-16 left-4 w-10 border-t-2 border-dashed border-[#8B6914]/40 -rotate-12" />
+                {/* Question marks for mystery */}
+                <div className="absolute top-3 right-3 text-[#8B6914]/60 font-bold text-lg">?</div>
+                <div className="absolute bottom-14 left-6 text-[#8B6914]/40 font-bold text-sm rotate-12">?</div>
+              </div>
+
+              {/* MarshMellow with compass - positioned right */}
+              <div className="absolute right-1 bottom-0 w-28 h-28 group-hover:scale-105 transition-transform">
+                <img
+                  src="/images/marshmellow/marshmellow-map-pointing.png"
+                  alt="MarshMellow pointing the way"
+                  className="w-full h-full object-contain"
+                />
+              </div>
+
+              {/* Content - positioned left */}
+              <div className="absolute inset-0 p-3 flex flex-col justify-end">
+                <h3 className="font-display text-lg font-bold text-[#4A3728] dark:text-[#F5E6D3] leading-tight">
+                  Surprise Me!
+                </h3>
+                <p className="text-[#6B5240] dark:text-[#D4C4A8] text-xs mt-0.5">
+                  Random adventure
+                </p>
+              </div>
+            </div>
+          </button>
+        </div>
+
+        {/* Row 3: Coming Soon - Species Files + Conservation Toolkit */}
+        <div className="grid grid-cols-2 gap-4">
           {/* SPECIES FILES - Coming Soon - Classified dossier aesthetic */}
           <div
             className="relative h-40 rounded-2xl overflow-hidden"
@@ -298,54 +430,6 @@ export function Explore() {
               </p>
             </div>
           </div>
-
-          {/* SURPRISE ME - Adventure map theme with MarshMellow */}
-          <button
-            onClick={handleSurpriseMe}
-            className="block group w-full text-left"
-          >
-            <div
-              className="relative h-40 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
-              style={{ boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}
-            >
-              {/* Treasure map gradient background */}
-              <div className="absolute inset-0 bg-gradient-to-br from-[#D4A574] via-[#C4956A] to-[#A67C52] dark:from-[#8B6914] dark:via-[#6B5210] dark:to-[#4A3A0A]" />
-
-              {/* Map texture pattern - dotted trail lines */}
-              <div className="absolute inset-0 opacity-30">
-                {/* Compass rose hint in corner */}
-                <div className="absolute top-2 left-2 w-8 h-8 border border-[#8B6914]/50 rounded-full flex items-center justify-center">
-                  <div className="w-4 h-4 border-t border-l border-[#8B6914]/50 rotate-45" />
-                </div>
-                {/* Dotted path lines */}
-                <div className="absolute top-6 right-4 w-12 border-t-2 border-dashed border-[#8B6914]/40" />
-                <div className="absolute top-10 right-8 w-8 border-t-2 border-dashed border-[#8B6914]/40 rotate-45" />
-                <div className="absolute bottom-16 left-4 w-10 border-t-2 border-dashed border-[#8B6914]/40 -rotate-12" />
-                {/* Question marks for mystery */}
-                <div className="absolute top-3 right-3 text-[#8B6914]/60 font-bold text-lg">?</div>
-                <div className="absolute bottom-14 left-6 text-[#8B6914]/40 font-bold text-sm rotate-12">?</div>
-              </div>
-
-              {/* MarshMellow with compass - positioned right */}
-              <div className="absolute right-1 bottom-0 w-28 h-28 group-hover:scale-105 transition-transform">
-                <img
-                  src="/images/marshmellow/marshmellow-map-pointing.png"
-                  alt="MarshMellow pointing the way"
-                  className="w-full h-full object-contain"
-                />
-              </div>
-
-              {/* Content - positioned left */}
-              <div className="absolute inset-0 p-3 flex flex-col justify-end">
-                <h3 className="font-display text-lg font-bold text-[#4A3728] dark:text-[#F5E6D3] leading-tight">
-                  Surprise Me!
-                </h3>
-                <p className="text-[#6B5240] dark:text-[#D4C4A8] text-xs mt-0.5">
-                  Random adventure
-                </p>
-              </div>
-            </div>
-          </button>
         </div>
       </section>
 

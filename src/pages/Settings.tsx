@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail, X, Shield, Ban, CheckCircle, Settings as SettingsIcon, Users, Check } from 'lucide-react';
 import { useTheme, languageLabels, type Language } from '../context/ThemeContext';
 import { useTextSize, type TextSize } from '../context/TextSizeContext';
@@ -368,48 +367,6 @@ export function Settings() {
           Ribbit Report isn't just a website – add it to your home screen and it works like a real app, even offline! It runs on any device (phones, tablets, computers, school Chromebooks), updates automatically, and there's nothing to download from an app store. Best of all, it's completely free and works anywhere in the world.
         </p>
       </div>
-
-      {/* Divider */}
-      <hr className="border-[#E5E7EB] dark:border-[#374151] my-6" />
-
-      {/* Quick Links */}
-      <section className="mb-6">
-        <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white mb-4">
-          Learn More
-        </h2>
-        <div className="space-y-2">
-          <Link
-            to="/meet-marshmellow"
-            className="flex items-center justify-between p-4 bg-white dark:bg-[#262626] rounded-xl border border-[#E5E7EB] dark:border-[#374151] hover:border-[#2D5A3D] dark:hover:border-[#6B9B7A] transition-colors"
-          >
-            <div className="flex items-center gap-3">
-              <img
-                src="/images/marshmellow/marshmellow-searching.png"
-                alt="MarshMellow"
-                className="w-10 h-10 object-contain"
-              />
-              <span className="font-medium text-[#2D2D2D] dark:text-white">Meet MarshMellow</span>
-            </div>
-            <ChevronRight size={20} className="text-[#9CA3AF]" />
-          </Link>
-
-          <Link
-            to="/conservation-status"
-            className="flex items-center justify-between p-4 bg-white dark:bg-[#262626] rounded-xl border border-[#E5E7EB] dark:border-[#374151] hover:border-[#2D5A3D] dark:hover:border-[#6B9B7A] transition-colors"
-          >
-            <div className="flex items-center gap-3">
-              <img
-                src="/images/marshmellow/marshmellow-thinking6.png"
-                alt="MarshMellow thinking"
-                className="w-10 h-10 object-contain"
-              />
-              <span className="font-medium text-[#2D2D2D] dark:text-white">Conservation Status Guide</span>
-            </div>
-            <ChevronRight size={20} className="text-[#9CA3AF]" />
-          </Link>
-
-        </div>
-      </section>
 
       {/* Divider */}
       <hr className="border-[#E5E7EB] dark:border-[#374151] my-6" />

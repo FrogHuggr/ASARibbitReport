@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { ChevronLeft, X } from 'lucide-react';
+import { ChevronLeft, X, ExternalLink, ClipboardList, Shield, TrendingUp, ChevronRight, Landmark, Coins, MapPin, BarChart3, Palette } from 'lucide-react';
 
 // Status data with colors and descriptions
 const statuses = [
@@ -97,10 +97,62 @@ export function ConservationStatus() {
         <h1 className="font-display text-2xl font-bold text-[#2D2D2D] dark:text-white mb-4">
           Understanding Conservation Status
         </h1>
-        <p className="text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
-          When scientists want to know how much trouble a species is in, they use a system called the <span className="font-semibold">IUCN Red List Categories and Criteria</span>. It's like a health check for wildlife.
-        </p>
+        <div className="space-y-3 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
+          <p>
+            When scientists want to know how much trouble a species is in, they use a system called the <span className="font-semibold">IUCN Red List of Threatened Species™</span>. Think of it as a health check for all the world's wildlife.
+          </p>
+          <p>
+            But it's much more than just a list. The Red List tells us where animals live, how many are left, what's threatening them, and what we can do to help. Governments, scientists, and conservation groups around the world use it to decide which species need the most urgent protection.
+          </p>
+          <p>
+            Right now, over <span className="font-semibold">48,600 species</span> are threatened with extinction—including <span className="font-semibold">41% of all amphibians</span>. That's nearly half of all frogs, toads, and salamanders on Earth. The Red List helps us understand the problem so we can work to fix it.
+          </p>
+        </div>
       </section>
+
+      {/* From Data to Action - Visual Flow */}
+      <section className="px-4 pb-6">
+        <div className="bg-white dark:bg-[#262626] rounded-2xl p-4 border border-[#E5E7EB] dark:border-[#374151]">
+          <p className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#9CA3AF] mb-4 text-center">
+            From Data to Action
+          </p>
+          <div className="flex items-center justify-between gap-2">
+            {/* Step 1: Assess */}
+            <div className="flex-1 text-center">
+              <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-[#FEF3C7] dark:bg-[#78350F]/30 flex items-center justify-center">
+                <ClipboardList size={22} className="text-[#D97706] dark:text-[#FBBF24]" />
+              </div>
+              <p className="text-xs font-semibold text-[#2D2D2D] dark:text-white">Assess</p>
+              <p className="text-[10px] text-[#6B7280] dark:text-[#9CA3AF] mt-0.5">Scientists study species</p>
+            </div>
+
+            <ChevronRight size={16} className="text-[#D1D5DB] dark:text-[#4B5563] flex-shrink-0" />
+
+            {/* Step 2: Protect */}
+            <div className="flex-1 text-center">
+              <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-[#DBEAFE] dark:bg-[#1E3A8A]/30 flex items-center justify-center">
+                <Shield size={22} className="text-[#2563EB] dark:text-[#60A5FA]" />
+              </div>
+              <p className="text-xs font-semibold text-[#2D2D2D] dark:text-white">Protect</p>
+              <p className="text-[10px] text-[#6B7280] dark:text-[#9CA3AF] mt-0.5">Laws & funding follow</p>
+            </div>
+
+            <ChevronRight size={16} className="text-[#D1D5DB] dark:text-[#4B5563] flex-shrink-0" />
+
+            {/* Step 3: Recover */}
+            <div className="flex-1 text-center">
+              <div className="w-12 h-12 mx-auto mb-2 rounded-full bg-[#D1FAE5] dark:bg-[#065F46]/30 flex items-center justify-center">
+                <TrendingUp size={22} className="text-[#059669] dark:text-[#34D399]" />
+              </div>
+              <p className="text-xs font-semibold text-[#2D2D2D] dark:text-white">Recover</p>
+              <p className="text-[10px] text-[#6B7280] dark:text-[#9CA3AF] mt-0.5">Species bounce back</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Did You Know? Scrollable Cards */}
+      <DidYouKnowCards />
 
       {/* Interactive Visual Scale */}
       <InteractiveScale statuses={statuses} />
@@ -136,11 +188,34 @@ export function ConservationStatus() {
         </div>
       </section>
 
-      {/* IUCN Credit */}
+      {/* IUCN Source Card */}
       <section className="px-4 pt-2 pb-8">
-        <p className="text-center text-xs text-[#9CA3AF] dark:text-[#6B7280]">
-          Status categories from the IUCN Red List of Threatened Species™
-        </p>
+        <a
+          href="https://www.iucnredlist.org"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block bg-white dark:bg-[#262626] rounded-2xl p-4 border border-[#E5E7EB] dark:border-[#374151] hover:border-[#2D5A3D] dark:hover:border-[#6B9B7A] transition-colors group"
+        >
+          <div className="flex items-start justify-between gap-3">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#9CA3AF]">
+                  Official Source
+                </span>
+              </div>
+              <h3 className="font-display font-bold text-[#2D5A3D] dark:text-[#81C784] mb-1 group-hover:underline">
+                IUCN Red List of Threatened Species™
+              </h3>
+              <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] leading-relaxed">
+                Explore the world's most comprehensive database of species conservation status. Search for any species and discover what's being done to protect it.
+              </p>
+            </div>
+            <ExternalLink
+              size={20}
+              className="text-[#9CA3AF] dark:text-[#6B7280] group-hover:text-[#2D5A3D] dark:group-hover:text-[#81C784] flex-shrink-0 mt-1 transition-colors"
+            />
+          </div>
+        </a>
       </section>
     </div>
   );
@@ -365,6 +440,153 @@ function InteractiveScale({ statuses }: { statuses: Status[] }) {
             )}
           </div>
         )}
+      </div>
+    </section>
+  );
+}
+
+// Did You Know? horizontally scrollable fact cards
+const didYouKnowFacts = [
+  {
+    icon: Landmark,
+    iconBg: 'bg-[#FEF3C7] dark:bg-[#78350F]/30',
+    iconColor: 'text-[#D97706] dark:text-[#FBBF24]',
+    title: 'Zoos Use It Too',
+    fact: 'Next time you visit a zoo or aquarium, look for IUCN status badges on the animal signs!',
+  },
+  {
+    icon: Coins,
+    iconBg: 'bg-[#D1FAE5] dark:bg-[#065F46]/30',
+    iconColor: 'text-[#059669] dark:text-[#34D399]',
+    title: 'Funding Follows',
+    fact: 'When a species gets listed as threatened, it can unlock millions in conservation funding.',
+  },
+  {
+    icon: MapPin,
+    iconBg: 'bg-[#DBEAFE] dark:bg-[#1E3A8A]/30',
+    iconColor: 'text-[#2563EB] dark:text-[#60A5FA]',
+    title: 'Protecting Places',
+    fact: 'Red List data helps identify Key Biodiversity Areas that need protection around the world.',
+  },
+  {
+    icon: BarChart3,
+    iconBg: 'bg-[#F3E8FF] dark:bg-[#581C87]/30',
+    iconColor: 'text-[#9333EA] dark:text-[#C084FC]',
+    title: 'Tracking Progress',
+    fact: 'The United Nations uses Red List data to measure progress on global conservation goals.',
+  },
+  {
+    icon: Palette,
+    iconBg: 'bg-[#FCE7F3] dark:bg-[#831843]/30',
+    iconColor: 'text-[#DB2777] dark:text-[#F472B6]',
+    title: 'Inspiring Art',
+    fact: 'Artists, musicians, and writers use the Red List as inspiration to raise awareness about endangered species.',
+  },
+];
+
+function DidYouKnowCards() {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [canScrollLeft, setCanScrollLeft] = useState(false);
+  const [canScrollRight, setCanScrollRight] = useState(true);
+
+  const checkScroll = () => {
+    if (scrollRef.current) {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current;
+      setCanScrollLeft(scrollLeft > 0);
+      setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10);
+    }
+  };
+
+  useEffect(() => {
+    checkScroll();
+    const ref = scrollRef.current;
+    if (ref) {
+      ref.addEventListener('scroll', checkScroll);
+      return () => ref.removeEventListener('scroll', checkScroll);
+    }
+  }, []);
+
+  const scroll = (direction: 'left' | 'right') => {
+    if (scrollRef.current) {
+      const scrollAmount = 200;
+      scrollRef.current.scrollBy({
+        left: direction === 'left' ? -scrollAmount : scrollAmount,
+        behavior: 'smooth',
+      });
+    }
+  };
+
+  return (
+    <section className="pb-6">
+      <div className="px-4 mb-3 flex items-center justify-between">
+        <p className="text-xs font-semibold uppercase tracking-wider text-[#6B7280] dark:text-[#9CA3AF]">
+          Did You Know?
+        </p>
+        {/* Desktop scroll buttons */}
+        <div className="hidden sm:flex gap-1">
+          <button
+            onClick={() => scroll('left')}
+            disabled={!canScrollLeft}
+            className={`p-1 rounded-full transition-colors ${
+              canScrollLeft
+                ? 'bg-[#E5E7EB] dark:bg-[#374151] hover:bg-[#D1D5DB] dark:hover:bg-[#4B5563]'
+                : 'bg-transparent text-[#D1D5DB] dark:text-[#4B5563] cursor-not-allowed'
+            }`}
+            aria-label="Scroll left"
+          >
+            <ChevronLeft size={16} />
+          </button>
+          <button
+            onClick={() => scroll('right')}
+            disabled={!canScrollRight}
+            className={`p-1 rounded-full transition-colors ${
+              canScrollRight
+                ? 'bg-[#E5E7EB] dark:bg-[#374151] hover:bg-[#D1D5DB] dark:hover:bg-[#4B5563]'
+                : 'bg-transparent text-[#D1D5DB] dark:text-[#4B5563] cursor-not-allowed'
+            }`}
+            aria-label="Scroll right"
+          >
+            <ChevronRight size={16} />
+          </button>
+        </div>
+      </div>
+
+      {/* Scrollable container */}
+      <div
+        ref={scrollRef}
+        className="flex gap-3 overflow-x-auto pb-2 px-4 scrollbar-hide snap-x snap-mandatory"
+        style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+      >
+        {didYouKnowFacts.map((item, index) => {
+          const IconComponent = item.icon;
+          return (
+            <div
+              key={index}
+              className="flex-shrink-0 w-[260px] sm:w-[280px] snap-start bg-white dark:bg-[#262626] rounded-2xl p-4 border border-[#E5E7EB] dark:border-[#374151]"
+            >
+              <div className="flex items-start gap-3">
+                <div className={`w-10 h-10 rounded-full ${item.iconBg} flex items-center justify-center flex-shrink-0`}>
+                  <IconComponent size={20} className={item.iconColor} />
+                </div>
+                <div className="min-w-0">
+                  <p className="font-display font-bold text-sm text-[#2D2D2D] dark:text-white mb-1">
+                    {item.title}
+                  </p>
+                  <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] leading-relaxed">
+                    {item.fact}
+                  </p>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* Mobile scroll indicator dots */}
+      <div className="flex justify-center gap-1.5 mt-3 sm:hidden">
+        <span className="text-[10px] text-[#9CA3AF] dark:text-[#6B7280]">
+          Swipe to explore
+        </span>
       </div>
     </section>
   );
