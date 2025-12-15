@@ -8,9 +8,9 @@ import type { ResearcherSection } from '../data/dispatches';
 const popularContent = [
   { type: 'dispatch' as const, id: 'panama-crowned-tree-frog', rank: 1 },
   { type: 'realstory' as const, id: 'frogs-vs-toads', rank: 2 },
-  { type: 'dispatch' as const, id: 'nepal-himalayan-torrent-frog', rank: 3 },
-  { type: 'dispatch' as const, id: 'india-western-ghats', rank: 4 },
-  { type: 'dispatch' as const, id: 'peru-lake-junin-frog', rank: 5 },
+  { type: 'fieldnote' as const, id: 'glass-half-full', rank: 3 },
+  { type: 'dispatch' as const, id: 'nepal-himalayan-torrent-frog', rank: 4 },
+  { type: 'dispatch' as const, id: 'india-western-ghats', rank: 5 },
 ];
 
 // Helper to get researcher from dispatch sections
@@ -141,6 +141,45 @@ export function MostPopular() {
                   </h3>
                   <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mt-0.5">
                     {story.subtitle}
+                  </p>
+                </div>
+              </Link>
+            );
+          }
+
+          if (item.type === 'fieldnote') {
+            return (
+              <Link
+                key={item.id}
+                to="/field-notes/glass-half-full"
+                className="flex gap-4 bg-white dark:bg-[#242424] rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow"
+              >
+                {/* Rank Badge */}
+                <div className="w-8 h-8 rounded-full bg-[#2D5A3D] flex items-center justify-center flex-shrink-0 self-center">
+                  <span className="font-display font-bold text-white text-sm">
+                    {item.rank}
+                  </span>
+                </div>
+
+                {/* Thumbnail - MarshMellow with green background */}
+                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#2D5A3D] to-[#4A7B5C] flex items-center justify-center flex-shrink-0 overflow-hidden">
+                  <img
+                    src="/images/fieldnotes/glasshalffull/glasshalffullmarshmellow.png"
+                    alt="MarshMellow"
+                    className="w-14 h-14 object-contain"
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-1">
+                    Field Notes • Day 47
+                  </p>
+                  <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white leading-tight">
+                    Glass Half Full
+                  </h3>
+                  <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mt-0.5">
+                    A frog with nothing to hide
                   </p>
                 </div>
               </Link>

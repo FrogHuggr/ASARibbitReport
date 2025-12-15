@@ -86,6 +86,45 @@ export function NewThisMonth() {
           </div>
         </section>
 
+        {/* Field Notes Section */}
+        <section>
+          <div className="flex items-center gap-2 mb-4">
+            <Sparkles size={18} className="text-[#F4B942]" />
+            <h2 className="font-display text-lg font-bold text-[#2D2D2D] dark:text-white uppercase tracking-wide">
+              Field Notes
+            </h2>
+          </div>
+
+          <div className="space-y-3">
+            <Link
+              to="/field-notes/glass-half-full"
+              className="flex gap-4 bg-white dark:bg-[#242424] rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow"
+            >
+              {/* Thumbnail - MarshMellow with green background */}
+              <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-[#2D5A3D] to-[#4A7B5C] flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <img
+                  src="/images/fieldnotes/glasshalffull/glasshalffullmarshmellow.png"
+                  alt="MarshMellow"
+                  className="w-16 h-16 object-contain"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-1">
+                  Field Notes • Day 47
+                </p>
+                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white leading-tight">
+                  Glass Half Full
+                </h3>
+                <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mt-1">
+                  A frog with nothing to hide
+                </p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
         {/* The Real Story Section */}
         <section>
           <div className="flex items-center gap-2 mb-4">

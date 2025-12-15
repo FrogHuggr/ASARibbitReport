@@ -84,12 +84,12 @@ export const frogsVsToads: RealStory = {
   subtitle: 'Are they really different animals?',
   images: {
     frog: {
-      file: 'frog.png',
+      file: 'realstoryfrog.png',
       alt: 'A sleek green frog with smooth skin and long hind legs in profile view',
       path: '/images/realstory/',
     },
     toad: {
-      file: 'toad.png',
+      file: 'realstorytoad.png',
       alt: 'A stocky toad with bumpy, textured skin and a wide body facing forward',
       path: '/images/realstory/',
     },
