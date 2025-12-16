@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronLeft, MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, Skull, Clock } from 'lucide-react';
+import { ChevronLeft, MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, Skull, Clock, ExternalLink, BookOpen, AlertTriangle } from 'lucide-react';
 
 export function SalamanderOlderThanDinosaurs() {
   return (
@@ -188,6 +188,51 @@ export function SalamanderOlderThanDinosaurs() {
               label="Lifespan"
               value="Can live over 50 years in the wild, possibly up to 100. They have time to hold grudges."
             />
+          </div>
+        </div>
+      </section>
+
+      {/* Learn More - Conservation Links */}
+      <section className="px-4 pb-6">
+        <div className="bg-[#FFF9E6] dark:bg-[#3D3520] rounded-2xl p-4 border-l-4 border-[#D32F2F]">
+          <div className="flex items-start gap-3 mb-3">
+            <AlertTriangle size={20} className="text-[#D32F2F] flex-shrink-0 mt-0.5" />
+            <div>
+              <h3 className="font-display text-base font-bold text-[#2D2D2D] dark:text-white mb-1">
+                Critically Endangered
+              </h3>
+              <p className="text-sm text-[#4A3728] dark:text-[#E8D5B7] leading-relaxed">
+                Despite surviving 170 million years, giant salamanders are now critically endangered due to habitat loss, pollution, and over-collection. Want to learn more about their conservation status?
+              </p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 gap-3 mt-4">
+            <a
+              href="https://www.iucnredlist.org/species/179010104/48438418"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white dark:bg-[#2A2A2A] rounded-xl p-3 hover:shadow-md transition-shadow flex flex-col items-center text-center gap-1.5"
+              style={{ borderLeft: '3px solid #D32F2F' }}
+            >
+              <AlertTriangle size={18} className="text-[#D32F2F]" />
+              <span className="font-display font-bold text-sm text-[#2D2D2D] dark:text-white">
+                IUCN Red List
+              </span>
+              <ExternalLink size={12} className="text-[#6B7280]" />
+            </a>
+            <a
+              href="https://amphibiaweb.org/species/3858"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white dark:bg-[#2A2A2A] rounded-xl p-3 hover:shadow-md transition-shadow flex flex-col items-center text-center gap-1.5"
+              style={{ borderLeft: '3px solid #43A047' }}
+            >
+              <BookOpen size={18} className="text-[#43A047]" />
+              <span className="font-display font-bold text-sm text-[#2D2D2D] dark:text-white">
+                AmphibiaWeb
+              </span>
+              <ExternalLink size={12} className="text-[#6B7280]" />
+            </a>
           </div>
         </div>
       </section>

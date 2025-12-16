@@ -209,23 +209,72 @@ export function Home() {
           </div>
         </Link>
 
-        {/* FIELD NOTES - Coming Soon teaser */}
-        <div className="bg-gradient-to-r from-[#3D2E1F] to-[#4A3728] rounded-2xl p-4 flex items-center gap-4">
-          <div className="w-12 h-12 rounded-full bg-[#5A4632] flex items-center justify-center flex-shrink-0">
-            <Notebook size={22} className="text-[#D4A574]" />
+        {/* FIELD NOTES - Salamander Card */}
+        <Link to="/field-notes/salamander-older-than-dinosaurs" className="block group">
+          <div
+            className="relative h-48 rounded-2xl overflow-hidden transition-all duration-200 ease-out group-hover:-translate-y-1 group-active:scale-[0.98]"
+            style={{
+              boxShadow: '0 4px 16px rgba(0,0,0,0.1)',
+            }}
+          >
+            {/* Map background */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmap.jpg)',
+              }}
+            />
+
+            {/* NEW badge */}
+            <div className="absolute top-4 left-4 bg-[#8B6914] text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full flex items-center gap-1 shadow-md z-10">
+              <Notebook size={12} />
+              New
+            </div>
+
+            {/* Scared MarshMellow - positioned right */}
+            <div className="absolute right-1 bottom-0 w-36 h-36 z-10">
+              <img
+                src="/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmarshmellow.png"
+                alt="MarshMellow looking scared"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Dark gradient for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/60 via-black/30 to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-5 flex flex-col justify-end">
+              <div className="max-w-[55%]">
+                <p className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider mb-1">
+                  Field Notes
+                </p>
+                <h3 className="font-display text-xl font-bold text-white mb-1 leading-tight">
+                  The Salamander That's Older Than Dinosaurs
+                </h3>
+                <p className="text-white/90 text-sm">
+                  Day 52: Some rocks have legs
+                </p>
+              </div>
+            </div>
+
+            {/* Arrow */}
+            <div className="absolute right-4 bottom-4 z-10">
+              <ChevronRight
+                size={28}
+                className="text-white/60 group-hover:translate-x-1 transition-transform"
+              />
+            </div>
+
+            {/* Hover shadow enhancement */}
+            <div
+              className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none rounded-2xl"
+              style={{
+                boxShadow: '0 12px 32px rgba(0,0,0,0.2)',
+              }}
+            />
           </div>
-          <div className="flex-1">
-            <p className="text-[#D4A574] text-[10px] font-bold uppercase tracking-wider mb-0.5">
-              Next Field Note
-            </p>
-            <p className="text-[#E8D5B7] text-sm font-medium">
-              The Salamander That's Older Than Dinosaurs
-            </p>
-            <p className="text-[#B8A082] text-xs mt-0.5">
-              Coming soon
-            </p>
-          </div>
-        </div>
+        </Link>
 
         {/* WILD DECISIONS CARD - Illustrated map background */}
         <Link to="/wild-decisions" className="block group">

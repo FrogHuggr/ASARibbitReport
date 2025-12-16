@@ -96,6 +96,35 @@ export function NewThisMonth() {
           </div>
 
           <div className="space-y-3">
+            {/* Salamander Field Note */}
+            <Link
+              to="/field-notes/salamander-older-than-dinosaurs"
+              className="flex gap-4 bg-white dark:bg-[#242424] rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow"
+            >
+              {/* Thumbnail - Scared MarshMellow with warm background */}
+              <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-[#8B6914] to-[#6B5344] flex items-center justify-center flex-shrink-0 overflow-hidden">
+                <img
+                  src="/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmarshmellow.png"
+                  alt="MarshMellow looking scared"
+                  className="w-16 h-16 object-contain"
+                />
+              </div>
+
+              {/* Content */}
+              <div className="flex-1 min-w-0">
+                <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-1">
+                  Field Notes • Day 52
+                </p>
+                <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white leading-tight">
+                  The Salamander That's Older Than Dinosaurs
+                </h3>
+                <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mt-1">
+                  Some rocks have legs
+                </p>
+              </div>
+            </Link>
+
+            {/* Glass Half Full Field Note */}
             <Link
               to="/field-notes/glass-half-full"
               className="flex gap-4 bg-white dark:bg-[#242424] rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow"

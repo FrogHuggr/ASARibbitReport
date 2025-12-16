@@ -1,8 +1,20 @@
 import { Link } from 'react-router-dom';
-import { ArrowLeft, MapPin, Quote, ChevronRight } from 'lucide-react';
+import { ArrowLeft, MapPin, Quote, ChevronRight, Calendar } from 'lucide-react';
 import { dispatches } from '../data/dispatches';
-import { realStories } from '../data/realStory';
 import type { ResearcherSection } from '../data/dispatches';
+
+// Field notes data (could be moved to a data file later)
+const fieldNotes = [
+  {
+    id: 'salamander-older-than-dinosaurs',
+    title: "The Salamander That's Older Than Dinosaurs",
+    subtitle: "Some rocks have legs",
+    day: 52,
+    location: "Yangtze River Basin, China",
+    thumbnail: "/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmarshmellow.png",
+    thumbnailBg: "from-[#8B6914] to-[#6B5344]",
+  },
+];
 
 // Curated picks with MarshMellow's comments
 const marshmellowPicks = [
@@ -12,9 +24,9 @@ const marshmellowPicks = [
     pickQuote: "The most colorful frog we've featured!",
   },
   {
-    type: 'realstory' as const,
-    id: 'frogs-vs-toads',
-    pickQuote: "Everyone asks me this question!",
+    type: 'fieldnote' as const,
+    id: 'salamander-older-than-dinosaurs',
+    pickQuote: "I SCREAMED. Diego asked if I screamed. I hung up on him.",
   },
   {
     type: 'dispatch' as const,
@@ -157,54 +169,38 @@ export function MarshMellowPicks() {
             );
           }
 
-          if (pick.type === 'realstory') {
-            const story = realStories.find((s) => s.id === pick.id);
-            if (!story) return null;
+          if (pick.type === 'fieldnote') {
+            const fieldNote = fieldNotes.find((f) => f.id === pick.id);
+            if (!fieldNote) return null;
 
             return (
               <Link
                 key={pick.id}
-                to={`/real-story/${story.id}`}
+                to={`/field-notes/${fieldNote.id}`}
                 className="block bg-white dark:bg-[#242424] rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow"
               >
                 {/* Card content */}
                 <div className="flex gap-4 p-4">
-                  {/* Thumbnail - VS split style */}
-                  <div className="w-24 h-24 rounded-lg overflow-hidden flex-shrink-0 relative">
-                    <div className="absolute inset-0 flex">
-                      <div className="flex-1 relative overflow-hidden">
-                        <img
-                          src={`${story.images.frog.path}${story.images.frog.file}`}
-                          alt="Frog"
-                          className="absolute inset-0 w-full h-full object-cover scale-150"
-                        />
-                      </div>
-                      <div className="flex-1 relative overflow-hidden">
-                        <img
-                          src={`${story.images.toad.path}${story.images.toad.file}`}
-                          alt="Toad"
-                          className="absolute inset-0 w-full h-full object-cover scale-150"
-                        />
-                      </div>
-                    </div>
-                    {/* VS badge */}
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-7 h-7 rounded-full bg-[#8B6914] flex items-center justify-center z-10 shadow-md">
-                        <span className="font-display font-bold text-[10px] text-white">VS</span>
-                      </div>
-                    </div>
+                  {/* Thumbnail - MarshMellow with gradient background */}
+                  <div className={`w-24 h-24 rounded-lg bg-gradient-to-br ${fieldNote.thumbnailBg} flex items-center justify-center flex-shrink-0 overflow-hidden`}>
+                    <img
+                      src={fieldNote.thumbnail}
+                      alt="MarshMellow"
+                      className="w-20 h-20 object-contain"
+                    />
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 min-w-0">
-                    <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-1">
-                      The Real Story
-                    </p>
+                    <div className="flex items-center gap-1.5 text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-1">
+                      <Calendar size={12} />
+                      <span>Field Notes • Day {fieldNote.day}</span>
+                    </div>
                     <h3 className="font-display font-bold text-lg text-[#2D2D2D] dark:text-white leading-tight">
-                      {story.title}
+                      {fieldNote.title}
                     </h3>
                     <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mt-1">
-                      {story.subtitle}
+                      {fieldNote.subtitle}
                     </p>
                   </div>
                 </div>
