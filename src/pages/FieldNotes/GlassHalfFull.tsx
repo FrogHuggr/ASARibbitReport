@@ -250,50 +250,49 @@ export function GlassHalfFull() {
         </p>
       </section>
 
-      {/* Coming Soon teaser - visual preview */}
+      {/* Next Field Note teaser */}
       <section className="px-4 pb-6">
-        <div className="relative h-44 rounded-2xl overflow-hidden">
-          {/* Map background */}
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: 'url(/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmap.jpg)',
-            }}
-          />
-
-          {/* Warm overlay for cohesion */}
-          <div className="absolute inset-0 bg-[#3D2E1F]/40" />
-
-          {/* Scared MarshMellow - positioned right */}
-          <div className="absolute right-1 bottom-0 w-32 h-32 z-10">
-            <img
-              src="/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmarshmellow.png"
-              alt="MarshMellow looking scared"
-              className="w-full h-full object-contain"
+        <Link to="/field-notes/salamander-older-than-dinosaurs" className="block group">
+          <div className="relative h-44 rounded-2xl overflow-hidden">
+            {/* Map background */}
+            <div
+              className="absolute inset-0 bg-cover bg-center"
+              style={{
+                backgroundImage: 'url(/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmap.jpg)',
+              }}
             />
-          </div>
 
-          {/* Dark gradient for text readability */}
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+            {/* Warm overlay for cohesion */}
+            <div className="absolute inset-0 bg-[#3D2E1F]/40" />
 
-          {/* Content */}
-          <div className="absolute inset-0 p-4 flex flex-col justify-end">
-            <div className="max-w-[60%]">
-              <p className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider mb-1">
-                Next Field Note
-              </p>
-              <h3 className="font-display text-lg font-bold text-white mb-1 leading-tight">
-                The Salamander That's Older Than Dinosaurs
-              </h3>
-              <p className="text-white/80 text-sm">
-                Some things shouldn't fit in a carry-on.
-              </p>
-              <p className="text-[#B8A082] text-xs mt-2 font-medium">
-                Coming soon
-              </p>
+            {/* Scared MarshMellow - positioned right */}
+            <div className="absolute right-1 bottom-0 w-32 h-32 z-10">
+              <img
+                src="/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmarshmellow.png"
+                alt="MarshMellow looking scared"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Dark gradient for text readability */}
+            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+
+            {/* Content */}
+            <div className="absolute inset-0 p-4 flex flex-col justify-end">
+              <div className="max-w-[60%]">
+                <p className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider mb-1">
+                  Next Field Note
+                </p>
+                <h3 className="font-display text-lg font-bold text-white mb-1 leading-tight group-hover:text-[#D4A574] transition-colors">
+                  The Salamander That's Older Than Dinosaurs
+                </h3>
+                <p className="text-white/80 text-sm">
+                  Some things shouldn't fit in a carry-on.
+                </p>
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       </section>
 
     </div>

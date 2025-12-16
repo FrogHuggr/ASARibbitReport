@@ -23,6 +23,7 @@ import { MostPopular } from './pages/MostPopular';
 import { Analytics } from './pages/Analytics';
 import { NotFound } from './pages/NotFound';
 import { GlassHalfFull } from './pages/FieldNotes/GlassHalfFull';
+import { SalamanderOlderThanDinosaurs } from './pages/FieldNotes/SalamanderOlderThanDinosaurs';
 
 function App() {
   return (
@@ -52,6 +53,7 @@ function App() {
               <Route path="/popular" element={<MostPopular />} />
               {/* Field Notes */}
               <Route path="/field-notes/glass-half-full" element={<GlassHalfFull />} />
+              <Route path="/field-notes/salamander-older-than-dinosaurs" element={<SalamanderOlderThanDinosaurs />} />
               <Route path="/admin/analytics" element={<Analytics />} />
               {/* 404 catch-all */}
               <Route path="*" element={<NotFound />} />
