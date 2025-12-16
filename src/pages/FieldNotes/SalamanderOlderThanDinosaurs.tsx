@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronLeft, MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, Skull, Clock, ExternalLink } from 'lucide-react';
+import { MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, Skull, Clock, ExternalLink } from 'lucide-react';
 import { ShareButton } from '../../components/ShareButton';
 
 export function SalamanderOlderThanDinosaurs() {
@@ -16,15 +16,6 @@ export function SalamanderOlderThanDinosaurs() {
         />
         {/* Gradient overlay for text readability */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30" />
-
-        {/* Back button */}
-        <Link
-          to="/explore"
-          className="absolute top-4 left-4 inline-flex items-center gap-1 text-white/90 font-medium text-sm hover:text-white bg-black/20 hover:bg-black/30 px-2 py-1 rounded-lg transition-colors"
-        >
-          <ChevronLeft size={18} />
-          Explore
-        </Link>
 
         {/* Field Notes badge */}
         <div className="absolute top-4 right-4 bg-[#8B6914]/90 text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
