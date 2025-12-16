@@ -21,24 +21,21 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-// Get system preference for dark mode
-function getSystemPreference(): boolean {
-  if (typeof window !== 'undefined' && window.matchMedia) {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
-  }
-  return true; // Default to dark if can't detect
+// Default to dark mode for best visual experience
+function getDefaultTheme(): boolean {
+  return true; // Dark mode by default - content pops better!
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // Check for saved preference, otherwise use system preference
+  // Check for saved preference, otherwise default to dark mode
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('ribbit-dark-mode');
     // If user has manually set a preference, use it
     if (saved !== null) {
       return JSON.parse(saved);
     }
-    // Otherwise, follow system preference
-    return getSystemPreference();
+    // Otherwise, default to dark mode
+    return getDefaultTheme();
   });
 
   // Glossary highlighting - default to disabled (false) to avoid distracting older readers
@@ -74,18 +71,6 @@ export function ThemeProvider({ children }: { children: ReactNode }) {
     }
   }, [isDark, hasManualPreference]);
 
-  // Listen for system preference changes (only if user hasn't manually set preference)
-  useEffect(() => {
-    if (hasManualPreference) return;
-
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-    const handleChange = (e: MediaQueryListEvent) => {
-      setIsDark(e.matches);
-    };
-
-    mediaQuery.addEventListener('change', handleChange);
-    return () => mediaQuery.removeEventListener('change', handleChange);
-  }, [hasManualPreference]);
 
   useEffect(() => {
     localStorage.setItem('ribbit-glossary-enabled', JSON.stringify(glossaryEnabled));

@@ -7,11 +7,11 @@ export function GlassHalfFull() {
     <div className="pb-10">
       {/* Hero Banner */}
       <div className="relative">
-        {/* Background image - stunning glass frog */}
+        {/* Background image - field journal illustration of glass frog */}
         <div
           className="h-72 sm:h-80 bg-cover bg-center"
           style={{
-            backgroundImage: 'url(/images/fieldnotes/glasshalffull/glasshalffullhero.png)',
+            backgroundImage: 'url(/images/fieldnotes/glasshalffull/glasshalffullhero.jpg)',
           }}
         />
         {/* Gradient overlay for text readability */}
