@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, Skull, Clock, ExternalLink } from 'lucide-react';
+import { MapPin, Calendar, Pencil, Compass, Droplets, Eye, Heart, Skull, Clock, ExternalLink } from 'lucide-react';
 import { ShareButton } from '../../components/ShareButton';
 
 export function SalamanderOlderThanDinosaurs() {
@@ -37,11 +37,11 @@ export function SalamanderOlderThanDinosaurs() {
         </div>
       </div>
 
-      {/* Photo credit bar */}
+      {/* MarshMellow's sketch note */}
       <div className="bg-[#F5E6D3] dark:bg-[#3D2E1F] px-4 py-2 flex items-center gap-2">
-        <Camera size={14} className="text-[#8B6914] dark:text-[#D4A574]" />
-        <span className="text-xs text-[#6B5344] dark:text-[#B8A082]">
-          Illustration: Naturalist Field Journal
+        <Pencil size={14} className="text-[#8B6914] dark:text-[#D4A574] flex-shrink-0" />
+        <span className="text-xs text-[#6B5344] dark:text-[#B8A082] italic">
+          MarshMellow's sketch note: "I drew this one from memory. Mostly because I was too busy screaming to draw it in person."
         </span>
       </div>
 

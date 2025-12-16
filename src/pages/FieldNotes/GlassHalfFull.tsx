@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, ExternalLink } from 'lucide-react';
+import { MapPin, Calendar, Pencil, Camera, Compass, Droplets, Eye, Heart, ExternalLink } from 'lucide-react';
 import { ShareButton } from '../../components/ShareButton';
 
 export function GlassHalfFull() {
@@ -37,11 +37,11 @@ export function GlassHalfFull() {
         </div>
       </div>
 
-      {/* Photo credit bar */}
+      {/* MarshMellow's sketch note */}
       <div className="bg-[#F5E6D3] dark:bg-[#3D2E1F] px-4 py-2 flex items-center gap-2">
-        <Camera size={14} className="text-[#8B6914] dark:text-[#D4A574]" />
-        <span className="text-xs text-[#6B5344] dark:text-[#B8A082]">
-          Photo: Thorsten Spoerlein
+        <Pencil size={14} className="text-[#8B6914] dark:text-[#D4A574] flex-shrink-0" />
+        <span className="text-xs text-[#6B5344] dark:text-[#B8A082] italic">
+          MarshMellow's sketch note: "I tried to draw what I saw. Turns out 'transparent' is hard to capture on paper."
         </span>
       </div>
 
