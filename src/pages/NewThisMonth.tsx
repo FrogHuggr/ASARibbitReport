@@ -101,12 +101,17 @@ export function NewThisMonth() {
               to="/field-notes/salamander-older-than-dinosaurs"
               className="flex gap-4 bg-white dark:bg-[#242424] rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow"
             >
-              {/* Thumbnail - Scared MarshMellow with warm background */}
-              <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-[#8B6914] to-[#6B5344] flex items-center justify-center flex-shrink-0 overflow-hidden">
+              {/* Thumbnail - Scared MarshMellow with map background */}
+              <div className="w-20 h-20 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden relative">
+                <img
+                  src="/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmap.jpg"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 <img
                   src="/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmarshmellow.png"
                   alt="MarshMellow looking scared"
-                  className="w-16 h-16 object-contain"
+                  className="w-16 h-16 object-contain relative z-10"
                 />
               </div>
 
@@ -129,12 +134,17 @@ export function NewThisMonth() {
               to="/field-notes/glass-half-full"
               className="flex gap-4 bg-white dark:bg-[#242424] rounded-xl p-3 shadow-sm hover:shadow-md transition-shadow"
             >
-              {/* Thumbnail - MarshMellow with green background */}
-              <div className="w-20 h-20 rounded-lg bg-gradient-to-br from-[#2D5A3D] to-[#4A7B5C] flex items-center justify-center flex-shrink-0 overflow-hidden">
+              {/* Thumbnail - MarshMellow with map background */}
+              <div className="w-20 h-20 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden relative">
+                <img
+                  src="/images/fieldnotes/glasshalffull/glasshalffullmap.jpg"
+                  alt=""
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
                 <img
                   src="/images/fieldnotes/glasshalffull/glasshalffullmarshmellow.png"
                   alt="MarshMellow"
-                  className="w-16 h-16 object-contain"
+                  className="w-16 h-16 object-contain relative z-10"
                 />
               </div>
 

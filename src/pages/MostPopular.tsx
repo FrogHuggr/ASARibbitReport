@@ -167,12 +167,17 @@ export function MostPopular() {
                   </span>
                 </div>
 
-                {/* Thumbnail - MarshMellow with green background */}
-                <div className="w-16 h-16 rounded-lg bg-gradient-to-br from-[#2D5A3D] to-[#4A7B5C] flex items-center justify-center flex-shrink-0 overflow-hidden">
+                {/* Thumbnail - MarshMellow with map background */}
+                <div className="w-16 h-16 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden relative">
+                  <img
+                    src="/images/fieldnotes/glasshalffull/glasshalffullmap.jpg"
+                    alt=""
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
                   <img
                     src="/images/fieldnotes/glasshalffull/glasshalffullmarshmellow.png"
                     alt="MarshMellow"
-                    className="w-14 h-14 object-contain"
+                    className="w-14 h-14 object-contain relative z-10"
                   />
                 </div>
 

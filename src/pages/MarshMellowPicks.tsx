@@ -12,7 +12,7 @@ const fieldNotes = [
     day: 52,
     location: "Yangtze River Basin, China",
     thumbnail: "/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmarshmellow.png",
-    thumbnailBg: "from-[#8B6914] to-[#6B5344]",
+    mapBackground: "/images/fieldnotes/salamanderolderthandinosaur/salamanderolderthandinosaursmap.jpg",
   },
 ];
 
@@ -181,12 +181,17 @@ export function MarshMellowPicks() {
               >
                 {/* Card content */}
                 <div className="flex gap-4 p-4">
-                  {/* Thumbnail - MarshMellow with gradient background */}
-                  <div className={`w-24 h-24 rounded-lg bg-gradient-to-br ${fieldNote.thumbnailBg} flex items-center justify-center flex-shrink-0 overflow-hidden`}>
+                  {/* Thumbnail - MarshMellow with map background */}
+                  <div className="w-24 h-24 rounded-lg flex items-center justify-center flex-shrink-0 overflow-hidden relative">
+                    <img
+                      src={fieldNote.mapBackground}
+                      alt=""
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
                     <img
                       src={fieldNote.thumbnail}
                       alt="MarshMellow"
-                      className="w-20 h-20 object-contain"
+                      className="w-20 h-20 object-contain relative z-10"
                     />
                   </div>
 
