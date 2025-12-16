@@ -412,7 +412,7 @@ export function Settings() {
       <hr className="border-[#E5E7EB] dark:border-[#374151] my-6" />
 
       {/* About The Ribbit Report */}
-      <section id="about" className="mb-8 scroll-mt-4">
+      <section id="about" className="mb-8 scroll-mt-20">
         <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white mb-4">
           About The Ribbit Report
         </h2>
