@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronLeft, MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, Skull, Clock, ExternalLink, BookOpen, AlertTriangle } from 'lucide-react';
+import { ChevronLeft, MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, Skull, Clock, ExternalLink } from 'lucide-react';
 
 export function SalamanderOlderThanDinosaurs() {
   return (
@@ -192,51 +192,6 @@ export function SalamanderOlderThanDinosaurs() {
         </div>
       </section>
 
-      {/* Learn More - Conservation Links */}
-      <section className="px-4 pb-6">
-        <div className="bg-[#FFF9E6] dark:bg-[#3D3520] rounded-2xl p-4 border-l-4 border-[#D32F2F]">
-          <div className="flex items-start gap-3 mb-3">
-            <AlertTriangle size={20} className="text-[#D32F2F] flex-shrink-0 mt-0.5" />
-            <div>
-              <h3 className="font-display text-base font-bold text-[#2D2D2D] dark:text-white mb-1">
-                Critically Endangered
-              </h3>
-              <p className="text-sm text-[#4A3728] dark:text-[#E8D5B7] leading-relaxed">
-                Despite surviving 170 million years, giant salamanders are now critically endangered due to habitat loss, pollution, and over-collection. Want to learn more about their conservation status?
-              </p>
-            </div>
-          </div>
-          <div className="grid grid-cols-2 gap-3 mt-4">
-            <a
-              href="https://www.iucnredlist.org/species/179010104/48438418"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white dark:bg-[#2A2A2A] rounded-xl p-3 hover:shadow-md transition-shadow flex flex-col items-center text-center gap-1.5"
-              style={{ borderLeft: '3px solid #D32F2F' }}
-            >
-              <AlertTriangle size={18} className="text-[#D32F2F]" />
-              <span className="font-display font-bold text-sm text-[#2D2D2D] dark:text-white">
-                IUCN Red List
-              </span>
-              <ExternalLink size={12} className="text-[#6B7280]" />
-            </a>
-            <a
-              href="https://amphibiaweb.org/species/3858"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-white dark:bg-[#2A2A2A] rounded-xl p-3 hover:shadow-md transition-shadow flex flex-col items-center text-center gap-1.5"
-              style={{ borderLeft: '3px solid #43A047' }}
-            >
-              <BookOpen size={18} className="text-[#43A047]" />
-              <span className="font-display font-bold text-sm text-[#2D2D2D] dark:text-white">
-                AmphibiaWeb
-              </span>
-              <ExternalLink size={12} className="text-[#6B7280]" />
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Divider */}
       <div className="px-4">
         <hr className="border-[#E5E5E5] dark:border-[#374151]" />
@@ -295,27 +250,67 @@ export function SalamanderOlderThanDinosaurs() {
         </p>
       </section>
 
+      {/* Learn More - subtle links */}
+      <section className="px-4 pb-6">
+        <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-3">
+          Want to learn more about giant salamander conservation?
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <a
+            href="https://www.iucnredlist.org/species/179010104/48438418"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-[#D32F2F] dark:text-[#EF5350] hover:underline"
+          >
+            <span>IUCN Red List</span>
+            <span className="text-[10px] px-1.5 py-0.5 rounded bg-[#D32F2F]/10 dark:bg-[#D32F2F]/20 font-semibold uppercase">
+              Critically Endangered
+            </span>
+            <ExternalLink size={12} />
+          </a>
+          <span className="text-[#6B7280]">•</span>
+          <a
+            href="https://amphibiaweb.org/species/3858"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-[#2D5A3D] dark:text-[#81C784] hover:underline"
+          >
+            <span>AmphibiaWeb</span>
+            <ExternalLink size={12} />
+          </a>
+        </div>
+      </section>
+
       {/* Previous Field Note link */}
       <section className="px-4 pb-6">
         <Link to="/field-notes/glass-half-full" className="block group">
-          <div className="relative h-32 rounded-2xl overflow-hidden">
-            {/* Background */}
+          <div className="relative h-44 rounded-2xl overflow-hidden">
+            {/* Map background */}
             <div
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: 'url(/images/fieldnotes/glasshalffull/glasshalffullhero.png)',
+                backgroundImage: 'url(/images/fieldnotes/glasshalffull/glasshalffullmap.jpg)',
               }}
             />
 
-            {/* Warm overlay for cohesion */}
+            {/* Green overlay for cohesion */}
             <div className="absolute inset-0 bg-[#1E3A2F]/40" />
+
+            {/* MarshMellow - positioned right */}
+            <div className="absolute right-1 bottom-0 w-32 h-32 z-10">
+              <img
+                src="/images/fieldnotes/glasshalffull/glasshalffullmarshmellow.png"
+                alt="MarshMellow"
+                className="w-full h-full object-contain"
+              />
+            </div>
 
             {/* Dark gradient for text readability */}
             <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
 
             {/* Content */}
             <div className="absolute inset-0 p-4 flex flex-col justify-end">
-              <div className="max-w-[70%]">
+              <div className="max-w-[55%]">
                 <p className="text-[#81C784] text-xs font-semibold uppercase tracking-wider mb-1">
                   Previous Field Note
                 </p>
@@ -323,12 +318,55 @@ export function SalamanderOlderThanDinosaurs() {
                   Glass Half Full
                 </h3>
                 <p className="text-white/80 text-sm">
-                  The frog that forgot to finish rendering.
+                  Day 47: A frog with nothing to hide
                 </p>
               </div>
             </div>
           </div>
         </Link>
+      </section>
+
+      {/* Coming Soon teaser */}
+      <section className="px-4 pb-6">
+        <div className="relative h-44 rounded-2xl overflow-hidden">
+          {/* Map background */}
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: 'url(/images/fieldnotes/thedadwhoatehiskids/thedadwhoatehiskidsmap.jpg)',
+            }}
+          />
+
+          {/* Warm overlay for cohesion */}
+          <div className="absolute inset-0 bg-[#3D2E1F]/50" />
+
+          {/* MarshMellow - positioned right */}
+          <div className="absolute right-1 bottom-0 w-32 h-32 z-10">
+            <img
+              src="/images/fieldnotes/thedadwhoatehiskids/thedadwhoatehiskids-marshmellow.png"
+              alt="MarshMellow looking confused"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          {/* Dark gradient for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/40 to-transparent" />
+
+          {/* Content */}
+          <div className="absolute inset-0 p-4 flex flex-col justify-end">
+            <div className="max-w-[55%]">
+              <p className="text-[#D4A574] text-xs font-semibold uppercase tracking-wider mb-1">
+                Coming Soon
+              </p>
+              <h3 className="font-display text-lg font-bold text-white mb-1 leading-tight">
+                The Dad Who Ate His Kids (On Purpose)
+              </h3>
+              <p className="text-white/80 text-sm">
+                Day 58: Parenting goals? Parenting goals.
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
     </div>
