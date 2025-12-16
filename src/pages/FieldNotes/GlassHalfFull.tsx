@@ -251,14 +251,6 @@ export function GlassHalfFull() {
         </p>
       </section>
 
-      {/* Share Button */}
-      <div className="flex justify-center px-4 pb-6">
-        <ShareButton
-          title="Glass Half Full - The Ribbit Report"
-          text="A frog with nothing to hide! Check out MarshMellow's field notes about glass frogs from Costa Rica."
-        />
-      </div>
-
       {/* Next Field Note teaser */}
       <section className="px-4 pb-6">
         <Link to="/field-notes/salamander-older-than-dinosaurs" className="block group">
@@ -303,6 +295,14 @@ export function GlassHalfFull() {
           </div>
         </Link>
       </section>
+
+      {/* Share Button */}
+      <div className="flex justify-center px-4 pb-6">
+        <ShareButton
+          title="Glass Half Full - The Ribbit Report"
+          text="A frog with nothing to hide! Check out MarshMellow's field notes about glass frogs from Costa Rica."
+        />
+      </div>
 
     </div>
   );

@@ -282,14 +282,6 @@ export function SalamanderOlderThanDinosaurs() {
         </div>
       </section>
 
-      {/* Share Button */}
-      <div className="flex justify-center px-4 pb-6">
-        <ShareButton
-          title="The Salamander That's Older Than Dinosaurs - The Ribbit Report"
-          text="170 million years old and still going! Check out MarshMellow's field notes about the Chinese Giant Salamander."
-        />
-      </div>
-
       {/* Previous Field Note link */}
       <section className="px-4 pb-6">
         <Link to="/field-notes/glass-half-full" className="block group">
@@ -377,6 +369,14 @@ export function SalamanderOlderThanDinosaurs() {
           </div>
         </div>
       </section>
+
+      {/* Share Button */}
+      <div className="flex justify-center px-4 pb-6">
+        <ShareButton
+          title="The Salamander That's Older Than Dinosaurs - The Ribbit Report"
+          text="170 million years old and still going! Check out MarshMellow's field notes about the Chinese Giant Salamander."
+        />
+      </div>
 
     </div>
   );
