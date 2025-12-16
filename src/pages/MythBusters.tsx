@@ -77,7 +77,7 @@ function MythBustersLanding({ onStart }: { onStart: () => void }) {
           Let's find out!
         </p>
         <p className="text-[#6B7280] dark:text-[#9CA3AF] text-sm mb-8 text-center px-4">
-          Tap through {mythBusterCards.length} cards and test what you think you know.
+          Swipe through our cards and test what you think you know.
         </p>
 
         {/* Start button - adventure gold/brown to match theme */}

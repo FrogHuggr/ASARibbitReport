@@ -200,14 +200,6 @@ export function WildDecisionDetail() {
             </Link>
           )}
 
-          {/* Share button */}
-          <div className="flex justify-center mb-6">
-            <ShareButton
-              title={`${dilemma.title} - Wild Decisions`}
-              text={`What would YOU do? ${dilemma.title} - a conservation dilemma from The Ribbit Report!`}
-            />
-          </div>
-
           {/* Action buttons */}
           <div className="space-y-3">
             <button
@@ -224,6 +216,14 @@ export function WildDecisionDetail() {
             >
               Back to Wild Decisions
             </Link>
+          </div>
+
+          {/* Share button */}
+          <div className="flex justify-center mt-6">
+            <ShareButton
+              title={`${dilemma.title} - Wild Decisions`}
+              text={`What would YOU do? ${dilemma.title} - a conservation dilemma from The Ribbit Report!`}
+            />
           </div>
         </section>
       )}
