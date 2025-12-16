@@ -362,7 +362,7 @@ export function SalamanderOlderThanDinosaurs() {
                 The Dad Who Ate His Kids (On Purpose)
               </h3>
               <p className="text-white/80 text-sm">
-                Day 58: Parenting goals? Parenting goals.
+                Day 58: Evolution said "put them WHERE?"
               </p>
             </div>
           </div>

@@ -82,7 +82,7 @@ export function GlassHalfFull() {
         </div>
         <div className="space-y-4 text-[15px] text-[#2D2D2D] dark:text-[#b3b3b3] leading-relaxed">
           <p>
-            I've seen a lot of weird things in my travels. Purple frogs that look like deflated balloons. Salamanders the size of a carry-on bag. A toad that survived being frozen solid (she was not interested in chatting afterwards—fair enough, honestly).
+            I've seen a lot of weird things in my travels. Purple frogs that look like deflated balloons. Salamanders the size of a carry-on bag. A frog that survived being frozen half solid (she was not interested in chatting afterwards—fair enough, honestly).
           </p>
           <p>
             But nothing—<em>nothing</em>—prepared me for my first glass frog.

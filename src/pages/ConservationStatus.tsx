@@ -82,15 +82,6 @@ export function ConservationStatus() {
   return (
     <div className="pb-10">
       {/* Header with back button */}
-      <header className="px-4 pt-4 pb-2">
-        <Link
-          to="/settings"
-          className="inline-flex items-center gap-1 text-[#2D5A3D] dark:text-[#6B9B7A] font-medium text-sm hover:underline"
-        >
-          <ChevronLeft size={18} />
-          Settings
-        </Link>
-      </header>
 
       {/* Title section */}
       <section className="px-4 pt-4 pb-6">
