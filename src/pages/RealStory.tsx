@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import {
-  ArrowLeft,
   ChevronLeft,
   ChevronRight,
   Droplet,
@@ -203,18 +202,7 @@ export function RealStory() {
   const { frog: frogColor, toad: toadColor } = story.colorPalette;
 
   return (
-    <div className="pb-6">
-      {/* Header */}
-      <header className="container-app px-4 py-4">
-        <Link
-          to="/explore"
-          className="inline-flex items-center gap-2 text-[#6B7280] dark:text-[#9CA3AF] hover:text-[#2D2D2D] dark:hover:text-white transition-colors"
-        >
-          <ArrowLeft size={20} />
-          <span>Back</span>
-        </Link>
-      </header>
-
+    <div className="pb-6 pt-4">
       {/* Hero Section */}
       <section className="container-app px-4 mb-8">
         {/* Title Card */}

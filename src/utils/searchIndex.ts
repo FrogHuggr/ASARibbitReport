@@ -2,6 +2,7 @@
 // Adding new content types is as simple as adding entries to this index
 
 import { dispatches } from '../data/dispatches';
+import { fieldNotes } from '../data/fieldNotes';
 import { glossaryTerms } from '../data/glossary';
 import { mythBusterCards } from '../data/mythbusters';
 import { realStories } from '../data/realStory';
@@ -9,6 +10,7 @@ import { dilemmas } from '../data/wildDecisions';
 
 export type SearchResultType =
   | 'dispatch'
+  | 'fieldnote'
   | 'glossary'
   | 'mythbuster'
   | 'realstory'
@@ -49,6 +51,26 @@ function buildSearchIndex(): SearchResult[] {
       ].join(' ').toLowerCase(),
       route: `/dispatches/${dispatch.id}`,
       icon: 'map-pin',
+    });
+  });
+
+  // Add Field Notes
+  fieldNotes.forEach(note => {
+    results.push({
+      id: `fieldnote-${note.id}`,
+      type: 'fieldnote',
+      title: note.title,
+      subtitle: `Day ${note.day} - ${note.location} - ${note.species}`,
+      searchText: [
+        note.title,
+        note.species,
+        note.location,
+        note.searchText,
+        'field notes',
+        'marshmellow',
+      ].join(' ').toLowerCase(),
+      route: `/field-notes/${note.slug}`,
+      icon: 'pencil',
     });
   });
 
@@ -205,15 +227,31 @@ export function getTypeInfo(type: SearchResultType): { label: string; color: str
   switch (type) {
     case 'dispatch':
       return { label: 'Dispatch', color: '#2D5A3D' };
+    case 'fieldnote':
+      return { label: 'Field Notes', color: '#8B6914' };
+    case 'wilddecision':
+      return { label: 'Wild Decision', color: '#EC4899' };
+    case 'realstory':
+      return { label: 'The Real Story', color: '#0EA5E9' };
     case 'glossary':
       return { label: 'Glossary', color: '#7C3AED' };
     case 'mythbuster':
       return { label: 'Myth Buster', color: '#F97316' };
-    case 'realstory':
-      return { label: 'The Real Story', color: '#0EA5E9' };
-    case 'wilddecision':
-      return { label: 'Wild Decision', color: '#EC4899' };
     default:
       return { label: 'Content', color: '#6B7280' };
   }
+}
+
+// Define type order for grouping results
+const typeOrder: SearchResultType[] = [
+  'dispatch',
+  'fieldnote',
+  'wilddecision',
+  'realstory',
+  'glossary',
+  'mythbuster',
+];
+
+export function getTypeOrder(): SearchResultType[] {
+  return typeOrder;
 }

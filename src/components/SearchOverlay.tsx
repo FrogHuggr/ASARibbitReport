@@ -8,12 +8,14 @@ import {
   Zap,
   Lightbulb,
   GitBranch,
+  Pencil,
   ArrowRight
 } from 'lucide-react';
 import {
   search,
   getPopularSearches,
   getTypeInfo,
+  getTypeOrder,
   type SearchResult,
   type SearchResultType
 } from '../utils/searchIndex';
@@ -28,6 +30,7 @@ interface SearchOverlayProps {
 // Icon component map
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
   'map-pin': MapPin,
+  'pencil': Pencil,
   'book-open': BookOpen,
   'zap': Zap,
   'lightbulb': Lightbulb,
@@ -134,6 +137,9 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
     return acc;
   }, {} as Record<SearchResultType, SearchResult[]>);
 
+  // Get ordered types that have results
+  const orderedTypes = getTypeOrder().filter(type => groupedResults[type]?.length > 0);
+
   const popularSearches = getPopularSearches();
 
   return (
@@ -233,8 +239,9 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
         {/* Results */}
         {query && results.length > 0 && (
           <div className="pb-8">
-            {Object.entries(groupedResults).map(([type, typeResults]) => {
-              const typeInfo = getTypeInfo(type as SearchResultType);
+            {orderedTypes.map(type => {
+              const typeResults = groupedResults[type];
+              const typeInfo = getTypeInfo(type);
               return (
                 <div key={type} className="mb-4">
                   {/* Type header */}

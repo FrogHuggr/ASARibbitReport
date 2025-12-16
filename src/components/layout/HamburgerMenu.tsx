@@ -96,7 +96,7 @@ export function HamburgerMenu({ isOpen, onClose }: HamburgerMenuProps) {
 
           {/* About Section */}
           <MenuItem to="/meet-marshmellow" label="Meet MarshMellow" onClose={onClose} />
-          <MenuItem to="/settings" label="About The Ribbit Report" onClose={onClose} />
+          <MenuItem to="/settings#about" label="About The Ribbit Report" onClose={onClose} />
         </nav>
       </div>
     </>

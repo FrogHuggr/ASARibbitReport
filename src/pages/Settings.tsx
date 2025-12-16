@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ChevronRight, ExternalLink, Smartphone, Share, Plus, MoreVertical, BookOpen, Globe, Mail, X, Shield, Ban, CheckCircle, Settings as SettingsIcon, Users, Check } from 'lucide-react';
 import { useTheme, languageLabels, type Language } from '../context/ThemeContext';
 import { useTextSize, type TextSize } from '../context/TextSizeContext';
@@ -42,8 +43,22 @@ export function Settings() {
   const device = useDeviceType();
   const [showTranslationInfo, setShowTranslationInfo] = useState(true);
   const [showPrivacyModal, setShowPrivacyModal] = useState(false);
+  const location = useLocation();
 
   const languages: Language[] = ['en', 'es', 'fr', 'pt', 'de'];
+
+  // Scroll to hash anchor when navigating to this page
+  useEffect(() => {
+    if (location.hash) {
+      const element = document.querySelector(location.hash);
+      if (element) {
+        // Small delay to ensure the page has rendered
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location.hash]);
 
   // Reset info box visibility when language changes to non-English
   useEffect(() => {
@@ -397,7 +412,7 @@ export function Settings() {
       <hr className="border-[#E5E7EB] dark:border-[#374151] my-6" />
 
       {/* About The Ribbit Report */}
-      <section className="mb-8">
+      <section id="about" className="mb-8 scroll-mt-4">
         <h2 className="font-display text-xl font-bold text-[#2D2D2D] dark:text-white mb-4">
           About The Ribbit Report
         </h2>
