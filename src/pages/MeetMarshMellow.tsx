@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { ChevronLeft, UtensilsCrossed, Volume2, Lightbulb, Map, MessageCircle, Notebook } from 'lucide-react';
+import { ChevronLeft, UtensilsCrossed, Volume2, Lightbulb, Map, MessageCircle, Notebook, Pencil } from 'lucide-react';
 import { type LucideIcon } from 'lucide-react';
 import { ShareButton } from '../components/ShareButton';
 
@@ -137,6 +137,10 @@ export function MeetMarshMellow() {
         </div>
         <div className="bg-[#F5E6D3] dark:bg-[#3D2E1F] rounded-2xl p-4 space-y-3">
           <FieldNote
+            day={12}
+            note="Started keeping a field journal. The sketches are... abstract. In my defense, pencils weren't designed for webbed feet."
+          />
+          <FieldNote
             day={23}
             note="Hitched a ride in a researcher's backpack. Accidentally traveled to Panama. No regrets."
           />
@@ -233,6 +237,13 @@ export function MeetMarshMellow() {
             iconColor="text-[#4A7B5C] dark:text-[#8FBC8F]"
             label="Best advice"
             value={`"You don't have to travel far to find something amazing. Sometimes the best discoveries are in your own backyard."`}
+          />
+          <FavoriteItem
+            icon={Pencil}
+            iconBg="bg-[#F5E6D3] dark:bg-[#3D2E1F]/50"
+            iconColor="text-[#6B5344] dark:text-[#D4A574]"
+            label="Favorite medium"
+            value={`Pencil on leaf. "Results may vary. Artistic interpretation is encouraged."`}
           />
         </div>
       </section>
