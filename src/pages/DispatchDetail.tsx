@@ -7,6 +7,7 @@ import { StatusBadge } from '../components/ui/StatusBadge';
 import { ReadingProgress } from '../components/ui/ReadingProgress';
 import { BackToTop } from '../components/ui/BackToTop';
 import { GlossaryText } from '../components/GlossaryText';
+import { ShareButton } from '../components/ShareButton';
 
 // Map icon names to Lucide components
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string; style?: React.CSSProperties }>> = {
@@ -503,6 +504,14 @@ export function DispatchDetail() {
           {dispatch.sections.map((section) => (
             <SectionRenderer key={section.id} section={section} colors={dispatch.colors} />
           ))}
+        </div>
+
+        {/* Share Button */}
+        <div className="flex justify-center mt-8 mb-4">
+          <ShareButton
+            title={`${dispatch.species.commonName} - The Ribbit Report`}
+            text={`Check out this amazing story about ${dispatch.species.commonName} from ${dispatch.location.country}!`}
+          />
         </div>
 
       </div>

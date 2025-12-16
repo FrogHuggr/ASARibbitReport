@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ChevronLeft, MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, Skull, Clock, ExternalLink } from 'lucide-react';
+import { ShareButton } from '../../components/ShareButton';
 
 export function SalamanderOlderThanDinosaurs() {
   return (
@@ -280,6 +281,14 @@ export function SalamanderOlderThanDinosaurs() {
           </a>
         </div>
       </section>
+
+      {/* Share Button */}
+      <div className="flex justify-center px-4 pb-6">
+        <ShareButton
+          title="The Salamander That's Older Than Dinosaurs - The Ribbit Report"
+          text="170 million years old and still going! Check out MarshMellow's field notes about the Chinese Giant Salamander."
+        />
+      </div>
 
       {/* Previous Field Note link */}
       <section className="px-4 pb-6">

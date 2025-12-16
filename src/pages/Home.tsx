@@ -7,6 +7,7 @@ import { mythBusterCards } from '../data/mythbusters';
 import { dilemmas } from '../data/wildDecisions';
 import { getRandomHeroImage } from '../data/heroImages';
 import { getRandomFact } from '../data/didYouKnowFacts';
+import { ShareButton } from '../components/ShareButton';
 
 export function Home() {
   // Random hero image selection on each mount
@@ -29,6 +30,16 @@ export function Home() {
         />
         {/* Dark gradient overlay for text legibility */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+
+        {/* Share button - top right */}
+        <div className="absolute top-4 right-4 z-10">
+          <ShareButton
+            title="The Ribbit Report"
+            text="Check out The Ribbit Report - amazing amphibian stories for young explorers!"
+            url="https://ribbitreport.org"
+            variant="compact"
+          />
+        </div>
 
         {/* Species caption and photographer credit - bottom left of image */}
         <div className="absolute bottom-24 left-4 flex flex-col gap-1">

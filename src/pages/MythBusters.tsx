@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import { mythBusterCards } from '../data/mythbusters';
 import type { BonusChip, MythBusterCard } from '../data/mythbusters';
+import { ShareButton } from '../components/ShareButton';
 
 // Map icon names to Lucide components
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
@@ -347,6 +348,16 @@ export function MythBusters() {
             <ChevronRight size={20} />
           </button>
         </div>
+
+        {/* Share button - show on last card when revealed */}
+        {currentIndex === mythBusterCards.length - 1 && isCurrentRevealed && (
+          <div className="flex justify-center mt-6 animate-fade-in">
+            <ShareButton
+              title="Myth Busters - The Ribbit Report"
+              text={`I just busted ${mythBusterCards.length} amphibian myths! Test what you know on The Ribbit Report.`}
+            />
+          </div>
+        )}
       </div>
     </div>
   );

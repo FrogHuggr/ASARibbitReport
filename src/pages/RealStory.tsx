@@ -18,6 +18,7 @@ import {
 } from 'lucide-react';
 import { getRealStoryById } from '../data/realStory';
 import type { Comparison, FaceOffSection } from '../data/realStory';
+import { ShareButton } from '../components/ShareButton';
 
 // Icon mapping
 const iconMap: Record<string, React.ComponentType<{ size?: number; className?: string }>> = {
@@ -431,6 +432,14 @@ export function RealStory() {
 
           return null;
         })}
+
+        {/* Share Button */}
+        <div className="flex justify-center pt-6">
+          <ShareButton
+            title={`${story.title} - The Ribbit Report`}
+            text={`${story.subtitle}! Learn the real story on The Ribbit Report.`}
+          />
+        </div>
       </div>
     </div>
   );

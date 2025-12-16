@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft, RotateCcw, Lightbulb, MessageCircle, ChevronRight } from 'lucide-react';
 import { getDilemmaBySlug } from '../data/wildDecisions';
 import type { ChoiceId } from '../data/wildDecisions';
+import { ShareButton } from '../components/ShareButton';
 
 export function WildDecisionDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -198,6 +199,14 @@ export function WildDecisionDetail() {
               </div>
             </Link>
           )}
+
+          {/* Share button */}
+          <div className="flex justify-center mb-6">
+            <ShareButton
+              title={`${dilemma.title} - Wild Decisions`}
+              text={`What would YOU do? ${dilemma.title} - a conservation dilemma from The Ribbit Report!`}
+            />
+          </div>
 
           {/* Action buttons */}
           <div className="space-y-3">

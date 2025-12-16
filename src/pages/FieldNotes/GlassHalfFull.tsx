@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { ChevronLeft, MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart } from 'lucide-react';
+import { ShareButton } from '../../components/ShareButton';
 
 export function GlassHalfFull() {
   return (
@@ -249,6 +250,14 @@ export function GlassHalfFull() {
           Day 47 expedition location • Costa Rican Cloud Forest
         </p>
       </section>
+
+      {/* Share Button */}
+      <div className="flex justify-center px-4 pb-6">
+        <ShareButton
+          title="Glass Half Full - The Ribbit Report"
+          text="A frog with nothing to hide! Check out MarshMellow's field notes about glass frogs from Costa Rica."
+        />
+      </div>
 
       {/* Next Field Note teaser */}
       <section className="px-4 pb-6">
