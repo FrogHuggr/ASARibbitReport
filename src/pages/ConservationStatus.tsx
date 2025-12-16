@@ -1,5 +1,4 @@
 import { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
 import { ChevronLeft, X, ExternalLink, ClipboardList, Shield, TrendingUp, ChevronRight, Landmark, Coins, MapPin, BarChart3, Palette } from 'lucide-react';
 
 // Status data with colors and descriptions
