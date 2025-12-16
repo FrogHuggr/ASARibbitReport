@@ -26,7 +26,7 @@ export function SalamanderOlderThanDinosaurs() {
         <div className="absolute bottom-0 left-0 right-0 p-4">
           <div className="flex items-center gap-2 text-[#D4A574] text-sm mb-2">
             <Calendar size={14} />
-            <span className="font-semibold">Day 52</span>
+            <span className="font-semibold">Day 72</span>
             <span className="text-white/50">•</span>
             <MapPin size={14} />
             <span>Yangtze River Basin, China</span>
@@ -238,7 +238,7 @@ export function SalamanderOlderThanDinosaurs() {
           />
         </div>
         <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mt-2 text-center">
-          Day 52 expedition location • Yangtze River Basin, China
+          Day 72 expedition location • Yangtze River Basin, China
         </p>
       </section>
 
@@ -310,7 +310,7 @@ export function SalamanderOlderThanDinosaurs() {
                   Glass Half Full
                 </h3>
                 <p className="text-white/80 text-sm">
-                  Day 47: A frog with nothing to hide
+                  Day 58: A frog with nothing to hide
                 </p>
               </div>
             </div>
@@ -354,7 +354,7 @@ export function SalamanderOlderThanDinosaurs() {
                 The Dad Who Ate His Kids (On Purpose)
               </h3>
               <p className="text-white/80 text-sm">
-                Day 58: Evolution said "put them WHERE?"
+                Day 85: Evolution said "put them WHERE?"
               </p>
             </div>
           </div>

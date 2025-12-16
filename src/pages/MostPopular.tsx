@@ -184,7 +184,7 @@ export function MostPopular() {
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mb-1">
-                    Field Notes • Day 47
+                    Field Notes • Day 58
                   </p>
                   <h3 className="font-display font-bold text-[#2D2D2D] dark:text-white leading-tight">
                     Glass Half Full

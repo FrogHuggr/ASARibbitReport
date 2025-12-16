@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { ChevronLeft, UtensilsCrossed, Volume2, Lightbulb, Map, MessageCircle, Notebook } from 'lucide-react';
 import { type LucideIcon } from 'lucide-react';
+import { ShareButton } from '../components/ShareButton';
 
 export function MeetMarshMellow() {
   return (
@@ -235,6 +236,14 @@ export function MeetMarshMellow() {
           />
         </div>
       </section>
+
+      {/* Share Button */}
+      <div className="flex justify-center px-4 pb-6">
+        <ShareButton
+          title="Meet MarshMellow - The Ribbit Report"
+          text="Meet MarshMellow, your frog explorer guide! Learn his story on The Ribbit Report."
+        />
+      </div>
 
     </div>
   );

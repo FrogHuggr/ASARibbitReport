@@ -244,7 +244,7 @@ export function Explore() {
                   Glass Half Full
                 </h3>
                 <p className="text-white/80 text-sm">
-                  Day 47: A frog with nothing to hide
+                  Day 58: A frog with nothing to hide
                 </p>
               </div>
             </div>

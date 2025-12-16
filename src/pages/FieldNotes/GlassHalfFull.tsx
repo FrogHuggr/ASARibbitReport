@@ -26,7 +26,7 @@ export function GlassHalfFull() {
         <div className="absolute bottom-0 left-0 right-0 p-4">
           <div className="flex items-center gap-2 text-[#D4A574] text-sm mb-2">
             <Calendar size={14} />
-            <span className="font-semibold">Day 47</span>
+            <span className="font-semibold">Day 58</span>
             <span className="text-white/50">•</span>
             <MapPin size={14} />
             <span>Costa Rica</span>
@@ -80,7 +80,7 @@ export function GlassHalfFull() {
             But nothing—<em>nothing</em>—prepared me for my first glass frog.
           </p>
           <p>
-            It was Day 47. I was perched on a leaf in the Costa Rican cloud forest, minding my own business, writing in my field journal, feeling very professional and explorer-y. Then I noticed something on the branch below. A frog. Tiny. Lime green. Perfectly normal looking from above.
+            It was Day 58. I was perched on a leaf in the Costa Rican cloud forest, minding my own business, writing in my field journal, feeling very professional and explorer-y. Then I noticed something on the branch below. A frog. Tiny. Lime green. Perfectly normal looking from above.
           </p>
           <p>
             Then it shifted, and I caught a glimpse of its underside.
@@ -238,7 +238,7 @@ export function GlassHalfFull() {
           />
         </div>
         <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mt-2 text-center">
-          Day 47 expedition location • Costa Rican Cloud Forest
+          Day 58 expedition location • Costa Rican Cloud Forest
         </p>
       </section>
 

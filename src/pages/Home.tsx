@@ -197,7 +197,7 @@ export function Home() {
                   Glass Half Full
                 </h3>
                 <p className="text-white/90 text-sm">
-                  Day 47: A frog with nothing to hide
+                  Day 58: A frog with nothing to hide
                 </p>
               </div>
             </div>
@@ -264,7 +264,7 @@ export function Home() {
                   The Salamander That's Older Than Dinosaurs
                 </h3>
                 <p className="text-white/90 text-sm">
-                  Day 52: Some rocks have legs
+                  Day 72: Some rocks have legs
                 </p>
               </div>
             </div>
