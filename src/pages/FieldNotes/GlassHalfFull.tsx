@@ -95,7 +95,7 @@ export function GlassHalfFull() {
             The skin on its belly was completely transparent. Like someone had forgotten to finish rendering it. I could see its liver. Its intestines. The blood flowing through its veins like tiny red highways during rush hour.
           </p>
           <p>
-            I dropped my field journal.
+            I dropped my field journal. (My sketches from that day are... interpretive at best. Drawing with webbed feet is harder than it looks, and I refuse to apologize for my artistic choices.)
           </p>
           <p>
             I stared for a solid five minutes. The frog stared back. Neither of us blinked. (Well, I didn't. Frogs don't really blink much anyway. We're just built different. Literally. Our eyes are on top of our heads. It's a whole thing.)
