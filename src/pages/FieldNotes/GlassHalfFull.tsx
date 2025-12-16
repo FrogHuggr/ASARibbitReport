@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart } from 'lucide-react';
+import { MapPin, Calendar, Camera, Compass, Droplets, Eye, Heart, ExternalLink } from 'lucide-react';
 import { ShareButton } from '../../components/ShareButton';
 
 export function GlassHalfFull() {
@@ -240,6 +240,34 @@ export function GlassHalfFull() {
         <p className="text-xs text-[#6B7280] dark:text-[#9CA3AF] mt-2 text-center">
           Day 47 expedition location • Costa Rican Cloud Forest
         </p>
+      </section>
+
+      {/* Explore Glass Frogs - external links */}
+      <section className="px-4 pb-6">
+        <p className="text-sm text-[#6B7280] dark:text-[#9CA3AF] mb-3">
+          Glass frogs include over 150 species with varying conservation statuses. Explore them all:
+        </p>
+        <div className="flex flex-wrap gap-2">
+          <a
+            href="https://www.iucnredlist.org/search/grid?taxonomies=100366&searchType=species"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-[#2D5A3D] dark:text-[#81C784] hover:underline"
+          >
+            <span>IUCN Red List</span>
+            <ExternalLink size={12} />
+          </a>
+          <span className="text-[#6B7280]">•</span>
+          <a
+            href="https://amphibiaweb.org/lists/Centrolenidae.shtml"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-sm text-[#2D5A3D] dark:text-[#81C784] hover:underline"
+          >
+            <span>AmphibiaWeb</span>
+            <ExternalLink size={12} />
+          </a>
+        </div>
       </section>
 
       {/* Next Field Note teaser */}
