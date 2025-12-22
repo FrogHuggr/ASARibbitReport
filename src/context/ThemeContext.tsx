@@ -21,13 +21,13 @@ interface ThemeContextType {
 
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
-// Default to dark mode for best visual experience
+// Respect user's system preference for first-time visitors
 function getDefaultTheme(): boolean {
-  return true; // Dark mode by default - content pops better!
+  return window.matchMedia('(prefers-color-scheme: dark)').matches;
 }
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-  // Check for saved preference, otherwise default to dark mode
+  // Check for saved preference, otherwise use system preference
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('ribbit-dark-mode');
     // If user has manually set a preference, use it
